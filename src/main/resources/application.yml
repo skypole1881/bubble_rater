@@ -1,5 +1,10 @@
 spring:
   thymeleaf:
-    mode: HTML5
+    mode: LEGACYHTML5
   profiles:
     active: dev
+  messages:
+    basename: i18n/messages
+
+
+    
