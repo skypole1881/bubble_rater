@@ -16,6 +16,7 @@ CREATE TABLE bubble_user(
 
 CREATE TABLE bubble_blog(
     `blog_id`           int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+    `title`             varchar(254) DEFAULT NULL COMMENT 'title',
     `store_city`        varchar(254) DEFAULT NULL COMMENT '城市名稱',
     `store_district`    varchar(254) DEFAULT NULL COMMENT '區',
     `store_brand`       varchar(254) DEFAULT NULL COMMENT '店名',

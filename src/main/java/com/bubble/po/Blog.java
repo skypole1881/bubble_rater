@@ -2,10 +2,10 @@ package com.bubble.po;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -15,20 +15,35 @@ import javax.persistence.TemporalType;
 public class Blog {
 	@Id
 	@GeneratedValue
+	@Column(name="blog_id")
 	private int blogId;
+	@Column(name="title")
+	private String title;
+	@Column(name="store_city")
 	private String storeCity;
+	@Column(name="store_district")
 	private String storeDistrict;
+	@Column(name="stor_brand")
 	private String storeBrand;
+	@Column(name="store_address")
 	private String storeAddress;
+	@Column(name="content1")
 	private String content1;
+	@Column(name="content2")
 	private String content2;
+	@Column(name="like")
 	private int like;
+	@Column(name="views")
 	private int views;
+	@Column(name="version")
 	private int version;
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="createdDtm")
 	private Date createdDtm;
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="lastModifiedDtm")
 	private Date lastModifiedDtm;
+	@Column(name="deleted")
 	private int deleted;
 
 	public int getBlogId() {
@@ -133,6 +148,14 @@ public class Blog {
 
 	public void setDeleted(int deleted) {
 		this.deleted = deleted;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }
