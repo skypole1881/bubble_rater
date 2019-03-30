@@ -11,15 +11,13 @@ import com.bubble.vo.BlogQuery;
 
 public interface BlogService {
 
-	Blog getBlog(Long id);
+	Blog getBlog(Integer id);
 
-	Blog getAndConvert(Long id);
+	Blog getAndConvert(Integer id);
 
 	Page<Blog> listBlog(Pageable pageable, Blog blog);
 
 	Page<Blog> listBlog(Pageable pageable);
-
-	Page<Blog> listBlog(Long tagId, Pageable pageable);
 
 	Page<Blog> listBlog(String query, Pageable pageable);
 
@@ -31,7 +29,7 @@ public interface BlogService {
 
 	Blog saveBlog(Blog blog);
 
-	Blog updateBlog(Long id, Blog blog);
+	Blog updateBlog(Integer id, Blog blog);
 
-	void deleteBlog(Long id);
+	void deleteBlog(Integer id);
 }

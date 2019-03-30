@@ -37,7 +37,7 @@ public class BlogServiceImpl implements BlogService {
 	private BlogRepository blogRepository;
 
 	@Override
-	public Blog getBlog(Long id) {
+	public Blog getBlog(Integer id) {
 		// TODO Auto-generated method stub
 		return blogRepository.findOne(id);
 	}
@@ -172,21 +172,9 @@ public class BlogServiceImpl implements BlogService {
 //	}
 
 	@Override
-	public void deleteBlog(Long id) {
+	public void deleteBlog(Integer id) {
 		blogRepository.delete(id);
 
-	}
-
-	@Override
-	public Blog getAndConvert(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Page<Blog> listBlog(Long tagId, Pageable pageable) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
@@ -208,7 +196,13 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public Blog updateBlog(Long id, Blog blog) {
+	public Blog getAndConvert(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Blog updateBlog(Integer id, Blog blog) {
 		// TODO Auto-generated method stub
 		return null;
 	}
