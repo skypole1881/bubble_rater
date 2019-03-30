@@ -38,7 +38,6 @@
   <div class="ui attached pointing menu">
     <div class="ui container">
       <div class="right menu">
-        <a href="#" th:href="@{/admin/blogs/input}" class=" item">发布</a>
         <a href="#" th:href="@{/admin/blogs}" class="teal active item">列表</a>
       </div>
     </div>
@@ -51,29 +50,17 @@
         <input type="hidden" name="page" >
         <div class="inline fields">
           <div class="field">
-            <input type="text" name="title" placeholder="标题">
+            <input type="text" name="title" placeholder="標題">
           </div>
           <div class="field">
             <div class="ui labeled action input">
-              <div class="ui type selection dropdown">
-                <input type="hidden" name="typeId">
-                <i class="dropdown icon"></i>
-                <div class="default text">分类</div>
-                <div class="menu">
-                  <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">错误日志</div>
-                  <!--/*-->
-                  <div class="item" data-value="2">开发者手册</div>
-                  <!--*/-->
-                </div>
+              <div class="ui type selection ">
               </div>
-              <button id="clear-btn" class="ui compact button">clear</button>
             </div>
 
           </div>
           <div class="field">
             <div class="ui checkbox">
-              <input type="checkbox" id="recommend" name="recommend">
-              <label for="recommend">推荐</label>
             </div>
           </div>
           <div class="field">
@@ -86,21 +73,15 @@
           <thead>
           <tr>
             <th></th>
-            <th>标题</th>
-            <th>类型</th>
-            <th>推荐</th>
-            <th>状态</th>
-            <th>更新时间</th>
-            <th>操作</th>
+            <th>標題</th>
+            <th>最近更新時間</th>
+            <th></th>
           </tr>
           </thead>
           <tbody>
           <tr th:each="blog,iterStat : ${page.content}">
             <td th:text="${iterStat.count}">1</td>
             <td th:text="${blog.title}">刻意练习清单</td>
-            <td th:text="${blog.type.name}">认知升级</td>
-            <td th:text="${blog.recommend} ? '是':'否'">是</td>
-            <td th:text="${blog.published} ? '发布':'草稿'">草稿</td>
             <td th:text="${blog.updateTime}">2017-10-02 09:45</td>
             <td>
               <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
