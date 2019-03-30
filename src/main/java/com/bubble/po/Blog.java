@@ -23,11 +23,11 @@ public class Blog {
 	private String storeCity;
 	@Column(name="store_district")
 	private String storeDistrict;
-	@Column(name="stor_brand")
+	@Column(name="store_brand")
 	private String storeBrand;
 	@Column(name="store_address")
 	private String storeAddress;
-	@Column(name="content1")
+	@Column(name="content")
 	private String content1;
 	@Column(name="content2")
 	private String content2;
