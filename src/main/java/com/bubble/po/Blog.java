@@ -15,35 +15,39 @@ import javax.persistence.TemporalType;
 public class Blog {
 	@Id
 	@GeneratedValue
-	@Column(name="blog_id")
+	@Column(name = "blog_id")
 	private int blogId;
-	@Column(name="title")
+	@Column(name = "title")
 	private String title;
-	@Column(name="store_city")
+	@Column(name = "store_city")
 	private String storeCity;
-	@Column(name="store_district")
+	@Column(name = "store_district")
 	private String storeDistrict;
-	@Column(name="store_brand")
+	@Column(name = "store_brand")
 	private String storeBrand;
-	@Column(name="store_address")
+	@Column(name = "store_address")
 	private String storeAddress;
-	@Column(name="content")
+	@Column(name = "content")
 	private String content1;
-	@Column(name="content2")
+	@Column(name = "content2")
 	private String content2;
-	@Column(name="like")
+	@Column(name = "cold")
+	private boolean cold;
+	@Column(name = "publish")
+	private boolean publish;
+	@Column(name = "like")
 	private int like;
-	@Column(name="views")
+	@Column(name = "views")
 	private int views;
-	@Column(name="version")
+	@Column(name = "version")
 	private int version;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="createdDtm")
+	@Column(name = "createdDtm")
 	private Date createdDtm;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="lastModifiedDtm")
+	@Column(name = "lastModifiedDtm")
 	private Date lastModifiedDtm;
-	@Column(name="deleted")
+	@Column(name = "deleted")
 	private int deleted;
 
 	public int getBlogId() {
@@ -156,6 +160,22 @@ public class Blog {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public boolean isCold() {
+		return cold;
+	}
+
+	public void setCold(boolean cold) {
+		this.cold = cold;
+	}
+
+	public boolean isPublish() {
+		return publish;
+	}
+
+	public void setPublish(boolean publish) {
+		this.publish = publish;
 	}
 
 }

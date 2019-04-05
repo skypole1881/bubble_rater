@@ -23,6 +23,8 @@ CREATE TABLE bubble_blog(
     `store_address`     varchar(254) DEFAULT NULL COMMENT '地址',
     `content`           VARCHAR(700) DEFAULT NULL COMMENT '內容',
     `content2`          VARCHAR(700) DEFAULT NULL COMMENT '內容',
+    `cold`              boolean      DEFAULT NULL COMMENT '冷熱',
+    `publish`           boolean      DEFAULT NULL COMMENT '是否發布',
     `like`              int(11) NOT NULL COMMENT '喜歡',
     `views`             int(11) NOT NULL COMMENT '瀏覽數',
     `version`           int(11) NOT NULL DEFAULT '0' COMMENT '版本',
