@@ -16,7 +16,7 @@ public class Blog {
 	@Id
 	@GeneratedValue
 	@Column(name = "blog_id")
-	private int blogId;
+	private Integer blogId;
 	@Column(name = "title")
 	private String title;
 	@Column(name = "store_city")
@@ -31,12 +31,14 @@ public class Blog {
 	private String content1;
 	@Column(name = "content2")
 	private String content2;
+	@Column(name = "photo_link")
+	private String photoLink;
 	@Column(name = "cold")
 	private boolean cold;
 	@Column(name = "publish")
 	private boolean publish;
-	@Column(name = "like")
-	private int like;
+	@Column(name = "likes")
+	private int likes;
 	@Column(name = "views")
 	private int views;
 	@Column(name = "version")
@@ -49,8 +51,10 @@ public class Blog {
 	private Date lastModifiedDtm;
 	@Column(name = "deleted")
 	private int deleted;
+	
+	
 
-	public int getBlogId() {
+	public Integer getBlogId() {
 		return blogId;
 	}
 
@@ -106,12 +110,12 @@ public class Blog {
 		this.content2 = content2;
 	}
 
-	public int getLike() {
-		return like;
+	public int getLiks() {
+		return likes;
 	}
 
-	public void setLike(int like) {
-		this.like = like;
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 
 	public int getViews() {
@@ -177,5 +181,14 @@ public class Blog {
 	public void setPublish(boolean publish) {
 		this.publish = publish;
 	}
+
+	public String getPhotoLink() {
+		return photoLink;
+	}
+
+	public void setPhotoLink(String photoLink) {
+		this.photoLink = photoLink;
+	}
+	
 
 }

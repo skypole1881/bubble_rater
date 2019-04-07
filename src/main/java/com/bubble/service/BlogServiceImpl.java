@@ -2,6 +2,7 @@ package com.bubble.service;
 
 import org.springframework.data.domain.Pageable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -121,7 +122,7 @@ public class BlogServiceImpl implements BlogService {
 	public Long countBlog() {
 		return blogRepository.count();
 	}
-//
+
 //	@Transactional
 //	@Override
 //	public Blog saveBlog(Blog blog) {
@@ -157,6 +158,10 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog saveBlog(Blog blog) {
+		blog.setCreatedDtm(new Date());
+		blog.setLastModifiedDtm(new Date());
+		blog.setVersion(0);
+		blog.setDeleted(0);
 		// TODO Auto-generated method stub
 		return blogRepository.save(blog);
 	}

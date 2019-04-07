@@ -57,23 +57,23 @@ public class BlogController {
     }
 
 
-//    @PostMapping("/blogs")
-//    public String post(Blog blog, RedirectAttributes attributes, HttpSession session) {
+    @PostMapping("/blogs")
+    public String post(Blog blog, RedirectAttributes attributes, HttpSession session) {
 //        blog.setUser((User) session.getAttribute("user"));
-//        Blog b;
-//        if (blog.getId() == null) {
-//            b =  blogService.saveBlog(blog);
-//        } else {
-//            b = blogService.updateBlog(blog.getId(), blog);
-//        }
-//
-//        if (b == null ) {
-//            attributes.addFlashAttribute("message", "操作失败");
-//        } else {
-//            attributes.addFlashAttribute("message", "操作成功");
-//        }
-//        return REDIRECT_LIST;
-//    }
+        Blog b;
+        if (blog.getBlogId() == null) {
+            b =  blogService.saveBlog(blog);
+        } else {
+            b = blogService.updateBlog(blog.getBlogId(), blog);
+        }
+
+        if (b == null ) {
+            attributes.addFlashAttribute("message", "操作失败");
+        } else {
+            attributes.addFlashAttribute("message", "操作成功");
+        }
+        return REDIRECT_LIST;
+    }
 
 
 //    @GetMapping("/blogs/{id}/delete")
