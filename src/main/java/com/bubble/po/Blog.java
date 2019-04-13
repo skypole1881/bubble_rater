@@ -51,14 +51,16 @@ public class Blog {
 	private Date lastModifiedDtm;
 	@Column(name = "deleted")
 	private int deleted;
-	
-	
+
+	public Blog() {
+
+	}
 
 	public Integer getBlogId() {
 		return blogId;
 	}
 
-	public void setBlogId(int blogId) {
+	public void setBlogId(Integer blogId) {
 		this.blogId = blogId;
 	}
 
@@ -110,7 +112,7 @@ public class Blog {
 		this.content2 = content2;
 	}
 
-	public int getLiks() {
+	public int getLikes() {
 		return likes;
 	}
 
@@ -189,6 +191,5 @@ public class Blog {
 	public void setPhotoLink(String photoLink) {
 		this.photoLink = photoLink;
 	}
-	
 
 }

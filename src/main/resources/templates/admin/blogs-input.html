@@ -51,18 +51,18 @@
 			<form id="blog-form" action="#" th:action="@{/admin/blogs}" method="post"
 				class="ui form">
 				<!-- th:object="${blog}" -->
-				<input type="hidden" name="publish" th:value="*{blog.publish}">
-				<!-- <input type="hidden" name="blogId" th:value="*{blog.blogId}">  -->
+				<input type="hidden" name="publish" th:value="${blog.publish}">
+				<input type="hidden" name="blogId" th:value="${blog.blogId}">
 				<div class="required field">
 					<div class="ui left labeled input">
 						<label class="ui compact teal basic label">標題</label>
-						<input type="text" name="title" placeholder="標題" th:value="*{blog.title}">
+						<input type="text" name="title" placeholder="標題" th:value="${blog.title}">
 					</div>
 				</div>
 
 				<div class="required field">
 					<div id="md-content" style="z-index: 1 !important;">
-					<textarea placeholder="博客内容" name="content1" style="display: none" th:text="*{blog.content1}"></textarea> 
+					<textarea placeholder="博客内容" name="content1" style="display: none" th:text="${blog.content1}"></textarea> 
 					<!-- <input type="text" name="content" placeholder="店名" th:value="*{blog.content1}"> -->
 					</div>
 				</div>
@@ -71,13 +71,13 @@
 					<div class="required field">
 						<div class="ui left labeled action input">
 							<label class="ui compact teal basic label">店名</label>
-								<input type="text" name="storeBrand" placeholder="店名" th:value="*{blog.storeBrand}">
+								<input type="text" name="storeBrand" placeholder="店名" th:value="${blog.storeBrand}">
 						</div>
 					</div>
 					<div class=" field">
 						<div class="ui left labeled action input">
 							<label class="ui compact teal basic label">地址</label>
-								<input type="text" name="storeAddress" placeholder="地址" th:value="*{blog.storeAddress}">
+								<input type="text" name="storeAddress" placeholder="地址" th:value="${blog.storeAddress}">
 						</div>
 					</div>
 				</div>
@@ -85,13 +85,13 @@
 					<div class="required field">
 						<div class="ui left labeled action input">
 							<label class="ui compact teal basic label">城市名稱</label>
-								<input type="text" name="storeCity" placeholder="城市" th:value="*{blog.storeCity}">
+								<input type="text" name="storeCity" placeholder="城市" th:value="${blog.storeCity}">
 						</div>
 					</div>
 					<div class=" field">
 						<div class="ui left labeled action input">
 							<label class="ui compact teal basic label">區</label>
-								<input type="text" name="storeDistrict" placeholder="區" th:value="*{blog.storeDistrict}">
+								<input type="text" name="storeDistrict" placeholder="區" th:value="${blog.storeDistrict}">
 						</div>
 					</div>
 				</div>
@@ -99,13 +99,13 @@
 					<div class="required field">
 						<div class="ui left labeled action input">
 							<label class="ui compact teal basic label">圖片連結</label>
-						 		<input type="text" name="photoLink" placeholder="圖片連結" th:value="*{blog.photoLink}">
+						 		<input type="text" name="photoLink" placeholder="圖片連結" th:value="${blog.photoLink}">
 						</div>
 					</div>
 					<div class=" field">
 						<div class="ui left labeled action input">
-							<label class="ui compact teal basic label">冷熱</label>
-								<input type="text" name="cold" placeholder="冷熱" th:value="*{blog.cold}">
+							<label class="ui compact teal basic label">熱</label>
+								<input type="checkbox" name="cold" placeholder="熱" th:value="${blog.cold}">
 						</div>
 					</div>
 				</div>
