@@ -35,6 +35,16 @@ public class Blog {
 	private String photoLink;
 	@Column(name = "cold")
 	private boolean cold;
+	@Column(name = "bubble_rate")
+	private float bubbleRate;
+	@Column(name = "tea_rate")
+	private float teaRate;
+	@Column(name = "sweetness_rate")
+	private float sweetnessRate;
+	@Column(name = "godfeeling_rate")
+	private float godfeelingRate;
+	@Column(name = "user_rate")
+	private float userRate;
 	@Column(name = "publish")
 	private boolean publish;
 	@Column(name = "likes")
@@ -174,6 +184,46 @@ public class Blog {
 
 	public void setCold(boolean cold) {
 		this.cold = cold;
+	}
+
+	public float getBubbleRate() {
+		return bubbleRate;
+	}
+
+	public void setBubbleRate(float bubbleRate) {
+		this.bubbleRate = bubbleRate;
+	}
+
+	public float getTeaRate() {
+		return teaRate;
+	}
+
+	public void setTeaRate(float teaRate) {
+		this.teaRate = teaRate;
+	}
+
+	public float getSweetnessRate() {
+		return sweetnessRate;
+	}
+
+	public void setSweetnessRate(float sweetnessRate) {
+		this.sweetnessRate = sweetnessRate;
+	}
+
+	public float getGodfeelingRate() {
+		return godfeelingRate;
+	}
+
+	public void setGodfeelingRate(float godfeelingRate) {
+		this.godfeelingRate = godfeelingRate;
+	}
+
+	public float getUserRate() {
+		return userRate;
+	}
+
+	public void setUserRate(float userRate) {
+		this.userRate = userRate;
 	}
 
 	public boolean isPublish() {

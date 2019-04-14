@@ -25,8 +25,13 @@ CREATE TABLE bubble_blog(
     `content2`          LONGTEXT     DEFAULT NULL COMMENT '內容',
     `photo_link`        varchar(254) DEFAULT NULL COMMENT '圖片連結',
     `cold`              boolean      DEFAULT NULL COMMENT '冷熱',
+    `bubble_rate`       float(11) DEFAULT NULL COMMENT '珍珠彈性',
+    `tea_rate`          float(11) DEFAULT NULL COMMENT '茶分數',
+    `sweetness_rate`    float(11) DEFAULT NULL COMMENT '甜度',
+    `godfeeling_rate`   float(11) DEFAULT NULL COMMENT '小編分數',
+    `user_rate`         float(11) DEFAULT NULL COMMENT '使用者分數',
     `publish`           boolean      DEFAULT NULL COMMENT '是否發布',
-    `likes`              int(11) NOT NULL COMMENT '喜歡',
+    `likes`             int(11) NOT NULL COMMENT '喜歡',
     `views`             int(11) NOT NULL COMMENT '瀏覽數',
     `version`           int(11) NOT NULL DEFAULT '0' COMMENT '版本',
     `created_dtm`       datetime NOT NULL COMMENT '创建时间',
@@ -35,21 +40,6 @@ CREATE TABLE bubble_blog(
 
     PRIMARY KEY (blog_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
-CREATE TABLE bubble_rate(
-    `rate_id`           int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-    `sweetness`         float(11) DEFAULT NULL COMMENT '甜度',
-    `bubble_elasticity` float(11) DEFAULT NULL COMMENT '珍珠彈性',
-    `tea_concentration` float(11) DEFAULT NULL COMMENT '濃度',
-    `godfeeling`        float(11) DEFAULT NULL COMMENT '小編分數',
-    `version`           int(11) NOT NULL DEFAULT '0' COMMENT '版本',
-    `created_dtm`       datetime NOT NULL COMMENT '创建时间',
-    `last_modified_dtm` datetime DEFAULT NULL COMMENT '最近修改时间',
-    `deleted`           tinyint(1) NOT NULL COMMENT '删除标识',
-    PRIMARY KEY (rate_id)
-
-)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
 
 CREATE TABLE bubble_comment(
     `comment_id`        int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
