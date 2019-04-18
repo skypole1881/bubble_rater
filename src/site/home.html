@@ -27,8 +27,8 @@
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Start Bootstrap</a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Bubblerater logo</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,18 +36,15 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Home
+            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">About us
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">About</a>
+            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Rate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Contact</a>
+            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Contact us</a>
           </li>
         </ul>
       </div>
@@ -55,312 +52,252 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container">
+  <div class="container-fluid">
 
-    <div class="row justify-content-md-center">
+    <div class="row text-white">
 
       <!-- Blog Entries Column -->
-      <div class="col-md-12 ">
-
-        <h1 class="my-4">  <!-- Page Heading -->
-          <small><!-- Secondary Text --></small>
-          <img src="image/header.png" class="img-fluid"/>
-        </h1>
+      <div class="col-md-6 text-left">
+        Slogan
+        <h1 class="my-4">珍珠的口感，我說的算！</h1>
+        <input type="checkbox" class="read-more-state" id="post-1"/>
+        <p class="read-more-wrap">簡單來說是這樣...<span class="read-more-target col-md-6">實際上有這些blablablablablablablablablablablablablablablablablablablablablablablablab lablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla詳細的內容。</span></p>
+        <label for="post-1" class="read-more-trigger"></label>
       </div>
     </div>
-    <div class="row justify-content-between">
-      <!-- <div class=" col-md-3 minipage greenback"> -->
-        <div class=" col-md-3">
-        <button class=" btn-success">
-          Categories
-        </button>
-          
-        </a>
-      </div>
-      <div class="col-md-3 minipage greenback">
-        <a>
-          About us
-        </a>
-      </div>
-      <div class="col-md-3 minipage greenback">
-        <a>
-          Contact
-        </a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 button">
-        Sort
-      </div>
-      <div class="col-md-2 button">
-        Language
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-9">
-        <!-- {% for post in post_list %} -->
-        <div class="post-wrapper lightback">
-          <div class="postdiv row">
-            <div class="image col-md-3">
-              <img src="image/tea1.png" class="img-fluid" />
-            </div>
-            <div class="word col-md-9">
-              <div class="title background">
-                <!-- {{ post.title }} -->
-                一芳茶舖-公館店
-              </div>
-              <div class="content">
-                <!-- {{ post.content }} -->
-                <br/>
-                茶味偏淡，喝完之後口腔感到乾澀不舒服，珍珠大小一致，Q度好，但是過於黏牙，而且珍珠沒味道，味同嚼蠟。
-                <br/>
-                整體服務很好，如果排隊時間不長，是表現穩定的好選擇
-              </div>
-            </div>
-          </div>
-          <div class="score">
-            <div class="col-md-3">
-              <div class="scoreimagetable">
-                <div class="scoreimage">
-                  score
-                </div>
-              </div>
-            </div>
 
-            <div class="list">
-              <ul>
-                <!-- <li>Chewiness:{{ post.chewiness }}+{{post.adherence }}</li>
-                <li>Adherence:{{ post.adherence }}</li>
-                <li>Bubble flavor:{{post.bubble_flavor}}</li>
-                <li>Tea flavor:{{post.tea_flavor}}</li>
-                <li>Con tea:{{post.con_tea}}{{ post.photo1 }}</li> -->
-                <li>aaa:100</li>
-                <li>aaa:100</li>
-                <li>aaa:100</li>
-                <li>aaa:100</li>
-                <li>aaa:100</li>
-              </ul>
-            </div>
-
-          </div>
-          <hr />
-          <div class="markerdiv">
-            <div class="marker">
-              <img src="image/sweetness-1.png" class=" marker"/>
-            </div>
-            <div class="content2">
-              Equal to 10 sugar cube<br />
-              per 100 ml water
-            </div>
-          </div>
-          <hr />
-          <div class="votediv">
-            <div class="vote">
-              vote
-            </div>
-            <div class="votedescribe">
-              Rate for your favorite Bubble tea
-            </div>
-
-          </div>
-          <hr />
-          <div class="message">
-            message board
-          </div>
-          <div class="date">
-            <!-- {{post.created_at}} -->
-            Taipei, 2018.06.25
-          </div>
-        </div>
-        <!-- {% endfor %} -->
-
-        <div class="post-wrapper">
-          <div class="postdiv row">
-            <div class="image col-md-3">
-              <img src="image/tea2.png" class="img-fluid" />
-            </div>
-            <div class="word col-md-9">
-              <div class="title background">
-                春水堂-古亭店
-              </div>
-              <div class="row">
-                <div class=" col-sm-6">
-                  <div class="scoreimagetable">
-                    <div class="scoreimage">
-                      8.7
-                    </div>
-                  </div>
-                </div>
-                <div class="sweetimage col-sm-6">
-                  <img src="image/sweetness-1.png" class="img-fluid" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="open"><a href="">continue</a></div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <ul class="ranking">
-          <li>
-            <header class="greenback">Official Ranking</header>
-            <ol>
-              <!-- {% for x in posts %}
-
-
-              <li>{{ x }}</li>
-              {% endfor %} -->
-              <li class="ranking1">10</li>
-              <li class="ranking2">10</li>
-              <li class="ranking3">10</li>
-              <li>10</li>
-              <li>10</li>
-              <li>10</li>
-              <li>10</li>
-              <li>10</li>
-              <li>10</li>
-              <li>10</li>
-            </ol>
-          </li>
-          <li>
-            <header class="greenback">Overall Ranking</header>
-            <table class="table table-sm rankingtable">
+    <div class="row no-gutters justify-content-md-center">
+      <div class="col-md-4 store text-white">
+        <div class="storeinfo">
+          <p class="text-center h5">第一名</p>
+          <p class="text-center display-1">9.6</p>
+          <p class="text-center h4">店家</p>
+          <p class="text-center h4">品名</p>
+          <hr color="white"></hr>
+          <center>
+            <table class="scoretable">
               <tr>
-                <td><img src="image/ranking1.png" class="img-fluid" /></td>
-                <td class="rankingname">aaaa</td>
-                <td>-</td>
-                <td class="topscore">8</td>
+                <td>珍珠</td>
+                <td>90</td>
               </tr>
               <tr>
-                <td><img src="image/ranking2.png" class="img-fluid" /></td>
-                <td class="rankingname">bbbafghadfghasgasgasdgasdgasgvbbbb</td>
-                <td>-</td>
-                <td class="topscore">8</td>
+                <td>茶品</td>
+                <td>90</td>
               </tr>
               <tr>
-                <td><img src="image/ranking3.png" class="img-fluid" /></td>
-                <td class="rankingname">ccccccccccc</td>
-                <td>-</td>
-                <td class="topscore">8</td>
+                <td>bubble rate</td>
+                <td>90</td>
               </tr>
               <tr>
-                <td>4.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>5.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>6.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>7.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>8.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>9.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>10.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
+                <td>甜度</td>
+                <td>剛剛好</td>
               </tr>
             </table>
-          </li>
-          <li>
-            <header class="greenback">User Ranking</header>
-            <table class="table table-sm rankingtable">
+          </center>
+        </div>
+
+        <div class="text-white storecomment" id="test2">
+          <img class="img-fluid" src="image/store1.jpg"/>
+          <div>
+            <table class="storename ">
               <tr>
-                <td><img src="image/ranking1.png" class="img-fluid" /></td>
-                <td class="rankingname">aaaa</td>
-                <td>-</td>
-                <td class="topscore">8</td>
-              </tr>
-              <tr>
-                <td><img src="image/ranking2.png" class="img-fluid" /></td>
-                <td class="rankingname">bbbafghadfghasgasgasdgasdgasgvbbbb</td>
-                <td>-</td>
-                <td class="topscore">8</td>
-              </tr>
-              <tr>
-                <td><img src="image/ranking3.png" class="img-fluid" /></td>
-                <td class="rankingname">ccccccccccc</td>
-                <td>-</td>
-                <td class="topscore">8</td>
-              </tr>
-              <tr>
-                <td>4.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>5.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>6.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>7.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>8.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>9.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
-              </tr>
-              <tr>
-                <td>10.</td>
-                <td class="rankingname">ddddddddd</td>
-                <td>-</td>
-                <td>8</td>
+                <td class="h4 weight-bold">
+                  <p>清心</p>
+                  <p>珍奶半糖去冰</p>
+                </td>
+                <td>
+                  <p class="h1 weight-bolder text-center">8.9</p>
+                </td>
               </tr>
             </table>
-          </li>
-        </ul>
-        <div class="social row">
-          <div class="col-4"><a href="http://www.facebook.com"><img src="image/facebook.png" class="img-fluid" /></a></div>
-          <div class="col-4"><a href="http://www.youtube.com"><img src="image/youtube.png" class="img-fluid" /></a></div>
-          <div class="col-4"><a href="http://www.instagram.com"><img src="image/instagram.png" class="img-fluid" /></a></div>
+            <table class="scoretable h5">
+              <tr>
+                <td>珍珠</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>茶品</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>bubble rate</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>甜度</td>
+                <td>剛剛好</td>
+              </tr>
+            </table>
+            <p>
+              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+            </p>
+            <p>我也要評分 O O O O O O O</p>
+          </div>
         </div>
-        <div>
-          Views 1000000
+      </div>
+      
+
+      <div class="col-md-4 store text-white">
+        <div class="storeinfo">
+          <p class="text-center h5">第二名</p>
+          <p class="text-center display-1">9.6</p>
+          <p class="text-center h4">店家</p>
+          <p class="text-center h4">品名</p>
+          <hr color="white"></hr>
+          <center>
+            <table class="scoretable">
+              <tr>
+                <td>珍珠</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>茶品</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>bubble rate</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>甜度</td>
+                <td>剛剛好</td>
+              </tr>
+            </table>
+          </center>
         </div>
+
+        <div class="text-white storecomment" id="test2">
+          <img class="img-fluid" src="image/store1.jpg"/>
+          <div>
+            <table class="storename ">
+              <tr>
+                <td class="h4 weight-bold">
+                  <p>清心</p>
+                  <p>珍奶半糖去冰</p>
+                </td>
+                <td>
+                  <p class="h1 weight-bolder text-center">8.9</p>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable h5">
+              <tr>
+                <td>珍珠</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>茶品</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>bubble rate</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>甜度</td>
+                <td>剛剛好</td>
+              </tr>
+            </table>
+            <p>
+              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+            </p>
+            <p>我也要評分 O O O O O O O</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 store text-white">
+        <div class="storeinfo">
+          <p class="text-center h5">第三名</p>
+          <p class="text-center display-1">9.6</p>
+          <p class="text-center h4">店家</p>
+          <p class="text-center h4">品名</p>
+          <hr color="white"></hr>
+          <center>
+            <table class="scoretable">
+              <tr>
+                <td>珍珠</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>茶品</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>bubble rate</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>甜度</td>
+                <td>剛剛好</td>
+              </tr>
+            </table>
+          </center>
+        </div>
+
+        <div class="text-white storecomment" id="test2">
+          <img class="img-fluid" src="image/store1.jpg"/>
+          <div>
+            <table class="storename ">
+              <tr>
+                <td class="h4 weight-bold">
+                  <p>清心</p>
+                  <p>珍奶半糖去冰</p>
+                </td>
+                <td>
+                  <p class="h1 weight-bolder text-center">8.9</p>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable h5">
+              <tr>
+                <td>珍珠</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>茶品</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>bubble rate</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>甜度</td>
+                <td>剛剛好</td>
+              </tr>
+            </table>
+            <p>
+              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+            </p>
+            <p>我也要評分 O O O O O O O</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 store text-white" id="test">
+        <h1 class="text-center">9.6</h1></p>
+        <p class="text-center">店家|品名</p>
+        <div class="col-md-4"><hr/></div>
+        <hr/>
+        <center>
+          <table class="">
+            <tr>
+              <td>珍珠</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>茶品</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>甜度</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>評分111</td>
+              <td>90</td>
+            </tr>
+          </table>
+        </center>
       </div>
     </div>
   </div>

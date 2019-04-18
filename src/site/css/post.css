@@ -1,3 +1,130 @@
+/*hr
+{
+	color: white;
+	size: 20px;
+	width: 80%;
+}*/
+
+/*about read more*/
+.read-more-state {
+  display: none;
+}
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+.read-more-state ~ .read-more-trigger:before {
+  content: '顯示更多';
+}
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: '顯示較少';
+}
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 .5em;
+  color: #666;
+  font-size: .9em;
+  line-height: 2;
+  /*border: 1px solid #ddd;*/
+  /*border-radius: .25em;*/
+}
+/*read more over*/
+
+.store
+{
+	background: hsla(0,0%,0%,0.5);
+	overflow: hidden;
+	transition: background-color 1s;
+}
+.storeinfo
+{
+	padding-left: 10%;
+	padding-right: 10%;
+	position:absolute;
+	top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    transition: opacity 1s;
+}
+.store::before
+{
+	background-image: url('../image/store1.jpg');
+	background-size: 100% auto;
+	background-position: center;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	filter: blur(5px);
+	margin: -30px;
+	z-index: -1;
+}
+.storecomment
+{
+	background-color: black;
+	opacity: 0;
+	transition: opacity 1s;
+	/*display: none;*/
+	/*z-index: 2;*/
+}
+.storecomment > div
+{
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.storecomment > div table
+{
+	margin-bottom: 10px;
+}
+.storecomment > div 	
+.storename
+{
+	width: 100%;
+	table-layout: fixed;
+	text-align: left;
+}
+.store:hover
+{
+	background-color: black;
+}
+.store:hover .storecomment
+{
+	/*display: none;*/
+	opacity: 1;
+}
+.store:hover .storeinfo
+{
+	opacity: 0;
+}
+
+/*#test:hover ~ #test2
+{
+	display: block;
+}
+#test2:hover
+{
+	display: block;
+}*/
+.scoretable
+{
+	width: 100%;
+	table-layout: fixed;
+	text-align: left;
+}
+
+
+
 .background
 {
 	background-image: url('../image/background.jpg');
