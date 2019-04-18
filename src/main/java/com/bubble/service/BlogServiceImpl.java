@@ -1,7 +1,7 @@
 package com.bubble.service;
 
-import org.springframework.data.domain.Pageable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -13,22 +13,14 @@ import javax.persistence.criteria.Root;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.bubble.NotFoundException;
 import com.bubble.dao.BlogRepository;
 import com.bubble.po.Blog;
-import com.bubble.vo.BlogQuery;
+import com.bubble.util.MyBeanUtils;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -121,7 +113,7 @@ public class BlogServiceImpl implements BlogService {
 	public Long countBlog() {
 		return blogRepository.count();
 	}
-//
+
 //	@Transactional
 //	@Override
 //	public Blog saveBlog(Blog blog) {
@@ -135,9 +127,8 @@ public class BlogServiceImpl implements BlogService {
 //		return blogRepository.save(blog);
 //	}
 
-//	@Transactional
 //	@Override
-//	public Blog updateBlog(Long id, Blog blog) {
+//	public Blog updateBlog(Integer id, Blog blog) {
 //		Blog b = blogRepository.findOne(id);
 //		if (b == null) {
 //			throw new NotFoundException("该博客不存在");
@@ -147,29 +138,28 @@ public class BlogServiceImpl implements BlogService {
 //		return blogRepository.save(b);
 //	}
 
-//	@Transactional
-//	@Override
-//	public void deleteBlog(Long id) {
-//		blogRepository.delete(id);
-//	}
-//
-//	}
-
 	@Override
 	public Blog saveBlog(Blog blog) {
+
+		blog.setCreatedDtm(new Date());
+		blog.setLastModifiedDtm(new Date());
+		blog.setVersion(0);
+
 		// TODO Auto-generated method stub
 		return blogRepository.save(blog);
 	}
 
-//	@Override
-//	public Blog updateBlog(Long id, BlogService blog) {
-//		Blog b = blogRepository.findOne(id);
-//		if (b == null) {
-//			throw new NotFoundException("not exist");
-//		}
-//		BeanUtils.copyProperties(b, blog);
-//		return blogRepository.save(b);
-//	}
+	@Override
+	public Blog updateBlog(Integer id, Blog blog) {
+		Blog b = blogRepository.findOne(id);
+		if (b == null) {
+			throw new NotFoundException("not exist");
+		}
+		BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
+		b.setLastModifiedDtm(new Date());
+		blog.setVersion(blog.getVersion() + 1);
+		return blogRepository.save(b);
+	}
 
 	@Override
 	public void deleteBlog(Integer id) {
@@ -197,12 +187,6 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog getAndConvert(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Blog updateBlog(Integer id, Blog blog) {
 		// TODO Auto-generated method stub
 		return null;
 	}
