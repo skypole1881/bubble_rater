@@ -37,14 +37,20 @@ public class Blog {
 	private boolean cold;
 	@Column(name = "bubble_rate")
 	private float bubbleRate;
+	@Column(name = "bubble_rate_PR")
+	private float bubbleRatePR;
 	@Column(name = "tea_rate")
 	private float teaRate;
+	@Column(name = "tea_rate_PR")
+	private float teaRatePR;
 	@Column(name = "sweetness_rate")
 	private float sweetnessRate;
 	@Column(name = "godfeeling_rate")
 	private float godfeelingRate;
 	@Column(name = "user_rate")
 	private float userRate;
+	@Column(name = "latest")
+	private boolean latest;
 	@Column(name = "publish")
 	private boolean publish;
 	@Column(name = "likes")
@@ -242,4 +248,28 @@ public class Blog {
 		this.photoLink = photoLink;
 	}
 
+	public float getBubbleRatePR() {
+		return bubbleRatePR;
+	}
+
+	public void setBubbleRatePR(float bubbleRatePR) {
+		this.bubbleRatePR = bubbleRatePR;
+	}
+
+	public float getTeaRatePR() {
+		return teaRatePR;
+	}
+
+	public void setTeaRatePR(float teaRatePR) {
+		this.teaRatePR = teaRatePR;
+	}
+
+	public boolean isLatest() {
+		return latest;
+	}
+
+	public void setLatest(boolean latest) {
+		this.latest = latest;
+	}
+	
 }
