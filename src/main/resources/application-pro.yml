@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://database.c50xqnmxv90m.ap-southeast-1.rds.amazonaws.com:3306/blog?&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: root 
+    password: rootroot
   jpa:
     hibernate:
       ddl-auto: none
