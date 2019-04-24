@@ -13,11 +13,11 @@
 
   <title>Blog Home - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="css/post.css" />
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css" />
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/blog-home.css" rel="stylesheet">
+  <link href="../static/css/blog-home.css" rel="stylesheet">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
 
 
@@ -67,8 +67,24 @@
     </div>
 
     <div class="row no-gutters justify-content-md-center">
-      <div class="col-md-4 store text-white">
-        <div class="storeinfo">
+      <div class="sticky-nav">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <button type="button" class="btn btn-secondary">篩選</button>
+          <input type="" name="">
+
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              排序
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">Dropdown link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 store change-top bg-blur text-white">
+        <div class="storeinfo change-first">
           <p class="text-center h5">第一名</p>
           <p class="text-center display-1">9.6</p>
           <p class="text-center h4">店家</p>
@@ -96,17 +112,17 @@
           </center>
         </div>
 
-        <div class="text-white storecomment" id="test2">
-          <img class="img-fluid" src="image/store1.jpg"/>
+        <div class="text-white change-second storecomment" id="test2">
+          <img class="img-fluid" src="../static/images/store1.jpg"/>
           <div>
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
                   <p>清心</p>
-                  <p>珍奶半糖去冰</p>
+                  <p>珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-center">8.9</p>
+                  <p class="h1 weight-bolder text-right">8.9</p>
                 </td>
               </tr>
             </table>
@@ -129,16 +145,17 @@
               </tr>
             </table>
             <p>
-              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
             </p>
             <p>我也要評分 O O O O O O O</p>
           </div>
         </div>
       </div>
       
-
-      <div class="col-md-4 store text-white">
-        <div class="storeinfo">
+      <div class="col-md-4 store change-top bg-blur text-white">
+        <div class="storeinfo change-first">
           <p class="text-center h5">第二名</p>
           <p class="text-center display-1">9.6</p>
           <p class="text-center h4">店家</p>
@@ -165,9 +182,8 @@
             </table>
           </center>
         </div>
-
-        <div class="text-white storecomment" id="test2">
-          <img class="img-fluid" src="image/store1.jpg"/>
+        <div class="text-white storecomment change-second" id="test2">
+          <img class="img-fluid" src="../static/images/store1.jpg"/>
           <div>
             <table class="storename ">
               <tr>
@@ -199,14 +215,17 @@
               </tr>
             </table>
             <p>
-              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
             </p>
             <p>我也要評分 O O O O O O O</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4 store text-white">
-        <div class="storeinfo">
+
+      <div class="col-md-4 store change-top bg-blur text-white">
+        <div class="storeinfo change-first">
           <p class="text-center h5">第三名</p>
           <p class="text-center display-1">9.6</p>
           <p class="text-center h4">店家</p>
@@ -233,9 +252,8 @@
             </table>
           </center>
         </div>
-
-        <div class="text-white storecomment" id="test2">
-          <img class="img-fluid" src="image/store1.jpg"/>
+        <div class="storecomment change-second" id="test2">
+          <img class="img-fluid" src="../static/images/store1.jpg"/>
           <div>
             <table class="storename ">
               <tr>
@@ -267,39 +285,284 @@
               </tr>
             </table>
             <p>
-              小編評價巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
             </p>
             <p>我也要評分 O O O O O O O</p>
           </div>
         </div>
       </div>
-      <div class="col-md-4 store text-white" id="test">
-        <h1 class="text-center">9.6</h1></p>
-        <p class="text-center">店家|品名</p>
-        <div class="col-md-4"><hr/></div>
-        <hr/>
-        <center>
-          <table class="">
+
+      <div class="col-md-4 text-white change-top" id="test">
+        <div class="otherinfo change-first">
+          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <div>
+            <div class="bg-blur">
+              <table class="storename">
+                <tr>
+                  <td class="h4 weight-bold">
+                    <p>清心</p>
+                    <p>珍奶半糖去冰</p>
+                  </td>
+                  <td>
+                    <p class="h1 weight-bolder text-right">8.9</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <table class="storename ">
+            <tr>
+              <td class="h4 weight-bold">
+                <p>清心</p>
+                <p>珍奶半糖去冰</p>
+              </td>
+              <td>
+                <p class="h1 weight-bolder text-center">8.9</p>
+              </td>
+            </tr>
+          </table>
+          <table class="scoretable h5">
             <tr>
               <td>珍珠</td>
+              <td>90</td>
+              <td>bubble rate</td>
               <td>90</td>
             </tr>
             <tr>
               <td>茶品</td>
               <td>90</td>
-            </tr>
-            <tr>
               <td>甜度</td>
-              <td>90</td>
-            </tr>
-            <tr>
-              <td>評分111</td>
-              <td>90</td>
+              <td>剛剛好</td>
             </tr>
           </table>
-        </center>
+          <p>
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+          </p>
+          <p>我也要評分 O O O O O O O</p>
+        </div>
       </div>
+
+      <div class="col-md-4 text-white change-top" id="test">
+        <div class="otherinfo change-first">
+          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <div>
+            <div class="bg-blur">
+              <table class="storename">
+                <tr>
+                  <td class="h4 weight-bold">
+                    <p>清心</p>
+                    <p>珍奶半糖去冰</p>
+                  </td>
+                  <td>
+                    <p class="h1 weight-bolder text-right">8.9</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <table class="storename ">
+            <tr>
+              <td class="h4 weight-bold">
+                <p>清心</p>
+                <p>珍奶半糖去冰</p>
+              </td>
+              <td>
+                <p class="h1 weight-bolder text-center">8.9</p>
+              </td>
+            </tr>
+          </table>
+          <table class="scoretable h5">
+            <tr>
+              <td>珍珠</td>
+              <td>90</td>
+              <td>bubble rate</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>茶品</td>
+              <td>90</td>
+              <td>甜度</td>
+              <td>剛剛好</td>
+            </tr>
+          </table>
+          <p>
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+          </p>
+          <p>我也要評分 O O O O O O O</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-white change-top" id="test">
+        <div class="otherinfo change-first">
+          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <div>
+            <div class="bg-blur">
+              <table class="storename">
+                <tr>
+                  <td class="h4 weight-bold">
+                    <p>清心</p>
+                    <p>珍奶半糖去冰</p>
+                  </td>
+                  <td>
+                    <p class="h1 weight-bolder text-right">8.9</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <table class="storename ">
+            <tr>
+              <td class="h4 weight-bold">
+                <p>清心</p>
+                <p>珍奶半糖去冰</p>
+              </td>
+              <td>
+                <p class="h1 weight-bolder text-center">8.9</p>
+              </td>
+            </tr>
+          </table>
+          <table class="scoretable h5">
+            <tr>
+              <td>珍珠</td>
+              <td>90</td>
+              <td>bubble rate</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>茶品</td>
+              <td>90</td>
+              <td>甜度</td>
+              <td>剛剛好</td>
+            </tr>
+          </table>
+          <p>
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+          </p>
+          <p>我也要評分 O O O O O O O</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-white change-top" id="test">
+        <div class="otherinfo change-first">
+          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <div>
+            <div class="bg-blur">
+              <table class="storename">
+                <tr>
+                  <td class="h4 weight-bold">
+                    <p>清心</p>
+                    <p>珍奶半糖去冰</p>
+                  </td>
+                  <td>
+                    <p class="h1 weight-bolder text-right">8.9</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <table class="storename ">
+            <tr>
+              <td class="h4 weight-bold">
+                <p>清心</p>
+                <p>珍奶半糖去冰</p>
+              </td>
+              <td>
+                <p class="h1 weight-bolder text-center">8.9</p>
+              </td>
+            </tr>
+          </table>
+          <table class="scoretable h5">
+            <tr>
+              <td>珍珠</td>
+              <td>90</td>
+              <td>bubble rate</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>茶品</td>
+              <td>90</td>
+              <td>甜度</td>
+              <td>剛剛好</td>
+            </tr>
+          </table>
+          <p>
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+          </p>
+          <p>我也要評分 O O O O O O O</p>
+        </div>
+      </div>
+      <div class="col-md-4 text-white change-top" id="test">
+        <div class="otherinfo change-first">
+          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <div>
+            <div class="bg-blur">
+              <table class="storename">
+                <tr>
+                  <td class="h4 weight-bold">
+                    <p>清心</p>
+                    <p>珍奶半糖去冰</p>
+                  </td>
+                  <td>
+                    <p class="h1 weight-bolder text-right">8.9</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <table class="storename ">
+            <tr>
+              <td class="h4 weight-bold">
+                <p>清心</p>
+                <p>珍奶半糖去冰</p>
+              </td>
+              <td>
+                <p class="h1 weight-bolder text-center">8.9</p>
+              </td>
+            </tr>
+          </table>
+          <table class="scoretable h5">
+            <tr>
+              <td>珍珠</td>
+              <td>90</td>
+              <td>bubble rate</td>
+              <td>90</td>
+            </tr>
+            <tr>
+              <td>茶品</td>
+              <td>90</td>
+              <td>甜度</td>
+              <td>剛剛好</td>
+            </tr>
+          </table>
+          <p>
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+            小編評價巴拉巴拉巴拉
+          </p>
+          <p>我也要評分 O O O O O O O</p>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </body>
 

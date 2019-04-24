@@ -38,26 +38,40 @@
 }
 /*read more over*/
 
+.sticky-nav
+{
+	text-align: right;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 56px;
+	width: 	100%;
+	z-index: 999;
+}
+
 .store
 {
-	background: hsla(0,0%,0%,0.5);
-	overflow: hidden;
 	transition: background-color 1s;
 }
-.storeinfo
+.store:hover
 {
-	padding-left: 10%;
-	padding-right: 10%;
-	position:absolute;
-	top: 50%;
-    transform: perspective(1px) translateY(-50%);
-    transition: opacity 1s;
+	background-color: black;
 }
 .store::before
 {
-	background-image: url('../image/store1.jpg');
-	background-size: 100% auto;
+	background-image: url('../images/store1.jpg');
+	background-size: 100% 100%;
 	background-position: center;
+}
+.bg-blur
+{
+	background: hsla(0,0%,0%,0.5);
+	overflow: hidden;
+	position: relative;
+	/*need set background image of ::before in div*/
+}
+.bg-blur::before
+{
+	/*need set background image of ::before in div*/
 	content: '';
 	position: absolute;
 	top: 0;
@@ -68,13 +82,19 @@
 	margin: -30px;
 	z-index: -1;
 }
+.storeinfo
+{
+	padding-left: 10%;
+	padding-right: 10%;
+	position:absolute;
+	top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    /*transition: opacity 1s;*/
+}
 .storecomment
 {
 	background-color: black;
-	opacity: 0;
 	transition: opacity 1s;
-	/*display: none;*/
-	/*z-index: 2;*/
 }
 .storecomment > div
 {
@@ -87,25 +107,66 @@
 {
 	margin-bottom: 10px;
 }
-.storecomment > div 	
+
+.otherinfo
+{
+	position: absolute;
+	bottom: 0px;
+}
+.otherinfo>div
+{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	z-index: 1;
+}
+.otherinfo .bg-blur::before
+{
+	background-image: url('../images/store2.jpg');
+	background-size: 100% auto;
+	background-position: bottom;
+	margin: 0px;
+}
+.othercomment
+{
+	overflow: hidden;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.othercomment::before
+{
+	background-image: url('../images/store2.jpg');
+	background-size: 100% 100%;
+	background-position: center;
+}
 .storename
 {
 	width: 100%;
-	table-layout: fixed;
 	text-align: left;
 }
-.store:hover
+
+/*when change-top is hover, change-first change to change-second*/
+.change-top
 {
-	background-color: black;
+	overflow: hidden;
 }
-.store:hover .storecomment
+.change-first
 {
-	/*display: none;*/
-	opacity: 1;
+
 }
-.store:hover .storeinfo
+.change-second
 {
 	opacity: 0;
+}
+.change-top:hover .change-first
+{
+	display: none;
+}
+.change-top:hover .change-second
+{
+	opacity: 1;
 }
 
 /*#test:hover ~ #test2
