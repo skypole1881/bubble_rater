@@ -140,13 +140,53 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog saveBlog(Blog blog) {
-
+		Blog b;
 		blog.setCreatedDtm(new Date());
 		blog.setLastModifiedDtm(new Date());
 		blog.setVersion(0);
+		b = blogRepository.save(blog);
+		calculatePR();
+		setLatest();
 
 		// TODO Auto-generated method stub
-		return blogRepository.save(blog);
+		return b;
+	}
+
+	private void calculatePR() {
+		List<Blog> BubbleRateList = new ArrayList<Blog>();
+		List<Blog> TeaRateList = new ArrayList<Blog>();
+		BubbleRateList.addAll(blogRepository.selectBlogOrderByBubbleRate());
+		TeaRateList.addAll(blogRepository.selectBlogOrderByTeaRate());
+		float total = BubbleRateList.size();
+		float index = total;
+		float indexTea = total;
+		for (Blog blog : BubbleRateList) {
+			blog.setBubbleRatePR((index / total * 5) + 5);
+			index--;
+			blogRepository.updateBubbleRatePR(blog.getBubbleRatePR(), blog.getBlogId());
+		}
+		for (Blog blog : TeaRateList) {
+			blog.setTeaRatePR((indexTea / total * 5) + 5);
+			indexTea--;
+			blogRepository.updateTeaRatePR(blog.getTeaRatePR(), blog.getBlogId());
+		}
+
+	}
+
+	private void setLatest() {
+		List<Blog> blogsList = new ArrayList<Blog>();
+		blogsList.addAll(blogRepository.selectBlogOrderByCreatedTime());
+		for (Blog blog : blogsList) {
+			if (new Date().getTime()-blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
+				blog.setLatest(false);
+			}
+			else {
+				blog.setLatest(true);
+			}
+			blogRepository.updateLatest(blog.isLatest(),blog.getBlogId());
+		}
+		
+		
 	}
 
 	@Override
@@ -158,7 +198,9 @@ public class BlogServiceImpl implements BlogService {
 		BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
 		b.setLastModifiedDtm(new Date());
 		blog.setVersion(blog.getVersion() + 1);
-		return blogRepository.save(b);
+		b = blogRepository.save(b);
+		calculatePR();
+		return b;
 	}
 
 	@Override

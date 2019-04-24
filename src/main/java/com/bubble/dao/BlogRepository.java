@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bubble.po.Blog;
@@ -30,5 +31,24 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 //
 //	@Query("select b from Blog b where function('date_format',b.updateTime,'%Y') = ?1")
 //	List<Blog> findByYear(String year);
-
+	
+	@Query("select b from Blog b order by bubbleRate desc")
+	List<Blog> selectBlogOrderByBubbleRate();
+	@Query("select b from Blog b order by teaRate desc")
+	List<Blog> selectBlogOrderByTeaRate();
+	@Query("select b from Blog b order by createdDtm desc")
+	List<Blog> selectBlogOrderByCreatedTime();
+	@Transactional
+	@Modifying
+	@Query("update Blog b set b.bubbleRatePR = :score where blogId=:id")
+	int updateBubbleRatePR(@Param("score") float score,@Param("id") int id);
+	@Transactional
+	@Modifying
+	@Query("update Blog b set b.teaRatePR =:score where blogId=:id")
+	int updateTeaRatePR(@Param("score") float score, @Param("id") int id);
+	@Transactional
+	@Modifying
+	@Query("update Blog b set b.latest =:latest where blogId=:id")
+	void updateLatest(@Param("latest") boolean b, @Param("id") int id);
+	
 }
