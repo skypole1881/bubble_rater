@@ -13,11 +13,11 @@
 
   <title>Blog Home - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/post.css" />
-  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
 
   <!-- Custom styles for this template -->
-  <link href="../static/css/blog-home.css" rel="stylesheet">
+  <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
 
 
@@ -113,7 +113,9 @@
         </div>
 
         <div class="text-white change-second storecomment" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
+          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
+          
           <div>
             <table class="storename ">
               <tr>
@@ -183,7 +185,8 @@
           </center>
         </div>
         <div class="text-white storecomment change-second" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
+          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
           <div>
             <table class="storename ">
               <tr>
@@ -253,7 +256,8 @@
           </center>
         </div>
         <div class="storecomment change-second" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
+          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
           <div>
             <table class="storename ">
               <tr>
@@ -296,7 +300,8 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+          <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -350,7 +355,8 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -403,7 +409,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -456,7 +463,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -509,7 +517,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -672,7 +681,7 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{STATIC_URL}}css/jquery.min.js"></script>
+<script src="{{STATIC_URL}}css/jquery.min.js" ></script>
 <script src="{{STATIC_URL}}css/bootstrap.bundle.min.js"></script>
 
 

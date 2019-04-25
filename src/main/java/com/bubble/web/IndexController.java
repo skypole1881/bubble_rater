@@ -14,6 +14,6 @@ public class IndexController {
 //			throw new NotFoundException("nnnnn");
 //		}
 		System.out.println("index");
-		return "index";
+		return "home";
 	}
 }
