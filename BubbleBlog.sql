@@ -32,6 +32,7 @@ CREATE TABLE bubble_blog(
     `sweetness_rate`    float(11) DEFAULT NULL COMMENT '甜度',
     `godfeeling_rate`   float(11) DEFAULT NULL COMMENT '小編分數',
     `user_rate`         float(11) DEFAULT NULL COMMENT '使用者分數',
+	`total_rate`         float(11) DEFAULT NULL COMMENT '總分',
     `latest`               boolean   DEFAULT NULL COMMENT '是否最新',
     `publish`           boolean   DEFAULT NULL COMMENT '是否發布',
     `likes`             int(11) NOT NULL COMMENT '喜歡',

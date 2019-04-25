@@ -49,6 +49,8 @@ public class Blog {
 	private float godfeelingRate;
 	@Column(name = "user_rate")
 	private float userRate;
+	@Column(name = "total_rate")
+	private float totalRate;
 	@Column(name = "latest")
 	private boolean latest;
 	@Column(name = "publish")
@@ -270,6 +272,14 @@ public class Blog {
 
 	public void setLatest(boolean latest) {
 		this.latest = latest;
+	}
+
+	public float getTotalRate() {
+		return totalRate;
+	}
+
+	public void setTotalRate(float totalRate) {
+		this.totalRate = totalRate;
 	}
 	
 }
