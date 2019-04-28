@@ -73,7 +73,9 @@
           <thead>
           <tr>
             <th></th>
-            <th>標題</th>
+            <th>品牌</th>
+            <th>店名</th>
+            <th>品項</th>
             <th>狀態</th>
             <th>創建日期</th>
             <th>最近更新時間</th>
@@ -84,7 +86,9 @@
           <tbody>
           <tr th:each="blog,iterStat : ${page.content}">
             <td th:text="${iterStat.count}">1</td>
-            <td th:text="${blog.title}">刻意练习清单</td>
+            <td th:text="${blog.storeBrand}">刻意练习清单</td>
+            <td th:text="${blog.storeCity+'-'+blog.storeDistrict}">刻意练习清单</td>
+            <td th:text="${blog.item}">刻意练习清单</td>
             <td th:text="${blog.publish}? '發布':'草稿'">刻意练习清单</td>
             <td th:text="${blog.createdDtm}">2017-10-02 09:45</td>
             <td th:text="${blog.lastModifiedDtm}">2017-10-02 09:45</td>

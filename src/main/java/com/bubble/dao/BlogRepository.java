@@ -38,7 +38,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	List<Blog> selectBlogOrderByTeaRate();
 	@Query("select b from Blog b order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
-	@Query("select b from Blog b order by totalRate desc")
+	@Query("select b from Blog b where publish = '1' order by totalRate desc ")
 	List<Blog> selectBlogOrderByTotalRate();
 
 	@Transactional
