@@ -4,6 +4,12 @@
 	size: 20px;
 	width: 80%;
 }*/
+.header
+{
+	background-image: url("../images/header_background.jpg");
+	background-size: 100% auto;
+	background-position: center;
+}
 
 /*about read more*/
 .read-more-state {
@@ -59,7 +65,7 @@
 .store::before
 {
 	background-image: url('../images/store1.jpg');
-	background-size: 100% 100%;
+	background-size: auto 100%;
 	background-position: center;
 }
 .bg-blur
