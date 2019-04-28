@@ -91,7 +91,7 @@
           <!-- <td th:text="${blog.totalRate}"></td> -->
           <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[0].totalRate,0,1)}"></p>
           <p class="text-center h4" th:text="${blog[0].storeBrand+blog[0].storeCity+'-'+blog[0].storeDistrict}">店家</p>
-          <p class="text-center h4">品名</p>
+          <p class="text-center h4" th:text="${blog[0].item}">品名</p>
           <hr color="white"></hr>
           <center>
             <table class="scoretable">
@@ -122,8 +122,8 @@
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶104</p>
+                  <p th:text="${blog[0].storeBrand}">清心</p>
+                  <p th:text="${blog[0].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-right">8.9</p>
@@ -163,8 +163,7 @@
           <p class="text-center h5">第二名</p>
           <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[1].totalRate,0,1)}"></p>
          <p class="text-center h4" th:text="${blog[1].storeBrand+blog[1].storeCity+'-'+blog[1].storeDistrict}">店家</p>
-          <p class="text-center h4">品名</p>
-          <p class="text-center h4">品名</p>
+          <p class="text-center h4" th:text="${blog[1].item}">品名</p>
           <hr color="white"></hr>
        <center>
             <table class="scoretable">
@@ -193,8 +192,8 @@
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶半糖去冰</p>
+                   <p th:text="${blog[1].storeBrand}">清心</p>
+                  <p th:text="${blog[1].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-center">8.9</p>
@@ -234,8 +233,7 @@
           <p class="text-center h5">第三名</p>
           <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[2].totalRate,0,1)}"></p>
           <p class="text-center h4" th:text="${blog[2].storeBrand+blog[2].storeCity+'-'+blog[2].storeDistrict}">店家</p>
-          <p class="text-center h4">品名</p>
-          <p class="text-center h4">品名</p>
+          <p class="text-center h4" th:text="${blog[2].item}">品名</p>
           <hr color="white"></hr>
           <center>
             <table class="scoretable">
@@ -264,8 +262,8 @@
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶半糖去冰</p>
+                  <p th:text="${blog[2].storeBrand}">清心</p>
+                  <p th:text="${blog[2].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-center">8.9</p>
