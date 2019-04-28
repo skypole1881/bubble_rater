@@ -77,7 +77,7 @@
     </div>
     <div class="row">
       <div class="col-md-4">
-        <img src="../static/images/bubble rater_logo-02.png" class="img-fluid"/>
+        <img src="../static/images/bubble rater_logo-02.png" th:src="@{/images/bubble rater_logo-02.png}" class="img-fluid"/>
         <p>珍珠的彈性</p>
         <hr color="white"/>
         <p>珍珠到底有多Q?</p>
@@ -85,7 +85,7 @@
 我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
       </div>
       <div class="col-md-4">
-        <img src="../static/images/bubble rater_logo-03.png" class="img-fluid"/>
+        <img src="../static/images/bubble rater_logo-03.png" th:src="@{/images/bubble rater_logo-03.png}" class="img-fluid"/>
         <p>奶茶的口感</p>
         <hr color="white"/>
         <p>奶茶到底有多濃?</p>
@@ -93,7 +93,7 @@
 以落球法測試奶茶黏度，在層流狀態下，在奶茶中落下的小球會因重力、浮力及黏滯阻力的力平衡達到終端速度，便可從此得知奶茶的黏度。</p>
       </div>
       <div class="col-md-4">
-        <img src="../static/images/bubble rater_logo-04.png" class="img-fluid"/>
+        <img src="../static/images/bubble rater_logo-04.png"  th:src="@{/images/bubble rater_logo-04.png}"class="img-fluid"/>
         <p>甜度</p>
         <hr color="white"/>
         <p>奶茶到底有多甜?</p>
@@ -345,8 +345,7 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-          <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -400,8 +399,7 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+       <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -454,8 +452,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+      <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -508,8 +505,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+       <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -562,8 +558,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+       <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -728,7 +723,14 @@
 <!-- Bootstrap core JavaScript -->
 <script src="{{STATIC_URL}}css/jquery.min.js" ></script>
 <script src="{{STATIC_URL}}css/bootstrap.bundle.min.js"></script>
+<!--  <script>
+        $('#btn').click(function () {
+            var url = '/blog/ajaxTest';
+            $('#div1').load(url);
 
+        });
+</script>
+ -->
 
 
 
