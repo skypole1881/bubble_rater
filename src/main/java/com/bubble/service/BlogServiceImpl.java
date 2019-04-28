@@ -206,7 +206,7 @@ public class BlogServiceImpl implements BlogService {
 		}
 		BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
 		b.setLastModifiedDtm(new Date());
-		blog.setVersion(blog.getVersion() + 1);
+		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
 		calculatePR();
 		calculateTotal();
