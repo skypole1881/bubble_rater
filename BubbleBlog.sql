@@ -22,7 +22,7 @@ CREATE TABLE bubble_blog(
     `store_brand`       varchar(254) DEFAULT NULL COMMENT '店名',
     `store_address`     varchar(254) DEFAULT NULL COMMENT '地址',
     `content`           LONGTEXT     DEFAULT NULL COMMENT '內容',
-    `content2`          LONGTEXT     DEFAULT NULL COMMENT '內容',
+    `item`              LONGTEXT     DEFAULT NULL COMMENT '品項',
     `photo_link`        varchar(254) DEFAULT NULL COMMENT '圖片連結',
     `cold`              boolean      DEFAULT NULL COMMENT '冷熱',
     `bubble_rate`       float(11) DEFAULT NULL COMMENT '珍珠彈性',

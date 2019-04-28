@@ -53,10 +53,19 @@
 				<!-- th:object="${blog}" -->
 				<input type="hidden" name="publish" th:value="${blog.publish}">
 				<input type="hidden" name="blogId" th:value="${blog.blogId}">
-				<div class="required field">
-					<div class="ui left labeled input">
-						<label class="ui compact teal basic label">標題</label>
-						<input type="text" name="title" placeholder="標題" th:value="${blog.title}">
+				
+				<div class="two fields">
+					<div class="required field">
+						<div class="ui left labeled action input">
+							<label class="ui compact teal basic label">標題</label>
+								<input type="text" name="title" placeholder="標題" th:value="${blog.title}">
+						</div>
+					</div>
+					<div class=" field">
+						<div class="ui left labeled action input">
+							<label class="ui compact teal basic label">品項</label>
+								<input type="text" name="item" placeholder="品項" th:value="${blog.item}">
+						</div>
 					</div>
 				</div>
 
