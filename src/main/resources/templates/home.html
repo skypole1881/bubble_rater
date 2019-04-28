@@ -13,11 +13,11 @@
 
   <title>Blog Home - Start Bootstrap Template</title>
   <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/post.css" />
-  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
 
   <!-- Custom styles for this template -->
-  <link href="../static/css/blog-home.css" rel="stylesheet">
+  <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
 
 
@@ -128,43 +128,47 @@
           </div>
         </div>
       </div>
+      
       <div class="col-md-4 store change-top bg-blur text-white">
+<!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <p class="text-center h5">第一名</p>
-          <p class="text-center display-1">9.6</p>
-          <p class="text-center h4">店家</p>
-          <p class="text-center h4">品名</p>
+          <!-- <td th:text="${blog.totalRate}"></td> -->
+          <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[0].totalRate,0,1)}"></p>
+          <p class="text-center h4" th:text="${blog[0].storeBrand+blog[0].storeCity+'-'+blog[0].storeDistrict}">店家</p>
+          <p class="text-center h4" th:text="${blog[0].item}">品名</p>
           <hr color="white"></hr>
           <center>
             <table class="scoretable">
-              <tr>
+              <tr >
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].bubbleRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+               <td th:text="${#numbers.formatDecimal(blog[0].TeaRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                 <td th:text="${#numbers.formatDecimal(blog[0].godfeelingRate,0,1)}"></td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].sweetnessRate,0,1)}"></td>
               </tr>
             </table>
           </center>
         </div>
-
+ <!--        </tr> -->
         <div class="text-white change-second storecomment" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blog[0].photoLink}}"/>
+          
           <div>
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶104</p>
+                  <p th:text="${blog[0].storeBrand}">清心</p>
+                  <p th:text="${blog[0].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-right">8.9</p>
@@ -172,24 +176,24 @@
               </tr>
             </table>
             <table class="scoretable h5">
-              <tr>
+             <tr>
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].bubbleRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].TeaRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].godfeelingRate,0,1)}">90</td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[0].sweetnessRate,0,1)}">剛剛好</td>
               </tr>
             </table>
-            <p>
+            <p th:text="${blog[0].content1}">
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
@@ -202,39 +206,39 @@
       <div class="col-md-4 store change-top bg-blur text-white">
         <div class="storeinfo change-first">
           <p class="text-center h5">第二名</p>
-          <p class="text-center display-1">9.6</p>
-          <p class="text-center h4">店家</p>
-          <p class="text-center h4">品名</p>
+          <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[1].totalRate,0,1)}"></p>
+         <p class="text-center h4" th:text="${blog[1].storeBrand+blog[1].storeCity+'-'+blog[1].storeDistrict}">店家</p>
+          <p class="text-center h4" th:text="${blog[1].item}">品名</p>
           <hr color="white"></hr>
-          <center>
+       <center>
             <table class="scoretable">
-              <tr>
+              <tr >
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].bubbleRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+               <td th:text="${#numbers.formatDecimal(blog[1].TeaRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                 <td th:text="${#numbers.formatDecimal(blog[1].godfeelingRate,0,1)}"></td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].sweetnessRate,0,1)}"></td>
               </tr>
             </table>
           </center>
         </div>
         <div class="text-white storecomment change-second" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blog[1].photoLink}}"/>
           <div>
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶半糖去冰</p>
+                   <p th:text="${blog[1].storeBrand}">清心</p>
+                  <p th:text="${blog[1].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-center">8.9</p>
@@ -244,22 +248,22 @@
             <table class="scoretable h5">
               <tr>
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].bubbleRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].TeaRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].godfeelingRate,0,1)}">90</td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[1].sweetnessRate,0,1)}">剛剛好</td>
               </tr>
             </table>
-            <p>
+            <p th:text="${blog[1].content1}">
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
@@ -272,39 +276,39 @@
       <div class="col-md-4 store change-top bg-blur text-white">
         <div class="storeinfo change-first">
           <p class="text-center h5">第三名</p>
-          <p class="text-center display-1">9.6</p>
-          <p class="text-center h4">店家</p>
-          <p class="text-center h4">品名</p>
+          <p class="text-center display-1" th:text="${#numbers.formatDecimal(blog[2].totalRate,0,1)}"></p>
+          <p class="text-center h4" th:text="${blog[2].storeBrand+blog[2].storeCity+'-'+blog[2].storeDistrict}">店家</p>
+          <p class="text-center h4" th:text="${blog[2].item}">品名</p>
           <hr color="white"></hr>
           <center>
             <table class="scoretable">
-              <tr>
+              <tr >
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].bubbleRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+               <td th:text="${#numbers.formatDecimal(blog[2].TeaRatePR,0,1)}"></td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                 <td th:text="${#numbers.formatDecimal(blog[2].godfeelingRate,0,1)}"></td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].sweetnessRate,0,1)}"></td>
               </tr>
             </table>
           </center>
         </div>
         <div class="storecomment change-second" id="test2">
-          <img class="img-fluid" src="../static/images/store1.jpg"/>
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blog[2].photoLink}}"/>
           <div>
             <table class="storename ">
               <tr>
                 <td class="h4 weight-bold">
-                  <p>清心</p>
-                  <p>珍奶半糖去冰</p>
+                  <p th:text="${blog[2].storeBrand}">清心</p>
+                  <p th:text="${blog[2].item}">珍奶104</p>
                 </td>
                 <td>
                   <p class="h1 weight-bolder text-center">8.9</p>
@@ -314,22 +318,22 @@
             <table class="scoretable h5">
               <tr>
                 <td>珍珠</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].bubbleRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>茶品</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].TeaRatePR,0,1)}">90</td>
               </tr>
               <tr>
                 <td>bubble rate</td>
-                <td>90</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].godfeelingRate,0,1)}">90</td>
               </tr>
               <tr>
                 <td>甜度</td>
-                <td>剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blog[2].sweetnessRate,0,1)}">剛剛好</td>
               </tr>
             </table>
-            <p>
+            <p th:text="${blog[2].content1}">
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
@@ -341,7 +345,8 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+          <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -395,7 +400,8 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -448,7 +454,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -501,7 +508,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -554,7 +562,8 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" class="img-fluid"/>
+          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
+           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -717,7 +726,7 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{STATIC_URL}}css/jquery.min.js"></script>
+<script src="{{STATIC_URL}}css/jquery.min.js" ></script>
 <script src="{{STATIC_URL}}css/bootstrap.bundle.min.js"></script>
 
 

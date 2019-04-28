@@ -75,6 +75,13 @@ public class BlogServiceImpl implements BlogService {
 	public Page<Blog> listBlog(Pageable pageable) {
 		return blogRepository.findAll(pageable);
 	}
+	@Override
+	public List<Blog> selectAll() {
+		List<Blog> dtos= new ArrayList<>();
+		dtos=blogRepository.selectBlogOrderByTotalRate();
+		return dtos;
+	}
+	
 
 //	@Override
 //	public Page<Blog> listBlog(Long tagId, Pageable pageable) {
@@ -147,9 +154,20 @@ public class BlogServiceImpl implements BlogService {
 		b = blogRepository.save(blog);
 		calculatePR();
 		setLatest();
+		calculateTotal();
 
 		// TODO Auto-generated method stub
 		return b;
+	}
+
+	private void calculateTotal() {
+		List<Blog> BubbleRateList = new ArrayList<Blog>();
+		BubbleRateList.addAll(blogRepository.selectBlogOrderByBubbleRate());
+		for (Blog blog : BubbleRateList) {
+			float totalRate;
+			totalRate = (blog.getBubbleRatePR() + blog.getGodfeelingRate() + blog.getTeaRatePR()) / 3;
+			blogRepository.updateTotalRate(totalRate, blog.getBlogId());
+		}
 	}
 
 	private void calculatePR() {
@@ -177,16 +195,14 @@ public class BlogServiceImpl implements BlogService {
 		List<Blog> blogsList = new ArrayList<Blog>();
 		blogsList.addAll(blogRepository.selectBlogOrderByCreatedTime());
 		for (Blog blog : blogsList) {
-			if (new Date().getTime()-blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
+			if (new Date().getTime() - blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
 				blog.setLatest(false);
-			}
-			else {
+			} else {
 				blog.setLatest(true);
 			}
-			blogRepository.updateLatest(blog.isLatest(),blog.getBlogId());
+			blogRepository.updateLatest(blog.isLatest(), blog.getBlogId());
 		}
-		
-		
+
 	}
 
 	@Override
@@ -197,9 +213,11 @@ public class BlogServiceImpl implements BlogService {
 		}
 		BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
 		b.setLastModifiedDtm(new Date());
-		blog.setVersion(blog.getVersion() + 1);
+		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
 		calculatePR();
+		calculateTotal();
+		setLatest();
 		return b;
 	}
 
