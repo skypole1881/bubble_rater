@@ -117,7 +117,7 @@
  <!--        </tr> -->
         <div class="text-white change-second storecomment" id="test2">
           <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
-          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
+          <img class="img-fluid" th:src="@{${blog[0].photoLink}}"/>
           
           <div>
             <table class="storename ">
@@ -190,7 +190,7 @@
         </div>
         <div class="text-white storecomment change-second" id="test2">
           <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
-          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
+          <img class="img-fluid" th:src="@{${blog[1].photoLink}}"/>
           <div>
             <table class="storename ">
               <tr>
@@ -262,7 +262,7 @@
         </div>
         <div class="storecomment change-second" id="test2">
           <!-- <img class="img-fluid" src="../static/images/store1.jpg"/> -->
-          <img class="img-fluid" th:src="@{/images/store1.jpg}"/>
+          <img class="img-fluid" th:src="@{${blog[2].photoLink}}"/>
           <div>
             <table class="storename ">
               <tr>
