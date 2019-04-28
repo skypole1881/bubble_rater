@@ -75,6 +75,13 @@ public class BlogServiceImpl implements BlogService {
 	public Page<Blog> listBlog(Pageable pageable) {
 		return blogRepository.findAll(pageable);
 	}
+	@Override
+	public List<Blog> selectAll() {
+		List<Blog> dtos= new ArrayList<>();
+		dtos=blogRepository.selectBlogOrderByTotalRate();
+		return dtos;
+	}
+	
 
 //	@Override
 //	public Page<Blog> listBlog(Long tagId, Pageable pageable) {

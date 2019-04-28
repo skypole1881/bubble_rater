@@ -38,6 +38,9 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	List<Blog> selectBlogOrderByTeaRate();
 	@Query("select b from Blog b order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
+	@Query("select b from Blog b order by totalRate desc")
+	List<Blog> selectBlogOrderByTotalRate();
+
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.bubbleRatePR = :score where blogId=:id")
@@ -54,5 +57,6 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
+	
 	
 }
