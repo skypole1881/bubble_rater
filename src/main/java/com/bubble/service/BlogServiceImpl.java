@@ -210,6 +210,7 @@ public class BlogServiceImpl implements BlogService {
 		b = blogRepository.save(b);
 		calculatePR();
 		calculateTotal();
+		setLatest();
 		return b;
 	}
 
