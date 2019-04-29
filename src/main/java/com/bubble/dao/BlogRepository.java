@@ -31,32 +31,40 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 //
 //	@Query("select b from Blog b where function('date_format',b.updateTime,'%Y') = ?1")
 //	List<Blog> findByYear(String year);
-	
+
 	@Query("select b from Blog b order by bubbleRate desc")
 	List<Blog> selectBlogOrderByBubbleRate();
+
 	@Query("select b from Blog b order by teaRate desc")
 	List<Blog> selectBlogOrderByTeaRate();
+
 	@Query("select b from Blog b order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
-	@Query("select b from Blog b where publish = '1' order by totalRate desc ")
+
+	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate ")
 	List<Blog> selectBlogOrderByTotalRate();
+
+	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
+	List<Blog> selectBlogOrderByCriteriaStoreCity(@Param("criteria") String criteria);
 
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.bubbleRatePR = :score where blogId=:id")
-	int updateBubbleRatePR(@Param("score") float score,@Param("id") int id);
+	int updateBubbleRatePR(@Param("score") float score, @Param("id") int id);
+
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.teaRatePR =:score where blogId=:id")
 	int updateTeaRatePR(@Param("score") float score, @Param("id") int id);
+
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.latest =:latest where blogId=:id")
 	void updateLatest(@Param("latest") boolean b, @Param("id") int id);
+
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
-	
-	
+
 }

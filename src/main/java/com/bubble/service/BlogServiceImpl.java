@@ -75,13 +75,20 @@ public class BlogServiceImpl implements BlogService {
 	public Page<Blog> listBlog(Pageable pageable) {
 		return blogRepository.findAll(pageable);
 	}
+
 	@Override
-	public List<Blog> selectAll() {
-		List<Blog> dtos= new ArrayList<>();
-		dtos=blogRepository.selectBlogOrderByTotalRate();
+	public List<Blog> selectAllByCriteria(String criteria) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepository.selectBlogOrderByCriteriaStoreCity(criteria);
 		return dtos;
 	}
-	
+
+	@Override
+	public List<Blog> selectAll() {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepository.selectBlogOrderByTotalRate();
+		return dtos;
+	}
 
 //	@Override
 //	public Page<Blog> listBlog(Long tagId, Pageable pageable) {
@@ -215,9 +222,9 @@ public class BlogServiceImpl implements BlogService {
 		b.setLastModifiedDtm(new Date());
 		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
+		setLatest();
 		calculatePR();
 		calculateTotal();
-		setLatest();
 		return b;
 	}
 
