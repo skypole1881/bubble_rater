@@ -76,12 +76,12 @@ public class BlogServiceImpl implements BlogService {
 		return blogRepository.findAll(pageable);
 	}
 
-	@Override
-	public List<Blog> selectAllByCriteria(String criteria) {
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogRepository.selectBlogOrderByCriteriaStoreCity(criteria);
-		return dtos;
-	}
+//	@Override
+//	public List<Blog> selectAllByCriteria(String criteria,String orderBy) {
+//		List<Blog> dtos = new ArrayList<>();
+//		dtos = blogRepository.selectBlogByCriteriaStoreCityAndOrder(criteria,orderBy);
+//		return dtos;
+//	}
 
 	@Override
 	public List<Blog> selectAll() {
@@ -254,6 +254,33 @@ public class BlogServiceImpl implements BlogService {
 
 	@Override
 	public Blog getAndConvert(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> selectAllByCriteriaByCity(String criteria) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepository.selectAllByCriteriaByCity(criteria);
+		return dtos;
+	}
+
+	@Override
+	public List<Blog> selectAllByCriteriaByDistrict(String criteria) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepository.selectAllByCriteriaByDistrict(criteria);
+		return dtos;
+	}
+
+	@Override
+	public List<Blog> selectAllByCriteriaByName(String criteria) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepository.selectAllByCriteriaByName(criteria);
+		return dtos;
+	}
+
+	@Override
+	public List<Blog> selectAllByCriteria(String criteria, String orderBy) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -45,7 +45,18 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	List<Blog> selectBlogOrderByTotalRate();
 
 	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
+	List<Blog> selectAllByCriteriaByCity(@Param("criteria") String criteria);
+
+	@Query("select b from Blog b where publish = '1' and storeBrand=:criteria order by totalRate desc,godfeelingRate ")
+	List<Blog> selectAllByCriteriaByName(@Param("criteria") String criteria);
+
+	@Query("select b from Blog b where publish = '1' and storeDistrict=:criteria order by totalRate desc,godfeelingRate ")
+	List<Blog> selectAllByCriteriaByDistrict(@Param("criteria") String criteria);
+
+	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
 	List<Blog> selectBlogOrderByCriteriaStoreCity(@Param("criteria") String criteria);
+
+
 
 	@Transactional
 	@Modifying

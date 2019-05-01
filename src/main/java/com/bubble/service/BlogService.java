@@ -34,5 +34,11 @@ public interface BlogService {
 
 	List<Blog> selectAll();
 
-	List<Blog> selectAllByCriteria(String criteria);
+	List<Blog> selectAllByCriteria(String criteria, String orderBy);
+
+	List<Blog> selectAllByCriteriaByCity(String criteria);
+
+	List<Blog> selectAllByCriteriaByDistrict(String criteria);
+
+	List<Blog> selectAllByCriteriaByName(String criteria);
 }
