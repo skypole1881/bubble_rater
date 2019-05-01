@@ -345,7 +345,7 @@
 	<th:block th:each="blog :${blog}">
       <div class="col-md-4 text-white change-top" id="test" >
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
+          <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
