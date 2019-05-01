@@ -7,7 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.bubble.po.Blog;
-import com.bubble.vo.BlogQuery;
 
 public interface BlogService {
 
@@ -34,4 +33,12 @@ public interface BlogService {
 	void deleteBlog(Integer id);
 
 	List<Blog> selectAll();
+
+	List<Blog> selectAllByCriteria(String criteria, String orderBy);
+
+	List<Blog> selectAllByCriteriaByCity(String criteria);
+
+	List<Blog> selectAllByCriteriaByDistrict(String criteria);
+
+	List<Blog> selectAllByCriteriaByName(String criteria);
 }
