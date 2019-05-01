@@ -52,7 +52,7 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container-fluid text-white">
+  <div class="container-fluid text-white" >
 
     <div class="row text-white header">
 
@@ -111,10 +111,10 @@
       </div>
     </div>
 
-    <div class="row no-gutters justify-content-md-center">
+    <div class="row no-gutters justify-content-md-center" id="search">
       <div class="sticky-nav">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-          <button type="button" class="btn btn-secondary">篩選</button>
+          <button type="button" class="btn btn-secondary" id=button1>篩選</button>
           <input type="" name="">
 
           <div class="btn-group" role="group">
@@ -129,7 +129,7 @@
         </div>
       </div>
       
-      <div class="col-md-4 store change-top bg-blur text-white">
+      <div id="search1" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <p class="text-center h5">第一名</p>
@@ -171,7 +171,7 @@
                   <p th:text="${blog[0].item}">珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-right">8.9</p>
+                  <p class="h1 weight-bolder text-right" th:text="${#numbers.formatDecimal(blog[0].totalRate,0,1)}">8.9</p>
                 </td>
               </tr>
             </table>
@@ -241,7 +241,7 @@
                   <p th:text="${blog[1].item}">珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-center">8.9</p>
+                  <p class="h1 weight-bolder text-center" th:text="${#numbers.formatDecimal(blog[1].totalRate,0,1)}">8.9</p>
                 </td>
               </tr>
             </table>
@@ -311,7 +311,7 @@
                   <p th:text="${blog[2].item}">珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-center">8.9</p>
+                  <p class="h1 weight-bolder text-center" th:text="${#numbers.formatDecimal(blog[2].totalRate,0,1)}">8.9</p>
                 </td>
               </tr>
             </table>
@@ -342,8 +342,8 @@
           </div>
         </div>
       </div>
-
-      <div class="col-md-4 text-white change-top" id="test">
+	<th:block th:each="blog :${blog}">
+      <div class="col-md-4 text-white change-top" id="test" >
         <div class="otherinfo change-first">
           <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
@@ -351,44 +351,44 @@
               <table class="storename">
                 <tr>
                   <td class="h4 weight-bold">
-                    <p>清心</p>
-                    <p>珍奶半糖去冰</p>
+                    <p th:text="${blog.storeBrand}">清心</p>
+                    <p th:text="${blog.item}">珍奶半糖去冰</p>
                   </td>
                   <td>
-                    <p class="h1 weight-bolder text-right">8.9</p>
+                    <p class="h1 weight-bolder text-right" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
                   </td>
                 </tr>
               </table>
             </div>
           </div>
         </div>
-        <div class="othercomment change-second bg-blur">
+    <div class="othercomment change-second bg-blur">
           <table class="storename ">
             <tr>
               <td class="h4 weight-bold">
-                <p>清心</p>
-                <p>珍奶半糖去冰</p>
+                <p th:text="${blog.storeBrand}">清心</p>
+                <p th:text="${blog.item}">珍奶半糖去冰</p>
               </td>
               <td>
-                <p class="h1 weight-bolder text-center">8.9</p>
+                <p class="h1 weight-bolder text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
               </td>
             </tr>
           </table>
           <table class="scoretable h5">
             <tr>
-              <td>珍珠</td>
-              <td>90</td>
+              <td >珍珠</td>
+              <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
               <td>bubble rate</td>
-              <td>90</td>
+              <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
             </tr>
             <tr>
               <td>茶品</td>
-              <td>90</td>
+              <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
               <td>甜度</td>
-              <td>剛剛好</td>
+              <td th:text="${#numbers.formatDecimal(blog.sweetnessRate,0,1)}">剛剛好</td>
             </tr>
           </table>
-          <p>
+          <p th:text="${blog.content1}">
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
@@ -396,8 +396,8 @@
           <p>我也要評分 O O O O O O O</p>
         </div>
       </div>
-
-      <div class="col-md-4 text-white change-top" id="test">
+	</th:block>
+     <!--  <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
        <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
           <div>
@@ -608,7 +608,7 @@
           </p>
           <p>我也要評分 O O O O O O O</p>
         </div>
-      </div>
+      </div> --> 
 
     </div>
 
@@ -721,8 +721,8 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{STATIC_URL}}css/jquery.min.js" ></script>
-<script src="{{STATIC_URL}}css/bootstrap.bundle.min.js"></script>
+<script src="{{STATIC_URL}}css/jquery.min.js" th:src="@{/lib/jquery.min.js}" ></script>
+<script src="{{STATIC_URL}}css/bootstrap.bundle.min.js" th:src="@{/lib/jquery.min.js}"></script>
 <!--  <script>
         $('#btn').click(function () {
             var url = '/blog/ajaxTest';
@@ -731,7 +731,25 @@
         });
 </script>
  -->
+ <script>
+ 
+ $('#button1').click(function () {
+     var url = '/test?criteria=新竹市';
+     $.ajax({
+         url: url,
+         type: 'get',
+         data: {
+             a:'123'
+         },
+         success: function (data) {
+             $('#search').html(data);
+         }
+     })
+ })
 
+           
+
+ </script>
 
 
 </body>

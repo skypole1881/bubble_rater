@@ -33,4 +33,21 @@ public class IndexController {
 		model.addAttribute("blog", dtos);
 		return "home";
 	}
+	@GetMapping("/test")
+	public String index(Model model,String criteria) {
+		List<Blog> dtos = blogService.selectAllByCriteria(criteria);
+		if (dtos.size() < 3) {
+			for (int i = 0; i < 3; i++) {
+				Blog b = new Blog();
+				b.setStoreCity("無資料");
+				b.setStoreDistrict("");
+				b.setStoreBrand("");
+
+				dtos.add(b);
+			}
+
+		}
+		model.addAttribute("blog", dtos);
+		return "home::#search";
+	}
 }
