@@ -4,11 +4,27 @@
 	size: 20px;
 	width: 80%;
 }*/
+.chosen-select
+{
+	height: 40px;
+}
+
 .header
 {
 	background-image: url("../images/header_background.jpg");
 	background-size: 100% auto;
 	background-position: center;
+}
+
+.test2
+{
+	overflow: hidden;
+}
+.test
+{
+	/*size: cover;
+	position: center;*/
+	size: auto 100%;
 }
 
 /*about read more*/
@@ -64,7 +80,7 @@
 }
 .store::before
 {
-	background-image: url('../images/store1.jpg');
+	/*background-image: url('../images/store1.jpg');*/
 	background-size: auto 100%;
 	background-position: center;
 }
@@ -144,7 +160,8 @@
 .othercomment::before
 {
 	background-image: url('../images/store2.jpg');
-	background-size: 100% 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: center;
 }
 .storename

@@ -16,10 +16,12 @@
   <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
   <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
 
+  <!-- Chosen css -->
+  <link rel="stylesheet" href="../static/lib/chosen/chosen.min.css" th:href="@{/lib/chosen/chosen.min.css}">
+
   <!-- Custom styles for this template -->
   <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
-
 
 </head>
 
@@ -69,7 +71,8 @@
     <div class="row text-white">
       <div class="col-md-6 ">
         <p>
-          一杯好喝的珍珠奶茶 = QQ 的珍珠 + 濃濃的奶茶 + 恰恰好的甜<br/>
+          一杯好喝的珍珠奶茶 =<br/>
+          QQ 的珍珠 + 濃濃的奶茶 + 恰恰好的甜<br/>
           誰才是最好喝的珍奶？<br/>
           我們用數字告訴你??
         </p>
@@ -78,25 +81,22 @@
     <div class="row">
       <div class="col-md-4">
         <img src="../static/images/bubble rater_logo-02.png" class="img-fluid"/>
-        <p>珍珠的彈性</p>
-        <hr color="white"/>
         <p>珍珠到底有多Q?</p>
+        <hr color="white"/>
         <p>以彈性係數 (elastic modulus) 為測量目標，彈性係數愈高，珍珠愈 Q 彈！
 我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble rater_logo-03.png" class="img-fluid"/>
-        <p>奶茶的口感</p>
-        <hr color="white"/>
         <p>奶茶到底有多濃?</p>
+        <hr color="white"/>
         <p>我們使用黏度 (Viscosity) 作為測量目標。黏度愈高的奶茶，流動性愈差，口感愈濃郁。
 以落球法測試奶茶黏度，在層流狀態下，在奶茶中落下的小球會因重力、浮力及黏滯阻力的力平衡達到終端速度，便可從此得知奶茶的黏度。</p>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble rater_logo-04.png" class="img-fluid"/>
-        <p>甜度</p>
-        <hr color="white"/>
         <p>奶茶到底有多甜?</p>
+        <hr color="white"/>
         <p>白利糖度 (Brix) 形容攝氏 20 度 C 下，每 100 公克水溶液中，溶解的蔗糖公克數。
 我們以 4 °Bx、6 °Bx、8 °Bx、10 °Bx 以及 12 °Bx 的蔗糖溶液為比較基準，比較奶茶甜度與甜度比較基準的差異，判斷奶茶含糖量。</p>
       </div>
@@ -111,25 +111,92 @@
       </div>
     </div>
 
+
+
     <div class="row no-gutters justify-content-md-center">
       <div class="sticky-nav">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
           <button type="button" class="btn btn-secondary">篩選</button>
-          <input type="" name="">
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              我要找
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <button class="dropdown-item" >找縣市</button>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">找區域</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">找店家</a>
+            </div>
+          </div>
+<div class="text-dark">
+    <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="4">
+      <option value=""></option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+      <option value="測試123WAW">測試</option>
+      <option value="我我午我">我我我我我ted Kingdom</option>
+    </select>
+  </div>
+
+<!--           <div class="chosen-container chosen-container-multi" title="" style="width: 350px;">
+            <ul class="chosen-choices">
+              <li class="search-field">
+                <input class="chosen-search-input default" type="text" autocomplete="off" value="Choose a Country..." tabindex="4" style="width: 139.656px;">
+              </li>
+            </ul>
+            <div class="chosen-drop">
+              <ul class="chosen-results">
+                <li class="result-selected" data-option-array-index="1">United States</li>
+                <li class="active-result" data-option-array-index="2">United Kingdom</li>
+                <li class="active-result" data-option-array-index="3">Afghanistan</li>
+              </ul>
+            </div>
+          </div> -->
+          
+<!-- <select class="example" multiple style="width: 300px" >
+<option value="Tom">Tom</option>
+<option value="Tom">Tom1</option>
+<option value="Tom">Tom2</option>
+<option value="Tom">To3m</option>
+<option value="Tom">T5om</option>
+<option value="Tom">6Tom</option>
+</select> -->
 
           <div class="btn-group" role="group">
             <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               排序
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="#">Dropdown link</a>
-              <a class="dropdown-item" href="#">Dropdown link</a>
+              <a class="dropdown-item" href="#">依照總分</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">依照時間</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">珍珠彈性</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">奶茶口感</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">小編評比</a>
             </div>
           </div>
         </div>
       </div>
+      <div class="input-group">
+        <input type="" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button">Go!</button>
+        </span>
+      </div>
       
-      <div class="col-md-4 store change-top bg-blur text-white">
+      <div class="col-md-4 store change-top bg-blur text-white" id="store1">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <p class="text-center h5">第一名</p>
@@ -201,6 +268,9 @@
             <p>我也要評分 O O O O O O O</p>
           </div>
         </div>
+        <style type="text/css">
+          #store1::before {background-image: url("../static/images/store2.jpg");}
+        </style>
       </div>
       
       <div class="col-md-4 store change-top bg-blur text-white">
@@ -345,8 +415,7 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-          <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -400,8 +469,7 @@
 
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -454,8 +522,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -508,8 +575,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -562,8 +628,7 @@
       </div>
       <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
-          <!-- <img src="../static/images/store2.jpg" class="img-fluid"/> -->
-           <img class="img-fluid" th:src="@{/images/store2.jpg}"/>
+          <img src="../static/images/store2.jpg" class="img-fluid" th:src="@{/images/store2.jpg}"/>
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -614,8 +679,22 @@
           <p>我也要評分 O O O O O O O</p>
         </div>
       </div>
-
     </div>
+    <!-- <div class="row">
+      <div class="col-12 bg-primary">
+        <p></p>
+      </div>
+      <div class="col-12 bg-primary">
+        <p></p>
+      </div>
+      <div class="col-12 bg-primary">
+        <p></p>
+      </div>
+      <div class="col-12 bg-primary">
+        <p></p>
+      </div>
+      <button class="readmore"></button>
+    </div> -->
 
   </div>
 </body>
@@ -656,12 +735,7 @@
   <div class="card my-4">
     <h5 class="card-header">Search</h5>
     <div class="card-body">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for...">
-        <span class="input-group-btn">
-          <button class="btn btn-secondary" type="button">Go!</button>
-        </span>
-      </div>
+      
     </div>
   </div>
 
@@ -726,9 +800,12 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="{{STATIC_URL}}css/jquery.min.js" ></script>
-<script src="{{STATIC_URL}}css/bootstrap.bundle.min.js"></script>
-
+<script src="../static/lib/jquery.min.js" ></script>
+<script src="../static/lib/bootstrap.bundle.min.js"></script>
+<!-- Chosen v1.8.2 -->
+<script src="../static/lib/chosen/chosen.jquery.min.js"></script>
+<!-- main js -->
+<script src="../static/lib/post.js"></script>
 
 
 
