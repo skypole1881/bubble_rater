@@ -384,7 +384,7 @@
       </div>
 
       
-<!-- <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3"> -->
+ <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
       <div class="col-md-4 text-white change-top" id="test" >
         <div class="otherinfo change-first">
           <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/> 
@@ -438,7 +438,7 @@
           <p class="vote">我也要評分 O O O O O O O</p>
         </div>
       </div>
-<!-- </th:block>  -->
+ </th:block> 
      <!--  <div class="col-md-4 text-white change-top" id="test">
         <div class="otherinfo change-first">
         <img src="../static/images/store2.jpg" th:src="@{/images/store2.jpg}" class="img-fluid"/> 
@@ -680,15 +680,12 @@
 </footer>
 
 <!-- Bootstrap core JavaScript -->
-<script src="../static/lib/jquery.min.js" ></script>
-<script src="../static/lib/bootstrap.bundle.min.js"></script>
-<!-- Chosen v1.8.2 -->
-<script src="../static/lib/chosen/chosen.jquery.min.js"></script>
-<!-- main js -->
-<script src="../static/lib/post.js"></script>
+ <script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
+ <script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
+<script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
+<script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script>  -->
 
-<script src="{{STATIC_URL}}lib/jquery.min.js" th:src="@{/lib/jquery.min.js}" ></script>
-<script src="{{STATIC_URL}}lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
+
 <!--  <script>
         $('#btn').click(function () {
             var url = '/blog/ajaxTest';

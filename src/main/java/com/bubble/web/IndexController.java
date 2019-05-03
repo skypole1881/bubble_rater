@@ -21,12 +21,13 @@ public class IndexController {
 	@GetMapping("/")
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectAll();
-		if (dtos.size() < 3) {
+		if (dtos.size() < 4) {
 			for (int i = 0; i < 3; i++) {
 				Blog b = new Blog();
 				b.setStoreCity("無資料");
 				b.setStoreDistrict("");
 				b.setStoreBrand("");
+				b.setPhotoLink("無圖片");
 
 				dtos.add(b);
 			}
