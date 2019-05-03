@@ -10,7 +10,7 @@
 }
 .navbar-font
 {
-	font-size: 36pt;
+	font-size: 36px;
 }
 .header
 {
@@ -20,31 +20,31 @@
 }
 .slogan-main
 {
-	font-size: 120pt;
+	font-size: 120px;
 }
 .slogan-text
 {
-	font-size: 36pt;
-	line-height: 48pt;
+	font-size: 36px;
+	line-height: 48px;
 }
 .formula-text
 {
-	font-size: 60pt;
-	line-height: 90pt;
+	font-size: 60px;
+	line-height: 90px;
 }
 .introduction-header
 {
-	font-size: 36pt;
-	line-height: 48pt;
+	font-size: 36px;
+	line-height: 48px;
 }
 .introduction-text
 {
-	font-size: 24pt;
-	line-height: 48pt;
+	font-size: 24px;
+	line-height: 48px;
 }
 .introduction-conclusion
 {
-	font-size: 24pt;
+	font-size: 24px;
 }
 
 .test2
@@ -96,7 +96,7 @@
 	text-align: right;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 104px;
+	top: 88px;
 	width: 	100%;
 	z-index: 999;
 }
@@ -147,16 +147,16 @@
 }
 .storeinfo > .ranking
 {
-	font-size: 36pt;
+	font-size: 36px;
 }
 .storeinfo > .finalscore
 {
-	font-size: 210pt;
+	font-size: 210px;
 }
 .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1)
 {
-	font-size: 36pt;
-	line-height: 54pt;
+	font-size: 36px;
+	line-height: 54px;
 }
 .scoretable
 {
@@ -166,13 +166,13 @@
 }
 .store .scoretable tr td:nth-child(1)
 {
-	font-size: 24pt;
-	line-height: 36pt;
+	font-size: 24px;
+	line-height: 36px;
 }
 .store .scoretable tr td:nth-child(2)
 {
-	font-size: 24pt;
-	line-height: 36pt;
+	font-size: 24px;
+	line-height: 36px;
 }
 .storecomment
 {
@@ -212,13 +212,13 @@
 }
 .otherinfo .storename td:nth-of-type(1)
 {
-	font-size: 24pt;
-	line-height: 36pt;
+	font-size: 24px;
+	line-height: 36px;
 	padding-left: 20px;
 }
 .otherinfo .storename td:nth-of-type(2)
 {
-	font-size: 60pt;
+	font-size: 60px;
 	padding-right: 20px;
 }
 .othercomment
@@ -238,22 +238,22 @@
 }
 .othercomment .storename td:nth-of-type(1)
 {
-	font-size: 36pt;
-	line-height: 54pt;
+	font-size: 36px;
+	line-height: 54px;
 }
 .othercomment .storename td:nth-of-type(2)
 {
-	font-size: 48pt;
+	font-size: 48px;
 }
 .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3)
 {
-	font-size: 24pt;
-	line-height: 36pt;
+	font-size: 24px;
+	line-height: 36px;
 }
 .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
 {
-	font-size: 24pt;
-	line-height: 36pt;
+	font-size: 24px;
+	line-height: 36px;
 }
 .storename
 {
@@ -262,16 +262,16 @@
 }
 .storename td:nth-of-type(2) p
 {
-	font-size: 48pt;
+	font-size: 48px;
 }
 .comment
 {
-	font-size: 20pt;
-	line-height: 30pt;
+	font-size: 20px;
+	line-height: 30px;
 }
 .vote
 {
-	font-size: 24pt;
+	font-size: 24px;
 }
 
 /*when change-top is hover, change-first change to change-second*/
