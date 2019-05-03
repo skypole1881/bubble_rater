@@ -5,13 +5,13 @@
  */
 
 body {
-  padding-top: 54px;
+  padding-top: 88px;
   background-color: black;
 }
 
 @media (min-width: 992px) {
   body {
-    padding-top: 56px;
+    padding-top: 88px;
     background-color: black;
     /*background-image: url('../image/background.jpg');*/
     background-repeat: repeat;
