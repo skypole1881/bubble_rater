@@ -295,6 +295,36 @@
 {
 	opacity: 1;
 }
+.readmore div:nth-of-type(1)
+{
+	height:  2vh;
+	background-color: #FFBD45;
+}
+.readmore div:nth-of-type(2)
+{
+	height:  2vh;
+	background-color: #E69500;
+}
+.readmore div:nth-of-type(3)
+{
+	height:  2vh;
+	background-color: #B27400;
+}
+.readmore div:nth-of-type(4)
+{
+	height:  2vh;
+	background-color: #805300;
+}
+.readmore div:nth-of-type(5)
+{
+	position: absolute;
+	width: 100%;
+	height: 8vh;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 24px;
+}
+
 
 /*#test:hover ~ #test2
 {
