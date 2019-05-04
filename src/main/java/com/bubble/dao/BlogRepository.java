@@ -58,8 +58,8 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 
 	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
 	List<Blog> selectBlogOrderByCriteriaStoreCity(@Param("criteria") String criteria);
-
-
+	@Query("select COUNT(*) from Blog b where publish = '1'")
+	Integer countBlog();
 
 	@Transactional
 	@Modifying
@@ -80,6 +80,8 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
+
+
 
 	
 	

@@ -45,4 +45,6 @@ public interface BlogService {
 	List<Blog> selectTopTwelve();
 
 	List<Blog> selectSixMore(Integer token);
+
+	Integer countAllBlog();
 }

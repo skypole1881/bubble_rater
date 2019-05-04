@@ -31,8 +31,9 @@ public class IndexController {
 
 				dtos.add(b);
 			}
-
 		}
+		boolean num = true;
+		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
 		return "home";
 	}
@@ -68,10 +69,16 @@ public class IndexController {
 		model.addAttribute("blogs", dtos);
 		return "home::#search";
 	}
+
 	@GetMapping("/load")
 	public String load(Model model, Integer token) {
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
+		boolean num = true;
+		if (dtos.size() < token * 6 + 12) {
+			num = false;
+		}
+		model.addAttribute("num", num);
 
 		if (dtos.size() < 3) {
 			for (int i = 0; i < 3; i++) {
