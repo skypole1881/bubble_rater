@@ -166,7 +166,7 @@
       </div>
       
       
-      <div id="search1" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search0" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <p class="text-center ranking">第一名</p>
@@ -239,11 +239,11 @@
           </div>
         </div>
         <style type="text/css" th:inline="text">
-          #search1::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
+          #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
       </div>
       
-      <div id="search2" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search1" class="col-md-4 store change-top bg-blur text-white">
         <div class="storeinfo change-first">
           <p class="text-center h5">第二名</p>
           <p class="text-center display-1" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}"></p>
@@ -312,11 +312,11 @@
           </div>
         </div>
         <style type="text/css" th:inline="text">
-          #search2::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
+          #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
         </style>
       </div>
 
-      <div id="search3" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search2" class="col-md-4 store change-top bg-blur text-white">
         <div class="storeinfo change-first">
           <p class="text-center h5">第三名</p>
           <p class="text-center display-1" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}"></p>
@@ -385,14 +385,15 @@
           </div>
         </div>
         <style type="text/css" th:inline="text">
-          #search3::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
+          #search2::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
         </style>
       </div>
 
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
-      <div class="col-md-4 text-white change-top" id="test" >
+ 
+      <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/> 
+          <img th:src="@{${blog.photoLink}}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -441,7 +442,13 @@
             小編評價巴拉巴拉巴拉
           </p>
           <p class="vote">我也要評分 O O O O O O O</p>
+          <style type="text/css" th:inline="text">
+            .othercomment::before {background-image: url("[[@{${blog.photoLink}}]]");}
+          </style>
         </div>
+      <style type="text/css" th:inline="text">
+          #[['search' + ${iterStat.index}]]::before {background-image: url("[[@{${blog.photoLink}}]]");}
+        </style>
       </div>
  </th:block> 
      <!--  <div class="col-md-4 text-white change-top" id="test">
