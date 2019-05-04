@@ -41,4 +41,8 @@ public interface BlogService {
 	List<Blog> selectAllByCriteriaByDistrict(String criteria);
 
 	List<Blog> selectAllByCriteriaByName(String criteria);
+
+	List<Blog> selectTopTwelve();
+
+	List<Blog> selectSixMore(Integer token);
 }

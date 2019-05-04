@@ -40,9 +40,12 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 
 	@Query("select b from Blog b order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
-
-	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate ")
-	List<Blog> selectBlogOrderByTotalRate();
+	
+	//限制筆數
+	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
+	List<Blog> selectTopTwelveBlogOrderByTotalRate(Pageable pageable);
+	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
+	List<Blog> selectSixMore(Pageable pageable);
 
 	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
 	List<Blog> selectAllByCriteriaByCity(@Param("criteria") String criteria);
@@ -77,5 +80,10 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
+
+	
+	
+	
+
 
 }

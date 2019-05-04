@@ -13,6 +13,7 @@ import javax.persistence.criteria.Root;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -82,14 +83,6 @@ public class BlogServiceImpl implements BlogService {
 //		dtos = blogRepository.selectBlogByCriteriaStoreCityAndOrder(criteria,orderBy);
 //		return dtos;
 //	}
-
-	@Override
-	public List<Blog> selectAll() {
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogRepository.selectBlogOrderByTotalRate();
-		return dtos;
-	}
-
 //	@Override
 //	public Page<Blog> listBlog(Long tagId, Pageable pageable) {
 //		return blogRepository.findAll(new Specification<Blog>() {
@@ -283,6 +276,29 @@ public class BlogServiceImpl implements BlogService {
 	public List<Blog> selectAllByCriteria(String criteria, String orderBy) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Blog> selectTopTwelve() {
+		List<Blog> dtos = new ArrayList<>();
+		Pageable pageable = new PageRequest(0, 12);
+		dtos = blogRepository.selectTopTwelveBlogOrderByTotalRate(pageable);
+		return dtos;
+	}
+
+	@Override
+	public List<Blog> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Blog> selectSixMore(Integer token) {
+		List<Blog> dtos = new ArrayList<>();
+		Integer limitNumber = token * 6 + 12;
+		Pageable pageable = new PageRequest(0, limitNumber);
+		dtos = blogRepository.selectSixMore(pageable);
+		return dtos;
 	}
 
 }
