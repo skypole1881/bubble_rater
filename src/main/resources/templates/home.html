@@ -410,7 +410,7 @@
             </div>
           </div>
         </div>
-        <div class="othercomment change-second bg-blur">
+        <div class="change-second bg-blur" th:classappend="'othercomment'+${iterStat.index}">
           <table class="storename">
             <tr>
               <td>
@@ -443,7 +443,13 @@
           </p>
           <p class="vote">我也要評分 O O O O O O O</p>
           <style type="text/css" th:inline="text">
-            .othercomment::before {background-image: url("[[@{${blog.photoLink}}]]");}
+            .othercomment, .[['othercomment'+${iterStat.index}]] {}
+            .[['othercomment'+${iterStat.index}]]::before {
+              background-image: url("[[@{${blog.photoLink}}]]");
+              background-size: cover;
+	          background-repeat: no-repeat;
+	          background-position: center;
+            }
           </style>
         </div>
       <style type="text/css" th:inline="text">
