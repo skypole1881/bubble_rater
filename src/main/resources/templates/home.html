@@ -392,7 +392,7 @@
  
       <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
         <div class="otherinfo change-first">
-          <img th:src="@{${blog.photoLink}}" class="img-fluid"/> 
+          <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
@@ -409,7 +409,7 @@
             </div>
           </div>
         </div>
-        <div class="change-second bg-blur" th:classappend="'othercomment'+${iterStat.index}">
+        <div class="othercomment change-second bg-blur" th:classappend="'othercomment'+${iterStat.index}">
           <table class="storename">
             <tr>
               <td>
