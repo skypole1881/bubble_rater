@@ -441,18 +441,11 @@
             小編評價巴拉巴拉巴拉
           </p>
           <p class="vote">我也要評分 O O O O O O O</p>
-          <style type="text/css" th:inline="text">
-            .othercomment, .[['othercomment'+${iterStat.index}]] {}
-            .[['othercomment'+${iterStat.index}]]::before {
-              background-image: url("[[@{${blog.photoLink}}]]");
-              background-size: cover;
-	          background-repeat: no-repeat;
-	          background-position: center;
-            }
-          </style>
         </div>
-      <style type="text/css" th:inline="text">
-          #[['search' + ${iterStat.index}]]::before {background-image: url("[[@{${blog.photoLink}}]]");}
+        <style type="text/css" th:inline="text">
+          #[['search' + ${iterStat.index}]] .otherinfo .bg-blur:before, #[['search' + ${iterStat.index}]] .othercomment:before {
+            background-image: url("[[@{${blog.photoLink}}]]");
+          }
         </style>
       </div>
  </th:block> 
