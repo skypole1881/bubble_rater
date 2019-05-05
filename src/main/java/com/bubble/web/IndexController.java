@@ -74,10 +74,7 @@ public class IndexController {
 	public String load(Model model, Integer token) {
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
-		boolean num = true;
-		if (dtos.size() < token * 6 + 12) {
-			num = false;
-		}
+		Integer  num = dtos.size() + token;
 		model.addAttribute("num", num);
 
 		if (dtos.size() < 3) {
@@ -95,4 +92,15 @@ public class IndexController {
 		return "home::#search";
 	}
 
+	@GetMapping("/loadbu")
+	public String loadbu(Model model, Integer token) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogService.selectSixMore(token);
+		boolean num = !(dtos.size() < token * 6 + 12);
+		model.addAttribute("num", num);
+		if (!num) {
+			return "home::#bu";
+		}
+		return null;
+	}
 }

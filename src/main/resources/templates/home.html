@@ -110,8 +110,7 @@
         </p>
       </div>
     </div>
-
-    <div class="row no-gutters justify-content-md-center"id="search" th:fragment="search">
+    <div class="row no-gutters justify-content-md-center" id="search" th:fragment="search">
       <div class="sticky-nav">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
           <button type="button" class="btn btn-secondary" id="button1">篩選</button>
@@ -459,17 +458,19 @@
  </th:block> 
     
     </div>
-    <div class="row readmore" th:if='${num}'>
-      <div class="col-12"></div>
-      <div class="col-12"></div>
-      <div class="col-12"></div>
-      <div class="col-12"></div>
-      <div>
-        <a href="Javascript:void(0);" id="loadButton" class="btn text-white" role="button">點我看更多排名</a>
-      </div>
-      
-    </div>
 
+    <div th:if='${num}' id="bu">
+	    <div class="row readmore">
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div>
+	        <a href="Javascript:void(0);" id="loadButton" class="btn text-white" role="button">點我看更多排名</a>
+	      </div>
+	    </div>
+  	</div>
+  	</div>
   </div>
 
 <!-- Footer -->
@@ -497,6 +498,7 @@
  -->
  <script>
  var index = 1;
+ var note;
  $('#button1').click(function () {
      var url = '/search?';
      $.ajax({
@@ -512,15 +514,34 @@
      })
  })
    $('#loadButton').click(function () {
-            var url = '/load?token=';
+            var url = '/load?';
             var token=index;
-            $('#search').load(url+token);
+            $.ajax({
+                url: url,
+                type: 'get',
+                data: {
+               	 token:token,
+                },
+                success: function (data) {
+                	note = data
+                	$('#search').replaceWith(data);
+                },
+            })
+            url = '/loadbu?';
+            $.ajax({
+                url: url,
+                type: 'get',
+                data: {
+               	 token:token,
+                },
+                success: function (data) {
+                    $('#bu').html(data);
+                },
+                error: function (error) {)
+                }
+            })
             index++;
         });
-
-
-           
-
  </script>
 
 
