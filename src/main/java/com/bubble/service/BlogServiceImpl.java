@@ -301,4 +301,10 @@ public class BlogServiceImpl implements BlogService {
 		return dtos;
 	}
 
+	@Override
+	public Integer countAllBlog() {
+		Integer count = blogRepository.countBlog();
+		return count;
+	};
+
 }
