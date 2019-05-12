@@ -23,6 +23,9 @@
   <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
 
+  <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+  
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -30,23 +33,25 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-font">
     <div class="container-fluid">
-      <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Bubblerater logo</a>
+      <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">
+        <img src="../static/images/bubble rater_logo_A-w.png"/>
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto text-nowrap">
           <li class="nav-item active">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">About us
+            <a class="nav-link" href="#">About us
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Rate</a>
+            <a class="nav-link" href="#search">Rate</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">Contact us</a>
+            <a class="nav-link" href="#contact">Contact us</a>
           </li>
         </ul>
       </div>
@@ -59,7 +64,7 @@
     <div class="row text-white header">
 
       <!-- Blog Entries Column -->
-      <div class="col-md-12 text-left">
+      <div class="col-md-12 text-left align-self-end">
         <p class="my-4 slogan-main">用科學評珍奶</p>
         <p class="slogan-text">
           儀器測量加上清楚數據<br/>
@@ -127,7 +132,7 @@
             </div>
           </div>
           <!-- <div class="text-dark"> -->
-            <select data-placeholder="Choose a Country..." class="chosen-select" tabindex="4">
+            <select data-placeholder="Choose a Country..." class="chosen-select text-reset" tabindex="4">
               <!-- first option must be blank -->
               <option value=""></option>
               <option value="測試123WAW">測試</option>
@@ -463,7 +468,13 @@
 	      </div>
 	    </div>
   	</div>
-  	</div>
+  	<!-- </div> -->
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-2" height="5px" padding="5px">
+      <img src="../static/images/bubble rater_logo_B-w.png" class="img-fluid"/>
+    </div>
   </div>
 
 <!-- Footer -->

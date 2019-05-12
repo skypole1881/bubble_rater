@@ -4,36 +4,52 @@
 	size: 20px;
 	width: 80%;
 }*/
+.navbar-brand img
+{
+	height: 36px;
+}
 .chosen-select
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	height: 40px;
 }
 .navbar-font
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	font-size: 36px;
 }
 .header
 {
+	height: 85vh;
 	background-image: url("../images/header_background.jpg");
-	background-size: 100% auto;
+	background-size: contain;
 	background-position: center;
 }
 .slogan-main
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 120px;
 }
 .slogan-text
 {
+	font-family: 'GenJyuuGothic';
 	font-size: 36px;
 	line-height: 48px;
 }
 .formula-text
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 60px;
 	line-height: 90px;
 }
 .introduction-header
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 36px;
 	line-height: 48px;
 }
@@ -44,6 +60,7 @@
 }
 .introduction-conclusion
 {
+	font-family: 'GenJyuuGothic';
 	font-size: 24px;
 }
 
@@ -151,10 +168,14 @@
 }
 .storeinfo > .finalscore
 {
+	font-family: 'Branding';
+	font-weight: bold;
 	font-size: 210px;
 }
 .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1)
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 36px;
 	line-height: 54px;
 }
@@ -166,11 +187,14 @@
 }
 .store .scoretable tr td:nth-child(1)
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	font-size: 24px;
 	line-height: 36px;
 }
 .store .scoretable tr td:nth-child(2)
 {
+	font-family: 'GenJyuuGothic';
 	font-size: 24px;
 	line-height: 36px;
 }
@@ -212,12 +236,16 @@
 }
 .otherinfo .storename td:nth-of-type(1)
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 24px;
 	line-height: 36px;
 	padding-left: 20px;
 }
 .otherinfo .storename td:nth-of-type(2)
 {
+	font-family: 'Branding';
+	font-weight: bold;
 	font-size: 60px;
 	padding-right: 20px;
 }
@@ -238,20 +266,27 @@
 }
 .othercomment .storename td:nth-of-type(1)
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bolder;
 	font-size: 36px;
 	line-height: 54px;
 }
 .othercomment .storename td:nth-of-type(2)
 {
+	font-family: 'Branding';
+	font-weight: bold;
 	font-size: 48px;
 }
 .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3)
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	font-size: 24px;
 	line-height: 36px;
 }
 .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
 {
+	font-family: 'GenJyuuGothic';
 	font-size: 24px;
 	line-height: 36px;
 }
@@ -262,6 +297,8 @@
 }
 .storename td:nth-of-type(2) p
 {
+	font-family: 'Branding';
+	font-weight: bold;
 	font-size: 48px;
 }
 .comment
@@ -271,6 +308,8 @@
 }
 .vote
 {
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	font-size: 24px;
 }
 
@@ -322,9 +361,13 @@
 	height: 8vh;
 	vertical-align: middle;
 	text-align: center;
+}
+.readmore div:nth-of-type(5) a
+{
+	font-family: 'GenJyuuGothic';
+	font-weight: bold;
 	font-size: 24px;
 }
-
 
 /*#test:hover ~ #test2
 {
