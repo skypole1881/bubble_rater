@@ -368,6 +368,12 @@
 	font-weight: bold;
 	font-size: 24px;
 }
+.contact:before
+{
+	background-image: url('../images/header_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 .logo, .society
 {
 	margin-top: 5vw;
