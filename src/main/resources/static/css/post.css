@@ -368,6 +368,16 @@
 	font-weight: bold;
 	font-size: 24px;
 }
+.logo, .society
+{
+	margin-top: 5vw;
+	margin-bottom: 5vw;
+}
+.ps
+{
+	font-family: 'GenJyuuGothic';
+	font-size: 15px;
+}
 
 /*#test:hover ~ #test2
 {
