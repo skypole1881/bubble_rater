@@ -305,6 +305,12 @@ public class BlogServiceImpl implements BlogService {
 	public Integer countAllBlog() {
 		Integer count = blogRepository.countBlog();
 		return count;
+	}
+
+	@Override
+	public List<Blog> query(String firstTwoCharacters) {
+
+		return blogRepository.queryCity(firstTwoCharacters);
 	};
 
 }

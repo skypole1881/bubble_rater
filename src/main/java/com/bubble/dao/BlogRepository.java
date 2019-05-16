@@ -80,6 +80,9 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
+	
+	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1' and storeCity LIKE CONCAT('%',:firstTwoCharacters,'%')")
+	List<Blog> queryCity(@Param("firstTwoCharacters") String firstTwoCharacters);
 
 
 

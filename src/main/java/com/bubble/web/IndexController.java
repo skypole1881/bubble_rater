@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bubble.po.Blog;
 import com.bubble.service.BlogService;
@@ -74,7 +77,7 @@ public class IndexController {
 	public String load(Model model, Integer token) {
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
-		Integer  num = dtos.size() + token;
+		Integer num = dtos.size() + token;
 		model.addAttribute("num", num);
 
 		if (dtos.size() < 3) {
@@ -103,4 +106,27 @@ public class IndexController {
 		}
 		return null;
 	}
+
+	@RequestMapping(value = "/queryCharacters")
+	@ResponseBody
+	public List<Blog> query(
+			@RequestParam(value = "term", required = false, defaultValue = "") String term) {
+		List<Blog> suggestions = new ArrayList<Blog>();
+		String firstTwoCharacters;
+		try {
+			// only update when term is three characters.
+			if (term.length() == 2) {
+				firstTwoCharacters = term;
+				suggestions = blogService.query(firstTwoCharacters);
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return suggestions;
+
+	}
+
 }

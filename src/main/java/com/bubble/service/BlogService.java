@@ -47,4 +47,6 @@ public interface BlogService {
 	List<Blog> selectSixMore(Integer token);
 
 	Integer countAllBlog();
+
+	List<Blog> query(String firstTwoCharacters);
 }
