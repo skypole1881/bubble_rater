@@ -146,8 +146,6 @@
             <select id="query_suggeest" data-placeholder="Choose a Country..." class="chosen-select text-reset" tabindex="4">
               <!-- first option must be blank -->
               <option value=""></option>
-              <option value="測試value">測試</option>
-              <option value="我value">我</option>
             </select>
             <button type="button">GO</button>
           <!-- </div> -->
@@ -565,8 +563,13 @@
 	    	 var newOption = document.createElement("option");
 	    	 newOption.value = query_result[i]
 	    	 newOption.innerHTML = query_result[i]
-	    	 myElement.appendChild(newOption)
+	    	 myElement.appendChild(newOption);
 	     }
+		$("#query_suggeest").trigger("chosen:updated");
+		
+		
+		
+		
 	 })
 	 
 	 $('#button1').click(function () {
