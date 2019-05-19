@@ -40,10 +40,11 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 
 	@Query("select b from Blog b order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
-	
-	//限制筆數
+
+	// 限制筆數
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectTopTwelveBlogOrderByTotalRate(Pageable pageable);
+
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectSixMore(Pageable pageable);
 
@@ -58,9 +59,37 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 
 	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
 	List<Blog> selectBlogOrderByCriteriaStoreCity(@Param("criteria") String criteria);
+
 	@Query("select COUNT(*) from Blog b where publish = '1'")
 	Integer countBlog();
 
+	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1' and storeCity LIKE CONCAT('%',:firstTwoCharacters,'%')")
+	List<Blog> queryCity(@Param("firstTwoCharacters") String firstTwoCharacters);
+
+	
+	
+	// query key word
+	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1'")
+	List<Blog> queryKeyWordByStoreCity();
+
+	@Query("select DISTINCT (b.storeBrand) from Blog b where publish = '1'")
+	List<Blog> queryKeyWordByStoreName();
+
+	@Query("select DISTINCT (b.storeDistrict) from Blog b where publish = '1'")
+	List<Blog> queryKeyWordByDistrict();
+
+	// query key word with ice
+	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1'and cold=:cold")
+	List<Blog> queryKeyWordByStoreCityWithCold(@Param("cold") Boolean cold);
+
+	@Query("select DISTINCT (b.storeBrand) from Blog b where publish = '1'and cold=:cold")
+	List<Blog> queryKeyWordByStoreNameWithCold(@Param("cold") Boolean cold);
+
+	@Query("select DISTINCT (b.storeDistrict) from Blog b where publish = '1'and cold=:cold")
+	List<Blog> queryKeyWordByDistrictWithCold(@Param("cold") Boolean cold);
+
+	
+	
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.bubbleRatePR = :score where blogId=:id")
@@ -80,12 +109,5 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
-
-
-
-	
-	
-	
-
 
 }

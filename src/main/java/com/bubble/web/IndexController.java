@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bubble.po.Blog;
 import com.bubble.service.BlogService;
@@ -74,7 +77,7 @@ public class IndexController {
 	public String load(Model model, Integer token) {
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
-		Integer  num = dtos.size() + token;
+		Integer num = dtos.size() + token;
 		model.addAttribute("num", num);
 
 		if (dtos.size() < 3) {
@@ -103,4 +106,25 @@ public class IndexController {
 		}
 		return null;
 	}
+
+	@RequestMapping(value = "/querykeyword")
+	@ResponseBody
+	public List<Blog> query(@RequestParam(value = "First", required = false, defaultValue = "") String First,
+			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
+		List<Blog> KeyWords = new ArrayList<Blog>();
+		try {
+			// only update when term is three characters.
+			KeyWords = blogService.queryKeyWord(First, Second);
+
+		} catch (
+
+		Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return KeyWords;
+
+	}
+
 }
