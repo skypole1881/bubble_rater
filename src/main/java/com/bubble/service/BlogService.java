@@ -49,4 +49,6 @@ public interface BlogService {
 	Integer countAllBlog();
 
 	List<Blog> query(String firstTwoCharacters);
+
+	List<Blog> queryKeyWord(String first, String second);
 }

@@ -107,25 +107,23 @@ public class IndexController {
 		return null;
 	}
 
-	@RequestMapping(value = "/queryCharacters")
+	@RequestMapping(value = "/querykeyword")
 	@ResponseBody
-	public List<Blog> query(
-			@RequestParam(value = "term", required = false, defaultValue = "") String term) {
-		List<Blog> suggestions = new ArrayList<Blog>();
-		String firstTwoCharacters;
+	public List<Blog> query(@RequestParam(value = "First", required = false, defaultValue = "") String First,
+			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
+		List<Blog> KeyWords = new ArrayList<Blog>();
 		try {
 			// only update when term is three characters.
-			if (term.length() == 2) {
-				firstTwoCharacters = term;
-				suggestions = blogService.query(firstTwoCharacters);
-			}
+			KeyWords = blogService.queryKeyWord(First, Second);
 
-		} catch (Exception e) {
+		} catch (
+
+		Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-		return suggestions;
+		return KeyWords;
 
 	}
 

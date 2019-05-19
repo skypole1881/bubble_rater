@@ -311,6 +311,59 @@ public class BlogServiceImpl implements BlogService {
 	public List<Blog> query(String firstTwoCharacters) {
 
 		return blogRepository.queryCity(firstTwoCharacters);
-	};
+	}
+
+	@Override
+	public List<Blog> queryKeyWord(String first, String second) {
+		List<Blog> dtos = new ArrayList<>();
+		Boolean cold;
+		if (first.equals("cold")) {
+			cold = true;
+			switch (second) {
+			case "city":
+				dtos = blogRepository.queryKeyWordByStoreCityWithCold(cold);
+				break;
+			case "district":
+				dtos = blogRepository.queryKeyWordByDistrictWithCold(cold);
+				break;
+			case "store":
+				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
+				break;
+			default:
+				break;
+			}
+		} else if (first.equals("hot")) {
+			cold = false;
+			switch (second) {
+			case "city":
+				dtos = blogRepository.queryKeyWordByStoreCityWithCold(cold);
+				break;
+			case "district":
+				dtos = blogRepository.queryKeyWordByDistrictWithCold(cold);
+				break;
+			case "store":
+				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
+				break;
+			default:
+				break;
+			}
+		} else {
+			switch (second) {
+			case "city":
+				dtos = blogRepository.queryKeyWordByStoreCity();
+				break;
+			case "district":
+				dtos = blogRepository.queryKeyWordByDistrict();
+				break;
+			case "store":
+				dtos = blogRepository.queryKeyWordByStoreName();
+				break;
+			default:
+				break;
+			}
+		}
+
+		return dtos;
+	}
 
 }
