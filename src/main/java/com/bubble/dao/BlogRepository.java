@@ -75,7 +75,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select DISTINCT (b.storeBrand) from Blog b where publish = '1'")
 	List<Blog> queryKeyWordByStoreName();
 
-	@Query("select DISTINCT (b.storeDistrict) from Blog b where publish = '1'")
+	@Query("select DISTINCT (b.storeDistrict),b.storeCity from Blog b where publish = '1'")
 	List<Blog> queryKeyWordByDistrict();
 
 	// query key word with ice
@@ -85,7 +85,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select DISTINCT (b.storeBrand) from Blog b where publish = '1'and cold=:cold")
 	List<Blog> queryKeyWordByStoreNameWithCold(@Param("cold") Boolean cold);
 
-	@Query("select DISTINCT (b.storeDistrict) from Blog b where publish = '1'and cold=:cold")
+	@Query("select DISTINCT (b.storeDistrict),b.storeCity from Blog b where publish = '1'and cold=:cold")
 	List<Blog> queryKeyWordByDistrictWithCold(@Param("cold") Boolean cold);
 
 	
@@ -109,5 +109,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
+
+
 
 }
