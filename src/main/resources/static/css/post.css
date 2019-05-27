@@ -223,6 +223,9 @@
 	font-size: 1.7rem;
 	/*line-height: 30px;*/
 	line-height: 2.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 /*when change-top is hover, change-first change to change-second*/
