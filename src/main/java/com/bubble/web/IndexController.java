@@ -24,6 +24,7 @@ public class IndexController {
 	@GetMapping("/")
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
+		List<Blog> defaultList = blogService.selectDefault();
 		if (dtos.size() < 4) {
 			for (int i = 0; i < 3; i++) {
 				Blog b = new Blog();
@@ -38,6 +39,7 @@ public class IndexController {
 		boolean num = true;
 		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
+		model.addAttribute("default",defaultList);
 		return "home";
 	}
 
@@ -113,9 +115,14 @@ public class IndexController {
 			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
 		List<Blog> KeyWords = new ArrayList<Blog>();
 		try {
+			
 			// only update when term is three characters.
 			KeyWords = blogService.queryKeyWord(First, Second);
-
+            if(Second.equals("district")) {
+            	for(Blog blog:KeyWords) {
+            		blog.setStoreDistrict(blog.getStoreDistrict()+","+blog.getStoreCity());
+            	}
+            }
 		} catch (
 
 		Exception e) {

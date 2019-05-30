@@ -366,4 +366,10 @@ public class BlogServiceImpl implements BlogService {
 		return dtos;
 	}
 
+	@Override
+	public List<Blog> selectDefault() {
+
+		return blogRepository.queryKeyWordByStoreName();
+	}
+
 }

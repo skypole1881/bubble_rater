@@ -144,8 +144,11 @@
           </div>
           <!-- <div class="text-dark"> -->
             <select id="query_suggeest" data-placeholder="Choose a Country..." class="chosen-select text-reset" tabindex="4">
-              <!-- first option must be blank -->
-              <option value=""></option>
+             <!-- <th:block th:each="blog:${default}"> -->
+              <option th:each="blog:${default}" value="123" th:value="${storeBrand}" th:text="${blog}"></option>
+          <!-- 	</th:block> -->
+              
+              
             </select>
             <button type="button">GO</button>
           <!-- </div> -->

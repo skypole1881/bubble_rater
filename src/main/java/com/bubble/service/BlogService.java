@@ -51,4 +51,6 @@ public interface BlogService {
 	List<Blog> query(String firstTwoCharacters);
 
 	List<Blog> queryKeyWord(String first, String second);
+
+	List<Blog> selectDefault();
 }
