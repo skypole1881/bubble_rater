@@ -3,35 +3,38 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
  */
-
+html{
+	/*font-size: 12px;*/
+	font-size: 1.2vmin;
+}
 body {
-  padding-top: 88px;
-  background-color: black;
+	padding-top: 88px;
+	background-color: black;
 }
 
 @media (min-width: 992px) {
-  body {
-    padding-top: 88px;
-    background-color: black;
-    /*background-image: url('../image/background.jpg');*/
-    background-repeat: repeat;
-  }
+	body {
+		padding-top: 88px;
+		background-color: black;
+		/*background-image: url('../image/background.jpg');*/
+		background-repeat: repeat;
+	}
 }
 @font-face {
-  font-family: 'GenJyuuGothic';
-  src: url('../lib/fonts/GenJyuuGothic-Regular.woff2') format('woff2'); /* IE9 Compat Modes */
-  font-weight: 400;
-  font-style: normal;
+	font-family: 'GenJyuuGothic';
+	src: url('../lib/fonts/GenJyuuGothic-Regular.woff2') format('woff2'); /* IE9 Compat Modes */
+	font-weight: 400;
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Branding';
-  src: url('../lib/fonts/Branding-Bold.woff2') format('woff2'), url('../lib/fonts/Branding-Bold.woff') format('woff'); /* IE9 Compat Modes */
-  font-weight: 700;
-  font-style: normal;
+	font-family: 'Branding';
+	src: url('../lib/fonts/Branding-Bold.woff2') format('woff2'), url('../lib/fonts/Branding-Bold.woff') format('woff'); /* IE9 Compat Modes */
+	font-weight: 700;
+	font-style: normal;
 }
 @font-face {
-  font-family: 'Branding';
-  src: url('../lib/fonts/Branding-SemiBold.woff2') format('woff2'), url('../lib/fonts/Branding-SemiBold.woff') format('woff'); /* IE9 Compat Modes */
-  font-weight: 600;
-  font-style: normal;
+	font-family: 'Branding';
+	src: url('../lib/fonts/Branding-SemiBold.woff2') format('woff2'), url('../lib/fonts/Branding-SemiBold.woff') format('woff'); /* IE9 Compat Modes */
+	font-weight: 600;
+	font-style: normal;
 }

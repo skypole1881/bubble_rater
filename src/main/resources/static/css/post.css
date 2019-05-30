@@ -14,12 +14,7 @@
 	font-weight: bold;
 	height: 40px;
 }
-.navbar-font
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bold;
-	font-size: 36px;
-}
+
 .header
 {
 	height: 85vh;
@@ -29,39 +24,17 @@
 }
 .slogan-main
 {
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 120px;
-}
-.slogan-text
-{
-	font-family: 'GenJyuuGothic';
-	font-size: 36px;
-	line-height: 48px;
+	/*font-size: 120px;*/
+	font-size: 10rem;
 }
 .formula-text
 {
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 60px;
-	line-height: 90px;
-}
-.introduction-header
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 36px;
-	line-height: 48px;
-}
-.introduction-text
-{
-	font-size: 24px;
-	line-height: 48px;
-}
-.introduction-conclusion
-{
-	font-family: 'GenJyuuGothic';
-	font-size: 24px;
+	/*font-size: 60px;*/
+	/*font-size: 3.125vw;*/
+	font-size: 5rem;
+	/*line-height: 90px;*/
+	/*line-height: 4.7vw;*/
+	line-height: 7.5rem;
 }
 
 .test2
@@ -155,48 +128,29 @@
 }
 .storeinfo
 {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 7rem;
+	padding-right: 7rem;
 	position:absolute;
-	top: 50%;
-    transform: perspective(1px) translateY(-50%);
+	top: 11rem;
+	/*top: 50%;*/
+    /*transform: perspective(1px) translateY(-50%);*/
     /*transition: opacity 1s;*/
 }
 .storeinfo > .ranking
 {
-	font-size: 36px;
+	
 }
 .storeinfo > .finalscore
 {
-	font-family: 'Branding';
-	font-weight: bold;
-	font-size: 210px;
-}
-.storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1)
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 36px;
-	line-height: 54px;
+	/*font-size: 210px;*/
+	font-size: 17.5rem;
+	line-height: 21rem;
 }
 .scoretable
 {
 	width: 100%;
 	table-layout: fixed;
 	text-align: left;
-}
-.store .scoretable tr td:nth-child(1)
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 36px;
-}
-.store .scoretable tr td:nth-child(2)
-{
-	font-family: 'GenJyuuGothic';
-	font-size: 24px;
-	line-height: 36px;
 }
 .storecomment
 {
@@ -205,14 +159,18 @@
 }
 .storecomment > div
 {
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-left: 7rem;
+	padding-right: 7rem;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
 }
-.storecomment > div table
+.storecomment > div >*
 {
-	margin-bottom: 10px;
+	margin-bottom: 2rem;
+}
+.storecomment > div > .storename
+{
+	
 }
 
 .otherinfo
@@ -236,17 +194,12 @@
 }
 .otherinfo .storename td:nth-of-type(1)
 {
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 24px;
-	line-height: 36px;
 	padding-left: 20px;
 }
 .otherinfo .storename td:nth-of-type(2)
 {
-	font-family: 'Branding';
-	font-weight: bold;
-	font-size: 60px;
+	/*font-size: 60px;*/
+	font-size: 5rem;
 	padding-right: 20px;
 }
 .othercomment
@@ -264,53 +217,21 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.othercomment .storename td:nth-of-type(1)
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bolder;
-	font-size: 36px;
-	line-height: 54px;
-}
-.othercomment .storename td:nth-of-type(2)
-{
-	font-family: 'Branding';
-	font-weight: bold;
-	font-size: 48px;
-}
-.othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3)
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bold;
-	font-size: 24px;
-	line-height: 36px;
-}
-.othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
-{
-	font-family: 'GenJyuuGothic';
-	font-size: 24px;
-	line-height: 36px;
-}
+
 .storename
 {
 	width: 100%;
 	text-align: left;
 }
-.storename td:nth-of-type(2) p
-{
-	font-family: 'Branding';
-	font-weight: bold;
-	font-size: 48px;
-}
 .comment
 {
-	font-size: 20px;
-	line-height: 30px;
-}
-.vote
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bold;
-	font-size: 24px;
+	/*font-size: 20px;*/
+	font-size: 1.7rem;
+	/*line-height: 30px;*/
+	line-height: 2.5rem;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 /*when change-top is hover, change-first change to change-second*/
@@ -372,12 +293,7 @@
 	vertical-align: middle;
 	text-align: center;
 }
-.readmore div:nth-of-type(5) a
-{
-	font-family: 'GenJyuuGothic';
-	font-weight: bold;
-	font-size: 24px;
-}
+
 .contact:before
 {
 	background-image: url('../images/header_background.jpg');
@@ -392,7 +308,8 @@
 .ps
 {
 	font-family: 'GenJyuuGothic';
-	font-size: 15px;
+	/*font-size: 15px;*/
+	font-size: 1.25rem;
 }
 
 /*#test:hover ~ #test2
@@ -405,4 +322,55 @@
 }*/
 
 
+.introduction-text, .introduction-conclusion, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a
+{
+	/*font-size: 24px;*/
+	/*font-size: 1.25vw;*/
+	font-size: 2rem;
+}
+.navbar-font, .slogan-text, .introduction-header, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+{
+	/*font-size: 36px;*/
+	font-size: 3rem;
+}
+.othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
+{
+	/*font-size: 48px;*/
+	/*font-size: 2.5vw;*/
+	font-size: 4rem;
+}
+.navbar-font, .slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-conclusion, .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps
+{
+	font-family: 'GenJyuuGothic';
+}
+.storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
+{
+	font-family: 'Branding';
+}
+.navbar-font, .storeinfo > .finalscore, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2) p, .vote, .readmore div:nth-of-type(5) a
+{
+	font-weight: bold;
+}
+.slogan-main, .formula-text, .introduction-header, .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+{
+	font-weight: bolder;
+}
 
+.store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1)
+{
+	/*line-height: 36px;*/
+	/*line-height: 1.8vw;*/
+	line-height: 3rem;
+}
+.slogan-text, .introduction-header, .introduction-text, .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
+{
+	/*line-height: 48px;*/
+	/*line-height: 2.5vw;*/
+	line-height: 4rem;
+}
+.othercomment .storename td:nth-of-type(1), .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1)
+{
+	/*line-height: 54px;*/
+	/*line-height: 2.8vw;*/
+	line-height: 4.5rem;
+}
