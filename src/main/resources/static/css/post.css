@@ -128,11 +128,12 @@
 }
 .storeinfo
 {
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 7rem;
+	padding-right: 7rem;
 	position:absolute;
-	top: 50%;
-    transform: perspective(1px) translateY(-50%);
+	top: 11rem;
+	/*top: 50%;*/
+    /*transform: perspective(1px) translateY(-50%);*/
     /*transition: opacity 1s;*/
 }
 .storeinfo > .ranking
@@ -143,6 +144,7 @@
 {
 	/*font-size: 210px;*/
 	font-size: 17.5rem;
+	line-height: 21rem;
 }
 .scoretable
 {
@@ -157,14 +159,18 @@
 }
 .storecomment > div
 {
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-left: 7rem;
+	padding-right: 7rem;
+	padding-top: 3rem;
+	padding-bottom: 1rem;
 }
-.storecomment > div table
+.storecomment > div >*
 {
-	margin-bottom: 10px;
+	margin-bottom: 2rem;
+}
+.storecomment > div > .storename
+{
+	
 }
 
 .otherinfo
