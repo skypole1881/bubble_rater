@@ -150,22 +150,22 @@
               
               
             </select>
-            <button type="button">GO</button>
+            <button type="button" id="GO"> GO</button>
           <!-- </div> -->
           <div class="btn-group" role="group">
-            <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="btnGroupDrop3" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="score">
               排序
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop3">
-              <a class="dropdown-item" href="#">依照總分</a>
+              <button type="button" class="dropdown-item sort" value="score">依照總分</button>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">依照時間</a>
+              <button type="button" class="dropdown-item sort" value="time">依照時間</button>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">珍珠彈性</a>
+              <button type="button" class="dropdown-item sort" value="bubble">珍珠彈性</button>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">奶茶口感</a>
+              <button type="button" class="dropdown-item sort" value="fever">奶茶口感</button>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">小編評比</a>
+              <button type="button" class="dropdown-item sort" value="rater">小編評比</button>
             </div>
           </div>
         </div>
@@ -547,6 +547,7 @@
  <script>
 	var index = 1;
 	var query_result;
+	var data_out;
 	$('.filter_category').click(function () {
 		var myElement = document.getElementById("btnGroupDrop1");
 		myElement.setAttribute('value', this.value);
@@ -561,6 +562,7 @@
 		$.ajax({
 	         url: url,
 	         type: 'get',
+	         async: false,
 	         data: {
 	         	"First": document.getElementById("btnGroupDrop1").value,
 	        	"Second": document.getElementById("btnGroupDrop2").value,
@@ -586,7 +588,7 @@
 			myElement.innerHTML = "找縣市";	  
 		} else if (this.value == 'district') {
 			myElement.innerHTML = "找區域";
-		} else {
+		} else if (this.value == 'store') {
 			myElement.innerHTML = "找店家";
 		}
 		var url = "/querykeyword";
@@ -611,27 +613,51 @@
 	    	 newOption.innerHTML = query_result[i]
 	    	 myElement.appendChild(newOption);
 	     }
-		$("#query_suggeest").trigger("chosen:updated");
-		
-		
-		
-		
+		$("#query_suggeest").trigger("chosen:updated");	
 	 })
 	 
-	 $('#button1').click(function () {
-	     var url = '/search?';
-	     $.ajax({
-	         url: url,
-	         type: 'get',
-	         data: {
-	        	 token:'1',
-	        	 criteria:'新竹市'
-	         },
-	         success: function (data) {
-	             $('#search').html(data);
-	         }
-	     })
+	 $('.sort').click(function () {
+		var myElement = document.getElementById("btnGroupDrop3");
+		myElement.setAttribute('value', this.value);
+		if (this.value == 'score') {
+			myElement.innerHTML = "依照總分";	  
+		} else if (this.value == 'time') {
+			myElement.innerHTML = "依照時間";
+		} else if (this.value == 'bubble') {
+			myElement.innerHTML = "珍珠彈性";
+		} else if (this.value == 'fever') {
+			myElement.innerHTML = "奶茶口感";
+		} else if (this.value == 'rater') {
+			myElement.innerHTML = "小編評比";
+		}
 	 })
+
+	 $('#GO').click(function () {
+		 var myElement1 = document.getElementById("btnGroupDrop1");
+		 var myElement2 = document.getElementById("btnGroupDrop2");
+		 var myElement3 = document.getElementById("btnGroupDrop3");
+		 var suggest = document.getElementById("query_suggeest_chosen")
+		 if (suggest.getElementsByClassName("result-selected").length > 0) {
+			 suggest_result = suggest.getElementsByClassName("result-selected")[0].innerHTML
+			 var data = {
+		        	'temp': myElement1.value,
+		        	'type': myElement2.value,
+		        	'sort': myElement3.value,
+		        	'suggest': suggest_result
+		         }
+		 	data_out = data
+			 var url = '/search?';
+		     $.ajax({
+		         url: url,
+		         type: 'get',
+		         data: data,
+		         success: function (data) {
+		             $('#search').html(data);
+		         }
+			})
+		 }
+	 })
+
    $('#loadButton').click(function () {
             var url = '/load?';
             var token=index;
