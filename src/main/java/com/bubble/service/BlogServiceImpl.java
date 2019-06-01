@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
@@ -35,22 +36,6 @@ public class BlogServiceImpl implements BlogService {
 		return blogRepository.findOne(id);
 	}
 
-//	@Transactional
-//	@Override
-//	public Blog getAndConvert(Long id) {
-//		Blog blog = blogRepository.findOne(id);
-//		if (blog == null) {
-//			throw new NotFoundException("该博客不存在");
-//		}
-//		Blog b = new Blog();
-//		BeanUtils.copyProperties(blog, b);
-//		String content = b.getContent();
-//		b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-//
-//		blogRepository.updateViews(id);
-//		return b;
-//	}
-
 	@Override
 	public Page<Blog> listBlog(Pageable pageable, Blog blog) {
 		return blogRepository.findAll(new Specification<Blog>() {
@@ -60,12 +45,6 @@ public class BlogServiceImpl implements BlogService {
 				if (!"".equals(blog.getTitle()) && blog.getTitle() != null) {
 					predicates.add(cb.like(root.<String>get("title"), "%" + blog.getTitle() + "%"));
 				}
-//				if (blog.getTypeId() != null) {
-//					predicates.add(cb.equal(root.<Type>get("type").get("id"), blog.getTypeId()));
-//				}
-//				if (blog.isRecommend()) {
-//					predicates.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
-//				}
 				cq.where(predicates.toArray(new Predicate[predicates.size()]));
 				return null;
 			}
@@ -77,73 +56,10 @@ public class BlogServiceImpl implements BlogService {
 		return blogRepository.findAll(pageable);
 	}
 
-//	@Override
-//	public List<Blog> selectAllByCriteria(String criteria,String orderBy) {
-//		List<Blog> dtos = new ArrayList<>();
-//		dtos = blogRepository.selectBlogByCriteriaStoreCityAndOrder(criteria,orderBy);
-//		return dtos;
-//	}
-//	@Override
-//	public Page<Blog> listBlog(Long tagId, Pageable pageable) {
-//		return blogRepository.findAll(new Specification<Blog>() {
-//			@Override
-//			public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
-//				Join join = root.join("tags");
-//				return cb.equal(join.get("id"), tagId);
-//			}
-//		}, pageable);
-//	}
-//
-//	@Override
-//	public Page<Blog> listBlog(String query, Pageable pageable) {
-//		return blogRepository.findByQuery(query, pageable);
-//	}
-
-//	@Override
-//	public List<Blog> listRecommendBlogTop(Integer size) {
-//		Sort sort = new Sort(Sort.Direction.DESC, "updateTime");
-//		Pageable pageable = new PageRequest(0, size, sort);
-//		return blogRepository.findTop(pageable);
-//	}
-
-//	@Override
-//	public Map<String, List<Blog>> archiveBlog() {
-//		List<String> years = blogRepository.findGroupYear();
-//		Map<String, List<Blog>> map = new HashMap<>();
-//		for (String year : years) {
-//			map.put(year, blogRepository.findByYear(year));
-//		}
-//		return map;
-//	}
-
 	@Override
 	public Long countBlog() {
 		return blogRepository.count();
 	}
-
-//	@Transactional
-//	@Override
-//	public Blog saveBlog(Blog blog) {
-//		if (blog.getId() == null) {
-//			blog.setCreateTime(new Date());
-//			blog.setUpdateTime(new Date());
-//			blog.setViews(0);
-//		} else {
-//			blog.setUpdateTime(new Date());
-//		}
-//		return blogRepository.save(blog);
-//	}
-
-//	@Override
-//	public Blog updateBlog(Integer id, Blog blog) {
-//		Blog b = blogRepository.findOne(id);
-//		if (b == null) {
-//			throw new NotFoundException("该博客不存在");
-//		}
-//		BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
-//		b.setUpdateTime(new Date());
-//		return blogRepository.save(b);
-//	}
 
 	@Override
 	public Blog saveBlog(Blog blog) {
@@ -252,27 +168,6 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByCriteriaByCity(String criteria) {
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogRepository.selectAllByCriteriaByCity(criteria);
-		return dtos;
-	}
-
-	@Override
-	public List<Blog> selectAllByCriteriaByDistrict(String criteria) {
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogRepository.selectAllByCriteriaByDistrict(criteria);
-		return dtos;
-	}
-
-	@Override
-	public List<Blog> selectAllByCriteriaByName(String criteria) {
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogRepository.selectAllByCriteriaByName(criteria);
-		return dtos;
-	}
-
-	@Override
 	public List<Blog> selectAllByCriteria(String criteria, String orderBy) {
 		// TODO Auto-generated method stub
 		return null;
@@ -362,7 +257,6 @@ public class BlogServiceImpl implements BlogService {
 				break;
 			}
 		}
-
 		return dtos;
 	}
 
@@ -370,6 +264,64 @@ public class BlogServiceImpl implements BlogService {
 	public List<Blog> selectDefault() {
 
 		return blogRepository.queryKeyWordByStoreName();
+	}
+
+	@Override
+	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby) {
+		Boolean coldBoolean = true;
+		Pageable pageable = null;
+		Sort sort = new Sort(Sort.Direction.DESC, orderby);
+		pageable = new PageRequest(1, 12, sort);
+		if (cold.equals("cold")) {
+			coldBoolean = true;
+		} else if (cold.equals("hot")) {
+			coldBoolean = false;
+		} else {
+			return blogRepository.selectAllByKeywordByCity(keyword, pageable);
+		}
+
+		return blogRepository.selectAllByKeywordByCityWithCold(keyword, coldBoolean, pageable);
+	}
+
+	@Override
+	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby) {
+		String[] oriString=keyword.split(",");
+		Boolean coldBoolean = true;
+		Pageable pageable = null;
+		Sort sort = new Sort(Sort.Direction.DESC, orderby);
+		pageable = new PageRequest(1, 12, sort);
+		if (cold.equals("cold")) {
+			coldBoolean = true;
+		} else if (cold.equals("hot")) {
+			coldBoolean = false;
+		} else {
+			return blogRepository.selectAllByKeywordByDistrict(oriString[0], pageable);
+		}
+
+		return blogRepository.selectAllByKeywordByDistrictWithCold(oriString[0], coldBoolean, pageable);
+	}
+
+	@Override
+	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby) {
+		Boolean coldBoolean = true;
+		Pageable pageable = null;
+		Sort sort = new Sort(Sort.Direction.DESC, orderby);
+		pageable = new PageRequest(1, 12, sort);
+		if (cold.equals("cold")) {
+			coldBoolean = true;
+		} else if (cold.equals("hot")) {
+			coldBoolean = false;
+		} else {
+			return blogRepository.selectAllByKeywordByName(keyword, pageable);
+		}
+
+		return blogRepository.selectAllByKeywordByNameWithCold(keyword, coldBoolean, pageable);
+	}
+
+	@Override
+	public List<Blog> selectAllByCriteriaByName(String criteria) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

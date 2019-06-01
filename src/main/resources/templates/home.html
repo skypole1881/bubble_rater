@@ -157,15 +157,15 @@
               排序
             </button>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop3">
-              <button type="button" class="dropdown-item sort" value="score">依照總分</button>
+              <button type="button" class="dropdown-item sort" value="totalRate">依照總分</button>
               <div class="dropdown-divider"></div>
-              <button type="button" class="dropdown-item sort" value="time">依照時間</button>
+              <button type="button" class="dropdown-item sort" value="createdDtm">依照時間</button>
               <div class="dropdown-divider"></div>
-              <button type="button" class="dropdown-item sort" value="bubble">珍珠彈性</button>
+              <button type="button" class="dropdown-item sort" value="bubbleRatePR">珍珠彈性</button>
               <div class="dropdown-divider"></div>
-              <button type="button" class="dropdown-item sort" value="fever">奶茶口感</button>
+              <button type="button" class="dropdown-item sort" value="teaRatePR">奶茶口感</button>
               <div class="dropdown-divider"></div>
-              <button type="button" class="dropdown-item sort" value="rater">小編評比</button>
+              <button type="button" class="dropdown-item sort" value="godfeelingRate">小編評比</button>
             </div>
           </div>
         </div>
@@ -619,15 +619,15 @@
 	 $('.sort').click(function () {
 		var myElement = document.getElementById("btnGroupDrop3");
 		myElement.setAttribute('value', this.value);
-		if (this.value == 'score') {
+		if (this.value == 'totalRate') {
 			myElement.innerHTML = "依照總分";	  
-		} else if (this.value == 'time') {
+		} else if (this.value == 'createdDtm') {
 			myElement.innerHTML = "依照時間";
-		} else if (this.value == 'bubble') {
+		} else if (this.value == 'bubbleRate') {
 			myElement.innerHTML = "珍珠彈性";
-		} else if (this.value == 'fever') {
+		} else if (this.value == 'teaRatePR') {
 			myElement.innerHTML = "奶茶口感";
-		} else if (this.value == 'rater') {
+		} else if (this.value == 'godfeelingRate') {
 			myElement.innerHTML = "小編評比";
 		}
 	 })
@@ -640,13 +640,13 @@
 		 if (suggest.getElementsByClassName("result-selected").length > 0) {
 			 suggest_result = suggest.getElementsByClassName("result-selected")[0].innerHTML
 			 var data = {
-		        	'temp': myElement1.value,
-		        	'type': myElement2.value,
-		        	'sort': myElement3.value,
-		        	'suggest': suggest_result
+		        	'cold': myElement1.value,
+		        	'criteria': myElement2.value,
+		        	'orderby': myElement3.value,
+		        	'keyword': suggest_result
 		         }
 		 	data_out = data
-			 var url = '/search?';
+			 var url = '/search';
 		     $.ajax({
 		         url: url,
 		         type: 'get',
@@ -687,21 +687,6 @@
             })
             index++;
         });
-
-	 $("select").change(function() {
-	     var title = $(this).text();  // 1、获取选择下拉框的标题
-	     var id  = $(this).val();  
-	     var url   = "/queryCharacters";  //这里填写后端的url 
-	     $.ajax({   //2、发送给后端
-	         url: url, 
-	         type: 'POST',  //设置发送的方式 这里假设为POST
-	         dataType: 'html',  //返回的数据类型
-	         data: {title: title},  //把选中的标题发给后端
-	         success:function(data) {
-	             // 4、这里写成功后更新页面的操作
-	         }
-	     })
-	 });
 
  </script>
 

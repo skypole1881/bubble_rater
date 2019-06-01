@@ -36,9 +36,11 @@ public interface BlogService {
 
 	List<Blog> selectAllByCriteria(String criteria, String orderBy);
 
-	List<Blog> selectAllByCriteriaByCity(String criteria);
+	List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby);
 
-	List<Blog> selectAllByCriteriaByDistrict(String criteria);
+	List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby);
+	
+	List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby);
 
 	List<Blog> selectAllByCriteriaByName(String criteria);
 
@@ -53,4 +55,6 @@ public interface BlogService {
 	List<Blog> queryKeyWord(String first, String second);
 
 	List<Blog> selectDefault();
+
+
 }
