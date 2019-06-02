@@ -48,15 +48,24 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectSixMore(Pageable pageable);
 
-	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
-	List<Blog> selectAllByCriteriaByCity(@Param("criteria") String criteria);
-
-	@Query("select b from Blog b where publish = '1' and storeBrand=:criteria order by totalRate desc,godfeelingRate ")
-	List<Blog> selectAllByCriteriaByName(@Param("criteria") String criteria);
-
-	@Query("select b from Blog b where publish = '1' and storeDistrict=:criteria order by totalRate desc,godfeelingRate ")
-	List<Blog> selectAllByCriteriaByDistrict(@Param("criteria") String criteria);
-
+	//go 搜尋條件
+	@Query("select b from Blog b where publish = '1' and cold =:cold and storeCity=:keyword")
+	List<Blog> selectAllByKeywordByCityWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
+	@Query("select b from Blog b where publish = '1' and cold=:cold and storeDistrict=:keyword")
+	List<Blog> selectAllByKeywordByDistrictWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
+	@Query("select b from Blog b where publish = '1' and cold=:cold and storeBrand=:keyword")
+	List<Blog> selectAllByKeywordByNameWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
+	//without cold
+	@Query("select b from Blog b where publish = '1' and cold =:cold and storeCity=:keyword")
+	List<Blog> selectAllByKeywordByCity(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
+	@Query("select b from Blog b where publish = '1' and cold=:cold and storeDistrict=:keyword")
+	List<Blog> selectAllByKeywordByDistrict(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
+	@Query("select b from Blog b where publish = '1' and cold=:cold and storeBrand=:keyword")
+	List<Blog> selectAllByKeywordByName(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
+	
+	
+	
+	
 	@Query("select b from Blog b where publish = '1' and storeCity=:criteria order by totalRate desc,godfeelingRate ")
 	List<Blog> selectBlogOrderByCriteriaStoreCity(@Param("criteria") String criteria);
 

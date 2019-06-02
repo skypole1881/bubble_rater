@@ -39,25 +39,24 @@ public class IndexController {
 		boolean num = true;
 		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
-		model.addAttribute("default",defaultList);
+		model.addAttribute("default", defaultList);
 		return "home";
 	}
 
 	@GetMapping("/search")
-	public String index(Model model, String criteria, Integer token) {
+	public String index(Model model, String criteria, String keyword, String cold, String orderby) {
 		List<Blog> dtos = new ArrayList<>();
 		// ByCity
-		if (token == 1) {
-			dtos = blogService.selectAllByCriteriaByCity(criteria);
+		if (criteria.equals("city")) {
+			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby);
 		}
 		// ByDistrict
-		if (token == 2) {
-			dtos = blogService.selectAllByCriteriaByDistrict(criteria);
+		if (criteria.equals("district")) {
+			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby);
 		}
 		// By name
-		if (token == 3) {
-
-			dtos = blogService.selectAllByCriteriaByName(criteria);
+		if (criteria.equals("store")) {
+			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby);
 		}
 
 		if (dtos.size() < 3) {
@@ -115,18 +114,13 @@ public class IndexController {
 			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
 		List<Blog> KeyWords = new ArrayList<Blog>();
 		try {
-			
-			// only update when term is three characters.
 			KeyWords = blogService.queryKeyWord(First, Second);
-            if(Second.equals("district")) {
-            	for(Blog blog:KeyWords) {
-            		blog.setStoreDistrict(blog.getStoreDistrict()+","+blog.getStoreCity());
-            	}
-            }
-		} catch (
-
-		Exception e) {
-			// TODO Auto-generated catch block
+			if (Second.equals("district")) {
+				for (Blog blog : KeyWords) {
+					blog.setStoreDistrict(blog.getStoreDistrict() + "," + blog.getStoreCity());
+				}
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
