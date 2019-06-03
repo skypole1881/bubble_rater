@@ -267,11 +267,11 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby) {
+	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(1, 12, sort);
+		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
 		if (cold.equals("cold")) {
 			coldBoolean = true;
 		} else if (cold.equals("hot")) {
@@ -284,12 +284,12 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby) {
+	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
 		String[] oriString=keyword.split(",");
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(1, 12, sort);
+		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
 		if (cold.equals("cold")) {
 			coldBoolean = true;
 		} else if (cold.equals("hot")) {
@@ -302,11 +302,11 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby) {
+	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(1, 12, sort);
+		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
 		if (cold.equals("cold")) {
 			coldBoolean = true;
 		} else if (cold.equals("hot")) {

@@ -43,20 +43,21 @@ public class IndexController {
 		return "home";
 	}
 
+	//這裡看要不要改成POST
 	@GetMapping("/search")
-	public String index(Model model, String criteria, String keyword, String cold, String orderby) {
+	public String index(Model model, String criteria, String keyword, String cold, String orderby,Integer limitNumStart,Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
 		// ByCity
 		if (criteria.equals("city")) {
-			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby);
+			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby,limitNumStart,limitNumEnd);
 		}
 		// ByDistrict
 		if (criteria.equals("district")) {
-			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby);
+			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby,limitNumStart,limitNumEnd);
 		}
 		// By name
 		if (criteria.equals("store")) {
-			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby);
+			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby,limitNumStart,limitNumEnd);
 		}
 
 		if (dtos.size() < 3) {

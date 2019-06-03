@@ -36,11 +36,11 @@ public interface BlogService {
 
 	List<Blog> selectAllByCriteria(String criteria, String orderBy);
 
-	List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby);
+	List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
-	List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby);
+	List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 	
-	List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby);
+	List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
 	List<Blog> selectAllByCriteriaByName(String criteria);
 
