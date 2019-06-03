@@ -21,6 +21,7 @@
 
   <!-- Custom styles for this template -->
   <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
+  <link href="../static/css/single-store.css" rel="stylesheet" th:href="@{/css/single-store.css}">
   <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
 
   <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
@@ -33,7 +34,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-font">
     <div class="container-fluid">
       <a class="navbar-brand" href="https://blackrockdigital.github.io/startbootstrap-blog-home/#">
-        <img src="../static/images/bubble rater_logo_A-w.png" th:src="@{/images/bubble rater_logo_A-w.png}"/>
+        <img src="../static/images/bubble rater_logo-15.png" th:src="@{/images/bubble rater_logo-15.png}"/>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -61,16 +62,16 @@
       <div class="col-8">
         <img src="../static/images/store2.jpg" class="img-fluid"/>
       </div>
-      <div class="col-4">
-        <div>
-          <p class="">NO.01</p>
+      <div class="col-4 storecomment">
+        <div class="">
+          <p class="ranking">NO.01</p>
           <table class="storename">
             <tr>
               <td>
                 <p th:text="${blogs[0].storeBrand}">清心</p>
               </td>
               <td rowspan="3">
-                <p class="text-right" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</p>
+                <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</p>
               </td>
             </tr>
             <tr>
@@ -107,6 +108,7 @@
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
           </p>
+          <hr></hr>
           <p class="vote">我也要評分 O O O O O O O</p>
           <div class="row readmore" >
             <div class="col-12"></div>

@@ -1,0 +1,47 @@
+.storecomment
+{
+	background-color: #D1C5AE;
+	z-index: -2;
+	color: black;
+}
+.storecomment > div
+{
+	height: 90vh;
+}
+
+.scoretable
+{
+	font-family: 'GenJyuuGothic';
+	font-size: 2rem;
+	line-height: 3rem;
+}
+.scoretable tr td:nth-child(1)
+{
+	font-weight: bold;
+}
+.ranking
+{
+	font-family: 'Branding';
+	font-size: 3rem;
+	line-height: 3rem;
+	font-weight: bold;
+	color: #FF0062;
+	text-decoration: underline;
+}
+.comment
+{
+	overflow: none;
+	white-space: normal;
+	text-overflow: ;
+}
+.storecomment > hr
+{
+	color: #715831;
+}
+.readmore
+{
+	position: absolute;
+	bottom: -2rem;
+	width: 100%;
+	left: 15px;
+}
