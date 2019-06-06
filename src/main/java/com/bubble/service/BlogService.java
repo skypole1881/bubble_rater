@@ -56,5 +56,7 @@ public interface BlogService {
 
 	List<Blog> selectDefault();
 
+	Integer getRank(String id);
+
 
 }

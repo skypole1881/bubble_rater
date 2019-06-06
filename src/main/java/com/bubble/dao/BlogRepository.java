@@ -32,15 +32,18 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 //	@Query("select b from Blog b where function('date_format',b.updateTime,'%Y') = ?1")
 //	List<Blog> findByYear(String year);
 
-	@Query("select b from Blog b order by bubbleRate desc")
+	@Query("select b from Blog b  where publish = '1' order by bubbleRate desc")
 	List<Blog> selectBlogOrderByBubbleRate();
 
-	@Query("select b from Blog b order by teaRate desc")
+	@Query("select b from Blog b where publish = '1' order by teaRate desc")
 	List<Blog> selectBlogOrderByTeaRate();
 
-	@Query("select b from Blog b order by createdDtm desc")
+	@Query("select b from Blog b where publish = '1' order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
 
+	@Query("select b from Blog b where publish = '1' order by totalRate desc")
+	List<Blog> selectBlogOrderByTotalRate();
+	
 	// 限制筆數
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectTopTwelveBlogOrderByTotalRate(Pageable pageable);

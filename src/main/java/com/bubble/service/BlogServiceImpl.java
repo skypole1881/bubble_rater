@@ -267,7 +267,8 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
+	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart,
+			Integer limitNumEnd) {
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
@@ -284,8 +285,9 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
-		String[] oriString=keyword.split(",");
+	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart,
+			Integer limitNumEnd) {
+		String[] oriString = keyword.split(",");
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
@@ -302,7 +304,8 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
+	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart,
+			Integer limitNumEnd) {
 		Boolean coldBoolean = true;
 		Pageable pageable = null;
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
@@ -322,6 +325,19 @@ public class BlogServiceImpl implements BlogService {
 	public List<Blog> selectAllByCriteriaByName(String criteria) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Integer getRank(String id) {
+		List<Blog> dtos = blogRepository.selectBlogOrderByTotalRate();
+		Integer rank = 0;
+		for (int i = 0; i < dtos.size(); i++) {
+			if (dtos.get(i).getBlogId() == Integer.valueOf(id)) {
+				rank = i+1;
+			}
+
+		}
+		return rank;
 	}
 
 }

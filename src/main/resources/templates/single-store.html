@@ -60,50 +60,50 @@
   <div class="container-fluid text-white" >
     <div class="row no-gutters">
       <div class="col-8">
-        <img src="../static/images/store2.jpg" class="img-fluid"/>
+        <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/>
       </div>
       <div class="col-4 storecomment">
         <div class="">
-          <p class="ranking">NO.01</p>
+          <p class="ranking" th:text=${rank}>NO.01</p>
           <table class="storename">
             <tr>
               <td>
-                <p th:text="${blogs[0].storeBrand}">清心</p>
+                <p th:text="${blog.storeBrand}">清心</p>
               </td>
               <td rowspan="3">
-                <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</p>
+                <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
               </td>
             </tr>
             <tr>
               <td>
-                <p th:text="${blogs[0].item}">文山</p>
+                <p th:text="${blog.storeDistrict}">文山</p>
               </td>
             </tr>
             <tr>
               <td>
-                <p th:text="${blogs[0].item}">珍奶</p>
+                <p th:text="${blog.item}">珍奶</p>
               </td>
             </tr>
           </table>
           <table class="scoretable">
             <tr>
               <td>珍珠彈性</td>
-              <td th:text="${#numbers.formatDecimal(blogs[0].bubbleRatePR,0,1)}">90</td>
+              <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
             </tr>
             <tr>
               <td>奶茶濃度</td>
-              <td th:text="${#numbers.formatDecimal(blogs[0].TeaRatePR,0,1)}">90</td>
+              <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
             </tr>
             <tr>
               <td>珍探給分</td>
-              <td th:text="${#numbers.formatDecimal(blogs[0].godfeelingRate,0,1)}">90</td>
+              <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
             </tr>
             <tr>
               <td>甜度等級</td>
-              <td th:text="${#numbers.formatDecimal(blogs[0].sweetnessRate,0,1)}">剛剛好</td>
+              <td th:text="${#numbers.formatDecimal(blog.sweetnessRate,0,1)}">剛剛好</td>
             </tr>
           </table>
-          <p class="comment" th:text="${blogs[0].content1}">
+          <p class="comment" th:text="${blog.content1}">
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉

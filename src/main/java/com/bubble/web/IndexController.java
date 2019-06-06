@@ -43,9 +43,11 @@ public class IndexController {
 		return "home";
 	}
 	
-	@GetMapping("/{Id}")
-	public String indexSingle(Model model,@PathVariable("Id") Integer Id) {
-		Blog blog = blogService.getBlog(Id);
+	@GetMapping("/single")
+	public String indexSingle(Model model,@RequestParam("Id") String Id) {
+		Blog blog = blogService.getBlog(Integer.valueOf(Id));
+		String rank ="NO."+blogService.getRank(Id);
+		model.addAttribute("rank", rank);
 		model.addAttribute("blog", blog);
 		return "single-store";
 	}
