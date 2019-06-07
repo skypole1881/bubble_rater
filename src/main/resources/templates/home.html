@@ -250,13 +250,13 @@
           #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
       </div>
-      
       <div id="search1" class="col-md-4 store change-top bg-blur text-white">
+<!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
-          <p class="text-center h5">第二名</p>
-          <p class="text-center display-1" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}"></p>
-          <p class="text-center h4" th:text="${blogs[1].storeBrand+blogs[1].storeCity+'-'+blogs[1].storeDistrict}">店家</p>
-          <p class="text-center h4" th:text="${blogs[1].item}">品名</p>
+          <p class="text-center ranking">第二名</p>
+          <p class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">9.6</p>
+          <p class="text-center store-name" th:text="${blogs[1].storeBrand+blogs[1].storeCity+'-'+blogs[1].storeDistrict}">店家</p>
+          <p class="text-center drink-name" th:text="${blogs[1].item}">品名</p>
           <hr color="white"/>
           <center>
             <table class="scoretable">
@@ -279,21 +279,23 @@
             </table>
           </center>
         </div>
-        <div class="text-white storecomment change-second">
+ <!--        </tr> -->
+        <div class="text-white change-second storecomment">
           <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blogs[1].photoLink}}"/>
+          
           <div>
-            <table class="storename ">
+            <table class="storename">
               <tr>
-                <td class="h4 weight-bold">
+                <td>
                   <p th:text="${blogs[1].storeBrand}">清心</p>
                   <p th:text="${blogs[1].item}">珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-center" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</p>
+                  <p class="text-right" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</p>
                 </td>
               </tr>
             </table>
-            <table class="scoretable h5">
+            <table class="scoretable">
               <tr>
                 <td>珍珠彈性</td>
                 <td th:text="${#numbers.formatDecimal(blogs[1].bubbleRatePR,0,1)}">90</td>
@@ -308,32 +310,34 @@
               </tr>
               <tr>
                 <td>甜度等級</td>
-                <td th:text="${#numbers.formatDecimal(blogs[1].sweetnessRate,0,1)}">剛剛好</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].sweetnessRate,0,1)}">甜膩</td>
               </tr>
             </table>
-            <p th:text="${blogs[1].content1}">
+            <p class="comment" th:text="${blogs[1].content1}">
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <p>我也要評分 O O O O O O O</p>
+            <a href="">顯示更多</a>
+            <div class="invisible">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
         <style type="text/css" th:inline="text">
           #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
         </style>
       </div>
-
       <div id="search2" class="col-md-4 store change-top bg-blur text-white">
+<!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
-          <p class="text-center h5">第三名</p>
-          <p class="text-center display-1" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}"></p>
-          <p class="text-center h4" th:text="${blogs[2].storeBrand+blogs[2].storeCity+'-'+blogs[2].storeDistrict}">店家</p>
-          <p class="text-center h4" th:text="${blogs[2].item}">品名</p>
+          <p class="text-center ranking">第三名</p>
+          <p class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">9.6</p>
+          <p class="text-center store-name" th:text="${blogs[2].storeBrand+blogs[2].storeCity+'-'+blogs[2].storeDistrict}">店家</p>
+          <p class="text-center drink-name" th:text="${blogs[2].item}">品名</p>
           <hr color="white"/>
           <center>
             <table class="scoretable">
-              <tr >
+              <tr>
                 <td>珍珠彈性</td>
                 <td th:text="${#numbers.formatDecimal(blogs[2].bubbleRatePR,0,1)}"></td>
               </tr>
@@ -352,21 +356,23 @@
             </table>
           </center>
         </div>
-        <div class="storecomment change-second">
+ <!--        </tr> -->
+        <div class="text-white change-second storecomment">
           <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blogs[2].photoLink}}"/>
+          
           <div>
-            <table class="storename ">
+            <table class="storename">
               <tr>
-                <td class="h4 weight-bold">
+                <td>
                   <p th:text="${blogs[2].storeBrand}">清心</p>
                   <p th:text="${blogs[2].item}">珍奶104</p>
                 </td>
                 <td>
-                  <p class="h1 weight-bolder text-center" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</p>
+                  <p class="text-right" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</p>
                 </td>
               </tr>
             </table>
-            <table class="scoretable h5">
+            <table class="scoretable">
               <tr>
                 <td>珍珠彈性</td>
                 <td th:text="${#numbers.formatDecimal(blogs[2].bubbleRatePR,0,1)}">90</td>
@@ -381,22 +387,24 @@
               </tr>
               <tr>
                 <td>甜度等級</td>
-                <td th:text="${#numbers.formatDecimal(blogs[2].sweetnessRate,0,1)}">偏甜</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].sweetnessRate,0,1)}">甜膩</td>
               </tr>
             </table>
-            <p th:text="${blogs[2].content1}">
+            <p class="comment" th:text="${blogs[2].content1}">
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <p>我也要評分 O O O O O O O</p>
+            <a href="">顯示更多</a>
+            <div class="invisible">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
         <style type="text/css" th:inline="text">
           #search2::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
         </style>
       </div>
-
+      
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
  
       <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
