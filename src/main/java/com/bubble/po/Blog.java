@@ -45,6 +45,8 @@ public class Blog {
 	private float teaRatePR;
 	@Column(name = "sweetness_rate")
 	private float sweetnessRate;
+	@Column(name = "sweetness")
+	private String sweetness;
 	@Column(name = "godfeeling_rate")
 	private float godfeelingRate;
 	@Column(name = "user_rate")
@@ -281,5 +283,15 @@ public class Blog {
 	public void setTotalRate(float totalRate) {
 		this.totalRate = totalRate;
 	}
+
+	public String getSweetness() {
+		return sweetness;
+	}
+
+	public void setSweetness(String sweetness) {
+		this.sweetness = sweetness;
+	}
+	
+	
 
 }

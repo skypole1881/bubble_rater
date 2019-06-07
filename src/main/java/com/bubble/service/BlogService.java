@@ -58,5 +58,7 @@ public interface BlogService {
 
 	Integer getRank(String id);
 
+	List<Blog> selectBlogsByCold(String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
+
 
 }

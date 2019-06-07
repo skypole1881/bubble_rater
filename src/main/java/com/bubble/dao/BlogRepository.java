@@ -43,7 +43,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 
 	@Query("select b from Blog b where publish = '1' order by totalRate desc")
 	List<Blog> selectBlogOrderByTotalRate();
-	
+
 	// 限制筆數
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectTopTwelveBlogOrderByTotalRate(Pageable pageable);
@@ -51,20 +51,38 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectSixMore(Pageable pageable);
 
-	//go 搜尋條件
+	// go 搜尋條件
 	@Query("select b from Blog b where publish = '1' and cold =:cold and storeCity=:keyword")
-	List<Blog> selectAllByKeywordByCityWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
+	List<Blog> selectAllByKeywordByCityWithCold(@Param("keyword") String keyword, @Param("cold") Boolean cold,
+			@Param("orderby") Pageable pageable);
+
 	@Query("select b from Blog b where publish = '1' and cold=:cold and storeDistrict=:keyword")
-	List<Blog> selectAllByKeywordByDistrictWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
+	List<Blog> selectAllByKeywordByDistrictWithCold(@Param("keyword") String keyword, @Param("cold") Boolean cold,
+			@Param("orderby") Pageable pageable);
+
 	@Query("select b from Blog b where publish = '1' and cold=:cold and storeBrand=:keyword")
-	List<Blog> selectAllByKeywordByNameWithCold(@Param("keyword") String keyword, @Param("cold")Boolean cold, @Param("orderby")Pageable pageable);
-	//without cold
-	@Query("select b from Blog b where publish = '1' and cold =:cold and storeCity=:keyword")
-	List<Blog> selectAllByKeywordByCity(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
-	@Query("select b from Blog b where publish = '1' and cold=:cold and storeDistrict=:keyword")
-	List<Blog> selectAllByKeywordByDistrict(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
-	@Query("select b from Blog b where publish = '1' and cold=:cold and storeBrand=:keyword")
-	List<Blog> selectAllByKeywordByName(@Param("keyword") String keyword, @Param("orderby")Pageable pageable);
+	List<Blog> selectAllByKeywordByNameWithCold(@Param("keyword") String keyword, @Param("cold") Boolean cold,
+			@Param("orderby") Pageable pageable);
+
+	// without cold
+	@Query("select b from Blog b where publish = '1' and storeCity=:keyword")
+	List<Blog> selectAllByKeywordByCity(@Param("keyword") String keyword, @Param("orderby") Pageable pageable);
+
+	@Query("select b from Blog b where publish = '1' and storeDistrict=:keyword")
+	List<Blog> selectAllByKeywordByDistrict(@Param("keyword") String keyword, @Param("orderby") Pageable pageable);
+
+	@Query("select b from Blog b where publish = '1' and storeBrand=:keyword")
+	List<Blog> selectAllByKeywordByName(@Param("keyword") String keyword, @Param("orderby") Pageable pageable);
+
+	
+	//我要找:不拘
+	@Query("select b from Blog b where publish = '1'")
+	List<Blog> selectAllWithOrder(Pageable pageable);
+	@Query("select b from Blog b where publish = '1'and cold=:cold")
+	List<Blog> selectAllWithColdAndOrder(@Param("cold") Boolean coldBoolean, Pageable pageable);
+
+	
+	
 	
 	
 	
@@ -78,8 +96,6 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1' and storeCity LIKE CONCAT('%',:firstTwoCharacters,'%')")
 	List<Blog> queryCity(@Param("firstTwoCharacters") String firstTwoCharacters);
 
-	
-	
 	// query key word
 	@Query("select DISTINCT (b.storeCity) from Blog b where publish = '1'")
 	List<Blog> queryKeyWordByStoreCity();
@@ -100,8 +116,6 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select DISTINCT (b.storeDistrict),b.storeCity from Blog b where publish = '1'and cold=:cold")
 	List<Blog> queryKeyWordByDistrictWithCold(@Param("cold") Boolean cold);
 
-	
-	
 	@Transactional
 	@Modifying
 	@Query("update Blog b set b.bubbleRatePR = :score where blogId=:id")
@@ -121,7 +135,5 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Modifying
 	@Query("update Blog b set b.totalRate =:rate where blogId=:id")
 	void updateTotalRate(@Param("rate") float rate, @Param("id") int id);
-
-
 
 }

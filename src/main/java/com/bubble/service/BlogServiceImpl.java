@@ -68,6 +68,7 @@ public class BlogServiceImpl implements BlogService {
 		blog.setLastModifiedDtm(new Date());
 		blog.setVersion(0);
 		b = blogRepository.save(blog);
+		setSweetNess(blog);
 		calculatePR();
 		setLatest();
 		calculateTotal();
@@ -121,6 +122,20 @@ public class BlogServiceImpl implements BlogService {
 
 	}
 
+	private void setSweetNess(Blog blog) {
+
+		if (blog.getSweetnessRate() == 10) {
+			blog.setSweetness("甜膩");
+		} else if (blog.getSweetnessRate() == 9) {
+			blog.setSweetness("偏甜");
+		} else if (blog.getSweetnessRate() == 7 || blog.getSweetnessRate() == 8) {
+			blog.setSweetness("中等");
+		} else {
+			blog.setSweetness("清淡");
+		}
+		blogRepository.save(blog);
+	}
+
 	@Override
 	public Blog updateBlog(Integer id, Blog blog) {
 		Blog b = blogRepository.findOne(id);
@@ -131,6 +146,7 @@ public class BlogServiceImpl implements BlogService {
 		b.setLastModifiedDtm(new Date());
 		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
+		setSweetNess(blog);
 		setLatest();
 		calculatePR();
 		calculateTotal();
@@ -333,11 +349,27 @@ public class BlogServiceImpl implements BlogService {
 		Integer rank = 0;
 		for (int i = 0; i < dtos.size(); i++) {
 			if (dtos.get(i).getBlogId() == Integer.valueOf(id)) {
-				rank = i+1;
+				rank = i + 1;
 			}
-
 		}
 		return rank;
+	}
+
+	@Override
+	public List<Blog> selectBlogsByCold(String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
+		Sort sort = new Sort(Sort.Direction.DESC, orderby);
+		Pageable pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
+		Boolean coldBoolean = true;
+		if (cold.equals("cold")) {
+			coldBoolean = true;
+		} else if (cold.equals("hot")) {
+			coldBoolean = false;
+		} else {
+			// 全部沒有只有排序
+			return blogRepository.selectAllWithOrder(pageable);
+		}
+		// 只有冷熱
+		return blogRepository.selectAllWithColdAndOrder(coldBoolean, pageable);
 	}
 
 }

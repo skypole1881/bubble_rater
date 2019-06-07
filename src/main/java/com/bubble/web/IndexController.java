@@ -25,6 +25,7 @@ public class IndexController {
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
+
 		if (dtos.size() < 4) {
 			for (int i = 0; i < 3; i++) {
 				Blog b = new Blog();
@@ -42,31 +43,32 @@ public class IndexController {
 		model.addAttribute("default", defaultList);
 		return "home";
 	}
-	
+
 	@GetMapping("/single")
-	public String indexSingle(Model model,@RequestParam("Id") String Id) {
+	public String indexSingle(Model model, @RequestParam("Id") String Id) {
 		Blog blog = blogService.getBlog(Integer.valueOf(Id));
-		String rank ="NO."+blogService.getRank(Id);
+		String rank = "NO." + blogService.getRank(Id);
 		model.addAttribute("rank", rank);
 		model.addAttribute("blog", blog);
 		return "single-store";
 	}
 
-	//這裡看要不要改成POST
+	// 這裡看要不要改成POST
 	@GetMapping("/search")
-	public String index(Model model, String criteria, String keyword, String cold, String orderby,Integer limitNumStart,Integer limitNumEnd) {
+	public String index(Model model, String criteria, String keyword, String cold, String orderby,
+			Integer limitNumStart, Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
-		// ByCity
+
 		if (criteria.equals("city")) {
-			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby,limitNumStart,limitNumEnd);
-		}
-		// ByDistrict
-		if (criteria.equals("district")) {
-			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby,limitNumStart,limitNumEnd);
-		}
-		// By name
-		if (criteria.equals("store")) {
-			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby,limitNumStart,limitNumEnd);
+			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else if (criteria.equals("district")) {
+			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else if (criteria.equals("store")) {
+			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else {
+			//我要找 不拘 
+			//全空會到這
+			dtos = blogService.selectBlogsByCold(cold, orderby, limitNumStart, limitNumEnd);
 		}
 
 		if (dtos.size() < 3) {
