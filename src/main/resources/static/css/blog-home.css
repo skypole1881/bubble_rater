@@ -8,13 +8,13 @@ html{
 	font-size: 1.2vmin;
 }
 body {
-	padding-top: 88px;
+	padding-top: 4.5rem;
 	background-color: black;
 }
 
 @media (min-width: 992px) {
 	body {
-		padding-top: 88px;
+		padding-top: 4.5rem;
 		background-color: black;
 		/*background-image: url('../image/background.jpg');*/
 		background-repeat: repeat;
