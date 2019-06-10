@@ -86,7 +86,7 @@
 	text-align: right;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 88px;
+	top: 5rem;
 	width: 	100%;
 	z-index: 999;
 }
@@ -320,6 +320,26 @@
 {
 	display: block;
 }*/
+
+/*modal*/
+.modal-img
+{
+	overflow: hidden;
+	text-align: center;
+}
+.modal-img > img
+{
+	max-height: 80vh;
+	height: 100%;
+	width: auto;
+	margin-left: 50%;
+	/*top: 50%;*/
+    transform: perspective(1px) translateX(-50%);
+}
+.modal-body .comment
+{
+	white-space: normal;
+}
 
 
 .introduction-text, .introduction-conclusion, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a

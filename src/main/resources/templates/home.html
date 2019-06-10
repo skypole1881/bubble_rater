@@ -241,7 +241,7 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <a href="">顯示更多</a>
+            <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -457,7 +457,7 @@
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
           </p>
-          <a href="" th:href="@{/single(Id=${blog.blogId})}">顯示更多</a>
+          <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal">顯示更多</button>
           <div class="invisible" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
@@ -533,19 +533,92 @@
     </div>
   </div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <!--<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>-->
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-md-7 modal-img">
+              <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class=""/>
+            </div>
+            <div class="storecomment col-md-5">
+              <div class="">
+                <p class="ranking" th:text=${rank}>NO.01</p>
+                <table class="storename">
+                  <tr>
+                    <td>
+                      <p th:text="${blog.storeBrand}">清心</p>
+                    </td>
+                    <td rowspan="3">
+                      <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p th:text="${blog.storeDistrict}">文山</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p th:text="${blog.item}">珍奶</p>
+                    </td>
+                  </tr>
+                </table>
+                <table class="scoretable">
+                  <tr>
+                    <td>珍珠彈性</td>
+                    <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
+                  </tr>
+                  <tr>
+                    <td>奶茶濃度</td>
+                    <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
+                  </tr>
+                  <tr>
+                    <td>珍探給分</td>
+                    <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
+                  </tr>
+                  <tr>
+                    <td>甜度等級</td>
+                    <td th:text="${#numbers.formatDecimal(blog.sweetnessRate,0,1)}">剛剛好</td>
+                  </tr>
+                </table>
+                <p class="comment" th:text="${blog.content1}">
+                  小編評價巴拉巴拉巴拉
+                  小編評價巴拉巴拉巴拉
+                  小編評價巴拉巴拉巴拉
+                </p>
+                <!-- <hr></hr> -->
+                <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Footer -->
 <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright © Your Website 2018</p>
   </div>
-  <!-- /.container -->
 </footer>
+<!-- /.container -->
 
 <!-- Bootstrap core JavaScript -->
- <script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
- <script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
+<script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
+<script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
 <script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
-<script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script>  -->
+<script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script>
 
 
 <!--  <script>
