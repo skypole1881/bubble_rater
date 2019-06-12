@@ -8,6 +8,7 @@ html{
 	font-size: 1.2vmin;
 }
 body {
+	position: relative;
 	padding-top: 4.5rem;
 	background-color: black;
 }
@@ -36,5 +37,17 @@ body {
 	font-family: 'Branding';
 	src: url('../lib/fonts/Branding-SemiBold.woff2') format('woff2'), url('../lib/fonts/Branding-SemiBold.woff') format('woff'); /* IE9 Compat Modes */
 	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'GenSenMaruGothic';
+	src: url('../lib/fonts/GenSenMaruGothicTW-Heavy-TTF.woff') format('woff'), url('../lib/fonts/GenSenMaruGothicTW-Heavy.ttf') format('truetype'); /* IE9 Compat Modes */
+	font-weight: 900;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'pingfang';
+	src: url('../lib/fonts/pingfang.ttf') format('truetype');
+	font-weight: 400;
 	font-style: normal;
 }
