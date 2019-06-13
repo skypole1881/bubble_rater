@@ -4,6 +4,11 @@
 	size: 20px;
 	width: 80%;
 }*/
+/*:target
+{
+	padding-top: 5rem;
+	margin-top: -5rem;
+}*/
 .navbar-brand img
 {
 	height: 36px;
