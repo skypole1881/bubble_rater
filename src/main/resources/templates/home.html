@@ -28,10 +28,10 @@
   
 </head>
 
-<body data-gr-c-s-loaded="true">
+<body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#nav-bar-spy" data-offset="10">
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-font">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top navbar-font" id="nav-bar-spy">
     <div class="container-fluid">
       <a class="navbar-brand" href="http://54.254.149.198:8081/">
         <img src="../static/images/bubble rater_logo-15.png" th:src="@{/images/bubble rater_logo-15.png}"/>
@@ -41,14 +41,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto text-nowrap">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">About us
+        <ul class="nav navbar-nav ml-auto text-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link active" href="#about">About us
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#search">Rate</a>
+            <a class="nav-link" href="#stores">Rate</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact us</a>
@@ -61,7 +61,7 @@
   <!-- Page Content -->
   <div class="container-fluid text-white" >
 
-    <div class="row text-white header">
+    <div class="row text-white header" id="about">
 
       <!-- Blog Entries Column -->
       <div class="col-md-12 text-left align-self-end">
@@ -115,6 +115,8 @@
         </p>
       </div>
     </div>
+  </div>
+  <div class="container-fluid text-white" id="stores">
     <div class="row no-gutters justify-content-md-center" id="search" th:fragment="search">
       <div class="sticky-nav">
         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
@@ -481,7 +483,9 @@
 	      </div>
 	    </div>
   	</div>
-  	<div class="row contact bg-blur" id="contact">
+  </div>
+  <div class="container-fluid text-white" id="contact">
+    <div class="row contact bg-blur">
       <div class="col-12">
         <div class="row justify-content-center logo">
           <div class="col-2">
