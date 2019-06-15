@@ -33,6 +33,9 @@
 
   <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+
+  <!-- lazyload javascript -->
+  <script src="../static/lib/lazyload/lazyload.min.js" th:src="@{/lib/lazyload/lazyload.min.js}"></script>
   
 </head>
 
@@ -419,7 +422,7 @@
  
       <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
         <div class="otherinfo change-first">
-          <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/> 
+          <img data-src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid lazyload"/> 
           <div>
             <div class="bg-blur">
               <table class="storename">
