@@ -235,8 +235,13 @@
 	/*line-height: 30px;*/
 	line-height: 2.5rem;
 	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
+	/*white-space: nowrap;*/
+	/*text-overflow: ellipsis;*/
+	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; /*顯示的行數*/
+	height: 5rem; /*line height 乘以顯示行數*/
 }
 
 /*when change-top is hover, change-first change to change-second*/
