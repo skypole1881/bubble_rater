@@ -259,6 +259,9 @@
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
+        <div class="newstore">
+          新 進 榜
+        </div>
         <style type="text/css" th:inline="text">
           #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
@@ -473,6 +476,9 @@
           <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal">顯示更多</button>
           <div class="invisible" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+        </div>
+        <div class="newstore">
+          新 進 榜
         </div>
         <style type="text/css" th:inline="text">
           #[['search' + ${iterStat.index}]] .otherinfo .bg-blur:before, #[['search' + ${iterStat.index}]] .othercomment:before {

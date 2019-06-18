@@ -243,6 +243,19 @@
 	-webkit-line-clamp: 2; /*顯示的行數*/
 	height: 5rem; /*line height 乘以顯示行數*/
 }
+.newstore
+{
+	/*垂直書寫*/
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr ;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: #FF0062;
+	line-height: 2.25rem;
+	padding: 2rem 1.5rem 2rem 1.5rem;
+	border-bottom-left-radius: 1.5rem;
+}
 
 /*when change-top is hover, change-first change to change-second*/
 .change-top
@@ -352,7 +365,7 @@
 }
 
 
-.introduction-text, .introduction-conclusion, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a
+.introduction-text, .introduction-conclusion, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .newstore
 {
 	/*font-size: 24px;*/
 	/*font-size: 1.25vw;*/
@@ -369,7 +382,7 @@
 	/*font-size: 2.5vw;*/
 	font-size: 4rem;
 }
-.navbar-font, .slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-conclusion, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps
+.navbar-font, .slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-conclusion, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps, .newstore
 {
 	font-family: 'GenJyuuGothic';
 }
