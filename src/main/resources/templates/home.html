@@ -100,7 +100,8 @@
         <p class="introduction-header">珍珠到底有多Q?</p>
         <hr color="white"/>
         <p class="introduction-text">以彈性係數 (elastic modulus) 為測量目標，彈性係數愈高，珍珠愈 Q 彈！
-我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
+我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的珍珠比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
+        <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#Modal-introduction">顯示更多</button>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble-rater_logo-03.jpg" th:src="@{/images/bubble-rater_logo-03.jpg}" class="img-fluid"/>
@@ -108,6 +109,7 @@
         <hr color="white"/>
         <p class="introduction-text">我們使用黏度 (Viscosity) 作為測量目標。黏度愈高的奶茶，流動性愈差，口感愈濃郁。
 以落球法測試奶茶黏度，在層流狀態下，在奶茶中落下的小球會因重力、浮力及黏滯阻力的力平衡達到終端速度，便可從此得知奶茶的黏度。</p>
+        <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#Modal-introduction">顯示更多</button>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble-rater_logo-04.jpg"  th:src="@{/images/bubble-rater_logo-04.jpg}"class="img-fluid"/>
@@ -617,6 +619,27 @@
                 <!-- <hr></hr> -->
                 <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal-introduction" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">奶茶到底有多濃?</h4>
+        </div>
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+              <img src="../static/images/introduction_tea.png" class="img-fluid"/>
             </div>
           </div>
         </div>
