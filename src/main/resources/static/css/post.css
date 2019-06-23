@@ -430,3 +430,8 @@
 	/*line-height: 2.8vw;*/
 	line-height: 4.5rem;
 }
+
+.bg-black
+{
+	background-color: #000000;
+}
