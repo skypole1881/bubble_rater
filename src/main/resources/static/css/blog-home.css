@@ -9,13 +9,13 @@ html{
 }
 body {
 	position: relative;
-	padding-top: 4.5rem;
+	padding-top: 9rem;
 	background-color: black;
 }
 
 @media (min-width: 992px) {
 	body {
-		padding-top: 4.5rem;
+		padding-top: 9rem;
 		background-color: black;
 		/*background-image: url('../image/background.jpg');*/
 		background-repeat: repeat;
