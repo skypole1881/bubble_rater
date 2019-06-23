@@ -662,6 +662,17 @@
 <script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
 <script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
 <script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142575291-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-142575291-1');
+</script>
+
 <!-- <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> -->
 <script>
  function openModal(){
@@ -682,7 +693,12 @@
 }
 	var index = 1;
 	var query_result;
-	var data_out;
+  var data_out;
+  $(`.filter_category`).on("click",function(){
+    $(`btnGroupDrop1`).val();
+  })
+
+
 	$('.filter_category').click(function () {
 		var myElement = document.getElementById("btnGroupDrop1");
 		myElement.setAttribute('value', this.value);
@@ -771,26 +787,32 @@
 		 var myElement1 = document.getElementById("btnGroupDrop1");
 		 var myElement2 = document.getElementById("btnGroupDrop2");
 		 var myElement3 = document.getElementById("btnGroupDrop3");
-		 var suggest = document.getElementById("query_suggeest_chosen")
-		 if (suggest.getElementsByClassName("result-selected").length > 0) {
-			 suggest_result = suggest.getElementsByClassName("result-selected")[0].innerHTML
-			 var data = {
-		        	'cold': myElement1.value,
-		        	'criteria': myElement2.value,
-		        	'orderby': myElement3.value,
-		        	'keyword': suggest_result
-		         }
-		 	data_out = data
-			 var url = '/search';
-		     $.ajax({
-		         url: url,
-		         type: 'get',
-		         data: data,
-		         success: function (data) {
-		             $('#search').html(data);
-		         }
-			})
-		 }
+     var suggest = document.getElementById("query_suggeest_chosen");
+     var data = {};
+     data.cold = $(`btnGroupDrop1`).val();
+     data.criteria = $(`btnGroupDrop2`).val();
+     data.orderby = $(`btnGroupDrop1`).val(); 
+     data.keyword = $(`query_suggeest_chosen`).val();
+       console.log(data);
+		//  if (suggest.getElementsByClassName("result-selected").length > 0) {
+		// 	 suggest_result = suggest.getElementsByClassName("result-selected")[0].innerHTML
+		// 	 var data = {
+		//         	'cold': myElement1.value,
+		//         	'criteria': myElement2.value,
+		//         	'orderby': myElement3.value,
+		//         	'keyword': suggest_result
+    //          }
+		//  	data_out = data
+		// 	 var url = '/search';
+		//      $.ajax({
+		//          url: url,
+		//          type: 'get',
+		//          data: data,
+		//          success: function (data) {
+		//              $('#search').html(data);
+		//          }
+		// 	})
+		//  }
 	 })
 
    $('#loadButton').click(function () {
@@ -824,6 +846,7 @@
         });
 	
  </script>
+ 
 
 </body>
 
