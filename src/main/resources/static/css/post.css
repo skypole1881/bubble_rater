@@ -11,7 +11,7 @@
 }*/
 .navbar-brand img
 {
-	height: 36px;
+	height: 7.375rem;
 }
 .chosen-select
 {
@@ -92,7 +92,7 @@
 	text-align: right;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 5rem;
+	top: 9rem;
 	width: 	100%;
 	z-index: 999;
 }
