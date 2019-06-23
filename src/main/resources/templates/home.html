@@ -475,8 +475,8 @@
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
           </p>
-          <button type="button" class="btn btn-outline-light btn-sm" onclick="openModal()" data-toggle="modal" data-target="#myModal">顯示更多</button>
-          <div class="invisible" th:text="${blog.blogId}">看不到</div>
+          <button type="button" class="btn btn-outline-light btn-sm" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+          <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${iterStat.index}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
         <div class="newstore">
@@ -577,9 +577,12 @@
                   <tr>
                     <td>
                       <p >清心</p>
+                      <p th:text="${blog.storeBrand}">清心</p>
                     </td>
                     <td rowspan="3">
                       <p class="text-right finalscore" >8.9</p>
+                      <p th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">清心</p>
+
                     </td>
                   </tr>
                   <tr>
@@ -675,19 +678,21 @@
 
 <!-- <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> -->
 <script>
- function openModal(){
-		var id=1
+ function openModal(id){
 		$.ajax({
-			url:"/single/"+id,
+			url:"/modal/"+id,
 			success:function(data){
 				console.log("KD")
 				var stateObj = { foo: "bar" };
 				history.pushState(stateObj, "page 2", "/single/"+id);
-				console.log("KD")
-				$("#myModalHolder").html(data);
-				$("#myModal").modal("show");
+				console.log("KD");
+				console.log(data);
+				/* $("#myModalHolder").html(data);
+				$("#myModal").modal("show"); */
 			}
 		}
+		
+		
 	);
 		
 }

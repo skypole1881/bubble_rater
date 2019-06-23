@@ -1,11 +1,15 @@
 package com.bubble.web;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +29,7 @@ public class IndexController {
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
+		Blog blog = blogService.getBlog(33);
 
 		if (dtos.size() < 4) {
 			for (int i = 0; i < 3; i++) {
@@ -40,7 +45,9 @@ public class IndexController {
 		boolean num = true;
 		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
+		model.addAttribute("blog", blog);
 		model.addAttribute("default", defaultList);
+		
 		return "home";
 	}
 
@@ -50,7 +57,17 @@ public class IndexController {
 		String rank = "NO." + blogService.getRank(id);
 		model.addAttribute("rank", rank);
 		model.addAttribute("blog", blog);
-		return "home::modalContent";
+		
+		return "single-store";
+	}
+	@RequestMapping (value="/modal/{id}")
+	public ResponseEntity<?> modal(ModelMap model, @PathVariable("id") String id) {
+		Blog blog = blogService.getBlog(Integer.valueOf(id));
+		String rank = "NO." + blogService.getRank(id);
+		Map<String,Object> map = new HashMap<>();
+		map.put("rank", rank);
+		map.put("blog", blog);
+		return ResponseEntity.ok(map);
 	}
 
 	// 這裡看要不要改成POST
