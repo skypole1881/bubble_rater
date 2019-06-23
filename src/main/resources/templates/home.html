@@ -473,7 +473,7 @@
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
           </p>
-          <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal">顯示更多</button>
+          <button type="button" class="btn btn-outline-light btn-sm" onclick="openModal()" data-toggle="modal" data-target="#myModal">顯示更多</button>
           <div class="invisible" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
@@ -555,7 +555,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+  <div class="modal fade" id="myModal" role="dialog" th:fragment="modalContent">
     <div class="modal-dialog modal-lg">
       <!-- Modal content-->
       <div class="modal-content">
@@ -566,50 +566,50 @@
         <div class="modal-body text-white">
           <div class="row justify-content-center no-gutters">
             <div class="col-md-7 modal-img">
-              <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class=""/>
+              <img src="../static/images/store1.jpg" class=""/>
             </div>
             <div class="storecomment col-md-5">
               <div class="">
-                <p class="ranking" th:text=${rank}>NO.01</p>
+                <p class="ranking" >NO.01</p>
                 <table class="storename">
                   <tr>
                     <td>
-                      <p th:text="${blog.storeBrand}">清心</p>
+                      <p >清心</p>
                     </td>
                     <td rowspan="3">
-                      <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
+                      <p class="text-right finalscore" >8.9</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p th:text="${blog.storeDistrict}">文山</p>
+                      <p >文山</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p th:text="${blog.item}">珍奶</p>
+                      <p >珍奶</p>
                     </td>
                   </tr>
                 </table>
                 <table class="scoretable">
                   <tr>
                     <td>珍珠彈性</td>
-                    <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
+                    <td >90</td>
                   </tr>
                   <tr>
                     <td>奶茶濃度</td>
-                    <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
+                    <td >90</td>
                   </tr>
                   <tr>
                     <td>珍探給分</td>
-                    <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
+                    <td >90</td>
                   </tr>
                   <tr>
                     <td>甜度等級</td>
-                    <td th:text="${#numbers.formatDecimal(blog.sweetnessRate,0,1)}">剛剛好</td>
+                    <td >剛剛好</td>
                   </tr>
                 </table>
-                <p class="comment" th:text="${blog.content1}">
+                <p class="comment" >
                   小編評價巴拉巴拉巴拉
                   小編評價巴拉巴拉巴拉
                   小編評價巴拉巴拉巴拉
@@ -639,18 +639,24 @@
 <script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
 <script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
 <script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
-<script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script>
-
-
-<!--  <script>
-        $('#btn').click(function () {
-            var url = '/blog/ajaxTest';
-            $('#div1').load(url);
-
-        });
-</script>
- -->
- <script>
+<!-- <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> -->
+<script>
+ function openModal(){
+		var id=1
+		$.ajax({
+			url:"/single/"+id,
+			success:function(data){
+				console.log("KD")
+				var stateObj = { foo: "bar" };
+				history.pushState(stateObj, "page 2", "/single/"+id);
+				console.log("KD")
+				$("#myModalHolder").html(data);
+				$("#myModal").modal("show");
+			}
+		}
+	);
+		
+}
 	var index = 1;
 	var query_result;
 	var data_out;
@@ -793,7 +799,7 @@
             })
             index++;
         });
-
+	
  </script>
 
 </body>

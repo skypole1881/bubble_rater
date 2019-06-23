@@ -44,13 +44,13 @@ public class IndexController {
 		return "home";
 	}
 
-	@GetMapping("/single")
-	public String indexSingle(Model model, @RequestParam("Id") String Id) {
-		Blog blog = blogService.getBlog(Integer.valueOf(Id));
-		String rank = "NO." + blogService.getRank(Id);
+	@RequestMapping (value="/single/{id}")
+	public String indexSingle(Model model, @PathVariable("id") String id) {
+		Blog blog = blogService.getBlog(Integer.valueOf(id));
+		String rank = "NO." + blogService.getRank(id);
 		model.addAttribute("rank", rank);
 		model.addAttribute("blog", blog);
-		return "single-store";
+		return "home::modalContent";
 	}
 
 	// 這裡看要不要改成POST
@@ -66,8 +66,8 @@ public class IndexController {
 		} else if (criteria.equals("store")) {
 			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		} else {
-			//我要找 不拘 
-			//全空會到這
+			// 我要找 不拘
+			// 全空會到這
 			dtos = blogService.selectBlogsByCold(cold, orderby, limitNumStart, limitNumEnd);
 		}
 
