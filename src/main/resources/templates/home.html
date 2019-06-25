@@ -191,10 +191,11 @@
       <div id="search0" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
-          <p class="text-center ranking">第一名</p>
-          <p class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">9.6</p>
-          <p class="text-center store-name" th:text="${blogs[0].storeBrand+blogs[0].storeCity+'-'+blogs[0].storeDistrict}">店家</p>
-          <p class="text-center drink-name" th:text="${blogs[0].item}">品名</p>
+          <div class="text-center ranking">第一名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[0].storeBrand+blogs[0].storeCity+'-'+blogs[0].storeDistrict}">店家</div>
+          <div class="text-center substore-name">門市</div>
+          <div class="text-center drink-name" th:text="${blogs[0].item}">品名</div>
           <hr color="white"/>
           <center>
             <table class="scoretable">
@@ -256,7 +257,7 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <button type="button" class="btn btn-outline-light btn-sm" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -271,10 +272,11 @@
       <div id="search1" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
-          <p class="text-center ranking">第二名</p>
-          <p class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">9.6</p>
-          <p class="text-center store-name" th:text="${blogs[1].storeBrand+blogs[1].storeCity+'-'+blogs[1].storeDistrict}">店家</p>
-          <p class="text-center drink-name" th:text="${blogs[1].item}">品名</p>
+          <div class="text-center ranking">第二名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[1].storeBrand+blogs[1].storeCity+'-'+blogs[1].storeDistrict}">店家</div>
+          <div class="text-center substore-name">門市</div>
+          <div class="text-center drink-name" th:text="${blogs[1].item}">品名</div>
           <hr color="white"/>
           <center>
             <table class="scoretable">
@@ -336,10 +338,13 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <a href="">顯示更多</a>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
+        </div>
+        <div class="newstore">
+          新 進 榜
         </div>
         <style type="text/css" th:inline="text">
           #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
@@ -348,10 +353,11 @@
       <div id="search2" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
-          <p class="text-center ranking">第三名</p>
-          <p class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">9.6</p>
-          <p class="text-center store-name" th:text="${blogs[2].storeBrand+blogs[2].storeCity+'-'+blogs[2].storeDistrict}">店家</p>
-          <p class="text-center drink-name" th:text="${blogs[2].item}">品名</p>
+          <div class="text-center ranking">第三名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[2].storeBrand+blogs[2].storeCity+'-'+blogs[2].storeDistrict}">店家</div>
+          <div class="text-center substore-name">門市</div>
+          <div class="text-center drink-name" th:text="${blogs[2].item}">品名</div>
           <hr color="white"/>
           <center>
             <table class="scoretable">
@@ -413,10 +419,13 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <a href="">顯示更多</a>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
+        </div>
+        <div class="newstore">
+          新 進 榜
         </div>
         <style type="text/css" th:inline="text">
           #search2::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
@@ -424,20 +433,23 @@
       </div>
       
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
- 
       <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
         <div class="otherinfo change-first">
-          <img data-src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid lazyload"/> 
+          <img data-src="../static/images/store2.jpg" src="../static/images/store2.jpg" th:data-src="@{${blog.photoLink}}" th:src="@{${blog.photoLink}}" class="img-fluid lazyload"/> 
           <div>
             <div class="bg-blur">
-              <table class="storename">
+              <table class="storename text-center">
                 <tr>
                   <td>
-                    <p th:text="${blog.storeBrand+blog.storeCity+'-'+blog.storeDistrict}">清心</p>
-                    <p th:text="${blog.item}">珍奶半糖去冰</p>
+                    <div th:text="${blog.storeBrand+blog.storeCity+'-'+blog.storeDistrict}">清心</div>
                   </td>
+                  <td rowspan="2">
+                    <div th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                  </td>
+                </tr>
+                <tr>
                   <td>
-                    <p class="text-right" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
+                    <div th:text="${blog.item}">珍奶半糖去冰</div>
                   </td>
                 </tr>
               </table>
@@ -448,11 +460,15 @@
           <table class="storename">
             <tr>
               <td>
-                <p th:text="${blog.storeBrand}">清心</p>
-                <p th:text="${blog.item}">珍奶半糖去冰</p>
+                <div th:text="${blog.storeBrand}">清心</div>
               </td>
+              <td rowspan="2">
+                <div class="text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+              </td>
+            </tr>
+            <tr>
               <td>
-                <p class="text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
+                <div th:text="${blog.item}">珍奶半糖去冰</div>
               </td>
             </tr>
           </table>
@@ -475,7 +491,7 @@
             小編評價巴拉巴拉巴拉
             小編評價巴拉巴拉巴拉
           </p>
-          <button type="button" class="btn btn-outline-light btn-sm" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+          <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
           <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${iterStat.index}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
@@ -488,7 +504,7 @@
           }
         </style>
       </div>
- </th:block> 
+  </th:block> 
     </div>
 
     <div th:if='${num}' id="bu">
