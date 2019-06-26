@@ -302,6 +302,10 @@
 {
 	opacity: 1;
 }
+.readmore
+{
+	position: relative;
+}
 .readmore div:nth-of-type(1):before, .readmore div:nth-of-type(2):before, .readmore div:nth-of-type(3):before, .readmore div:nth-of-type(4):before
 {
 	content: '';
@@ -334,10 +338,13 @@
 }
 .readmore div:nth-of-type(5)
 {
+	left: 0px;
+	top: 50%;
+    transform: perspective(1px) translateY(-50%);
 	position: absolute;
 	width: 100%;
-	height: 8vh;
-	vertical-align: middle;
+	/*height: 8vh;*/
+	/*vertical-align: middle;*/
 	text-align: center;
 }
 
