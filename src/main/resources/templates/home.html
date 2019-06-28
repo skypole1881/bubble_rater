@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- {% load staticfiles %} -->
 <!-- saved from url=(0061)https://blackrockdigital.github.io/startbootstrap-blog-home/# -->
 <html lang="en" class="gr__blackrockdigital_github_io" xmlns:th="http://www.thymeleaf.org">
@@ -198,9 +198,9 @@
           </div>
         </div>
       </div>
+    </div>
       
-      
-
+    <div class="row no-gutters justify-content-md-center">
       <div id="search0" class="col-md-4 store change-top bg-blur text-white">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
@@ -444,6 +444,9 @@
           #search2::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
         </style>
       </div>
+    </div>
+      
+    <div class="row no-gutters justify-content-md-center">
       
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
       <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
