@@ -60,5 +60,7 @@ public interface BlogService {
 
 	List<Blog> selectBlogsByCold(String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
+	List<Blog> selectSixMoreOnly(Integer token);
+
 
 }

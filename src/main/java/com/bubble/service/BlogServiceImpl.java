@@ -18,14 +18,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bubble.NotFoundException;
+import com.bubble.dao.BlogRepo;
 import com.bubble.dao.BlogRepository;
 import com.bubble.po.Blog;
 import com.bubble.util.MyBeanUtils;
 
 @Service
+@Transactional
 public class BlogServiceImpl implements BlogService {
+	@Autowired
+	private BlogRepo blogRepo;
 
 	@Autowired
 	private BlogRepository blogRepository;
@@ -209,6 +214,12 @@ public class BlogServiceImpl implements BlogService {
 		Integer limitNumber = token * 6 + 12;
 		Pageable pageable = new PageRequest(0, limitNumber);
 		dtos = blogRepository.selectSixMore(pageable);
+		return dtos;
+	}
+	@Override
+	public List<Blog> selectSixMoreOnly(Integer token) {
+		List<Blog> dtos = new ArrayList<>();
+		dtos = blogRepo.sixMore(token);
 		return dtos;
 	}
 

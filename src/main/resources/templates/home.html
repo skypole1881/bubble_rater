@@ -26,6 +26,7 @@
     }
     }       
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
     <!-- FB share  -->
   <meta property="og:title" content="bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶"/>
   <meta property="og:description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！"/>
@@ -268,7 +269,7 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[0].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -349,7 +350,7 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[1].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -430,7 +431,7 @@
               小編評價巴拉巴拉巴拉
               小編評價巴拉巴拉巴拉
             </p>
-            <button type="button" class="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[2].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
             <div class="invisible">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -519,6 +520,7 @@
         </style>
       </div>
   </th:block> 
+
     </div>
 
     <div th:if='${num}' id="bu">
@@ -598,53 +600,50 @@
         <div class="modal-body text-white">
           <div class="row justify-content-center no-gutters">
             <div class="col-md-7 modal-img">
-              <img src="../static/images/store1.jpg" class=""/>
+              <img id="modalPhotoLink"src="/static/images/store1.jpg" class=""/>
             </div>
             <div class="storecomment col-md-5">
               <div class="">
-                <p class="ranking" >NO.01</p>
+                <p id="modalRanking" class="ranking" >NO.01</p>
                 <table class="storename">
                   <tr>
                     <td>
-                      <p >清心</p>
-                      <p th:text="${blog.storeBrand}">清心</p>
+                      <p id="modalStoreBrand">清心</p>
                     </td>
                     <td rowspan="3">
-                      <p class="text-right finalscore" >8.9</p>
-                      <p th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">清心</p>
-
+                      <p id="modalTotalRate"class="text-right finalscore" >8.9</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p >文山</p>
+                      <p id="modalStoreDistrict">文山</p>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p >珍奶</p>
+                      <p id="modalItem"></p>
                     </td>
                   </tr>
                 </table>
                 <table class="scoretable">
                   <tr>
                     <td>珍珠彈性</td>
-                    <td >90</td>
+                    <td id="modalBubbleRatePR">90</td>
                   </tr>
                   <tr>
                     <td>奶茶濃度</td>
-                    <td >90</td>
+                    <td id="modalTeaRatePR">90</td>
                   </tr>
                   <tr>
                     <td>珍探給分</td>
-                    <td >90</td>
+                    <td id="modalGodfeelingRate">90</td>
                   </tr>
                   <tr>
                     <td>甜度等級</td>
-                    <td >剛剛好</td>
+                    <td id="modalSweetness">剛剛好</td>
                   </tr>
                 </table>
-                <p class="comment" >
+                <p id="modalContent"class="comment" >
                   小編評價巴拉巴拉巴拉
                   小編評價巴拉巴拉巴拉
                   小編評價巴拉巴拉巴拉
@@ -723,29 +722,30 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-142575291-1');
 </script>
 
 <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> 
 <script>
+$('#myModal').on('hidden.bs.modal', function () {
+	var stateObj = { foo: "bar" };
+	history.pushState(stateObj, "home.html", "/");
+});
  function openModal(id){
 		$.ajax({
 			url:"/modal/"+id,
 			success:function(data){
-				console.log("KD")
+				console.log("KD");
 				var stateObj = { foo: "bar" };
 				history.pushState(stateObj, "page 2", "/single/"+id);
 				console.log("KD");
 				console.log(data);
+				modalPrint(data);
 				/* $("#myModalHolder").html(data);
 				$("#myModal").modal("show"); */
 			}
 		}
-		
-		
 	);
-		
 }
 	var index = 1;
 	var query_result;
@@ -753,8 +753,6 @@
   $(`.filter_category`).on("click",function(){
     $(`btnGroupDrop1`).val();
   })
-
-
 	$('.filter_category').click(function () {
 		var myElement = document.getElementById("btnGroupDrop1");
 		myElement.setAttribute('value', this.value);
@@ -838,7 +836,6 @@
 			myElement.innerHTML = "小編評比";
 		}
 	 })
-
 	 $('#GO').click(function () {
 		 var myElement1 = document.getElementById("btnGroupDrop1");
 		 var myElement2 = document.getElementById("btnGroupDrop2");
@@ -870,9 +867,8 @@
 		// 	})
 		//  }
 	 })
-
    $('#loadButton').click(function () {
-            var url = '/load?';
+            var url = '/loadsix?';
             var token=index;
             $.ajax({
                 url: url,
@@ -882,7 +878,9 @@
                 },
                 success: function (data) {
                 	note = data
-                	$('#search').replaceWith(data);
+                	console.log(data);
+                	loadsix(data);
+//                 	$('#search').replaceWith(data);
                 },
             })
             url = '/loadbu?';
@@ -893,6 +891,7 @@
                	 token:token,
                 },
                 success: function (data) {
+                	console.log(data);
                     $('#bu').html(data);
                 },
                 error: function (error) {
@@ -900,7 +899,27 @@
             })
             index++;
         });
-	
+  function loadsix(data){
+	  var mindex = -1;
+	  data.mindex = function(){return ++mindex};
+	  var blogTplScript = $('#blogTplScript').html();
+	  Mustache.parse(blogTplScript);   // optional, speeds up future uses
+	  var rendered = Mustache.render(blogTplScript, data);
+	  $('#search').append(rendered);
+  }
+  function modalPrint(data){
+	  $("#modalRanking").html(`${data.rank}`);
+	  $("#modalPhotoLink").attr({src:`${data.blog.photoLink}`});
+	  $("#modalStoreBrand").html(`${data.blog.storeBrand}`);
+	  $("#modalTotalRate").html(`${data.blog.totalRate.toFixed(1)}`);
+	  $("#modalStoreDistrict").html(`${data.blog.storeDistrict}`);
+	  $("#modalItem").html(`${data.blog.item}`);
+	  $("#modalBubbleRatePR").html(`${data.blog.bubbleRatePR.toFixed(1)}`);
+	  $("#modalTeaRatePR").html(`${data.blog.teaRatePR.toFixed(1)}`);
+	  $("#modalGodfeelingRate").html(`${data.blog.godfeelingRate.toFixed(1)}`);
+	  $("#modalSweetness").html(`${data.blog.sweetness}`);
+	  $("#modalContent").html(`${data.blog.content1}`);
+  }
  </script>
  
 

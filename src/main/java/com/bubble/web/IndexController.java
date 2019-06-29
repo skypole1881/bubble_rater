@@ -50,6 +50,33 @@ public class IndexController {
 		
 		return "home";
 	}
+	@RequestMapping(path = { "/indexload" }, produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> indexload(Model model) {
+		List<Blog> dtos = blogService.selectTopTwelve();
+		List<Blog> defaultList = blogService.selectDefault();
+		Blog blog = blogService.getBlog(33);
+		
+		if (dtos.size() < 4) {
+			for (int i = 0; i < 3; i++) {
+				Blog b = new Blog();
+				b.setStoreCity("無資料");
+				b.setStoreDistrict("");
+				b.setStoreBrand("");
+				b.setPhotoLink("無圖片");
+				
+				dtos.add(b);
+			}
+		}
+		Map<String,Object> map = new HashMap<>();
+		boolean num = true;
+		map.put("num",num);
+		map.put("blogs",dtos);
+		map.put("blog",blog);
+		map.put("default",defaultList);
+		
+		return ResponseEntity.ok(map);
+	}
 
 	@RequestMapping (value="/single/{id}")
 	public String indexSingle(Model model, @PathVariable("id") String id) {
@@ -60,7 +87,8 @@ public class IndexController {
 		
 		return "single-store";
 	}
-	@RequestMapping (value="/modal/{id}")
+	@RequestMapping (value="/modal/{id}",produces= {"application/json"})
+	@ResponseBody
 	public ResponseEntity<?> modal(ModelMap model, @PathVariable("id") String id) {
 		Blog blog = blogService.getBlog(Integer.valueOf(id));
 		String rank = "NO." + blogService.getRank(id);
@@ -105,6 +133,7 @@ public class IndexController {
 
 	@GetMapping("/load")
 	public String load(Model model, Integer token) {
+		System.out.println("load");
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
 		Integer num = dtos.size() + token;
@@ -124,9 +153,35 @@ public class IndexController {
 		model.addAttribute("blogs", dtos);
 		return "home::#search";
 	}
+	@RequestMapping(path= {"/loadsix"},produces = {"application/json"})
+	@ResponseBody
+	public ResponseEntity<?> loadsix(Model model, Integer token) {
+		System.out.println("loadsix");
+		List<Blog> dtos = new ArrayList<>();
+		token = 1;
+		dtos = blogService.selectSixMoreOnly(token);
+		Integer num = dtos.size() + token;
+		Map<String,Object> map = new HashMap<>();
+		map.put("num", num);
+		if (dtos.size() < 3) {
+			for (int i = 0; i < 3; i++) {
+				Blog b = new Blog();
+				b.setStoreCity("無資料");
+				b.setStoreDistrict("");
+				b.setStoreBrand("");
+				
+				dtos.add(b);
+			}
+			
+		}
+		map.put("blogs", dtos);
+		map.put("token", token);
+		return ResponseEntity.ok(map);
+	}
 
 	@GetMapping("/loadbu")
 	public String loadbu(Model model, Integer token) {
+		System.out.println("loadbu");
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMore(token);
 		boolean num = !(dtos.size() < token * 6 + 12);
