@@ -445,10 +445,10 @@
       </div>
     </div>
       
-    <div class="row no-gutters justify-content-md-center">
+    <div id="blogAppend" class="row no-gutters justify-content-md-center">
       
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3">
-      <div th:id="'search' + ${iterStat.index}" class="col-md-4 text-white change-top">
+      <div th:id="'search' + ${blog.blogId}" class="col-md-4 text-white change-top">
         <div class="otherinfo change-first">
           <img data-src="../static/images/store2.jpg" src="../static/images/store2.jpg" th:data-src="@{${blog.photoLink}}" th:src="@{${blog.photoLink}}" class="img-fluid lazyload"/> 
           <div>
@@ -471,7 +471,7 @@
             </div>
           </div>
         </div>
-        <div class="othercomment change-second bg-blur" th:classappend="'othercomment'+${iterStat.index}">
+        <div class="othercomment change-second bg-blur" th:classappend="'othercomment'+${blog.blogId}">
           <table class="storename">
             <tr>
               <td>
@@ -507,14 +507,14 @@
             小編評價巴拉巴拉巴拉
           </p>
           <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-          <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${iterStat.index}" th:text="${blog.blogId}">看不到</div>
+          <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
         <div class="newstore">
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
-          #[['search' + ${iterStat.index}]] .otherinfo .bg-blur:before, #[['search' + ${iterStat.index}]] .othercomment:before {
+          #[['search' + ${blog.blogId}]] .otherinfo .bg-blur:before, #[['search' + ${blog.blogId}]] .othercomment:before {
             background-image: url("[[@{${blog.photoLink}}]]");
           }
         </style>
@@ -708,109 +708,26 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142575291-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-142575291-1');
-</script>
 
+<!-- home.js Plug-in written by 'self -->
+<script src="/static/lib/home/home.modal.js" th:src="@{/lib/home/home.modal.js}"></script>
+<script src="/static/lib/home/home.chosen.js" th:src="@{/lib/home/home.chosen.js}"></script>
+<script src="/static/lib/home/home.load.js" th:src="@{/lib/home/home.load.js}"></script>
+
+<!-- jQuery UI call chosen function -->
 <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> 
 <script>
-$('#myModal').on('hidden.bs.modal', function () {
-	var stateObj = { foo: "bar" };
-	history.pushState(stateObj, "home.html", "/");
-});
- function openModal(id){
-		$.ajax({
-			url:"/modal/"+id,
-			success:function(data){
-				console.log("KD");
-				var stateObj = { foo: "bar" };
-				history.pushState(stateObj, "page 2", "/single/"+id);
-				console.log("KD");
-				console.log(data);
-				modalPrint(data);
-				/* $("#myModalHolder").html(data);
-				$("#myModal").modal("show"); */
-			}
-		}
-	);
-}
-	var index = 1;
-	var query_result;
-  var data_out;
-  $(`.filter_category`).on("click",function(){
-    $(`btnGroupDrop1`).val();
-  })
-	$('.filter_category').click(function () {
-		var myElement = document.getElementById("btnGroupDrop1");
-		myElement.setAttribute('value', this.value);
-		if (this.value == 'cold') {
-			myElement.innerHTML = "冷飲";	  
-		} else if (this.value == 'hot') {
-			myElement.innerHTML = "熱飲";
-		} else {
-			myElement.innerHTML = "不拘";
-		}
-		var url = "/querykeyword";
-		$.ajax({
-	         url: url,
-	         type: 'get',
-	         async: false,
-	         data: {
-	         	"First": document.getElementById("btnGroupDrop1").value,
-	        	"Second": document.getElementById("btnGroupDrop2").value,
-	         },
-	         success: function (data) {
-	        	 query_result = data
-	         },
-	     })
-	     myElement = document.getElementById("query_suggeest")
-	     console.log(myElement)
-	     for (i = 0; i < query_result.length; i++) {
-	    	 var newOption = document.createElement("option");
-	    	 newOption.value = query_result[i]
-	    	 newOption.innerHTML = query_result[i]
-	    	 myElement.appendChild(newOption)
-	     }
-	 })
-	 
-	 $('.filter_region').click(function () {
-		var myElement = document.getElementById("btnGroupDrop2");
-		myElement.setAttribute('value', this.value);
-		if (this.value == 'city') {
-			myElement.innerHTML = "找縣市";	  
-		} else if (this.value == 'district') {
-			myElement.innerHTML = "找區域";
-		} else if (this.value == 'store') {
-			myElement.innerHTML = "找店家";
-		}
-		var url = "/querykeyword";
-		$.ajax({
-	         url: url,
-	         type: 'get',
-	         async: false,
-	         data: {
-	         	"First": document.getElementById("btnGroupDrop1").value,
-	        	"Second": document.getElementById("btnGroupDrop2").value,
-	         },
-	         success: function (data) {
-	        	 query_result = data
-	         },
-	     })
-	     myElement = document.getElementById("query_suggeest")
-	     console.log(myElement)
-	     	$("#query_suggeest").empty();
-	     for (i = 0; i < query_result.length; i++) {
-	    	 var newOption = document.createElement("option");
-	    	 newOption.value = query_result[i]
-	    	 newOption.innerHTML = query_result[i]
-	    	 myElement.appendChild(newOption);
-	     }
-		$("#query_suggeest").trigger("chosen:updated");	
-	 })
-	 
+// What's this?
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-142575291-1');
+
+var index = 1;
+var query_result;
+var data_out;
+
+	 // 排序
 	 $('.sort').click(function () {
 		var myElement = document.getElementById("btnGroupDrop3");
 		myElement.setAttribute('value', this.value);
@@ -836,6 +753,8 @@ $('#myModal').on('hidden.bs.modal', function () {
      data.criteria = $(`btnGroupDrop2`).val();
      data.orderby = $(`btnGroupDrop1`).val(); 
      data.keyword = $(`query_suggeest_chosen`).val();
+     data.limitNumStart = 0;
+     data.limitNumEnd = 12;
        console.log(data);
 		//  if (suggest.getElementsByClassName("result-selected").length > 0) {
 		// 	 suggest_result = suggest.getElementsByClassName("result-selected")[0].innerHTML
@@ -846,73 +765,18 @@ $('#myModal').on('hidden.bs.modal', function () {
 		//         	'keyword': suggest_result
     //          }
 		//  	data_out = data
-		// 	 var url = '/search';
-		//      $.ajax({
-		//          url: url,
-		//          type: 'get',
-		//          data: data,
-		//          success: function (data) {
-		//              $('#search').html(data);
-		//          }
-		// 	})
+// 							 				var url = '/search';
+// 										     $.ajax({
+// 										         url: url,
+// 										         type: 'get',
+// 										         data: data,
+// 										         success: function (data) {
+// 										             $('#search').html(data);
+// 										         }
+// 											});
 		//  }
 	 })
-   $('#loadButton').click(function () {
-            var url = '/loadsix?';
-            var token=index;
-            $.ajax({
-                url: url,
-                type: 'get',
-                data: {
-               	 token:token,
-                },
-                success: function (data) {
-                	note = data
-                	console.log(data);
-                	loadsix(data);
-//                 	$('#search').replaceWith(data);
-                },
-            })
-            url = '/loadbu?';
-            $.ajax({
-                url: url,
-                type: 'get',
-                data: {
-               	 token:token,
-                },
-                success: function (data) {
-                	console.log(data);
-                    $('#bu').html(data);
-                },
-                error: function (error) {
-                }
-            })
-            index++;
-        });
-  function loadsix(data){
-	  var mindex = -1;
-	  data.mindex = function(){return ++mindex};
-	  var blogTplScript = $('#blogTplScript').html();
-	  Mustache.parse(blogTplScript);   // optional, speeds up future uses
-	  var rendered = Mustache.render(blogTplScript, data);
-	  $('#search').append(rendered);
-  }
-  function modalPrint(data){
-	  $("#modalRanking").html(`${data.rank}`);
-	  $("#modalPhotoLink").attr({src:`${data.blog.photoLink}`});
-	  $("#modalStoreBrand").html(`${data.blog.storeBrand}`);
-	  $("#modalTotalRate").html(`${data.blog.totalRate.toFixed(1)}`);
-	  $("#modalStoreDistrict").html(`${data.blog.storeDistrict}`);
-	  $("#modalItem").html(`${data.blog.item}`);
-	  $("#modalBubbleRatePR").html(`${data.blog.bubbleRatePR.toFixed(1)}`);
-	  $("#modalTeaRatePR").html(`${data.blog.teaRatePR.toFixed(1)}`);
-	  $("#modalGodfeelingRate").html(`${data.blog.godfeelingRate.toFixed(1)}`);
-	  $("#modalSweetness").html(`${data.blog.sweetness}`);
-	  $("#modalContent").html(`${data.blog.content1}`);
-  }
+
  </script>
- 
-
 </body>
-
 </html>

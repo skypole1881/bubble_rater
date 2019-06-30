@@ -17,3 +17,9 @@ logging:
   file: log/blog-pro.log 
 server:
   port: 8081  
+  compression:
+        enabled: true
+        excluded-user-agents: 
+        mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,image/jpeg,application/font-woff,application/x-font-ttf
+        min-response-size: 1024
+    

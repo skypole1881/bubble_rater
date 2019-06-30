@@ -25,7 +25,8 @@ public class IndexController {
 	@Autowired
 	private BlogService blogService;
 
-	@GetMapping("/")
+
+	@RequestMapping(value = { "/", "/login1" })
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
@@ -103,7 +104,7 @@ public class IndexController {
 	public String index(Model model, String criteria, String keyword, String cold, String orderby,
 			Integer limitNumStart, Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
-
+		System.out.println("city="+criteria);
 		if (criteria.equals("city")) {
 			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		} else if (criteria.equals("district")) {
@@ -158,22 +159,8 @@ public class IndexController {
 	public ResponseEntity<?> loadsix(Model model, Integer token) {
 		System.out.println("loadsix");
 		List<Blog> dtos = new ArrayList<>();
-		token = 1;
 		dtos = blogService.selectSixMoreOnly(token);
-		Integer num = dtos.size() + token;
 		Map<String,Object> map = new HashMap<>();
-		map.put("num", num);
-		if (dtos.size() < 3) {
-			for (int i = 0; i < 3; i++) {
-				Blog b = new Blog();
-				b.setStoreCity("無資料");
-				b.setStoreDistrict("");
-				b.setStoreBrand("");
-				
-				dtos.add(b);
-			}
-			
-		}
 		map.put("blogs", dtos);
 		map.put("token", token);
 		return ResponseEntity.ok(map);
@@ -197,6 +184,8 @@ public class IndexController {
 	public List<Blog> query(@RequestParam(value = "First", required = false, defaultValue = "") String First,
 			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
 		List<Blog> KeyWords = new ArrayList<Blog>();
+		System.out.println("First====="+First);
+		System.out.println("Second====="+Second);
 		try {
 			KeyWords = blogService.queryKeyWord(First, Second);
 			if (Second.equals("district")) {
@@ -207,9 +196,6 @@ public class IndexController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return KeyWords;
-
 	}
-
 }
