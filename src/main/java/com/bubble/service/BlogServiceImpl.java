@@ -283,6 +283,7 @@ public class BlogServiceImpl implements BlogService {
 				dtos = blogRepository.queryKeyWordByStoreName();
 				break;
 			default:
+				dtos = blogRepository.queryKeyWordByStoreName();
 				break;
 			}
 		}

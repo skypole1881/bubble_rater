@@ -718,106 +718,25 @@
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142575291-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'UA-142575291-1');
-</script>
 
+<!-- home.js Plug-in written by 'self -->
+<script src="/static/lib/home/home.modal.js" th:src="@{/lib/home/home.modal.js}"></script>
+<script src="/static/lib/home/home.chosen.js" th:src="@{/lib/home/home.chosen.js}"></script>
+<script src="/static/lib/home/home.load.js" th:src="@{/lib/home/home.load.js}"></script>
+
+<!-- jQuery UI call chosen function -->
 <script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> 
 <script>
-$('#myModal').on('hidden.bs.modal', function () {
-	var stateObj = { foo: "bar" };
-	history.pushState(stateObj, "home.html", "/");
-});
- function openModal(id){
-		$.ajax({
-			url:"/modal/"+id,
-			success:function(data){
-				console.log("KD");
-				var stateObj = { foo: "bar" };
-				history.pushState(stateObj, "page 2", "/single/"+id);
-				console.log("KD");
-				console.log(data);
-				modalPrint(data);
-				/* $("#myModalHolder").html(data);
-				$("#myModal").modal("show"); */
-			}
-		}
-	);
-}
-	var index = 1;
-	var query_result;
-  var data_out;
-  // 冷飲、熱飲、不拘
-	$('.filter_category').on("click",function () {
-		var myElement = document.getElementById("btnGroupDrop1");
-		myElement.setAttribute('value', this.value);
-		if (this.value == 'cold') {
-			myElement.innerHTML = "冷飲";	  
-		} else if (this.value == 'hot') {
-			myElement.innerHTML = "熱飲";
-		} else {
-			myElement.innerHTML = "不拘";
-		}
-		var url = "/querykeyword";
-		$.ajax({
-	         url: url,
-	         type: 'get',
-	         async: false,
-	         data: {
-	         	"First": document.getElementById("btnGroupDrop1").value,
-	        	"Second": document.getElementById("btnGroupDrop2").value,
-	         },
-	         success: function (data) {
-	        	 console.log(data);
-	        	 query_result = data;
-	        	 chosenOptionChange(query_result)
-	         }
-	     })
-	 });
-  
-	 // 縣市、區域、店家
-	 $('.filter_region').on("click",function () {
-		var myElement = document.getElementById("btnGroupDrop2");
-		myElement.setAttribute('value', this.value);
-		if (this.value == 'city') {
-			myElement.innerHTML = "找縣市";	  
-		} else if (this.value == 'district') {
-			myElement.innerHTML = "找區域";
-		} else if (this.value == 'store') {
-			myElement.innerHTML = "找店家";
-		}
-		var url = "/querykeyword";
-		$.ajax({
-	         url: url,
-	         type: 'get',
-	         async: false,
-	         data: {
-	         	"First": document.getElementById("btnGroupDrop1").value,
-	        	"Second": document.getElementById("btnGroupDrop2").value
-	         },
-	         success: function (data) {
-	        	 query_result = data;
-	        	 chosenOptionChange(query_result);
-	         }
-	     })
-	 });
-	 
-	 function chosenOptionChange(query_result){
-		 myElement = document.getElementById("query_suggeest");
-	     console.log(myElement);
-	     	$("#query_suggeest").empty();
-	     for (i = 0; i < query_result.length; i++) {
-	    	 var newOption = document.createElement("option");
-	    	 newOption.value = query_result[i];
-	    	 newOption.innerHTML = query_result[i];
-	    	 myElement.appendChild(newOption);
-	     }
-		$("#query_suggeest").trigger("chosen:updated");	
-	  }
-	 
+// What's this?
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-142575291-1');
+
+var index = 1;
+var query_result;
+var data_out;
+
 	 // 排序
 	 $('.sort').click(function () {
 		var myElement = document.getElementById("btnGroupDrop3");
@@ -867,121 +786,7 @@ $('#myModal').on('hidden.bs.modal', function () {
 // 											});
 		//  }
 	 })
-   $('#loadButton').on("click",function () {
-            var url = '/loadsix?';
-            var token=index;
-            $.ajax({
-                url: url,
-                type: 'get',
-                data: {
-               	 token:token,
-                },
-                success: function (data) {
-                	note = data
-                	console.log(data);
-                	loadsix(data);
-//                 	$('#search').replaceWith(data);
-                }
-            })
-//             url = '/loadbu?';
-//             $.ajax({
-//                 url: url,
-//                 type: 'get',
-//                 data: {
-//                	 token:token,
-//                 },
-//                 success: function (data) {
-//                 	console.log(data);
-//                     $('#bu').html(data);
-//                 },
-//                 error: function (error) {
-//                 }
-//             })
-            index++;
-        });
-//   function loadsix(data){
-// 	  var mindex = -1;
-// 	  data.mindex = function(){return ++mindex};
-// 	  var blogTplScript = $('#blogTplScript').html();
-// 	  Mustache.parse(blogTplScript);   // optional, speeds up future uses
-// 	  var rendered = Mustache.render(blogTplScript, data);
-// 	  $('#search').append(rendered);
-//   }
-  function modalPrint(data){
-	  $("#modalRanking").html(`${data.rank}`);
-	  $("#modalPhotoLink").attr({src:`${data.blog.photoLink}`});
-	  $("#modalStoreBrand").html(`${data.blog.storeBrand}`);
-	  $("#modalTotalRate").html(`${data.blog.totalRate.toFixed(1)}`);
-	  $("#modalStoreDistrict").html(`${data.blog.storeDistrict}`);
-	  $("#modalItem").html(`${data.blog.item}`);
-	  $("#modalBubbleRatePR").html(`${data.blog.bubbleRatePR.toFixed(1)}`);
-	  $("#modalTeaRatePR").html(`${data.blog.teaRatePR.toFixed(1)}`);
-	  $("#modalGodfeelingRate").html(`${data.blog.godfeelingRate.toFixed(1)}`);
-	  $("#modalSweetness").html(`${data.blog.sweetness}`);
-	  $("#modalContent").html(`${data.blog.content1}`);
-  }
-  function loadsix(data){
-	  console.log("into loadsix");
-	  for(var i = 0 ; i < data.blogs.length ; i ++){
-	    var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white change-top");
-	    var div2 = $("<div>").addClass("otherinfo change-first");
-	    var img = $("<img>").attr({src:`${data.blogs[i].photoLink}`}).addClass("img-fluid lazyload");
-	    var div2_1 = $("<div>");
-	    var div2_1_1 = $("<div>").addClass("bg-blur");
-	    var tableTextCenter = $("<table>").addClass("storename text-center");
-	    var textCenterTr1 = $("<tr>");
-	    var textCenterTd1_1 = $("<td>").append(`<div>${data.blogs[i].storeBrand}${data.blogs[i].storeCity}-${data.blogs[i].storeDistrict}</div>`);
-	    var textCenterTd1_2 = $("<td>").attr({rowspan:"2"}).append(`<div>${data.blogs[i].totalRate.toFixed(1)}</div>`);
-	    textCenterTr1.append(textCenterTd1_1).append(textCenterTd1_2);
-	    var textCenterTr2 = $("<tr>");
-	    var textCenterTd2_1 = $("<td>").append(`<div>${data.blogs[i].item}</div>`);
-	    textCenterTr2.append(textCenterTd2_1);
-	    tableTextCenter.append(textCenterTr1).append(textCenterTr2);
-	    div2_1_1.append(tableTextCenter);
-	    div2_1.append(div2_1_1);
-	    div2.append(img).append(div2_1);
-	    divId.append(div2);
 
-	    var div3 = $("<div>").addClass("othercomment change-second bg-blur");
-	    var tableStoreName = $("<table>").addClass("storename");
-	    var storeNameTr1 = $("<tr>").append(`<td><div>${data.blogs[i].storeBrand}</div></td>`)
-	                        .append(`<td rowspan="2"><div class="text-center">${data.blogs[i].totalRate.toFixed(1)}</div></td>`);
-	    var storeNameTr2 = $("<tr>").append(`<td><div>${data.blogs[i].item}</div></td>`);
-	    tableStoreName.append(storeNameTr1).append(storeNameTr2);
-
-	    var tableScoretable = $("<table>").addClass("scoretable");
-	    var ScoreTableTr1 = $("<tr>").append(`<td>珍珠彈性</td>`).append(`<td>${data.blogs[i].bubbleRatePR.toFixed(1)}</td>`)
-	                        .append(`<td>珍探給分</td>`).append(`<td>${data.blogs[i].godfeelingRate.toFixed(1)}</td>`);
-	    var ScoreTableTr2 = $("<tr>").append(`<td>奶茶濃度</td>`).append(`<td>${data.blogs[i].teaRatePR.toFixed(1)}</td>`)
-	                        .append(`<td>甜度等級</td>`).append(`<td>${data.blogs[i].sweetness}</td>`);
-	    tableScoretable.append(ScoreTableTr1).append(ScoreTableTr2);
-
-	    var p = $("<p>").addClass("comment").text(`${data.blogs[i].content1}`);
-	    var btnClickModal = $("<button>").attr({id:`btnClickModal${data.blogs[i].blogId}`,type:"button","data-toggle":"modal","data-target":"#myModal"}).text("顯示更多")
-	                        .addClass("btn btn-outline-light btn-sm modal-btn")
-	                        .on("click", function(){
-	                          var btnId = $(this).attr("id");
-	                          var id = btnId.substr(13);
-	                          openModal(id);
-	                        });
-	    var divInvisible = $("<div>").attr({id:`invisibleId${data.blogs[i].blogId}`}).addClass("invisible").text(`${data.blogs[i].blogId}`);
-	    div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(divInvisible);
-	    divId.append(div3);
-
-	    var div4 = $("<div>").addClass("newstore").text("新 進 榜");
-	    divId.append(div4);
-	    var styleString = `<style type="text/css">
-	                        #search${data.blogs[i].blogId} .otherinfo .bg-blur:before, #search${data.blogs[i].blogId} .othercomment:before {
-	                          background-image: url("${data.blogs[i].photoLink}");
-	                        }
-	                      </style>`;
-	    divId.append(styleString);
-	    $("#blogAppend").append(divId);
-	  }
-	}
  </script>
- 
-
 </body>
-
 </html>
