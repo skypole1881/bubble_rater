@@ -11,6 +11,7 @@ body {
 	position: relative;
 	padding-top: 9rem;
 	background-color: black;
+	font-family: 'GenJyuuGothic';
 }
 
 @media (min-width: 992px) {
@@ -19,6 +20,7 @@ body {
 		background-color: black;
 		/*background-image: url('../image/background.jpg');*/
 		background-repeat: repeat;
+		font-family: 'GenJyuuGothic';
 	}
 }
 @font-face {
