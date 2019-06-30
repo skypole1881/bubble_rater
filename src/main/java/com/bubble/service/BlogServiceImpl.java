@@ -252,6 +252,7 @@ public class BlogServiceImpl implements BlogService {
 				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			default:
+				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			}
 		} else if (first.equals("hot")) {
@@ -267,6 +268,7 @@ public class BlogServiceImpl implements BlogService {
 				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			default:
+				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			}
 		} else {

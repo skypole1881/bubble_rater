@@ -103,6 +103,7 @@ public class IndexController {
 	public String index(Model model, String criteria, String keyword, String cold, String orderby,
 			Integer limitNumStart, Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
+		System.out.println("city="+criteria);
 		if (criteria.equals("city")) {
 			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		} else if (criteria.equals("district")) {
@@ -182,6 +183,8 @@ public class IndexController {
 	public List<Blog> query(@RequestParam(value = "First", required = false, defaultValue = "") String First,
 			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
 		List<Blog> KeyWords = new ArrayList<Blog>();
+		System.out.println("First====="+First);
+		System.out.println("Second====="+Second);
 		try {
 			KeyWords = blogService.queryKeyWord(First, Second);
 			if (Second.equals("district")) {
@@ -192,9 +195,6 @@ public class IndexController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return KeyWords;
-
 	}
-
 }

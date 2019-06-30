@@ -750,10 +750,8 @@ $('#myModal').on('hidden.bs.modal', function () {
 	var index = 1;
 	var query_result;
   var data_out;
-  $(`.filter_category`).on("click",function(){
-    $(`btnGroupDrop1`).val();
-  })
-	$('.filter_category').click(function () {
+  // 冷飲、熱飲、不拘
+	$('.filter_category').on("click",function () {
 		var myElement = document.getElementById("btnGroupDrop1");
 		myElement.setAttribute('value', this.value);
 		if (this.value == 'cold') {
@@ -773,20 +771,15 @@ $('#myModal').on('hidden.bs.modal', function () {
 	        	"Second": document.getElementById("btnGroupDrop2").value,
 	         },
 	         success: function (data) {
-	        	 query_result = data
-	         },
+	        	 console.log(data);
+	        	 query_result = data;
+	        	 chosenOptionChange(query_result)
+	         }
 	     })
-	     myElement = document.getElementById("query_suggeest")
-	     console.log(myElement)
-	     for (i = 0; i < query_result.length; i++) {
-	    	 var newOption = document.createElement("option");
-	    	 newOption.value = query_result[i]
-	    	 newOption.innerHTML = query_result[i]
-	    	 myElement.appendChild(newOption)
-	     }
-	 })
-	 
-	 $('.filter_region').click(function () {
+	 });
+  
+	 // 縣市、區域、店家
+	 $('.filter_region').on("click",function () {
 		var myElement = document.getElementById("btnGroupDrop2");
 		myElement.setAttribute('value', this.value);
 		if (this.value == 'city') {
@@ -803,24 +796,29 @@ $('#myModal').on('hidden.bs.modal', function () {
 	         async: false,
 	         data: {
 	         	"First": document.getElementById("btnGroupDrop1").value,
-	        	"Second": document.getElementById("btnGroupDrop2").value,
+	        	"Second": document.getElementById("btnGroupDrop2").value
 	         },
 	         success: function (data) {
-	        	 query_result = data
-	         },
+	        	 query_result = data;
+	        	 chosenOptionChange(query_result);
+	         }
 	     })
-	     myElement = document.getElementById("query_suggeest")
-	     console.log(myElement)
+	 });
+	 
+	 function chosenOptionChange(query_result){
+		 myElement = document.getElementById("query_suggeest");
+	     console.log(myElement);
 	     	$("#query_suggeest").empty();
 	     for (i = 0; i < query_result.length; i++) {
 	    	 var newOption = document.createElement("option");
-	    	 newOption.value = query_result[i]
-	    	 newOption.innerHTML = query_result[i]
+	    	 newOption.value = query_result[i];
+	    	 newOption.innerHTML = query_result[i];
 	    	 myElement.appendChild(newOption);
 	     }
 		$("#query_suggeest").trigger("chosen:updated");	
-	 })
+	  }
 	 
+	 // 排序
 	 $('.sort').click(function () {
 		var myElement = document.getElementById("btnGroupDrop3");
 		myElement.setAttribute('value', this.value);
@@ -858,15 +856,15 @@ $('#myModal').on('hidden.bs.modal', function () {
 		//         	'keyword': suggest_result
     //          }
 		//  	data_out = data
-			 var url = '/search';
-		     $.ajax({
-		         url: url,
-		         type: 'get',
-		         data: data,
-		         success: function (data) {
-		             $('#search').html(data);
-		         }
-			});
+// 							 				var url = '/search';
+// 										     $.ajax({
+// 										         url: url,
+// 										         type: 'get',
+// 										         data: data,
+// 										         success: function (data) {
+// 										             $('#search').html(data);
+// 										         }
+// 											});
 		//  }
 	 })
    $('#loadButton').on("click",function () {
