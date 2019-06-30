@@ -25,7 +25,8 @@ public class IndexController {
 	@Autowired
 	private BlogService blogService;
 
-	@GetMapping("/")
+
+	@RequestMapping(value = { "/", "/login1" })
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
