@@ -103,7 +103,6 @@ public class IndexController {
 	public String index(Model model, String criteria, String keyword, String cold, String orderby,
 			Integer limitNumStart, Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
-
 		if (criteria.equals("city")) {
 			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		} else if (criteria.equals("district")) {
@@ -158,22 +157,8 @@ public class IndexController {
 	public ResponseEntity<?> loadsix(Model model, Integer token) {
 		System.out.println("loadsix");
 		List<Blog> dtos = new ArrayList<>();
-		token = 1;
 		dtos = blogService.selectSixMoreOnly(token);
-		Integer num = dtos.size() + token;
 		Map<String,Object> map = new HashMap<>();
-		map.put("num", num);
-		if (dtos.size() < 3) {
-			for (int i = 0; i < 3; i++) {
-				Blog b = new Blog();
-				b.setStoreCity("無資料");
-				b.setStoreDistrict("");
-				b.setStoreBrand("");
-				
-				dtos.add(b);
-			}
-			
-		}
 		map.put("blogs", dtos);
 		map.put("token", token);
 		return ResponseEntity.ok(map);
