@@ -64,10 +64,10 @@ public class Blog {
 	@Column(name = "version")
 	private int version;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "createdDtm")
+	@Column(name = "created_dtm")
 	private Date createdDtm;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "lastModifiedDtm")
+	@Column(name = "last_modified_dtm")
 	private Date lastModifiedDtm;
 	@Column(name = "deleted")
 	private int deleted;
@@ -82,6 +82,14 @@ public class Blog {
 
 	public void setBlogId(Integer blogId) {
 		this.blogId = blogId;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getStoreCity() {
@@ -132,6 +140,110 @@ public class Blog {
 		this.item = item;
 	}
 
+	public String getPhotoLink() {
+		return photoLink;
+	}
+
+	public void setPhotoLink(String photoLink) {
+		this.photoLink = photoLink;
+	}
+
+	public boolean isCold() {
+		return cold;
+	}
+
+	public void setCold(boolean cold) {
+		this.cold = cold;
+	}
+
+	public float getBubbleRate() {
+		return bubbleRate;
+	}
+
+	public void setBubbleRate(float bubbleRate) {
+		this.bubbleRate = bubbleRate;
+	}
+
+	public float getBubbleRatePR() {
+		return bubbleRatePR;
+	}
+
+	public void setBubbleRatePR(float bubbleRatePR) {
+		this.bubbleRatePR = bubbleRatePR;
+	}
+
+	public float getTeaRate() {
+		return teaRate;
+	}
+
+	public void setTeaRate(float teaRate) {
+		this.teaRate = teaRate;
+	}
+
+	public float getTeaRatePR() {
+		return teaRatePR;
+	}
+
+	public void setTeaRatePR(float teaRatePR) {
+		this.teaRatePR = teaRatePR;
+	}
+
+	public float getSweetnessRate() {
+		return sweetnessRate;
+	}
+
+	public void setSweetnessRate(float sweetnessRate) {
+		this.sweetnessRate = sweetnessRate;
+	}
+
+	public String getSweetness() {
+		return sweetness;
+	}
+
+	public void setSweetness(String sweetness) {
+		this.sweetness = sweetness;
+	}
+
+	public float getGodfeelingRate() {
+		return godfeelingRate;
+	}
+
+	public void setGodfeelingRate(float godfeelingRate) {
+		this.godfeelingRate = godfeelingRate;
+	}
+
+	public float getUserRate() {
+		return userRate;
+	}
+
+	public void setUserRate(float userRate) {
+		this.userRate = userRate;
+	}
+
+	public float getTotalRate() {
+		return totalRate;
+	}
+
+	public void setTotalRate(float totalRate) {
+		this.totalRate = totalRate;
+	}
+
+	public boolean isLatest() {
+		return latest;
+	}
+
+	public void setLatest(boolean latest) {
+		this.latest = latest;
+	}
+
+	public boolean isPublish() {
+		return publish;
+	}
+
+	public void setPublish(boolean publish) {
+		this.publish = publish;
+	}
+
 	public int getLikes() {
 		return likes;
 	}
@@ -179,119 +291,5 @@ public class Blog {
 	public void setDeleted(int deleted) {
 		this.deleted = deleted;
 	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public boolean isCold() {
-		return cold;
-	}
-
-	public void setCold(boolean cold) {
-		this.cold = cold;
-	}
-
-	public float getBubbleRate() {
-		return bubbleRate;
-	}
-
-	public void setBubbleRate(float bubbleRate) {
-		this.bubbleRate = bubbleRate;
-	}
-
-	public float getTeaRate() {
-		return teaRate;
-	}
-
-	public void setTeaRate(float teaRate) {
-		this.teaRate = teaRate;
-	}
-
-	public float getSweetnessRate() {
-		return sweetnessRate;
-	}
-
-	public void setSweetnessRate(float sweetnessRate) {
-		this.sweetnessRate = sweetnessRate;
-	}
-
-	public float getGodfeelingRate() {
-		return godfeelingRate;
-	}
-
-	public void setGodfeelingRate(float godfeelingRate) {
-		this.godfeelingRate = godfeelingRate;
-	}
-
-	public float getUserRate() {
-		return userRate;
-	}
-
-	public void setUserRate(float userRate) {
-		this.userRate = userRate;
-	}
-
-	public boolean isPublish() {
-		return publish;
-	}
-
-	public void setPublish(boolean publish) {
-		this.publish = publish;
-	}
-
-	public String getPhotoLink() {
-		return photoLink;
-	}
-
-	public void setPhotoLink(String photoLink) {
-		this.photoLink = photoLink;
-	}
-
-	public float getBubbleRatePR() {
-		return bubbleRatePR;
-	}
-
-	public void setBubbleRatePR(float bubbleRatePR) {
-		this.bubbleRatePR = bubbleRatePR;
-	}
-
-	public float getTeaRatePR() {
-		return teaRatePR;
-	}
-
-	public void setTeaRatePR(float teaRatePR) {
-		this.teaRatePR = teaRatePR;
-	}
-
-	public boolean isLatest() {
-		return latest;
-	}
-
-	public void setLatest(boolean latest) {
-		this.latest = latest;
-	}
-
-	public float getTotalRate() {
-		return totalRate;
-	}
-
-	public void setTotalRate(float totalRate) {
-		this.totalRate = totalRate;
-	}
-
-	public String getSweetness() {
-		return sweetness;
-	}
-
-	public void setSweetness(String sweetness) {
-		this.sweetness = sweetness;
-	}
-	
-	
 
 }
