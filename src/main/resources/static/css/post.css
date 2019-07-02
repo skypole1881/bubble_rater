@@ -416,21 +416,13 @@
 	/*font-size: 2.5vw;*/
 	font-size: 4rem;
 }
-.slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-text, .introduction-conclusion, .sticky-nav, .newstore, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name
+/*.slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-text, .introduction-conclusion, .sticky-nav, .newstore, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name
 {
 	font-family: 'Noto Sans TC', sans-serif;
-}
-/*, .modal-btn, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps
-{
-	font-family: 'GenJyuuGothic';
 }*/
 .navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
 {
 	font-family: 'Ubuntu', sans-serif;
-}
-.comment
-{
-	font-family: 'pingfang';
 }
 #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2) p, .vote, .readmore div:nth-of-type(5) a
 {
