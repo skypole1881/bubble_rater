@@ -77,10 +77,15 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	
 	//我要找:不拘
 	@Query("select b from Blog b where publish = '1'")
-	List<Blog> selectAllWithOrder(Pageable pageable);
-	@Query("select b from Blog b where publish = '1'and cold=:cold")
-	List<Blog> selectAllWithColdAndOrder(@Param("cold") Boolean coldBoolean, Pageable pageable);
+	List<Blog> selectAllWithOrder(@Param("orderby") Pageable pageable);
+	@Query("select b from Blog b where publish = '1' and cold=:cold")
+	List<Blog> selectAllWithColdAndOrder(@Param("cold") Boolean cold, @Param("orderby") Pageable pageable);
 
+	//我要找:不拘 (有關鍵字)
+	@Query("select b from Blog b where publish = '1' and storeBrand = :keyword")
+	List<Blog> selectAllByKeywordWithOrder(@Param("keyword") String keyword, @Param("orderby") Pageable pageable);
+	@Query("select b from Blog b where publish = '1'and cold=:cold and storeBrand = :keyword")
+	List<Blog> selectAllByKeywordWithColdAndOrder(@Param("keyword") String keyword, @Param("cold") Boolean cold, @Param("orderby") Pageable pageable);
 	
 	
 	

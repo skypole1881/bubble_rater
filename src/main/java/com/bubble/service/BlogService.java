@@ -58,7 +58,7 @@ public interface BlogService {
 
 	Integer getRank(String id);
 
-	List<Blog> selectBlogsByCold(String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
+	List<Blog> selectBlogsByCold(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
 	List<Blog> selectSixMoreOnly(Integer token);
 

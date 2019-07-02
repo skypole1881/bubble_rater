@@ -25,8 +25,13 @@ public class IndexController {
 	@Autowired
 	private BlogService blogService;
 
+<<<<<<< Updated upstream
 
 	@RequestMapping(value = { "/", "/login1" })
+=======
+	// 最開始載入頁面
+	@GetMapping("/")
+>>>>>>> Stashed changes
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
@@ -48,63 +53,39 @@ public class IndexController {
 		model.addAttribute("blogs", dtos);
 		model.addAttribute("blog", blog);
 		model.addAttribute("default", defaultList);
-		
+		model.addAttribute("searchAll", "搜尋全部...");
+
 		return "home";
 	}
-	@RequestMapping(path = { "/indexload" }, produces = { "application/json" })
-	@ResponseBody
-	public ResponseEntity<?> indexload(Model model) {
-		List<Blog> dtos = blogService.selectTopTwelve();
-		List<Blog> defaultList = blogService.selectDefault();
-		Blog blog = blogService.getBlog(33);
-		
-		if (dtos.size() < 4) {
-			for (int i = 0; i < 3; i++) {
-				Blog b = new Blog();
-				b.setStoreCity("無資料");
-				b.setStoreDistrict("");
-				b.setStoreBrand("");
-				b.setPhotoLink("無圖片");
-				
-				dtos.add(b);
-			}
-		}
-		Map<String,Object> map = new HashMap<>();
-		boolean num = true;
-		map.put("num",num);
-		map.put("blogs",dtos);
-		map.put("blog",blog);
-		map.put("default",defaultList);
-		
-		return ResponseEntity.ok(map);
-	}
 
-	@RequestMapping (value="/single/{id}")
+	// modal單獨頁面
+	@RequestMapping(value = "/single/{id}")
 	public String indexSingle(Model model, @PathVariable("id") String id) {
 		Blog blog = blogService.getBlog(Integer.valueOf(id));
 		String rank = "NO." + blogService.getRank(id);
 		model.addAttribute("rank", rank);
 		model.addAttribute("blog", blog);
-		
+
 		return "single-store";
 	}
-	@RequestMapping (value="/modal/{id}",produces= {"application/json"})
+
+	// open modal視窗
+	@RequestMapping(value = "/modal/{id}", produces = { "application/json" })
 	@ResponseBody
 	public ResponseEntity<?> modal(ModelMap model, @PathVariable("id") String id) {
 		Blog blog = blogService.getBlog(Integer.valueOf(id));
 		String rank = "NO." + blogService.getRank(id);
-		Map<String,Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("rank", rank);
 		map.put("blog", blog);
 		return ResponseEntity.ok(map);
 	}
 
-	// 這裡看要不要改成POST
+	// 按下GO搜尋
 	@GetMapping("/search")
 	public String index(Model model, String criteria, String keyword, String cold, String orderby,
 			Integer limitNumStart, Integer limitNumEnd) {
 		List<Blog> dtos = new ArrayList<>();
-		System.out.println("city="+criteria);
 		if (criteria.equals("city")) {
 			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		} else if (criteria.equals("district")) {
@@ -114,24 +95,28 @@ public class IndexController {
 		} else {
 			// 我要找 不拘
 			// 全空會到這
-			dtos = blogService.selectBlogsByCold(cold, orderby, limitNumStart, limitNumEnd);
+			dtos = blogService.selectBlogsByCold(keyword, cold, orderby, limitNumStart, limitNumEnd);
 		}
 
-		if (dtos.size() < 3) {
+		if (dtos.size() < 4) {
 			for (int i = 0; i < 3; i++) {
 				Blog b = new Blog();
 				b.setStoreCity("無資料");
 				b.setStoreDistrict("");
 				b.setStoreBrand("");
+				b.setPhotoLink("無圖片");
 
 				dtos.add(b);
 			}
-
 		}
+		boolean num = true;
+		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
-		return "home::#search";
+		model.addAttribute("blogs", dtos);
+		return "home::searchPack";
 	}
 
+	// 這不知道啥
 	@GetMapping("/load")
 	public String load(Model model, Integer token) {
 		System.out.println("load");
@@ -154,18 +139,21 @@ public class IndexController {
 		model.addAttribute("blogs", dtos);
 		return "home::#search";
 	}
-	@RequestMapping(path= {"/loadsix"},produces = {"application/json"})
+
+	// 找下六筆資料
+	@RequestMapping(path = { "/loadsix" }, produces = { "application/json" })
 	@ResponseBody
-	public ResponseEntity<?> loadsix(Model model, Integer token) {
+	public ResponseEntity<?> loadsix(Integer token, String criteria, String keyword, String cold, String orderby) {
 		System.out.println("loadsix");
 		List<Blog> dtos = new ArrayList<>();
 		dtos = blogService.selectSixMoreOnly(token);
-		Map<String,Object> map = new HashMap<>();
+		Map<String, Object> map = new HashMap<>();
 		map.put("blogs", dtos);
 		map.put("token", token);
 		return ResponseEntity.ok(map);
 	}
 
+	// 不知道幹嘛的
 	@GetMapping("/loadbu")
 	public String loadbu(Model model, Integer token) {
 		System.out.println("loadbu");
@@ -179,13 +167,14 @@ public class IndexController {
 		return null;
 	}
 
-	@RequestMapping(value = "/querykeyword")
+	// chosen選單 (類onchange)
+	@RequestMapping(value = "/querykeyword", produces = { "application/json" })
 	@ResponseBody
 	public List<Blog> query(@RequestParam(value = "First", required = false, defaultValue = "") String First,
 			@RequestParam(value = "Second", required = false, defaultValue = "") String Second) {
 		List<Blog> KeyWords = new ArrayList<Blog>();
-		System.out.println("First====="+First);
-		System.out.println("Second====="+Second);
+		System.out.println("First=====" + First);
+		System.out.println("Second=====" + Second);
 		try {
 			KeyWords = blogService.queryKeyWord(First, Second);
 			if (Second.equals("district")) {
@@ -195,6 +184,9 @@ public class IndexController {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		if (!(Second.equals("district") || Second.equals("city"))) {
+			KeyWords.add(0, null);
 		}
 		return KeyWords;
 	}

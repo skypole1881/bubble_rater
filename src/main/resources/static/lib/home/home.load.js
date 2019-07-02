@@ -1,18 +1,17 @@
 $('#loadButton').on("click",function () {
 	var url = '/loadsix?';
-	var token=index;
+	console.log(data_condition);
+	data_condition.token = index;
 	$.ajax({
 		url: url,
 		type: 'get',
-		data: {
-			token:token,
-		},
+		data: data_condition,
 		success: function (data) {
 			note = data
 			console.log(data);
 			loadsix(data);
 		}
-	})
+	});
 // url = '/loadbu?';
 // $.ajax({
 // url: url,

@@ -19,9 +19,8 @@ $('.filter_category').on("click", function() {
 			"Second" : document.getElementById("btnGroupDrop2").value,
 		},
 		success : function(data) {
-			console.log(data);
 			query_result = data;
-			chosenOptionChange(query_result)
+			chosenOptionChange(query_result);
 		}
 	})
 });
@@ -53,15 +52,61 @@ $('.filter_region').on("click", function() {
 	})
 });
 
+// 排序
+$('.sort').on("click", function() {
+	var myElement = document.getElementById("btnGroupDrop3");
+	myElement.setAttribute('value', this.value);
+	if (this.value == 'totalRate') {
+		myElement.innerHTML = "依照總分";
+	} else if (this.value == 'createdDtm') {
+		myElement.innerHTML = "依照時間";
+	} else if (this.value == 'bubbleRate') {
+		myElement.innerHTML = "珍珠彈性";
+	} else if (this.value == 'teaRatePR') {
+		myElement.innerHTML = "奶茶口感";
+	} else if (this.value == 'godfeelingRate') {
+		myElement.innerHTML = "小編評比";
+	}
+});
+
+// 搜尋
+$('#GO').on("click", function() {
+	// index 回到1 (重新搜尋至多12筆資料)
+	index = 1;
+	data_condition.cold = $(`#btnGroupDrop1`).val();
+	data_condition.criteria = $(`#btnGroupDrop2`).val();
+	data_condition.orderby = $(`#btnGroupDrop3`).val();
+	data_condition.keyword = $(`#query_suggeest`).val();
+	if(data_condition.keyword == "搜尋全部..."){
+		data_condition.keyword = "";
+	}
+	console.log(data_condition);
+	var url = '/search';
+	$.ajax({
+		url : url,
+		type : 'get',
+		data : data_condition,
+		success : function(data) {
+			console.log(data);
+			$('#searchPack').html(data);
+		}
+	});
+});
+
 // select選單替換方法
 function chosenOptionChange(query_result) {
 	myElement = document.getElementById("query_suggeest");
 	$("#query_suggeest").empty();
+	console.log(query_result);
 	for (i = 0; i < query_result.length; i++) {
 		var newOption = document.createElement("option");
+		if(query_result[i] == null){
+			query_result[i] = "搜尋全部...";
+		}
 		newOption.value = query_result[i];
 		newOption.innerHTML = query_result[i];
 		myElement.appendChild(newOption);
 	}
 	$("#query_suggeest").trigger("chosen:updated");
+	console.log(query_result);
 }
