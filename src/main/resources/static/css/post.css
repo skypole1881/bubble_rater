@@ -9,9 +9,17 @@
 	padding-top: 5rem;
 	margin-top: -5rem;
 }*/
+.navbar-brand
+{
+	margin-top: 1.4325rem;
+	margin-bottom: 1.4325rem;
+	margin-left: -1rem;
+	padding-left: 4rem;
+}
 .navbar-brand img
 {
-	height: 7.375rem;
+	/*height: 7.375rem;*/
+	height: 4.5rem;
 }
 .chosen-select
 {
@@ -32,6 +40,11 @@
 {
 	/*font-size: 120px;*/
 	font-size: 10rem;
+	padding-left: 4rem;
+}
+.slogan-text
+{
+	padding-left: 4rem;
 }
 .formula-text
 {
@@ -41,6 +54,7 @@
 	/*line-height: 90px;*/
 	/*line-height: 4.7vw;*/
 	line-height: 7.5rem;
+	padding-left: 4rem;
 }
 
 .test2
