@@ -23,12 +23,12 @@ body {
 		font-family: 'GenJyuuGothic';
 	}
 }
-@font-face {
+/*@font-face {
 	font-family: 'GenJyuuGothic';
-	src: url('../lib/fonts/GenJyuuGothic-Regular.woff2') format('woff2'); /* IE9 Compat Modes */
-	font-weight: 400;
+	src: url('../lib/fonts/GenJyuuGothic-Regular.woff2') format('woff2');*/ /* IE9 Compat Modes */
+/*	font-weight: 400;
 	font-style: normal;
-}
+}*/
 @font-face {
 	font-family: 'Branding';
 	src: url('../lib/fonts/Branding-Bold.woff2') format('woff2'), url('../lib/fonts/Branding-Bold.woff') format('woff'); /* IE9 Compat Modes */
@@ -41,12 +41,12 @@ body {
 	font-weight: 600;
 	font-style: normal;
 }
-@font-face {
+/*@font-face {
 	font-family: 'GenSenMaruGothic';
-	src: url('../lib/fonts/GenSenMaruGothicTW-Heavy-TTF.woff') format('woff'), url('../lib/fonts/GenSenMaruGothicTW-Heavy.ttf') format('truetype'); /* IE9 Compat Modes */
-	font-weight: 900;
+	src: url('../lib/fonts/GenSenMaruGothicTW-Heavy-TTF.woff') format('woff'), url('../lib/fonts/GenSenMaruGothicTW-Heavy.ttf') format('truetype');*/ /* IE9 Compat Modes */
+/*	font-weight: 900;
 	font-style: normal;
-}
+}*/
 /*@font-face {
 	font-family: 'pingfang';
 	src: url('../lib/fonts/pingfang.ttf') format('truetype');
