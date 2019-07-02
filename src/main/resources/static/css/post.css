@@ -38,6 +38,7 @@
 	background-image: url("../images/header_background.jpg");
 	background-size: contain;
 	background-position: center;
+	padding-bottom: 5vh;
 }
 .slogan-main
 {
@@ -56,8 +57,8 @@
 	font-size: 5rem;
 	/*line-height: 90px;*/
 	/*line-height: 4.7vw;*/
-	line-height: 7.5rem;
 	padding-left: 4rem;
+	padding-top: 5vh;
 }
 
 .test2
@@ -455,7 +456,11 @@
 	/*font-size: 2.5vw;*/
 	font-size: 4rem;
 }
-/*.slogan-text, .modal-btn, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps, .newstore
+.slogan-main, .slogan-text, .formula-text
+{
+	font-family: 'Noto Sans TC', sans-serif;
+}
+/*, .modal-btn, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps, .newstore
 {
 	font-family: 'GenJyuuGothic';
 }*/
@@ -467,7 +472,7 @@
 {
 	font-family: 'Ubuntu', sans-serif;
 }
-.slogan-main, .formula-text, .introduction-header, .introduction-conclusion
+.introduction-header, .introduction-conclusion
 {
 	font-family: 'GenSenMaruGothic';
 }
@@ -479,22 +484,26 @@
 {
 	font-weight: bold;
 }
-.slogan-main, .formula-text, .introduction-header, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+.formula-text, .introduction-header, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
 {
 	font-weight: bolder;
 }
+.slogan-main, .formula-text
+{
+	font-weight: 900;
+}
 .navbar-font
 {
-	font-weight: 200;
+	font-weight: 300;
 }
 
-.introduction-text, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2)
+.store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2)
 {
 	/*line-height: 36px;*/
 	/*line-height: 1.8vw;*/
 	line-height: 3rem;
 }
-.slogan-text, .introduction-header, .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
+.introduction-header, .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
 {
 	/*line-height: 48px;*/
 	/*line-height: 2.5vw;*/
