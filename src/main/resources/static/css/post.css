@@ -65,50 +65,6 @@
 	padding: 5vh 0;
 }
 
-.test2
-{
-	overflow: hidden;
-}
-.test
-{
-	/*size: cover;
-	position: center;*/
-	size: auto 100%;
-}
-
-/*about read more*/
-.read-more-state {
-  display: none;
-}
-.read-more-target {
-  opacity: 0;
-  max-height: 0;
-  font-size: 0;
-  transition: .25s ease;
-}
-.read-more-state:checked ~ .read-more-wrap .read-more-target {
-  opacity: 1;
-  font-size: inherit;
-  max-height: 999em;
-}
-.read-more-state ~ .read-more-trigger:before {
-  content: '顯示更多';
-}
-.read-more-state:checked ~ .read-more-trigger:before {
-  content: '顯示較少';
-}
-.read-more-trigger {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 .5em;
-  color: #666;
-  font-size: .9em;
-  line-height: 2;
-  /*border: 1px solid #ddd;*/
-  /*border-radius: .25em;*/
-}
-/*read more over*/
-
 .sticky-nav
 {
 	text-align: right;
@@ -117,6 +73,7 @@
 	top: 9rem;
 	width: 	100%;
 	z-index: 999;
+	font-size: 1.5rem;
 }
 #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop1 + div, #btnGroupDrop2 + div
 {
@@ -370,7 +327,7 @@
 	text-align: center;
 }
 
-.contact:before
+#contact:before
 {
 	background-image: url('../images/header_background.jpg');
 	background-repeat: no-repeat;
@@ -383,7 +340,6 @@
 }
 .ps
 {
-	font-family: 'pingfang';
 	/*font-size: 15px;*/
 	font-size: 1.25rem;
 }
@@ -460,19 +416,15 @@
 	/*font-size: 2.5vw;*/
 	font-size: 4rem;
 }
-.slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-text, .introduction-conclusion
+.slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-text, .introduction-conclusion, .sticky-nav, .newstore, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name
 {
 	font-family: 'Noto Sans TC', sans-serif;
 }
-/*, .modal-btn, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps, .newstore
+/*, .modal-btn, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .storecomment .storename td:nth-of-type(1), .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .ps
 {
 	font-family: 'GenJyuuGothic';
 }*/
-.storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
-{
-	font-family: 'Branding';
-}
-.navbar-font
+.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
 {
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -480,11 +432,11 @@
 {
 	font-family: 'pingfang';
 }
-#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2) p, .vote, .readmore div:nth-of-type(5) a
+#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2) p, .vote, .readmore div:nth-of-type(5) a
 {
 	font-weight: bold;
 }
-.formula-text, .introduction-header, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+.storecomment .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
 {
 	font-weight: bolder;
 }
@@ -492,16 +444,9 @@
 {
 	font-weight: 900;
 }
-.navbar-font
+.navbar-font, .ps
 {
 	font-weight: 300;
-}
-
-.store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2)
-{
-	/*line-height: 36px;*/
-	/*line-height: 1.8vw;*/
-	line-height: 3rem;
 }
 .introduction-header, .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
 {
@@ -509,7 +454,7 @@
 	/*line-height: 2.5vw;*/
 	line-height: 4rem;
 }
-.othercomment .storename td:nth-of-type(1), .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1)
+.othercomment .storename td:nth-of-type(1), .storecomment .storename td:nth-of-type(1)
 {
 	/*line-height: 54px;*/
 	/*line-height: 2.8vw;*/

@@ -11,16 +11,14 @@ body {
 	position: relative;
 	padding-top: 9rem;
 	background-color: black;
-	font-family: 'GenJyuuGothic';
+	font-family: 'Noto Sans TC', sans-serif;
 }
 
 @media (min-width: 992px) {
 	body {
 		padding-top: 9rem;
 		background-color: black;
-		/*background-image: url('../image/background.jpg');*/
-		background-repeat: repeat;
-		font-family: 'GenJyuuGothic';
+		font-family: 'Noto Sans TC', sans-serif;
 	}
 }
 /*@font-face {
