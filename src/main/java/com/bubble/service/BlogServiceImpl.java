@@ -27,7 +27,7 @@ import com.bubble.po.Blog;
 import com.bubble.util.MyBeanUtils;
 
 @Service
-@Transactional
+//@Transactional
 public class BlogServiceImpl implements BlogService {
 	@Autowired
 	private BlogRepo blogRepo;
@@ -216,6 +216,7 @@ public class BlogServiceImpl implements BlogService {
 		dtos = blogRepository.selectSixMore(pageable);
 		return dtos;
 	}
+
 	@Override
 	public List<Blog> selectSixMoreOnly(Integer token) {
 		List<Blog> dtos = new ArrayList<>();
@@ -370,7 +371,8 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectBlogsByCold(String cold, String orderby, Integer limitNumStart, Integer limitNumEnd) {
+	public List<Blog> selectBlogsByCold(String keyword, String cold, String orderby, Integer limitNumStart,
+			Integer limitNumEnd) {
 		Sort sort = new Sort(Sort.Direction.DESC, orderby);
 		Pageable pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
 		Boolean coldBoolean = true;
@@ -379,8 +381,17 @@ public class BlogServiceImpl implements BlogService {
 		} else if (cold.equals("hot")) {
 			coldBoolean = false;
 		} else {
-			// 全部沒有只有排序
-			return blogRepository.selectAllWithOrder(pageable);
+			// 全部沒有只有排序 (有關鍵字)
+			if (!keyword.trim().equals("")) {
+				return blogRepository.selectAllByKeywordWithOrder(keyword, pageable);
+			}else {
+				// 全部沒有只有排序 (無關鍵字)
+				return blogRepository.selectAllWithOrder(pageable);
+			}
+		}
+		// 只有冷熱 (有關鍵字)
+		if (!keyword.trim().equals("")) {
+			return blogRepository.selectAllByKeywordWithColdAndOrder(keyword, coldBoolean, pageable);
 		}
 		// 只有冷熱
 		return blogRepository.selectAllWithColdAndOrder(coldBoolean, pageable);
