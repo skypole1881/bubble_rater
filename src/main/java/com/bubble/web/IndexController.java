@@ -25,13 +25,8 @@ public class IndexController {
 	@Autowired
 	private BlogService blogService;
 
-<<<<<<< Updated upstream
-
-	@RequestMapping(value = { "/", "/login1" })
-=======
 	// 最開始載入頁面
-	@GetMapping("/")
->>>>>>> Stashed changes
+	@RequestMapping(value = { "/", "/login1" })
 	public String index(Model model) {
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
