@@ -87,8 +87,8 @@ $('#GO').on("click", function() {
 		type : 'get',
 		data : data_condition,
 		success : function(data) {
-			console.log(data);
 			$('#searchPack').html(data);
+			bindLoadButton();
 		}
 	});
 });

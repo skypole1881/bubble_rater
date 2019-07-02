@@ -27,7 +27,7 @@ import com.bubble.po.Blog;
 import com.bubble.util.MyBeanUtils;
 
 @Service
-//@Transactional
+@Transactional
 public class BlogServiceImpl implements BlogService {
 	@Autowired
 	private BlogRepo blogRepo;
@@ -73,7 +73,7 @@ public class BlogServiceImpl implements BlogService {
 		blog.setLastModifiedDtm(new Date());
 		blog.setVersion(0);
 		b = blogRepository.save(blog);
-		setSweetNess(blog);
+		setSweetNess(b);
 		calculatePR();
 		setLatest();
 		calculateTotal();
@@ -151,7 +151,7 @@ public class BlogServiceImpl implements BlogService {
 		b.setLastModifiedDtm(new Date());
 		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
-		setSweetNess(blog);
+		setSweetNess(b);
 		setLatest();
 		calculatePR();
 		calculateTotal();
@@ -386,6 +386,7 @@ public class BlogServiceImpl implements BlogService {
 				return blogRepository.selectAllByKeywordWithOrder(keyword, pageable);
 			}else {
 				// 全部沒有只有排序 (無關鍵字)
+				System.out.println("只有排序嗎");
 				return blogRepository.selectAllWithOrder(pageable);
 			}
 		}

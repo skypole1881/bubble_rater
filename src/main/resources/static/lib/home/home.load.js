@@ -1,17 +1,19 @@
-$('#loadButton').on("click",function () {
-	var url = '/loadsix?';
-	console.log(data_condition);
-	data_condition.token = index;
-	$.ajax({
-		url: url,
-		type: 'get',
-		data: data_condition,
-		success: function (data) {
-			note = data
-			console.log(data);
-			loadsix(data);
-		}
-	});
+function bindLoadButton(){
+	$('#loadButton').on("click",function () {
+		var url = '/loadsix?';
+		console.log(data_condition);
+		console.log("aaaa");
+		data_condition.token = index;
+		$.ajax({
+			url: url,
+			type: 'get',
+			data: data_condition,
+			success: function (data) {
+				note = data
+				console.log(data);
+				loadsix(data);
+			}
+		});
 // url = '/loadbu?';
 // $.ajax({
 // url: url,
@@ -26,8 +28,10 @@ $('#loadButton').on("click",function () {
 // error: function (error) {
 // }
 // })
-	index++;
-});
+		index++;
+	});
+}
+	
   
 function loadsix(data){
 	console.log("into loadsix");

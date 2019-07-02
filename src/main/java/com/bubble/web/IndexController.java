@@ -111,6 +111,36 @@ public class IndexController {
 		return "home::searchPack";
 	}
 
+	// 找下六筆資料
+	@RequestMapping(path = { "/loadsix" }, produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> loadsix(Integer token, String criteria, String keyword, String cold, String orderby) {
+		System.out.println("loadsix");
+		// 每 6 筆為一頁，第token + 1 頁 (從0開始，前面12筆固定等於內建0跟1頁)
+		int limitNumStart = token + 1; 
+		int limitNumEnd = 6; 
+		System.out.println("limitNumStart=="+limitNumStart);
+		System.out.println("limitNumEnd=="+limitNumEnd);
+		
+		List<Blog> dtos = new ArrayList<>();
+		if (criteria.equals("city")) {
+			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else if (criteria.equals("district")) {
+			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else if (criteria.equals("store")) {
+			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		} else {
+			// 我要找 不拘
+			// 全空會到這
+			dtos = blogService.selectBlogsByCold(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		}
+		
+		//		dtos = blogService.selectSixMoreOnly(token);
+		Map<String, Object> map = new HashMap<>();
+		map.put("blogs", dtos);
+		map.put("token", token);
+		return ResponseEntity.ok(map);
+	}
 	// 這不知道啥
 	@GetMapping("/load")
 	public String load(Model model, Integer token) {
@@ -133,19 +163,6 @@ public class IndexController {
 		}
 		model.addAttribute("blogs", dtos);
 		return "home::#search";
-	}
-
-	// 找下六筆資料
-	@RequestMapping(path = { "/loadsix" }, produces = { "application/json" })
-	@ResponseBody
-	public ResponseEntity<?> loadsix(Integer token, String criteria, String keyword, String cold, String orderby) {
-		System.out.println("loadsix");
-		List<Blog> dtos = new ArrayList<>();
-		dtos = blogService.selectSixMoreOnly(token);
-		Map<String, Object> map = new HashMap<>();
-		map.put("blogs", dtos);
-		map.put("token", token);
-		return ResponseEntity.ok(map);
 	}
 
 	// 不知道幹嘛的

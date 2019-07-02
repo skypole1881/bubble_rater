@@ -171,9 +171,9 @@
           </div>
         </div>
         <!-- <div class="text-dark"> -->
-          <select id="query_suggeest" data-placeholder="Choose a Country..." class="chosen-select text-reset" tabindex="4">
+          <select id="query_suggeest" data-placeholder="搜尋更多..." class="chosen-select text-reset" tabindex="4">
            <!-- <th:block th:each="blog:${default}"> -->
-            <option value="" th:text="${searchAll}"></option>
+            <option value=""></option>
             <option th:each="blog:${default}" value="123" th:value="${blog}" th:text="${blog}"></option>
         <!-- 	</th:block> -->
             
@@ -529,7 +529,7 @@
 	      <div class="col-12"></div>
 	      <div class="col-12"></div>
 	      <div class="col-12"></div>
-	      <div>
+	      <div id="loadButtonParent">
 	        <a href="Javascript:void(0);" id="loadButton" class="btn text-white" role="button">點我看更多排名</a>
 	      </div>
 	    </div>
@@ -603,7 +603,7 @@
         <div class="modal-body bg-tea">
           <div class="row justify-content-center">
             <div class="col-lg-6 col-12 modal-img">
-              <img id="modalPhotoLink" src="../static/images/store1.jpg" class="img-fluid"/>
+              <img id="modalPhotoLink" src="../static/images/store1.jpg" th:src="@{/images/store1.jpg}" class="img-fluid"/>
             </div>
             <div class="modalcomment col-lg-6 col-12">
               <div id="modalRanking" class="ranking" >NO.01</div>
@@ -738,6 +738,7 @@ data_condition.keyword = "";
 data_condition.limitNumStart = 0;
 data_condition.limitNumEnd = 12;
 data_condition.token = index;
+bindLoadButton();
 
 </script>
 </body>
