@@ -13,13 +13,16 @@
 {
 	margin-top: 1.4325rem;
 	margin-bottom: 1.4325rem;
-	margin-left: -1rem;
-	padding-left: 4rem;
+	padding-left: 3rem;
 }
 .navbar-brand img
 {
 	/*height: 7.375rem;*/
 	height: 4.5rem;
+}
+#navbarResponsive >　ul
+{
+	padding-right: 3rem;
 }
 .chosen-select
 {
@@ -456,9 +459,13 @@
 {
 	font-family: 'GenJyuuGothic';
 }*/
-.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
+.storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
 {
 	font-family: 'Branding';
+}
+.navbar-font
+{
+	font-family: 'Ubuntu', sans-serif;
 }
 .slogan-main, .formula-text, .introduction-header, .introduction-conclusion
 {
