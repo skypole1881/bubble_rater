@@ -4,4 +4,4 @@ $( ".chosen-select" ).chosen({
 	allow_single_deselect: true
 });
 //let lazyload class img lazyload
-//lazyload();
+lazyload();
