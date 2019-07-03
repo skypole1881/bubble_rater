@@ -9,14 +9,14 @@ html{
 }
 body {
 	position: relative;
-	padding-top: 9rem;
+	padding-top: 10.8vmin;
 	background-color: black;
 	font-family: 'Noto Sans TC', sans-serif;
 }
 
 @media (min-width: 992px) {
 	body {
-		padding-top: 9rem;
+		padding-top: 10.8vmin;
 		background-color: black;
 		font-family: 'Noto Sans TC', sans-serif;
 	}

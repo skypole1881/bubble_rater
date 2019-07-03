@@ -11,19 +11,19 @@
 }*/
 .navbar-brand
 {
-	margin-top: 1.4325rem;
-	margin-bottom: 1.4325rem;
-	margin-left: -1rem;
+	margin-top: 1.719vmin;
+	margin-bottom: 1.719vmin;
+	margin-left: -1.2vmin;
 	padding-left: 3vw;
 }
 .navbar-brand img
 {
 	/*height: 7.375rem;*/
-	height: 4.5rem;
+	height: 5.4vmin;
 }
 #navbarResponsive >　ul
 {
-	margin-right: -1rem;
+	margin-right: -1.2vmin;
 	padding-right: 3vw;
 }
 .chosen-select
@@ -70,7 +70,7 @@
 	text-align: right;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 9rem;
+	top: 10.8vmin;
 	width: 	100%;
 	z-index: 999;
 	font-size: 1.5rem;
@@ -136,10 +136,10 @@
 }
 .storeinfo
 {
-	padding-left: 7rem;
-	padding-right: 7rem;
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
 	position:absolute;
-	top: 11rem;
+	top: 13.2vmin;
 	/*top: 50%;*/
     /*transform: perspective(1px) translateY(-50%);*/
     /*transition: opacity 1s;*/
@@ -152,7 +152,7 @@
 {
 	/*font-size: 210px;*/
 	font-size: 17.5rem;
-	line-height: 21rem;
+	line-height: 1.2;
 }
 .scoretable
 {
@@ -167,14 +167,14 @@
 }
 .storecomment > div
 {
-	padding-left: 7rem;
-	padding-right: 7rem;
-	padding-top: 3rem;
-	padding-bottom: 1rem;
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
+	padding-top: 3.6vmin;
+	padding-bottom: 1.2vmin;
 }
 .storecomment > div >*
 {
-	margin-bottom: 2rem;
+	margin-bottom: 2.4vmin;
 }
 .storecomment > div > .storename
 {
@@ -213,10 +213,10 @@
 .othercomment
 {
 	overflow: hidden;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-left: 2vmin;
+	padding-right: 2vmin;
+	padding-top: 1vmin;
+	padding-bottom: 1vmin;
 }
 .othercomment::before
 {
@@ -236,7 +236,7 @@
 	/*font-size: 20px;*/
 	font-size: 1.7rem;
 	/*line-height: 30px;*/
-	line-height: 2.5rem;
+	line-height: 1.5em;
 	overflow: hidden;
 	/*white-space: nowrap;*/
 	/*text-overflow: ellipsis;*/
@@ -244,7 +244,7 @@
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 2; /*顯示的行數*/
-	height: 5rem; /*line height 乘以顯示行數*/
+	height: 3em; /*line height 乘以顯示行數*/
 }
 .newstore
 {
@@ -255,9 +255,9 @@
 	top: 0px;
 	right: 0px;
 	background-color: #FF0062;
-	line-height: 2.25rem;
-	padding: 2rem 1.5rem 2rem 1.5rem;
-	border-bottom-left-radius: 1.5rem;
+	line-height: 1.35;
+	padding: 2.4vmin 1.8vmin 2.4vmin 1.8vmin;
+	border-bottom-left-radius: 1.8vmin;
 }
 
 /*when change-top is hover, change-first change to change-second*/
@@ -444,13 +444,13 @@
 {
 	/*line-height: 48px;*/
 	/*line-height: 2.5vw;*/
-	line-height: 4rem;
+	/*line-height: 4.8vmin;*/
 }
 .othercomment .storename td:nth-of-type(1), .storecomment .storename td:nth-of-type(1)
 {
 	/*line-height: 54px;*/
 	/*line-height: 2.8vw;*/
-	line-height: 4.5rem;
+	/*line-height: 5.4vmin;*/
 }
 
 .bg-black
