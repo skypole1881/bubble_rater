@@ -2,6 +2,7 @@ package com.bubble.dao;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import org.hibernate.Session;
@@ -14,11 +15,14 @@ import com.bubble.po.Condition;
 
 @Repository
 public class BlogRepoImpl implements BlogRepo {
+//	@Autowired
+//	private SessionFactory sessionFactory = null;
 	@Autowired
-	private SessionFactory sessionFactory = null;
+	private EntityManager entityManager;
 
 	public Session getSession() {
-		return sessionFactory.getCurrentSession();
+		return entityManager.unwrap(Session.class);
+//		return sessionFactory.getCurrentSession();
 	}
 
 	@SuppressWarnings("unchecked")

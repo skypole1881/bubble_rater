@@ -23,17 +23,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
 		registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
 	}
-//	@Bean
-//	public HibernateJpaSessionFactoryBean sessionFactory() {
-//		Properties props = new Properties();
-//		props.setProperty("hibernate.current_session_context_class", "thread");
-//	    return new HibernateJpaSessionFactoryBean();
-//	}
 
-	@Bean
-	public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf) {
-		return hemf.getSessionFactory();
-	}
+//	@Bean
+//	public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf) {
+//		return hemf.getSessionFactory();
+//	}
 
 	@Bean(name = "localeResolver")
 	public LocaleResolver getLocaleResolver() {
