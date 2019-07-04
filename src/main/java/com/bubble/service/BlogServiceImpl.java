@@ -24,6 +24,7 @@ import com.bubble.NotFoundException;
 import com.bubble.dao.BlogRepo;
 import com.bubble.dao.BlogRepository;
 import com.bubble.po.Blog;
+import com.bubble.po.Condition;
 import com.bubble.util.MyBeanUtils;
 
 @Service
@@ -298,58 +299,62 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart,
-			Integer limitNumEnd) {
-		Boolean coldBoolean = true;
-		Pageable pageable = null;
-		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
-		if (cold.equals("cold")) {
-			coldBoolean = true;
-		} else if (cold.equals("hot")) {
-			coldBoolean = false;
+	public List<Blog> selectNoKeyword(Condition cdt) {
+		if (cdt.getCold().equals("cold")) {
+			cdt.setColdBoolean(true);
+		} else if (cdt.getCold().equals("hot")) {
+			cdt.setColdBoolean(false);
 		} else {
-			return blogRepository.selectAllByKeywordByCity(keyword, pageable);
+				// 連冷熱都沒選
+				return blogRepo.selectAll(cdt);
 		}
-
-		return blogRepository.selectAllByKeywordByCityWithCold(keyword, coldBoolean, pageable);
+		// 只有冷熱
+		return blogRepo.selectAllWithCold(cdt);
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart,
-			Integer limitNumEnd) {
-		String[] oriString = keyword.split(",");
-		Boolean coldBoolean = true;
-		Pageable pageable = null;
-		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
-		if (cold.equals("cold")) {
-			coldBoolean = true;
-		} else if (cold.equals("hot")) {
-			coldBoolean = false;
-		} else {
-			return blogRepository.selectAllByKeywordByDistrict(oriString[0], pageable);
-		}
-
-		return blogRepository.selectAllByKeywordByDistrictWithCold(oriString[0], coldBoolean, pageable);
+	public List<Blog> selectByKeyword(Condition cdt) {
+		// 不管有沒有選btnGroup1, 都是只搜尋店名, 在選冷熱飲已做過onchange選單管理
+		return blogRepo.selectAllByKeyword(cdt);
 	}
 
 	@Override
-	public List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart,
-			Integer limitNumEnd) {
-		Boolean coldBoolean = true;
-		Pageable pageable = null;
-		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
-		if (cold.equals("cold")) {
-			coldBoolean = true;
-		} else if (cold.equals("hot")) {
-			coldBoolean = false;
+	public List<Blog> selectAllByCity(Condition cdt) {
+		if (cdt.getCold().equals("cold")) {
+			cdt.setColdBoolean(true);
+		} else if (cdt.getCold().equals("hot")) {
+			cdt.setColdBoolean(false);
 		} else {
-			return blogRepository.selectAllByKeywordByName(keyword, pageable);
+			return blogRepo.selectAllByCity(cdt);
 		}
 
-		return blogRepository.selectAllByKeywordByNameWithCold(keyword, coldBoolean, pageable);
+		return blogRepo.selectAllByCityWithCold(cdt);
+	}
+
+	@Override
+	public List<Blog> selectAllByDistrict(Condition cdt) {
+		if (cdt.getCold().equals("cold")) {
+			cdt.setColdBoolean(true);
+		} else if (cdt.getCold().equals("hot")) {
+			cdt.setColdBoolean(false);
+		} else {
+			return blogRepo.selectAllByDistrict(cdt);
+		}
+
+		return blogRepo.selectAllByDistrictWithCold(cdt);
+	}
+
+	@Override
+	public List<Blog> selectAllByName(Condition cdt) {
+		if (cdt.getCold().equals("cold")) {
+			cdt.setColdBoolean(true);
+		} else if (cdt.getCold().equals("hot")) {
+			cdt.setColdBoolean(false);
+		} else {
+			return blogRepo.selectAllByName(cdt);
+		}
+
+		return blogRepo.selectAllByNameWithCold(cdt);
 	}
 
 	@Override
@@ -369,33 +374,4 @@ public class BlogServiceImpl implements BlogService {
 		}
 		return rank;
 	}
-
-	@Override
-	public List<Blog> selectBlogsByCold(String keyword, String cold, String orderby, Integer limitNumStart,
-			Integer limitNumEnd) {
-		Sort sort = new Sort(Sort.Direction.DESC, orderby);
-		Pageable pageable = new PageRequest(limitNumStart, limitNumEnd, sort);
-		Boolean coldBoolean = true;
-		if (cold.equals("cold")) {
-			coldBoolean = true;
-		} else if (cold.equals("hot")) {
-			coldBoolean = false;
-		} else {
-			// 全部沒有只有排序 (有關鍵字)
-			if (!keyword.trim().equals("")) {
-				return blogRepository.selectAllByKeywordWithOrder(keyword, pageable);
-			}else {
-				// 全部沒有只有排序 (無關鍵字)
-				System.out.println("只有排序嗎");
-				return blogRepository.selectAllWithOrder(pageable);
-			}
-		}
-		// 只有冷熱 (有關鍵字)
-		if (!keyword.trim().equals("")) {
-			return blogRepository.selectAllByKeywordWithColdAndOrder(keyword, coldBoolean, pageable);
-		}
-		// 只有冷熱
-		return blogRepository.selectAllWithColdAndOrder(coldBoolean, pageable);
-	}
-
 }

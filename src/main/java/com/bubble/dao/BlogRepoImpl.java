@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bubble.po.Blog;
+import com.bubble.po.Condition;
+
 @Repository
-public class BlogRepoImpl implements BlogRepo{
+public class BlogRepoImpl implements BlogRepo {
 	@Autowired
 	private SessionFactory sessionFactory = null;
 
@@ -19,9 +21,103 @@ public class BlogRepoImpl implements BlogRepo{
 		return sessionFactory.getCurrentSession();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Blog> sixMore(int token) {
 		String qry = "from Blog where publish = '1' order by totalRate desc,godfeelingRate";
-		return this.getSession().createQuery(qry).setMaxResults(6).setFirstResult(token*6+6).list();
+		return this.getSession().createQuery(qry).setMaxResults(6).setFirstResult(token * 6 + 6).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAll(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' order by " + orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllWithCold(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and cold = :cold order by " + orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("cold", cdt.getColdBoolean()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByCity(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and storeCity = :keyword order by " + orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByCityWithCold(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and storeCity = :keyword and cold = :cold order by " + orderby
+				+ " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword())
+				.setParameter("cold", cdt.getColdBoolean()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByDistrict(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String storeDistrict = cdt.getKeyword().trim().split(",")[0];
+		String storeCity = cdt.getKeyword().trim().split(",")[1];
+		String qry = "from Blog where publish = '1' and storeCity = :storeCity and storeDistrict = :storeDistrict order by "
+				+ orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("storeDistrict", storeDistrict)
+				.setParameter("storeCity", storeCity).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByDistrictWithCold(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String storeDistrict = cdt.getKeyword().trim().split(",")[0];
+		String storeCity = cdt.getKeyword().trim().split(",")[1];
+		String qry = "from Blog where publish = '1' and storeCity = :storeCity and storeDistrict = :storeDistrict and cold = :cold order by "
+				+ orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("storeDistrict", storeDistrict)
+				.setParameter("storeCity", storeCity).setParameter("cold", cdt.getColdBoolean()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByName(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and storeBrand = :keyword order by " + orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByNameWithCold(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and storeBrand = :keyword and cold = :cold order by " + orderby
+				+ " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword())
+				.setParameter("cold", cdt.getColdBoolean()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blog> selectAllByKeyword(Condition cdt) {
+		String orderby = cdt.getOrderby();
+		String qry = "from Blog where publish = '1' and storeBrand = :keyword order by " + orderby + " desc";
+		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
+				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword()).list();
 	}
 }

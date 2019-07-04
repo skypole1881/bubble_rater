@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.bubble.po.Blog;
+import com.bubble.po.Condition;
 
 public interface BlogService {
 
@@ -33,14 +34,18 @@ public interface BlogService {
 	void deleteBlog(Integer id);
 
 	List<Blog> selectAll();
+	
+	List<Blog> selectNoKeyword(Condition cdt);
+	
+	List<Blog> selectAllByCity(Condition cdt);
+	
+	List<Blog> selectAllByDistrict(Condition cdt);
+	
+	List<Blog> selectAllByName(Condition cdt);
+	
+	List<Blog> selectByKeyword(Condition cdt);
 
 	List<Blog> selectAllByCriteria(String criteria, String orderBy);
-
-	List<Blog> selectAllByKeywordByCity(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
-
-	List<Blog> selectAllByKeywordByDistrict(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
-	
-	List<Blog> selectAllByKeywordByName(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
 	List<Blog> selectAllByCriteriaByName(String criteria);
 
@@ -57,8 +62,6 @@ public interface BlogService {
 	List<Blog> selectDefault();
 
 	Integer getRank(String id);
-
-	List<Blog> selectBlogsByCold(String keyword, String cold, String orderby, Integer limitNumStart, Integer limitNumEnd);
 
 	List<Blog> selectSixMoreOnly(Integer token);
 

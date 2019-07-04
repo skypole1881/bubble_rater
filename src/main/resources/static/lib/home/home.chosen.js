@@ -77,7 +77,8 @@ $('#GO').on("click", function() {
 	data_condition.criteria = $(`#btnGroupDrop2`).val();
 	data_condition.orderby = $(`#btnGroupDrop3`).val();
 	data_condition.keyword = $(`#query_suggeest`).val();
-	if(data_condition.keyword == "搜尋全部..."){
+	data_condition.limitNumEnd = 13;
+	if(data_condition.keyword == "搜尋更多..."){
 		data_condition.keyword = "";
 	}
 	console.log(data_condition);
@@ -88,6 +89,7 @@ $('#GO').on("click", function() {
 		data : data_condition,
 		success : function(data) {
 			$('#searchPack').html(data);
+			$("#bu").show();
 			bindLoadButton();
 		}
 	});
@@ -101,7 +103,7 @@ function chosenOptionChange(query_result) {
 	for (i = 0; i < query_result.length; i++) {
 		var newOption = document.createElement("option");
 		if(query_result[i] == null){
-			query_result[i] = "搜尋全部...";
+			query_result[i] = "";
 		}
 		newOption.value = query_result[i];
 		newOption.innerHTML = query_result[i];

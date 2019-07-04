@@ -10,7 +10,6 @@ function bindLoadButton(){
 			data: data_condition,
 			success: function (data) {
 				note = data
-				console.log(data);
 				loadsix(data);
 			}
 		});
@@ -34,6 +33,10 @@ function bindLoadButton(){
 	
   
 function loadsix(data){
+	console.log("num==="+data.num);
+	if(data.num == false){
+		$("#bu").hide();
+	}
 	console.log("into loadsix");
 	for(var i = 0 ; i < data.blogs.length ; i ++){
 		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white change-top");

@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bubble.po.Blog;
+import com.bubble.po.Condition;
 import com.bubble.service.BlogService;
 
 @Controller
@@ -78,19 +80,28 @@ public class IndexController {
 
 	// 按下GO搜尋
 	@GetMapping("/search")
-	public String index(Model model, String criteria, String keyword, String cold, String orderby,
-			Integer limitNumStart, Integer limitNumEnd) {
+	public String index(Condition cdt, BindingResult br, Model model) {
 		List<Blog> dtos = new ArrayList<>();
-		if (criteria.equals("city")) {
-			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else if (criteria.equals("district")) {
-			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else if (criteria.equals("store")) {
-			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else {
-			// 我要找 不拘
-			// 全空會到這
-			dtos = blogService.selectBlogsByCold(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
+		if (cdt.getKeyword().trim().equals("")) {
+			dtos = blogService.selectNoKeyword(cdt);
+		}else {
+			if (cdt.getCriteria().equals("city")) {
+				dtos = blogService.selectAllByCity(cdt);
+			} else if (cdt.getCriteria().equals("district")) {
+				dtos = blogService.selectAllByDistrict(cdt);
+			} else if (cdt.getCriteria().equals("store")) {
+				dtos = blogService.selectAllByName(cdt);
+			} else {
+				// btnGroup1 跟 btnGroup 都沒有選, 只有選keyword(這時的keyword只有店家名稱)
+				dtos = blogService.selectByKeyword(cdt);
+			}
+		}
+		boolean num = true;
+		if(dtos.size() <= 12) {
+			num = false;
+		}else {
+			dtos.remove(cdt.getLimitNumEnd()-1);
 		}
 
 		if (dtos.size() < 4) {
@@ -104,9 +115,7 @@ public class IndexController {
 				dtos.add(b);
 			}
 		}
-		boolean num = true;
 		model.addAttribute("num", num);
-		model.addAttribute("blogs", dtos);
 		model.addAttribute("blogs", dtos);
 		return "home::searchPack";
 	}
@@ -114,33 +123,43 @@ public class IndexController {
 	// 找下六筆資料
 	@RequestMapping(path = { "/loadsix" }, produces = { "application/json" })
 	@ResponseBody
-	public ResponseEntity<?> loadsix(Integer token, String criteria, String keyword, String cold, String orderby) {
+	public ResponseEntity<?> loadsix(Condition cdt, BindingResult br) {
 		System.out.println("loadsix");
 		// 每 6 筆為一頁，第token + 1 頁 (從0開始，前面12筆固定等於內建0跟1頁)
-		int limitNumStart = token + 1; 
-		int limitNumEnd = 6; 
-		System.out.println("limitNumStart=="+limitNumStart);
-		System.out.println("limitNumEnd=="+limitNumEnd);
-		
+		cdt.setLimitNumStart(12 + (cdt.getToken() - 1) * 6);
+		cdt.setLimitNumEnd(7);
+		System.out.println("limitNumStart==" + cdt.getLimitNumStart());
+		System.out.println("limitNumEnd==" + cdt.getLimitNumEnd());
+
 		List<Blog> dtos = new ArrayList<>();
-		if (criteria.equals("city")) {
-			dtos = blogService.selectAllByKeywordByCity(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else if (criteria.equals("district")) {
-			dtos = blogService.selectAllByKeywordByDistrict(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else if (criteria.equals("store")) {
-			dtos = blogService.selectAllByKeywordByName(keyword, cold, orderby, limitNumStart, limitNumEnd);
-		} else {
-			// 我要找 不拘
-			// 全空會到這
-			dtos = blogService.selectBlogsByCold(keyword, cold, orderby, limitNumStart, limitNumEnd);
+		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
+		if (cdt.getKeyword().trim().equals("")) {
+			dtos = blogService.selectNoKeyword(cdt);
+		}else {
+			if (cdt.getCriteria().equals("city")) {
+				dtos = blogService.selectAllByCity(cdt);
+			} else if (cdt.getCriteria().equals("district")) {
+				dtos = blogService.selectAllByDistrict(cdt);
+			} else if (cdt.getCriteria().equals("store")) {
+				dtos = blogService.selectAllByName(cdt);
+			} else {
+				// btnGroup1 跟 btnGroup 都沒有選, 只有選keyword(這時的keyword只有店家名稱)
+				dtos = blogService.selectByKeyword(cdt);
+			}
 		}
-		
-		//		dtos = blogService.selectSixMoreOnly(token);
+		boolean num = true;
+		if(dtos.size() <= 6) {
+			num = false;
+		}else {
+			dtos.remove(cdt.getLimitNumEnd()-1);
+		}
 		Map<String, Object> map = new HashMap<>();
 		map.put("blogs", dtos);
-		map.put("token", token);
+		map.put("token", cdt.getToken());
+		map.put("num", num);
 		return ResponseEntity.ok(map);
 	}
+
 	// 這不知道啥
 	@GetMapping("/load")
 	public String load(Model model, Integer token) {
