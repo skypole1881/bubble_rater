@@ -13,20 +13,6 @@ function bindLoadButton(){
 				loadsix(data);
 			}
 		});
-// url = '/loadbu?';
-// $.ajax({
-// url: url,
-// type: 'get',
-// data: {
-// token:token,
-// },
-// success: function (data) {
-// console.log(data);
-// $('#bu').html(data);
-// },
-// error: function (error) {
-// }
-// })
 		index++;
 	});
 }

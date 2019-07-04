@@ -238,57 +238,47 @@ public class BlogServiceImpl implements BlogService {
 	}
 
 	@Override
-	public List<Blog> queryKeyWord(String first, String second) {
-		List<Blog> dtos = new ArrayList<>();
+	public List<Object> queryKeyWord(String first, String second) {
+		List<Object> dtos = new ArrayList<>();
 		Boolean cold;
-		if (first.equals("cold")) {
-			cold = true;
+		// my update
+		if(!first.trim().equals("")) {
+			if(first.equals("cold")) {
+				cold = true;
+			}else {
+				cold = false;
+			}
 			switch (second) {
 			case "city":
-				dtos = blogRepository.queryKeyWordByStoreCityWithCold(cold);
+				dtos = blogRepo.queryKeyWordByStoreCityWithCold(cold);
 				break;
 			case "district":
-				dtos = blogRepository.queryKeyWordByDistrictWithCold(cold);
+				dtos = blogRepo.queryKeyWordByDistrictWithCold(cold);
 				break;
 			case "store":
-				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
+				dtos = blogRepo.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			default:
-				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
+				dtos = blogRepo.queryKeyWordByStoreNameWithCold(cold);
 				break;
 			}
-		} else if (first.equals("hot")) {
-			cold = false;
+		}else {
 			switch (second) {
 			case "city":
-				dtos = blogRepository.queryKeyWordByStoreCityWithCold(cold);
+				dtos = blogRepo.queryKeyWordByStoreCity();
 				break;
 			case "district":
-				dtos = blogRepository.queryKeyWordByDistrictWithCold(cold);
+				dtos = blogRepo.queryKeyWordByDistrict();
 				break;
 			case "store":
-				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
+				dtos = blogRepo.queryKeyWordByStoreName();
 				break;
 			default:
-				dtos = blogRepository.queryKeyWordByStoreNameWithCold(cold);
-				break;
-			}
-		} else {
-			switch (second) {
-			case "city":
-				dtos = blogRepository.queryKeyWordByStoreCity();
-				break;
-			case "district":
-				dtos = blogRepository.queryKeyWordByDistrict();
-				break;
-			case "store":
-				dtos = blogRepository.queryKeyWordByStoreName();
-				break;
-			default:
-				dtos = blogRepository.queryKeyWordByStoreName();
+				dtos = blogRepo.queryKeyWordByStoreName();
 				break;
 			}
 		}
+		
 		return dtos;
 	}
 

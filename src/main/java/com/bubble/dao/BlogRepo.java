@@ -25,4 +25,16 @@ public interface BlogRepo {
 	public abstract List<Blog> selectAllByNameWithCold(Condition cdt);
 
 	public abstract List<Blog> selectAllByKeyword(Condition cdt);
+
+	public abstract List<Object> queryKeyWordByStoreCityWithCold(Boolean cold);
+
+	public abstract List<Object> queryKeyWordByDistrictWithCold(Boolean cold);
+
+	public abstract List<Object> queryKeyWordByStoreNameWithCold(Boolean cold);
+	
+	public abstract List<Object> queryKeyWordByStoreCity();
+	
+	public abstract List<Object> queryKeyWordByDistrict();
+	
+	public abstract List<Object> queryKeyWordByStoreName();
 }

@@ -120,4 +120,46 @@ public class BlogRepoImpl implements BlogRepo {
 		return this.getSession().createQuery(qry).setFirstResult(cdt.getLimitNumStart())
 				.setMaxResults(cdt.getLimitNumEnd()).setParameter("keyword", cdt.getKeyword()).list();
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByStoreCityWithCold(Boolean cold) {
+		String qry = "select DISTINCT storeCity from Blog where publish = '1' and cold=:cold";
+		return this.getSession().createQuery(qry).setParameter("cold", cold).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByDistrictWithCold(Boolean cold) {
+		String qry = "select DISTINCT b.storeDistrict,b.storeCity from Blog b where publish = '1' and cold=:cold";
+		return this.getSession().createQuery(qry).setParameter("cold", cold).list();
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByStoreNameWithCold(Boolean cold) {
+		String qry = "select DISTINCT b.storeBrand from Blog b where publish = '1' and cold=:cold";
+		return this.getSession().createQuery(qry).setParameter("cold", cold).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByStoreCity() {
+		String qry = "select DISTINCT storeCity from Blog where publish = '1'";
+		return this.getSession().createQuery(qry).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByDistrict() {
+		String qry = "select DISTINCT b.storeDistrict,b.storeCity from Blog b where publish = '1'";
+		return this.getSession().createQuery(qry).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Object> queryKeyWordByStoreName() {
+		String qry = "select DISTINCT b.storeBrand from Blog b where publish = '1'";
+		return this.getSession().createQuery(qry).list();
+	}
 }
