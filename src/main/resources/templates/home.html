@@ -13,6 +13,7 @@
   <title>bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶</title>
   <meta name="description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！">
   <meta name="author" content="bubble rater">
+   
     <!-- Search engine - sitelink - searchbox  -->
   <script type="application/ld+json">
     {
@@ -27,29 +28,31 @@
     }       
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+   
     <!-- FB share  -->
   <meta property="og:title" content="bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶"/>
   <meta property="og:description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！"/>
   <meta property="og:type" content="article"/>
   <meta property="og:image" content="http://54.254.149.198:8081/images/bubblerater_stocks_FBshare.jpg"/>
+  <meta property="og:url" content="http://54.254.149.198:8081">
+    <!-- Twitter share  -->
     
-  
+    
     <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
   <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
 
   <!-- Chosen css -->
   <link rel="stylesheet" href="../static/lib/chosen/chosen.min.css" th:href="@{/lib/chosen/chosen.min.css}">
 
+  <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,700,900&display=swap&subset=chinese-traditional" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
+
   <!-- Custom styles for this template -->
   <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
-  <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/blog.css"> -->
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
 
-  <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"> -->
 
-  <!-- lazyload javascript -->
-  <script src="../static/lib/lazyload/lazyload.min.js" th:src="@{/lib/lazyload/lazyload.min.js}"></script>
   
 </head>
 
@@ -59,7 +62,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-font" id="nav-bar-spy">
     <div class="container-fluid">
       <a class="navbar-brand" href="http://54.254.149.198:8081/">
-        <img src="../static/images/bubble rater_logo-15.png" th:src="@{/images/bubble rater_logo-15.png}"/>
+        <img src="../static/images/bubble rater_logo-16.png" th:src="@{/images/bubble rater_logo-16.png}"/>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -84,9 +87,9 @@
   </nav>
 
   <!-- Page Content -->
-  <div class="container-fluid text-white" >
+  <div class="container-fluid text-white" id="about">
 
-    <div class="row text-white header" id="about">
+    <div class="row text-white header">
 
       <!-- Blog Entries Column -->
       <div class="col-md-12 text-left align-self-end">
@@ -98,19 +101,19 @@
         </p>
       </div>
     </div>
-    <div class="row text-white bg-coffee">
+    <div class="row text-white">
       <div class="col-md-12">
         <p class="formula-text">
           一杯好喝的珍珠奶茶 =<br/>
           QQ 的珍珠 + 濃濃的奶茶 + 恰恰好的甜<br/>
-          誰才是最好喝的珍奶?<br/>
-          我們用數字告訴你!
+          誰才是最好喝的珍奶？<br/>
+          我們用數字告訴你！
         </p>
       </div>
     </div>
-    <div class="row bg-coffee">
+    <div class="row">
       <div class="col-md-4">
-        <img src="../static/images/bubble-rater_logo-02.png" th:src="@{/images/bubble-rater_logo-02.png}" class="img-fluid"/>
+        <img src="../static/images/bubble-rater_logo-02.png" th:src="@{/images/bubble-rater_logo-02.png}" data-src="../static/images/bubble-rater_logo-02.png" th:data-src="@{/images/bubble-rater_logo-02.png}" class="img-fluid lazyload"/>
         <p class="introduction-header">珍珠到底有多Q?</p>
         <hr color="white"/>
         <p class="introduction-text">以彈性係數 (elastic modulus) 為測量目標，彈性係數愈高，珍珠愈 Q 彈！
@@ -118,7 +121,7 @@
         <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-bubble">顯示更多</button>
       </div>
       <div class="col-md-4">
-        <img src="../static/images/bubble-rater_logo-03.png" th:src="@{/images/bubble-rater_logo-03.png}" class="img-fluid"/>
+        <img src="../static/images/bubble-rater_logo-03.png" th:src="@{/images/bubble-rater_logo-03.png}" data-src="../static/images/bubble-rater_logo-03.png" th:data-src="@{/images/bubble-rater_logo-03.png}" class="img-fluid lazyload"/>
         <p class="introduction-header">奶茶到底有多濃?</p>
         <hr color="white"/>
         <p class="introduction-text">我們使用黏度 (viscosity) 作為測量目標。黏度愈高的奶茶，流動性愈差，口感愈濃郁。
@@ -126,14 +129,14 @@
         <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-tea">顯示更多</button>
       </div>
       <div class="col-md-4">
-        <img src="../static/images/bubble-rater_logo-04.png"  th:src="@{/images/bubble-rater_logo-04.png}"class="img-fluid"/>
+        <img src="../static/images/bubble-rater_logo-04.png"  th:src="@{/images/bubble-rater_logo-04.png}" data-src="../static/images/bubble-rater_logo-04.png"  th:data-src="@{/images/bubble-rater_logo-04.png}" class="img-fluid lazyload"/>
         <p class="introduction-header">奶茶到底有多甜?</p>
         <hr color="white"/>
         <p class="introduction-text">白利糖度 (Brix) 形容攝氏 20 度 C 下，每 100 公克水溶液中，溶解的蔗糖公克數。
 我們以 4 °Bx、6 °Bx、8 °Bx、10 °Bx 以及 12 °Bx 的蔗糖溶液為比較基準，比較奶茶甜度與甜度比較基準的差異，判斷奶茶含糖量。</p>
       </div>
     </div>
-    <div class="row justify-content-center bg-coffee">
+    <div class="row justify-content-center">
       <div class="col-md-12 text-center">
         <p class="introduction-conclusion">
           想睡了？好麻煩？<br/>
@@ -538,55 +541,51 @@
 <!-- searchPack end -->
   </div>
 <!-- id="store" end -->
-  <div class="container-fluid text-white" id="contact">
-    <div class="row contact bg-blur">
+  <div class="container-fluid text-white bg-blur" id="contact">
+    <div class="row justify-content-center logo">
+      <div class="col-2">
+        <img src="../static/images/bubble rater_logo_B-w.png" th:src="@{/images/bubble rater_logo_B-w.png}" class="img-fluid"/>
+      </div>
+    </div>
+    <div class="row justify-content-center society">
+      <div class="col-1 align-self-center" >
+        <a href="https://www.facebook.com/BubbleRater/">
+          <img src="../static/images/bubble rater_logo-11.png" th:src="@{/images/bubble rater_logo-11.png}" class="img-fluid"/>
+        </a>
+      </div>
+      <div class="col-1 align-self-center" >
+        <a href="https://www.youtube.com/">
+          <img src="../static/images/bubble rater_logo-13.png" th:src="@{/images/bubble rater_logo-13.png}" class="img-fluid"/>
+        </a>
+      </div>
+      <div class="col-1 align-self-center" >
+        <a href="https://www.instagram.com/bubblerater/">
+          <img src="../static/images/bubble rater_logo-12.png" th:src="@{/images/bubble rater_logo-12.png}" class="img-fluid"/>
+        </a>
+      </div>
+    </div>
+    <div class="row justify-content-center ps">
       <div class="col-12">
-        <div class="row justify-content-center logo">
-          <div class="col-1">
-            <img src="../static/images/bubble rater_logo_B-w.png" th:src="@{/images/bubble rater_logo_B-w.png}" class="img-fluid"/>
-          </div>
-        </div>
-        <div class="row justify-content-center society">
-          <div class="col-1 align-self-center" >
-            <a href="https://www.facebook.com/BubbleRater/">
-              <img src="../static/images/bubble rater_logo-11.png" th:src="@{/images/bubble rater_logo-11.png}" class="img-fluid"/>
-            </a>
-          </div>
-          <div class="col-1 align-self-center" >
-            <a href="https://www.youtube.com/">
-              <img src="../static/images/bubble rater_logo-13.png" th:src="@{/images/bubble rater_logo-13.png}" class="img-fluid"/>
-            </a>
-          </div>
-          <div class="col-1 align-self-center" >
-            <a href="https://www.instagram.com/bubblerater/">
-              <img src="../static/images/bubble rater_logo-12.png" th:src="@{/images/bubble rater_logo-12.png}" class="img-fluid"/>
-            </a>
-          </div>
-        </div>
-        <div class="row justify-content-center ps">
-          <div class="col-12">
-            <ol>
-              <li>
-                本網站評比的對象為珍珠鮮奶茶。為求量測公平，冰飲皆為三分糖去冰；熱飲皆為三分糖。若該品項無法調整甜度冰量，則另行標示。
-              </li>
-              <li>
-                為避免珍珠過度糊化或過度結晶，測量皆在購買後30分鐘內開始進行。奶茶濃度評分的依據為牛奶對於黏度的貢獻（扣除糖的貢獻），由於各店家採用的牛奶種類不同，故此評分並不代表牛奶含量。
-              </li>
-              <li>
-                本網站黏度的量測方式為傾斜式的落球法，並建立在奶茶為牛頓流體且落球時雷諾數小於1的基礎上。
-              </li>
-              <li>
-                本網站的評分會因量測的品項增加而隨著變動，以5-10分的區間表示該項目在全部飲品之間的排名。
-              </li>
-              <li>
-                本網站評比分數係為個人意見，僅供參考。
-              </li>
-              <li>
-                本網站的分數歡迎引用，但因分數隨著量測的品項增加而變化，敬請加註引用時間。例如: 總分9.2（2019/5/2）
-              </li>
-            </ol>
-          </div>
-        </div>
+        <ol>
+          <li>
+            本網站評比的對象為珍珠鮮奶茶。為求量測公平，冰飲皆為三分糖去冰；熱飲皆為三分糖。若該品項無法調整甜度冰量，則另行標示。
+          </li>
+          <li>
+            為避免珍珠過度糊化或過度結晶，測量皆在購買後30分鐘內開始進行。奶茶濃度評分的依據為牛奶對於黏度的貢獻（扣除糖的貢獻），由於各店家採用的牛奶種類不同，故此評分並不代表牛奶含量。
+          </li>
+          <li>
+            本網站黏度的量測方式為傾斜式的落球法，並建立在奶茶為牛頓流體且落球時雷諾數小於1的基礎上。
+          </li>
+          <li>
+            本網站的評分會因量測的品項增加而隨著變動，以5-10分的區間表示該項目在全部飲品之間的排名。
+          </li>
+          <li>
+            本網站評比分數係為個人意見，僅供參考。
+          </li>
+          <li>
+            本網站的分數歡迎引用，但因分數隨著量測的品項增加而變化，敬請加註引用時間。例如: 總分9.2（2019/5/2）
+          </li>
+        </ol>
       </div>
     </div>
   </div>
@@ -708,7 +707,8 @@
 <script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
 <script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
 <script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
-
+<!-- lazyload javascript -->
+<script src="../static/lib/lazyload/lazyload.min.js" th:src="@{/lib/lazyload/lazyload.min.js}"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142575291-1"></script>
 
