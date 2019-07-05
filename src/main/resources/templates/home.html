@@ -278,7 +278,7 @@
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
-        <div class="newstore">
+        <div th:if="${blogs[0].latest}" class="newstore">
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
@@ -359,7 +359,7 @@
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
-        <div class="newstore">
+        <div th:if="${blogs[1].latest}" class="newstore">
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
@@ -440,7 +440,7 @@
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
-        <div class="newstore">
+        <div th:if="${blogs[2].latest}" class="newstore">
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
@@ -514,7 +514,7 @@
           <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
-        <div class="newstore">
+        <div th:if="${blog.latest}" class="newstore">
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">

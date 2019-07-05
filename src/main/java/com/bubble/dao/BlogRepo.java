@@ -8,7 +8,9 @@ import com.bubble.po.Condition;
 public interface BlogRepo {
 	public abstract List<Blog> sixMore(int token);
 
-	public abstract List<Blog> selectAll(Condition cdt);
+	public abstract List<Blog> selectAll();
+	
+	public abstract List<Blog> selectAllOrderBy(Condition cdt);
 
 	public abstract List<Blog> selectAllWithCold(Condition cdt);
 
@@ -37,4 +39,6 @@ public interface BlogRepo {
 	public abstract List<Object> queryKeyWordByDistrict();
 	
 	public abstract List<Object> queryKeyWordByStoreName();
+	
+	public abstract void updateLatest(Blog blog);
 }

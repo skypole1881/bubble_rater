@@ -111,21 +111,21 @@ public class BlogServiceImpl implements BlogService {
 			indexTea--;
 			blogRepository.updateTeaRatePR(blog.getTeaRatePR(), blog.getBlogId());
 		}
-
 	}
-
-	private void setLatest() {
+	
+	@Override
+	public void setLatest() {
 		List<Blog> blogsList = new ArrayList<Blog>();
-		blogsList.addAll(blogRepository.selectBlogOrderByCreatedTime());
+		blogsList.addAll(blogRepo.selectAll());
+		Date now = new Date();
 		for (Blog blog : blogsList) {
-			if (new Date().getTime() - blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
+			if (now.getTime() - blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
 				blog.setLatest(false);
 			} else {
 				blog.setLatest(true);
 			}
-			blogRepository.updateLatest(blog.isLatest(), blog.getBlogId());
+			blogRepo.updateLatest(blog);
 		}
-
 	}
 
 	private void setSweetNess(Blog blog) {
@@ -296,7 +296,7 @@ public class BlogServiceImpl implements BlogService {
 			cdt.setColdBoolean(false);
 		} else {
 				// 連冷熱都沒選
-				return blogRepo.selectAll(cdt);
+				return blogRepo.selectAllOrderBy(cdt);
 		}
 		// 只有冷熱
 		return blogRepo.selectAllWithCold(cdt);

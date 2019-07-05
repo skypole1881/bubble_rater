@@ -30,6 +30,7 @@ public class IndexController {
 	// 最開始載入頁面
 	@RequestMapping(value = { "/", "/login1" })
 	public String index(Model model) {
+		blogService.setLatest();
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
 		Blog blog = blogService.getBlog(33);
@@ -80,6 +81,7 @@ public class IndexController {
 	// 按下GO搜尋
 	@GetMapping("/search")
 	public String index(Condition cdt, BindingResult br, Model model) {
+		blogService.setLatest();
 		List<Blog> dtos = new ArrayList<>();
 		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
 		if (cdt.getKeyword().trim().equals("")) {

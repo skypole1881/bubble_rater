@@ -2,7 +2,6 @@ function bindLoadButton(){
 	$('#loadButton').on("click",function () {
 		var url = '/loadsix?';
 		console.log(data_condition);
-		console.log("aaaa");
 		data_condition.token = index;
 		$.ajax({
 			url: url,
@@ -19,11 +18,9 @@ function bindLoadButton(){
 	
   
 function loadsix(data){
-	console.log("num==="+data.num);
 	if(data.num == false){
 		$("#bu").hide();
 	}
-	console.log("into loadsix");
 	for(var i = 0 ; i < data.blogs.length ; i ++){
 		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white change-top");
 		var div2 = $("<div>").addClass("otherinfo change-first");
@@ -70,8 +67,10 @@ function loadsix(data){
 		div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(divInvisible);
 		divId.append(div3);
 		
-		var div4 = $("<div>").addClass("newstore").text("新 進 榜");
-		divId.append(div4);
+		if(data.blogs[i].latest == true){
+			var div4 = $("<div>").addClass("newstore").text("新 進 榜");
+			divId.append(div4);
+		}
 		var styleString = `<style type="text/css">
 		                    #search${data.blogs[i].blogId} .otherinfo .bg-blur:before, #search${data.blogs[i].blogId} .othercomment:before {
 		                      background-image: url("${data.blogs[i].photoLink}");
