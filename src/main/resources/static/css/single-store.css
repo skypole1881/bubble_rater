@@ -1,19 +1,31 @@
-.storecomment
+.single-store > div
 {
-	/*z-index: -2;*/
-	color: black;
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
+	padding-top: 3.6vmin;
+	padding-bottom: 10vh;
 }
-.storecomment > div
+.single-store > div > *
 {
-	/*height: 90vh;*/
-
+	margin-bottom: 2.4vmin;
+}
+.storename td:nth-child(1)
+{
+	font-size: 3rem;
+	font-weight: bold;
+}
+.storename td:nth-child(2)
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 4rem;
+	font-weight: bold;
 }
 
 .scoretable
 {
-	font-family: 'GenJyuuGothic';
 	font-size: 2rem;
-	line-height: 3rem;
+	width: 100%;
+	text-align: left;
 }
 .scoretable tr td:nth-child(1)
 {
@@ -21,9 +33,8 @@
 }
 .ranking
 {
-	font-family: 'Branding';
+	font-family: 'Ubuntu', sans-serif;
 	font-size: 3rem;
-	line-height: 3rem;
 	font-weight: bold;
 	color: #FF0062;
 	text-decoration: underline;
@@ -32,7 +43,6 @@
 {
 	overflow: none;
 	white-space: normal;
-	text-overflow: ;
 }
 .storecomment > hr
 {
@@ -41,7 +51,7 @@
 .readmore
 {
 	position: absolute;
-	bottom: -2rem;
+	bottom: -2.4vmin;
 	width: 100%;
 	left: 15px;
 	z-index: 1;

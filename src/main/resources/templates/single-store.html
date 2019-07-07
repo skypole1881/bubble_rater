@@ -55,30 +55,22 @@
   </nav>
   <div class="container-fluid text-white" >
     <div class="row no-gutters bg-tea">
-      <div class="col-8">
+      <div class="col-md-8 col-sm-6 col-12">
         <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/>
       </div>
-      <div class="col-4 storecomment bg-tea">
+      <div class="col-md-4 col-sm-6 col-12 single-store bg-tea">
         <div class="">
           <p class="ranking" th:text=${rank}>NO.01</p>
           <table class="storename">
             <tr>
-              <td>
-                <p th:text="${blog.storeBrand}">清心 </p>
-              </td>
-              <td rowspan="3">
-                <p class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</p>
-              </td>
+              <td th:text="${blog.storeBrand}">清心</td>
+              <td rowspan="3" class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</td>
             </tr>
             <tr>
-              <td>
-                <p th:text="${blog.storeDistrict}">文山</p>
-              </td>
+              <td th:text="${blog.storeDistrict}">文山</td>
             </tr>
             <tr>
-              <td>
-                <p th:text="${blog.item}">珍奶</p>
-              </td>
+              <td th:text="${blog.item}">珍奶</td>
             </tr>
           </table>
           <table class="scoretable">
@@ -112,7 +104,7 @@
             <div class="col-12"></div>
             <div class="col-12"></div>
             <div>
-              <a href="Javascript:void(0);" id="loadButton" class="btn text-white" role="button">回主頁</a>
+              <a href="http://54.254.149.198:8081/#search" id="loadButton" class="btn text-white" role="button">回主頁</a>
             </div>
           </div>
         </div>
@@ -122,22 +114,22 @@
     <div class="row contact bg-blur" id="contact">
       <div class="col-12">
         <div class="row justify-content-center logo">
-          <div class="col-2">
+          <div class="col-3 col-md-2">
             <img src="../static/images/bubble rater_logo_B-w.png" th:src="@{/images/bubble rater_logo_B-w.png}" class="img-fluid"/>
           </div>
         </div>
         <div class="row justify-content-center society">
-          <div class="col-1 align-self-center" >
+          <div class="col-2 col-md-1 align-self-center" >
             <a href="https://www.facebook.com/BubbleRater/">
               <img src="../static/images/bubble rater_logo-11.png" th:src="@{/images/bubble rater_logo-11.png}" class="img-fluid"/>
             </a>
           </div>
-          <div class="col-1 align-self-center" >
+          <div class="col-2 col-md-1 align-self-center" >
             <a href="https://www.youtube.com/">
               <img src="../static/images/bubble rater_logo-13.png" th:src="@{/images/bubble rater_logo-13.png}" class="img-fluid"/>
             </a>
           </div>
-          <div class="col-1 align-self-center" >
+          <div class="col-2 col-md-1 align-self-center" >
             <a href="https://www.instagram.com/bubblerater/">
               <img src="../static/images/bubble rater_logo-12.png" th:src="@{/images/bubble rater_logo-12.png}" class="img-fluid"/>
             </a>
