@@ -3,7 +3,7 @@
 	padding-left: 8.4vmin;
 	padding-right: 8.4vmin;
 	padding-top: 3.6vmin;
-	padding-bottom: 10vh;
+	padding-bottom: 1.2vmin;
 }
 .single-store > div > *
 {
@@ -11,19 +11,19 @@
 }
 .storename td:nth-child(1)
 {
-	font-size: 3rem;
+	font-size: 4rem;
 	font-weight: bold;
 }
 .storename td:nth-child(2)
 {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 4rem;
+	font-size: 5rem;
 	font-weight: bold;
 }
 
 .scoretable
 {
-	font-size: 2rem;
+	font-size: 3rem;
 	width: 100%;
 	text-align: left;
 }
@@ -34,15 +34,17 @@
 .ranking
 {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 3rem;
+	font-size: 4rem;
 	font-weight: bold;
 	color: #FF0062;
 	text-decoration: underline;
 }
 .comment
 {
-	overflow: none;
-	white-space: normal;
+	color: white;
+	font-family: 'Noto Sans TC', sans-serif;
+	font-size: 2rem;
+	white-space: pre-line;
 }
 .storecomment > hr
 {
@@ -50,9 +52,14 @@
 }
 .readmore
 {
-	position: absolute;
-	bottom: -2.4vmin;
+	position: relative;
+	/*bottom: -2.4vmin;*/
 	width: 100%;
+	height: 8vh;
 	left: 15px;
 	z-index: 1;
+}
+.readmore > div > a
+{
+	width: 100%;
 }
