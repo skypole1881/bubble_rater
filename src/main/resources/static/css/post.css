@@ -28,7 +28,7 @@
 }
 .chosen-select
 {
-	font-family: 'GenJyuuGothic';
+	/*font-family: 'GenJyuuGothic';*/
 	font-weight: bold;
 	font-size: 2rem;
 	/*height: 40px;*/
@@ -378,7 +378,6 @@
 .modalcomment .ranking
 {
 	font-size: 1.5em;
-	font-family: 'Branding';
 	font-weight: bold;
 	color: #FF0062;
 	text-decoration: underline;
@@ -391,7 +390,6 @@
 .modalcomment > .storename tr > td:nth-child(2)
 {
 	font-size: 2.5em;
-	font-family: 'Branding';
 	font-weight: bolder;
 }
 .modalcomment > .scoretable tr > td:nth-child(1)
@@ -420,7 +418,7 @@
 {
 	font-family: 'Noto Sans TC', sans-serif;
 }*/
-.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
+.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p, .modalcomment .ranking, .modalcomment > .storename tr > td:nth-child(2)
 {
 	font-family: 'Ubuntu', sans-serif;
 }
