@@ -131,7 +131,7 @@
 	left: 0;
 	bottom: 0;
 	filter: blur(5px);
-	margin: -30px;
+	margin: -10px;
 	z-index: -1;
 }
 .storeinfo
@@ -181,24 +181,43 @@
 	
 }
 
+#blogAppend .change-top:before
+{
+	background-image: url('../images/store2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: -10px;
+	z-index: -1;
+	transition: background 1s;
+}
+#blogAppend .change-top:hover:before
+{
+	filter: blur(5px);
+	background-position: center;
+}
 .otherinfo
 {
 	position: absolute;
 	bottom: 0px;
-}
-.otherinfo>div
-{
-	position: absolute;
-	bottom: 0px;
 	width: 100%;
-	z-index: 1;
+	transition: transform 1s;
+}
+#blogAppend .change-top:hover .otherinfo
+{
+	transform: translateY(100%);
 }
 .otherinfo .bg-blur::before
 {
 	background-image: url('../images/store2.jpg');
-	background-size: 100% auto;
+	background-size: cover;
 	background-position: bottom;
-	margin: 0px;
 }
 .otherinfo .storename td:nth-of-type(1)
 {
@@ -217,13 +236,7 @@
 	padding-right: 2vmin;
 	padding-top: 1vmin;
 	padding-bottom: 1vmin;
-}
-.othercomment::before
-{
-	background-image: url('../images/store2.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	transition: opacity 1s;
 }
 
 .storename

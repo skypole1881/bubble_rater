@@ -453,26 +453,23 @@
       
  <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3 and ${blog.blogId != null}">
       <div th:id="'search' + ${blog.blogId}" class="col-md-4 text-white change-top">
-        <div class="otherinfo change-first">
-          <img data-src="../static/images/store2.jpg" src="../static/images/store2.jpg" th:data-src="@{${blog.photoLink}}" th:src="@{${blog.photoLink}}" class="img-fluid lazyload"/> 
-          <div>
-            <div class="bg-blur">
-              <table class="storename text-center">
-                <tr>
-                  <td>
-                    <div th:text="${blog.storeBrand+blog.storeCity+'-'+blog.storeDistrict}">清心</div>
-                  </td>
-                  <td rowspan="2">
-                    <div th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div th:text="${blog.item}">珍奶半糖去冰</div>
-                  </td>
-                </tr>
-              </table>
-            </div>
+        <div class="otherinfo">
+          <div class="bg-blur">
+            <table class="storename text-center">
+              <tr>
+                <td>
+                  <div th:text="${blog.storeBrand+blog.storeCity+'-'+blog.storeDistrict}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:text="${blog.item}">珍奶半糖去冰</div>
+                </td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="othercomment change-second bg-blur" th:classappend="'othercomment'+${blog.blogId}">
@@ -518,7 +515,7 @@
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
-          #[['search' + ${blog.blogId}]] .otherinfo .bg-blur:before, #[['search' + ${blog.blogId}]] .othercomment:before {
+          #[['search' + ${blog.blogId}]]:before, #[['search' + ${blog.blogId}]] .otherinfo:before {
             background-image: url("[[@{${blog.photoLink}}]]");
           }
         </style>
