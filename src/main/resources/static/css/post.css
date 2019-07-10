@@ -183,7 +183,7 @@
 
 #blogAppend .change-top:before
 {
-	background-image: url('../images/store2.jpg');
+	/*background-image: url('../images/store2.jpg');*/
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: bottom;
@@ -215,7 +215,7 @@
 }
 .otherinfo .bg-blur::before
 {
-	background-image: url('../images/store2.jpg');
+	/*background-image: url('../images/store2.jpg');*/
 	background-size: cover;
 	background-position: bottom;
 }
