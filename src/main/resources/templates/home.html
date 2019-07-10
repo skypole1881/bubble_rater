@@ -510,7 +510,7 @@
             小編評價巴拉巴拉巴拉
           </p>
           <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-          <div class="invisible" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
+          <div class="d-none" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>
         <div th:if="${blog.latest}" class="newstore">
@@ -526,7 +526,7 @@
 
     </div>
     <div th:if='${num}' id="bu">
-	    <div class="row readmore">
+	    <div class="row readmore no-gutters">
 	      <div class="col-12"></div>
 	      <div class="col-12"></div>
 	      <div class="col-12"></div>
@@ -547,17 +547,17 @@
       </div>
     </div>
     <div class="row justify-content-center society">
-      <div class="col-1 align-self-center" >
+      <div class="col-2 col-md-1 align-self-center" >
         <a href="https://www.facebook.com/BubbleRater/">
           <img src="../static/images/bubble rater_logo-11.png" th:src="@{/images/bubble rater_logo-11.png}" class="img-fluid"/>
         </a>
       </div>
-      <div class="col-1 align-self-center" >
+      <div class="col-2 col-md-1 align-self-center" >
         <a href="https://www.youtube.com/">
           <img src="../static/images/bubble rater_logo-13.png" th:src="@{/images/bubble rater_logo-13.png}" class="img-fluid"/>
         </a>
       </div>
-      <div class="col-1 align-self-center" >
+      <div class="col-2 col-md-1 align-self-center" >
         <a href="https://www.instagram.com/bubblerater/">
           <img src="../static/images/bubble rater_logo-12.png" th:src="@{/images/bubble rater_logo-12.png}" class="img-fluid"/>
         </a>
