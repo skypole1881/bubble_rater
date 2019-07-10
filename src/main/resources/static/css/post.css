@@ -238,7 +238,10 @@
 	padding-bottom: 1vmin;
 	transition: opacity 1s;
 }
-
+.othercomment > *
+{
+	margin-bottom: 2vmin;
+}
 .storename
 {
 	width: 100%;
