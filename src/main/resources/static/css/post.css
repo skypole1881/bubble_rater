@@ -216,7 +216,6 @@
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
-	height: 100%;
 	transition: transform 1s;
 }
 #blogAppend .change-top:hover .otherinfo
@@ -247,6 +246,7 @@
 	padding-top: 1vmin;
 	padding-bottom: 1vmin;
 	transition: opacity 1s;
+	height: 100%;
 }
 .othercomment > *
 {
