@@ -185,7 +185,11 @@
 {
 	
 }
-
+#blogAppend .change-top
+{
+	/*navbar is 8rem height*/
+	min-height: calc(50vh - 4rem);
+}
 #blogAppend .change-top:before
 {
 	/*background-image: url('../images/store2.jpg');*/
@@ -212,6 +216,7 @@
 	position: absolute;
 	bottom: 0px;
 	width: 100%;
+	height: 100%;
 	transition: transform 1s;
 }
 #blogAppend .change-top:hover .otherinfo
