@@ -53,14 +53,14 @@ $('.filter_region').on("click", function() {
 });
 
 // 排序
-$('.sort').on("click", function() {
+$('.dropdown-item.sort').on("click", function() {
 	var myElement = document.getElementById("btnGroupDrop3");
 	myElement.setAttribute('value', this.value);
 	if (this.value == 'totalRate') {
 		myElement.innerHTML = "依照總分";
 	} else if (this.value == 'createdDtm') {
 		myElement.innerHTML = "依照時間";
-	} else if (this.value == 'bubbleRate') {
+	} else if (this.value == 'bubbleRatePR') {
 		myElement.innerHTML = "珍珠彈性";
 	} else if (this.value == 'teaRatePR') {
 		myElement.innerHTML = "奶茶口感";

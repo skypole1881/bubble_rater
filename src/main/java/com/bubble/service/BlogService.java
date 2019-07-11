@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 
 import com.bubble.po.Blog;
 import com.bubble.po.Condition;
+import com.bubble.po.Rating;
 
 public interface BlogService {
 
@@ -67,5 +68,5 @@ public interface BlogService {
 
 	List<Blog> selectSixMoreOnly(Integer token);
 
-
+	List<Rating> selectRating(String bubbletag);
 }

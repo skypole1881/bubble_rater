@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.bubble.po.Blog;
 import com.bubble.po.Condition;
+import com.bubble.po.Rating;
 
 public interface BlogRepo {
 	public abstract List<Blog> sixMore(int token);
@@ -41,4 +42,6 @@ public interface BlogRepo {
 	public abstract List<Object> queryKeyWordByStoreName();
 	
 	public abstract void updateLatest(Blog blog);
+	
+	public abstract List<Rating> selectRating(String bubbletag);
 }

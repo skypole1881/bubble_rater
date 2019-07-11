@@ -1,7 +1,5 @@
 package com.bubble.Interceptor;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.jpa.HibernateEntityManagerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +20,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 		localeInterceptor.setParamName("lang");
 
 		registry.addInterceptor(localeInterceptor).addPathPatterns("/*");
+//		registry.addInterceptor(new BubbletagInterceptor()).addPathPatterns("/").addPathPatterns("/search")
+//				.addPathPatterns("/loadsix");
 	}
 
 //	@Bean
