@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bubble.po.Blog;
 import com.bubble.po.Condition;
+import com.bubble.po.Rating;
 
 @SuppressWarnings("unchecked")
 @Repository
@@ -161,5 +162,11 @@ public class BlogRepoImpl implements BlogRepo {
 	@Override
 	public void updateLatest(Blog blog) {
 		this.getSession().update(blog);
+	}
+
+	@Override
+	public List<Rating> selectRating(String bubbletag) {
+		String qry = "from Rating where cusBubbletag = :bubbletag";
+		return this.getSession().createQuery(qry).list();
 	}
 }

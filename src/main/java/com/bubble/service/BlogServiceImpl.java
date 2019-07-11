@@ -25,6 +25,7 @@ import com.bubble.dao.BlogRepo;
 import com.bubble.dao.BlogRepository;
 import com.bubble.po.Blog;
 import com.bubble.po.Condition;
+import com.bubble.po.Rating;
 import com.bubble.util.MyBeanUtils;
 
 @Service
@@ -363,5 +364,10 @@ public class BlogServiceImpl implements BlogService {
 			}
 		}
 		return rank;
+	}
+
+	@Override
+	public List<Rating> selectRating(String bubbletag) {
+		return blogRepo.selectRating(bubbletag);
 	}
 }

@@ -2,8 +2,14 @@ package com.bubble.web;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +25,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bubble.po.Blog;
 import com.bubble.po.Condition;
+import com.bubble.po.Rating;
 import com.bubble.service.BlogService;
 
 @Controller
@@ -29,27 +36,33 @@ public class IndexController {
 
 	// 最開始載入頁面
 	@RequestMapping(value = { "/", "/login1" })
-	public String index(Model model) {
+	public String index(Model model, HttpServletRequest request, HttpSession session, HttpServletResponse response) {
+//		String bubbletag = session.getAttribute("bubbletag").toString();
 		blogService.setLatest();
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
-		Blog blog = blogService.getBlog(33);
-
-		if (dtos.size() < 4) {
-			for (int i = 0; i < 3; i++) {
-				Blog b = new Blog();
-				b.setStoreCity("無資料");
-				b.setStoreDistrict("");
-				b.setStoreBrand("");
-				b.setPhotoLink("無圖片");
-
-				dtos.add(b);
-			}
-		}
+//		List<Rating> rating = blogService.selectRating(bubbletag);
+//		if (rating != null) {
+//			Set<Integer> same = new HashSet<Integer>();
+//			Set<Integer> temp = new HashSet<Integer>();
+//
+//			for (int i = 0; i < dtos.size(); i++) {
+//				temp.add(dtos.get(i).getBlogId());
+//			}
+//
+//			for (int j = 0; j < rating.size(); j++) {
+//				if (!temp.add(rating.get(j).getBlogId())) {
+//					for(Blog blog : dtos) {
+//						if(rating.get(j).getBlogId() == blog.getBlogId()) {
+//							blog.setTempRate(rating.get(j).getCusRate());
+//						}
+//					}
+//				}
+//			}
+//		}
 		boolean num = true;
 		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
-		model.addAttribute("blog", blog);
 		model.addAttribute("default", defaultList);
 
 		return "home";
@@ -86,7 +99,7 @@ public class IndexController {
 		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
 		if (cdt.getKeyword().trim().equals("")) {
 			dtos = blogService.selectNoKeyword(cdt);
-		}else {
+		} else {
 			if (cdt.getCriteria().equals("city")) {
 				dtos = blogService.selectAllByCity(cdt);
 			} else if (cdt.getCriteria().equals("district")) {
@@ -99,10 +112,10 @@ public class IndexController {
 			}
 		}
 		boolean num = true;
-		if(dtos.size() <= 12) {
+		if (dtos.size() <= 12) {
 			num = false;
-		}else {
-			dtos.remove(cdt.getLimitNumEnd()-1);
+		} else {
+			dtos.remove(cdt.getLimitNumEnd() - 1);
 		}
 
 		if (dtos.size() < 4) {
@@ -136,7 +149,7 @@ public class IndexController {
 		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
 		if (cdt.getKeyword().trim().equals("")) {
 			dtos = blogService.selectNoKeyword(cdt);
-		}else {
+		} else {
 			if (cdt.getCriteria().equals("city")) {
 				dtos = blogService.selectAllByCity(cdt);
 			} else if (cdt.getCriteria().equals("district")) {
@@ -149,10 +162,10 @@ public class IndexController {
 			}
 		}
 		boolean num = true;
-		if(dtos.size() <= 6) {
+		if (dtos.size() <= 6) {
 			num = false;
-		}else {
-			dtos.remove(cdt.getLimitNumEnd()-1);
+		} else {
+			dtos.remove(cdt.getLimitNumEnd() - 1);
 		}
 		Map<String, Object> map = new HashMap<>();
 		map.put("blogs", dtos);
@@ -175,7 +188,7 @@ public class IndexController {
 			e.printStackTrace();
 		}
 		KeyWords.add(0, null);
-		
+
 		return ResponseEntity.ok(KeyWords);
 	}
 }
