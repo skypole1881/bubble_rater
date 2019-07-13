@@ -206,7 +206,7 @@
     </div>
    <div id="searchPack" th:fragment="searchPack">
     <div class="row no-gutters justify-content-md-center">
-      <div id="search0" class="col-md-4 store change-top bg-blur text-white h-100">
+      <div th:id="'search' + ${blogs[0].blogId}" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <div class="text-center ranking">第一名</div>
@@ -284,10 +284,10 @@
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
-          #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
+          #[['search' + ${blogs[0].blogId}]]::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
       </div>
-      <div id="search1" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white h-100">
+      <div th:id="'search' + ${blogs[1].blogId}" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <div id="search1" th:if="${blogs[1].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
@@ -366,10 +366,10 @@
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
-          #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
+          #[['search' + ${blogs[1].blogId}]]::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
         </style>
       </div>
-      <div id="search2" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white h-100">
+      <div th:id="'search' + ${blogs[2].blogId}" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <div id="search2" th:if="${blogs[2].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
@@ -448,7 +448,7 @@
           新 進 榜
         </div>
         <style type="text/css" th:inline="text">
-          #search2::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
+          #[['search' + ${blogs[2].blogId}]]::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
         </style>
       </div>
     </div>
