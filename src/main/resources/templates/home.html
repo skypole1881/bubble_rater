@@ -287,7 +287,8 @@
           #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
       </div>
-      <div id="search1" th:if="${blogs[1].blogId != null}" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search1" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white">
+<!--       <div id="search1" th:if="${blogs[1].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <div class="text-center ranking">第二名</div>
@@ -368,7 +369,8 @@
           #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
         </style>
       </div>
-      <div id="search2" th:if="${blogs[2].blogId != null}" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search2" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white">
+<!--       <div id="search2" th:if="${blogs[2].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <div class="text-center ranking">第三名</div>

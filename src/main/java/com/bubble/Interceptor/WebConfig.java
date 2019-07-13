@@ -10,6 +10,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
+import com.bubble.util.BlogUtils;
+
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 	@Override
@@ -28,6 +30,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //	public SessionFactory sessionFactory(HibernateEntityManagerFactory hemf) {
 //		return hemf.getSessionFactory();
 //	}
+	@Bean
+	public BlogUtils getBlogUtils() {
+		return new BlogUtils();
+	}
 
 	@Bean(name = "localeResolver")
 	public LocaleResolver getLocaleResolver() {
