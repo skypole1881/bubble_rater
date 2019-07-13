@@ -206,7 +206,7 @@
     </div>
    <div id="searchPack" th:fragment="searchPack">
     <div class="row no-gutters justify-content-md-center">
-      <div id="search0" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search0" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
           <div class="text-center ranking">第一名</div>
@@ -276,7 +276,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[0].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-            <div class="invisible">看不到</div>
+            <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
@@ -287,7 +287,7 @@
           #search0::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
         </style>
       </div>
-      <div id="search1" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search1" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <div id="search1" th:if="${blogs[1].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
@@ -358,7 +358,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[1].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-            <div class="invisible">看不到</div>
+            <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
@@ -369,7 +369,7 @@
           #search1::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
         </style>
       </div>
-      <div id="search2" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white">
+      <div id="search2" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white h-100">
 <!--       <div id="search2" th:if="${blogs[2].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
 <!--       <tr th:each="blog : ${blog}"> -->
         <div class="storeinfo change-first">
@@ -440,7 +440,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[2].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-            <div class="invisible">看不到</div>
+            <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
         </div>
