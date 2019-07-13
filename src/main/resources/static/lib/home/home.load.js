@@ -23,10 +23,9 @@ function loadsix(data){
 	}
 	for(var i = 0 ; i < data.blogs.length ; i ++){
 		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white change-top");
-		var div2 = $("<div>").addClass("otherinfo change-first");
-		var img = $("<img>").attr({src:`${data.blogs[i].photoLink}`}).addClass("img-fluid lazyload");
-		var div2_1 = $("<div>");
-		var div2_1_1 = $("<div>").addClass("bg-blur");
+		var div2 = $("<div>").addClass("otherinfo");
+//		var img = $("<img>").attr({src:`${data.blogs[i].photoLink}`}).addClass("img-fluid lazyload");
+		var div2_1 = $("<div>").addClass("bg-blur");
 		var tableTextCenter = $("<table>").addClass("storename text-center");
 		var textCenterTr1 = $("<tr>");
 		var textCenterTd1_1 = $("<td>").append(`<div>${data.blogs[i].storeBrand}${data.blogs[i].storeCity}-${data.blogs[i].storeDistrict}</div>`);
@@ -36,9 +35,8 @@ function loadsix(data){
 		var textCenterTd2_1 = $("<td>").append(`<div>${data.blogs[i].item}</div>`);
 		textCenterTr2.append(textCenterTd2_1);
 		tableTextCenter.append(textCenterTr1).append(textCenterTr2);
-		div2_1_1.append(tableTextCenter);
-		div2_1.append(div2_1_1);
-		div2.append(img).append(div2_1);
+		div2_1.append(tableTextCenter);
+		div2.append(div2_1);
 		divId.append(div2);
 		
 		var div3 = $("<div>").addClass("othercomment change-second bg-blur");
@@ -63,7 +61,7 @@ function loadsix(data){
 		                      var id = btnId.substr(13);
 		                      openModal(id);
 		                    });
-		var divInvisible = $("<div>").attr({id:`invisibleId${data.blogs[i].blogId}`}).addClass("invisible").text(`${data.blogs[i].blogId}`);
+		var divInvisible = $("<div>").attr({id:`invisibleId${data.blogs[i].blogId}`}).addClass("d-none").text(`${data.blogs[i].blogId}`);
 		div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(divInvisible);
 		divId.append(div3);
 		
@@ -72,7 +70,7 @@ function loadsix(data){
 			divId.append(div4);
 		}
 		var styleString = `<style type="text/css">
-		                    #search${data.blogs[i].blogId} .otherinfo .bg-blur:before, #search${data.blogs[i].blogId} .othercomment:before {
+		                    #search${data.blogs[i].blogId}:before, #search${data.blogs[i].blogId} .otherinfo .bg-blur:before {
 		                      background-image: url("${data.blogs[i].photoLink}");
 		                    }
 		                  </style>`;
