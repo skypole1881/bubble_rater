@@ -462,10 +462,15 @@
             <table class="storename text-center">
               <tr>
                 <td>
-                  <div th:text="${blog.storeBrand+blog.storeCity+'-'+blog.storeDistrict}">清心</div>
+                  <div th:text="${blog.storeBrand}">清心</div>
                 </td>
-                <td rowspan="2">
+                <td rowspan="3">
                   <div th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:text="${blog.storeCity+'-'+blog.storeDistrict}">宜蘭縣蘇澳鎮</div>
                 </td>
               </tr>
               <tr>
