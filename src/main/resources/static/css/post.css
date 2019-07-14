@@ -207,6 +207,11 @@
 	filter: blur(5px);
 	background-position: center;
 }
+.change-top.hover:before
+{
+	filter: blur(5px);
+	background-position: center;
+}
 .otherinfo
 {
 	position: absolute;
@@ -215,6 +220,10 @@
 	transition: transform 1s;
 }
 #blogAppend .change-top:hover .otherinfo
+{
+	transform: translateY(100%);
+}
+.change-tp.hover .otherinfo
 {
 	transform: translateY(100%);
 }
@@ -299,7 +308,15 @@
 {
 	display: none;
 }
+.change-top.hover .change-first
+{
+	display: none;
+}
 .change-top:hover .change-second
+{
+	opacity: 1;
+}
+.change-top.hover .change-second
 {
 	opacity: 1;
 }
