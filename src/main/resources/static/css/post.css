@@ -181,12 +181,13 @@
 {
 	
 }
-#blogAppend .change-top
+#blogAppend .otherstore
 {
 	/*navbar is 8rem height*/
 	min-height: calc(50vh - 4rem);
+	overflow: hidden;
 }
-#blogAppend .change-top:before
+#blogAppend .otherstore:before
 {
 	/*background-image: url('../images/store2.jpg');*/
 	background-size: cover;
@@ -207,7 +208,7 @@
 	filter: blur(5px);
 	background-position: center;
 }
-.change-top.hover:before
+#blogAppend .touched:before
 {
 	filter: blur(5px);
 	background-position: center;
@@ -223,7 +224,7 @@
 {
 	transform: translateY(100%);
 }
-.change-tp.hover .otherinfo
+#blogAppend .touched .otherinfo
 {
 	transform: translateY(100%);
 }
@@ -294,7 +295,7 @@
 /*when change-top is hover, change-first change to change-second*/
 .change-top
 {
-	overflow: hidden;
+	
 }
 .change-first
 {
@@ -308,7 +309,7 @@
 {
 	display: none;
 }
-.change-top.hover .change-first
+.touched .change-first
 {
 	display: none;
 }
@@ -316,7 +317,7 @@
 {
 	opacity: 1;
 }
-.change-top.hover .change-second
+.touched .change-second
 {
 	opacity: 1;
 }

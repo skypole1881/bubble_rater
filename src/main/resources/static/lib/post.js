@@ -8,24 +8,13 @@ lazyload();
 
 $(".change-top").on("touchend", touchEnd);
 function touchEnd(event){
-	if( $(this).hasClass("store")){
-		if( $(this).hasClass("hover")){
-			$(this).removeClass("hover");
-			// $(this).children(".change-second").css("opacity", 0);
-			// $(this).children(".change-first").removeClass("d-none");
-			// $(this).children(".change-first").addClass("d-block");
-		}
-		else{
-			// $(".store .change-first.d-none").addClass("d-block");
-			// $(".store .change-first.d-none").removeClass("d-none");
-			// $(".store .change-second").css("opacity", 0);
-			$(".store.hover").removeClass("hover");
-			// $(this).children(".change-first").removeClass("d-block");
-			// $(this).children(".change-first").addClass("d-none");
-			// $(this).children(".change-second").css("opacity", 1);
-			$(this).addClass("hover");
-		}
+	if( $(this).hasClass("touched")){
+		$(this).removeClass("touched");
 	}
 	else{
+		$(".touched").addClass("change-top");
+		$(".touched").removeClass("touched");
+		$(this).addClass("touched");
+		$(this).removeClass("change-top");
 	}
 }
