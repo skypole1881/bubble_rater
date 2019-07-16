@@ -16,7 +16,7 @@ logging:
     com.bubble: info
   file: log/blog-pro.log 
 server:
-  port: 8081  
+  port: 8080  
   compression:
         enabled: true
         excluded-user-agents: 
