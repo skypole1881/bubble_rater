@@ -444,6 +444,10 @@
 {
 	white-space: pre-line;
 }
+.modal-footer button
+{
+	font-size: 16px;
+}
 
 .introduction-text, .modal-btn, .introduction-conclusion, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .newstore
 {
