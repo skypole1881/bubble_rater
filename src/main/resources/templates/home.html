@@ -220,7 +220,7 @@
           <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">9.6</div>
           <div class="text-center store-name" th:text="${blogs[0].storeBrand}">店家</div>
           <div class="text-center substore-name" th:text="${blogs[0].storeCity+'-'+blogs[0].storeDistrict}">門市</div>
-          <div th:if="${blogs[0].cold}" class="text-center drink-name" th:text="${blogs[0].item}+' (冷)'">品名</div>
+          <div th:if="${blogs[0].cold}" class="text-center drink-name" th:text="${blogs[0].item}">品名</div>
           <div th:unless="${blogs[0].cold}" class="text-center drink-name" th:text="${blogs[0].item}+' (熱)'">品名</div>
           <hr color="white"/>
           <center>
@@ -253,7 +253,7 @@
               <tr>
                 <td>
                   <p id="aaa" th:text="${blogs[0].storeBrand}">清心</p>
-                  <p th:if="${blogs[0].cold}" th:text="${blogs[0].item}+' (冷)'">珍奶104</p>
+                  <p th:if="${blogs[0].cold}" th:text="${blogs[0].item}">珍奶104</p>
                   <p th:unless="${blogs[0].cold}" th:text="${blogs[0].item}+' (熱)'">珍奶104</p>
                 </td>
                 <td>
@@ -304,7 +304,7 @@
           <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">9.6</div>
           <div class="text-center store-name" th:text="${blogs[1].storeBrand}">店家</div>
           <div class="text-center substore-name" th:text="${blogs[1].storeCity+'-'+blogs[1].storeDistrict}">門市</div>
-          <div th:if="${blogs[1].cold}" class="text-center drink-name" th:text="${blogs[1].item}+' (冷)'">品名</div>
+          <div th:if="${blogs[1].cold}" class="text-center drink-name" th:text="${blogs[1].item}">品名</div>
           <div th:unless="${blogs[1].cold}" class="text-center drink-name" th:text="${blogs[1].item}+' (熱)'">品名</div>
           <hr color="white"/>
           <center>
@@ -337,7 +337,7 @@
               <tr>
                 <td>
                   <p th:text="${blogs[1].storeBrand}">清心</p>
-				  <p th:if="${blogs[1].cold}" th:text="${blogs[1].item}+' (冷)'">珍奶104</p>
+				  <p th:if="${blogs[1].cold}" th:text="${blogs[1].item}">珍奶104</p>
                   <p th:unless="${blogs[1].cold}" th:text="${blogs[1].item}+' (熱)'">珍奶104</p>                </td>
                 <td>
                   <p class="text-right" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</p>
@@ -387,7 +387,7 @@
           <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">9.6</div>
           <div class="text-center store-name" th:text="${blogs[2].storeBrand}">店家</div>
           <div class="text-center substore-name" th:text="${blogs[2].storeCity+'-'+blogs[2].storeDistrict}">門市</div>
-          <div th:if="${blogs[2].cold}" class="text-center drink-name" th:text="${blogs[2].item}+' (冷)'">品名</div>
+          <div th:if="${blogs[2].cold}" class="text-center drink-name" th:text="${blogs[2].item}">品名</div>
           <div th:unless="${blogs[2].cold}" class="text-center drink-name" th:text="${blogs[2].item}+' (熱)'">品名</div>
           <hr color="white"/>
           <center>
@@ -420,7 +420,7 @@
               <tr>
                 <td>
                   <p th:text="${blogs[2].storeBrand}">清心</p>
-				  <p th:if="${blogs[2].cold}" th:text="${blogs[2].item}+' (冷)'">珍奶104</p>
+				  <p th:if="${blogs[2].cold}" th:text="${blogs[2].item}">珍奶104</p>
                   <p th:unless="${blogs[2].cold}" th:text="${blogs[2].item}+' (熱)'">珍奶104</p>                </td>
                 <td>
                   <p class="text-right" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</p>
@@ -486,7 +486,7 @@
               </tr>
               <tr>
                 <td>
-                  <div th:if="${blog.cold}" th:text="${blog.item}+' (冷)'">珍奶半糖去冰</div>
+                  <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
                   <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
                 </td>
               </tr>
@@ -505,7 +505,7 @@
             </tr>
             <tr>
               <td>
-                <div th:if="${blog.cold}" th:text="${blog.item}+' (冷)'">珍奶半糖去冰</div>
+                <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
                 <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
               </td>
             </tr>
