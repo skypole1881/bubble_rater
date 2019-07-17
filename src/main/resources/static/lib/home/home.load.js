@@ -22,6 +22,10 @@ function loadsix(data){
 		$("#bu").hide();
 	}
 	for(var i = 0 ; i < data.blogs.length ; i ++){
+		var cold = "冷";
+		if(data.blogs[i].cold == false){
+			cold = "熱";
+		}
 		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white otherstore change-top");
 		var div2 = $("<div>").addClass("otherinfo");
 //		var img = $("<img>").attr({src:`${data.blogs[i].photoLink}`}).addClass("img-fluid lazyload");
@@ -35,7 +39,7 @@ function loadsix(data){
 		var textCenterTd2_1 = $("<td>").append(`<div>${data.blogs[i].storeCity}-${data.blogs[i].storeDistrict}</div>`);
 		textCenterTr2.append(textCenterTd2_1);
 		var textCenterTr3 = $("<tr>");
-		var textCenterTd3_1 = $("<td>").append(`<div>${data.blogs[i].item}</div>`);
+		var textCenterTd3_1 = $("<td>").append(`<div>${data.blogs[i].item} (${cold})</div>`);
 		textCenterTr3.append(textCenterTd3_1);
 		tableTextCenter.append(textCenterTr1).append(textCenterTr2).append(textCenterTr3);
 		div2_1.append(tableTextCenter);
@@ -46,7 +50,7 @@ function loadsix(data){
 		var tableStoreName = $("<table>").addClass("storename");
 		var storeNameTr1 = $("<tr>").append(`<td><div>${data.blogs[i].storeBrand}</div></td>`)
 		                    .append(`<td rowspan="2"><div class="text-center">${data.blogs[i].totalRate.toFixed(1)}</div></td>`);
-		var storeNameTr2 = $("<tr>").append(`<td><div>${data.blogs[i].item}</div></td>`);
+		var storeNameTr2 = $("<tr>").append(`<td><div>${data.blogs[i].item} (${cold})</div></td>`);
 		tableStoreName.append(storeNameTr1).append(storeNameTr2);
 		
 		var tableScoretable = $("<table>").addClass("scoretable");
