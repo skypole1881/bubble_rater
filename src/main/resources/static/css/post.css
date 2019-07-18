@@ -307,6 +307,7 @@
 	padding: 2.4vmin 1.8vmin 2.4vmin 1.8vmin;
 	border-bottom-left-radius: 1.8vmin;
 	transition: transform 1s;
+	white-space: nowrap;
 }
 .change-top:hover .newstore, .touch .newstore
 {
