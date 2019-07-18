@@ -257,12 +257,16 @@
             <table class="storename">
               <tr>
                 <td>
-                  <p id="aaa" th:text="${blogs[0].storeBrand}">清心</p>
-                  <p th:if="${blogs[0].cold}" th:text="${blogs[0].item}">珍奶104</p>
-                  <p th:unless="${blogs[0].cold}" th:text="${blogs[0].item}+' (熱)'">珍奶104</p>
+                  <div id="aaa" th:text="${blogs[0].storeBrand}">清心</div>
                 </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
                 <td>
-                  <p class="text-right" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</p>
+                  <div th:if="${blogs[0].cold}" th:text="${blogs[0].item}">珍奶104</div>
+                  <div th:unless="${blogs[0].cold}" th:text="${blogs[0].item}+' (熱)'">珍奶104</div>
                 </td>
               </tr>
             </table>
@@ -341,11 +345,16 @@
             <table class="storename">
               <tr>
                 <td>
-                  <p th:text="${blogs[1].storeBrand}">清心</p>
-				  <p th:if="${blogs[1].cold}" th:text="${blogs[1].item}">珍奶104</p>
-                  <p th:unless="${blogs[1].cold}" th:text="${blogs[1].item}+' (熱)'">珍奶104</p>                </td>
+                  <div th:text="${blogs[1].storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
                 <td>
-                  <p class="text-right" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</p>
+                  <div th:if="${blogs[1].cold}" th:text="${blogs[1].item}">珍奶104</div>
+                  <div th:unless="${blogs[1].cold}" th:text="${blogs[1].item}+' (熱)'">珍奶104</div>
                 </td>
               </tr>
             </table>
@@ -424,11 +433,16 @@
             <table class="storename">
               <tr>
                 <td>
-                  <p th:text="${blogs[2].storeBrand}">清心</p>
-				  <p th:if="${blogs[2].cold}" th:text="${blogs[2].item}">珍奶104</p>
-                  <p th:unless="${blogs[2].cold}" th:text="${blogs[2].item}+' (熱)'">珍奶104</p>                </td>
+                  <div th:text="${blogs[2].storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
                 <td>
-                  <p class="text-right" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</p>
+                  <div th:if="${blogs[2].cold}" th:text="${blogs[2].item}">珍奶104</div>
+                  <div th:unless="${blogs[2].cold}" th:text="${blogs[2].item}+' (熱)'">珍奶104</div>
                 </td>
               </tr>
             </table>

@@ -177,9 +177,13 @@
 {
 	margin-bottom: 2.4vmin;
 }
-.storecomment > div > .storename
+.storecomment > div > .storename td:nth-of-type(2)
 {
-	
+	background-image: url("../images/bubble rater_logo_score.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: black;
 }
 #blogAppend .otherstore
 {
@@ -265,7 +269,15 @@
 }
 .othercomment > .storename tr td:nth-of-type(2)
 {
-	padding-right: 4.8vmin;
+	margin-right: 4.8vmin;
+}
+.othercomment > .storename tr td:nth-of-type(2)
+{
+	background-image: url("../images/bubble rater_logo_score.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: black;
 }
 .storecomment .comment, .othercomment .comment
 {
@@ -460,7 +472,7 @@
 	/*font-size: 36px;*/
 	font-size: 3rem;
 }
-.introduction-header, .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p
+.introduction-header, .othercomment .storename td:nth-of-type(2), .storecomment .storename td:nth-of-type(2)
 {
 	/*font-size: 48px;*/
 	/*font-size: 2.5vw;*/
@@ -470,11 +482,11 @@
 {
 	font-family: 'Noto Sans TC', sans-serif;
 }*/
-.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2) p, .modalcomment .ranking, .modalcomment > .storename tr > td:nth-child(2)
+.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2), .modalcomment .ranking, .modalcomment > .storename tr > td:nth-child(2)
 {
 	font-family: 'Ubuntu', sans-serif;
 }
-#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2) p, .vote, .readmore div:nth-of-type(5) a
+#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2), .vote, .readmore div:nth-of-type(5) a
 {
 	font-weight: bold;
 }
