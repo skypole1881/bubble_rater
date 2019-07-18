@@ -306,6 +306,11 @@
 	line-height: 1.35;
 	padding: 2.4vmin 1.8vmin 2.4vmin 1.8vmin;
 	border-bottom-left-radius: 1.8vmin;
+	transition: transform 1s;
+}
+.change-top:hover .newstore, .touch .newstore
+{
+	transform: translateY(-110%);
 }
 
 /*when change-top is hover, change-first change to change-second*/
@@ -321,19 +326,11 @@
 {
 	opacity: 0;
 }
-.change-top:hover .change-first
+.change-top:hover .change-first, .touched .change-first
 {
 	display: none;
 }
-.touched .change-first
-{
-	display: none;
-}
-.change-top:hover .change-second
-{
-	opacity: 1;
-}
-.touched .change-second
+.change-top:hover .change-second, .touched .change-second
 {
 	opacity: 1;
 }
