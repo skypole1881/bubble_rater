@@ -69,7 +69,7 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid text-white" >
+  <div class="container-fluid" >
     <div class="row no-gutters bg-tea">
       <div class="col-xl-6 col-md-8 col-sm-6 col-12">
         <img src="../static/images/store2.jpg" th:src="@{${blog.photoLink}}" class="img-fluid"/>
@@ -80,7 +80,7 @@
           <table class="storename">
             <tr>
               <td th:text="${blog.storeBrand}">清心</td>
-              <td rowspan="3" class="text-right finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</td>
+              <td rowspan="3" class="finalscore" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</td>
             </tr>
             <tr>
               <td th:text="${blog.storeDistrict}">文山</td>
