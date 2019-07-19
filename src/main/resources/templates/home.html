@@ -146,6 +146,7 @@
         <hr color="white"/>
         <p class="introduction-text">白利糖度 (Brix) 形容攝氏 20 度 C 下，每 100 公克水溶液中，溶解的蔗糖公克數。
 我們以 4 °Bx、6 °Bx、8 °Bx、10 °Bx 以及 12 °Bx 的蔗糖溶液為比較基準，比較奶茶甜度與甜度比較基準的差異，判斷奶茶含糖量。</p>
+        <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-sweetness">顯示更多</button>
       </div>
     </div>
     <div class="row justify-content-center">
@@ -721,6 +722,27 @@
           <div class="row justify-content-center no-gutters">
             <div class="col-12">
               <img src="../static/images/introduction_bubble.jpg" th:src="@{/images/introduction_bubble.jpg}" class="img-fluid"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-block btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal-introduction-sweetness" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">奶茶到底有多甜?</h4>
+        </div>
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+              <img src="../static/images/introduction_sweetness.jpg" th:src="@{/images/introduction_sweetness.jpg}" class="img-fluid"/>
             </div>
           </div>
         </div>
