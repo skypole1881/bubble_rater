@@ -11,19 +11,25 @@
 }
 .storename td:nth-child(1)
 {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: bold;
 }
 .storename td:nth-child(2)
 {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 5rem;
+	font-size: 7rem;
 	font-weight: bold;
+	text-align: center;
+	background-image: url("../images/bubble rater_logo_score_red.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: white;
 }
 
 .scoretable
 {
-	font-size: 3rem;
+	font-size: 2rem;
 	width: 100%;
 	text-align: left;
 }
@@ -34,16 +40,15 @@
 .ranking
 {
 	font-family: 'Ubuntu', sans-serif;
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: bold;
 	color: #FF0062;
 	text-decoration: underline;
 }
 .comment
 {
-	color: white;
 	font-family: 'Noto Sans TC', sans-serif;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	white-space: pre-line;
 }
 .storecomment > hr
