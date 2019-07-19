@@ -5,8 +5,10 @@ $( ".chosen-select" ).chosen({
 });
 //let lazyload class img lazyload
 lazyload();
-
-$(".change-top").on("touchend", touchEnd);
+addtouch();
+function addtouch(){
+	$(".change-top").on("touchend", touchEnd);
+}
 function touchEnd(event){
 	if( $(this).hasClass("touched")){
 		$(this).removeClass("touched");

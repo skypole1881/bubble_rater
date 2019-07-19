@@ -91,6 +91,7 @@ $('#GO').on("click", function() {
 			$('#searchPack').html(data);
 			$("#bu").show();
 			bindLoadButton();
+			addtouch();
 		}
 	});
 });
