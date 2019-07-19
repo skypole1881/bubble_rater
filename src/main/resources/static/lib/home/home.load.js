@@ -88,4 +88,5 @@ function loadsix(data){
 		divId.append(styleString);
 		$("#blogAppend").append(divId);
 	}
+	$(".change-top").on("touchend", touchEnd);
 }
