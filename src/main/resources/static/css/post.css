@@ -124,9 +124,14 @@
 {
 	color: white;
 }
+.chosen-contain-single
+{
+	background-color: hsla(1, 100%, 100%, 0.75);
+}
 .chosen-single
 {
 	height: 100%!important;
+	background-image: none;
 }
 .chosen-single span
 {
