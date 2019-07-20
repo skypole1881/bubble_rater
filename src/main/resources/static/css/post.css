@@ -107,7 +107,7 @@
 	position: absolute;
 	top: 0.5rem;
 }
-#search > .btn-group > .btn-group:nth-of-type(4):before
+#search > .btn-group > .btn-group:nth-last-of-type(1):before
 {
 	content: '';
 	height: 100%;
