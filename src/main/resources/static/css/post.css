@@ -124,11 +124,11 @@
 {
 	color: white;
 }
-.chosen-contain-single
+.chosen-container-single
 {
 	background-color: hsla(1, 100%, 100%, 0.75);
 }
-.chosen-single
+.chosen-single.chosen-default
 {
 	height: 100%!important;
 	background-image: none;
