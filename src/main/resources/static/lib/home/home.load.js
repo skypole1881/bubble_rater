@@ -22,7 +22,8 @@ function loadsix(data){
 		$("#bu").hide();
 	}
 	for(var i = 0 ; i < data.blogs.length ; i ++){
-		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white otherstore change-top").on("touchend", touchEnd);
+		var divId = $("<div>").attr({id:`search${data.blogs[i].blogId}`}).addClass("col-md-4 text-white otherstore change-top");
+		addtouch(divId);
 		var div2 = $("<div>").addClass("otherinfo");
 //		var img = $("<img>").attr({src:`${data.blogs[i].photoLink}`}).addClass("img-fluid lazyload");
 		var div2_1 = $("<div>").addClass("bg-blur");
