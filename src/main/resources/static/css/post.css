@@ -15,7 +15,7 @@
 	margin-bottom: 0.5rem;
 	margin-left: -1.2vmin;
 	padding-left: 3vw;
-	max-width: 50%;
+	max-width: 70%;
 	height: 6rem;
 	font-size: 3rem;
 }
@@ -23,12 +23,13 @@
 {
 	/*height: 7.375rem;*/
 	/*height: 5.4vmin;*/
-	max-height: 100%;
+	max-height: 40%;
 }
 #navbarResponsive >　ul
 {
 	margin-right: -1.2vmin;
 	padding-right: 3vw;
+	font-size: 2.5rem;
 }
 .chosen-select
 {
