@@ -59,7 +59,7 @@ public class IndexController {
 //				}
 //			}
 //		}
-		dtos = blogUtils.setLatest(dtos);
+		dtos = blogService.setLatest(dtos);
 		boolean num = true;
 		model.addAttribute("blogsize", dtos.size());
 		model.addAttribute("num", num);
@@ -129,7 +129,7 @@ public class IndexController {
 //				dtos.add(b);
 //			}
 //		}
-		dtos = blogUtils.setLatest(dtos);
+		dtos = blogService.setLatest(dtos);
 		model.addAttribute("blogsize", dtos.size());
 		model.addAttribute("num", num);
 		model.addAttribute("blogs", dtos);
@@ -160,7 +160,7 @@ public class IndexController {
 				dtos = blogService.selectByKeyword(cdt);
 			}
 		}
-		dtos = blogUtils.setLatest(dtos);
+		dtos = blogService.setLatest(dtos);
 		boolean num = true;
 		if (dtos.size() <= 6) {
 			num = false;

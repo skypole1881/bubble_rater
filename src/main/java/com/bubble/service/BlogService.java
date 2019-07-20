@@ -34,7 +34,7 @@ public interface BlogService {
 
 	void deleteBlog(Integer id);
 	
-	void setLatest();
+	List<Blog> setLatest(List<Blog> dtos);
 
 	List<Blog> selectAll();
 	

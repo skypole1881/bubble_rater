@@ -77,7 +77,6 @@ public class BlogServiceImpl implements BlogService {
 		b = blogRepository.save(blog);
 		setSweetNess(b);
 		calculatePR();
-		setLatest();
 		calculateTotal();
 
 		// TODO Auto-generated method stub
@@ -115,18 +114,16 @@ public class BlogServiceImpl implements BlogService {
 	}
 	
 	@Override
-	public void setLatest() {
-		List<Blog> blogsList = new ArrayList<Blog>();
-		blogsList.addAll(blogRepo.selectAll());
+	public List<Blog> setLatest(List<Blog> dtos) {
 		Date now = new Date();
-		for (Blog blog : blogsList) {
+		for (Blog blog : dtos) {
 			if (now.getTime() - blog.getCreatedDtm().getTime() >= 7 * 24 * 60 * 60 * 1000) {
 				blog.setLatest(false);
 			} else {
 				blog.setLatest(true);
 			}
-			blogRepo.updateLatest(blog);
 		}
+		return dtos;
 	}
 
 	private void setSweetNess(Blog blog) {
@@ -154,7 +151,6 @@ public class BlogServiceImpl implements BlogService {
 		b.setVersion(blog.getVersion() + 1);
 		b = blogRepository.save(b);
 		setSweetNess(b);
-		setLatest();
 		calculatePR();
 		calculateTotal();
 		return b;
