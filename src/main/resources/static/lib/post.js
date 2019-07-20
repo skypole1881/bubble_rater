@@ -1,8 +1,3 @@
-//initial chosen-select dropdown
-$( ".chosen-select" ).chosen({
-	search_contains: true,
-	allow_single_deselect: true
-});
 //let lazyload class img lazyload
 lazyload();
 addtouch();
@@ -20,3 +15,9 @@ function touchEnd(event){
 		$(this).removeClass("change-top");
 	}
 }
+//initial chosen-select dropdown
+//run latest because run in mobile maybe crash
+$( ".chosen-select" ).chosen({
+	search_contains: true,
+	allow_single_deselect: true
+});
