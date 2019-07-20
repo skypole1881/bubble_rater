@@ -69,6 +69,11 @@
 	padding: 5vh 0;
 }
 
+#stores
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
 .sticky-nav
 {
 	text-align: right;
