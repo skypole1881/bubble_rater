@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -56,7 +57,8 @@ public class Blog {
 	private float userRate;
 	@Column(name = "total_rate")
 	private float totalRate;
-	@Column(name = "latest")
+//	@Column(name = "latest")
+	@Transient
 	private boolean latest;
 	@Column(name = "publish")
 	private boolean publish;

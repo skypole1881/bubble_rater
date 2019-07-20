@@ -104,7 +104,7 @@
             </tr>
             <tr>
               <td>甜度等級</td>
-              <td th:text="${#numbers.formatDecimal(blog.sweetnessRate,0,1)}">剛剛好</td>
+              <td th:text="${blog.sweetness}">剛剛好</td>
             </tr>
           </table>
           <p class="comment" th:text="${blog.content1}">

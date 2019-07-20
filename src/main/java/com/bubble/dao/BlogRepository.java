@@ -131,10 +131,10 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("update Blog b set b.teaRatePR =:score where blogId=:id")
 	int updateTeaRatePR(@Param("score") float score, @Param("id") int id);
 
-	@Transactional
-	@Modifying
-	@Query("update Blog b set b.latest =:latest where blogId=:id")
-	void updateLatest(@Param("latest") boolean b, @Param("id") int id);
+//	@Transactional
+//	@Modifying
+//	@Query("update Blog b set b.latest =:latest where blogId=:id")
+//	void updateLatest(@Param("latest") boolean b, @Param("id") int id);
 
 	@Transactional
 	@Modifying
