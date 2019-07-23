@@ -41,7 +41,7 @@ public interface BlogRepository extends JpaRepository<Blog, Integer>, JpaSpecifi
 	@Query("select b from Blog b where publish = '1' order by createdDtm desc")
 	List<Blog> selectBlogOrderByCreatedTime();
 
-	@Query("select b from Blog b where publish = '1' order by totalRate desc")
+	@Query("select b from Blog b where publish = '1' order by totalRate desc,godfeelingRate")
 	List<Blog> selectBlogOrderByTotalRate();
 
 	// 限制筆數
