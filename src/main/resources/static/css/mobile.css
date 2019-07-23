@@ -1,0 +1,54 @@
+.ismobile #nav-bar-spy
+{
+	height: 15vh;
+}
+.ismobile .navbar-brand img
+{
+	src: url("../static/images/bubble rater_logo-15.png");
+	max-height: 7.5vh;
+}
+.ismobile .navbar-toggler-icon
+{
+	height: 5vh;
+}
+#about > .row
+{
+	padding-left: 6vw;
+	padding-right: 6vw;
+}
+.ismobile .slogan
+{
+	align-self: unset!important;
+}
+.ismobile .slogan:before
+{
+	content: ' ';
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+.ismobile .slogan > div
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ismobile .slogan-main
+{
+	font-size: 9rem;
+}
+.ismobile .slogan-text
+{
+	font-size: 4rem;
+	line-height: 1.75;
+}
+.ismobile .formula-text
+{
+	padding-top: 7vh;
+	font-size: 4rem;
+	line-height: 1.75;
+}
+.ismobile #about img
+{
+	height: 50vw;
+}
+.ismobile 

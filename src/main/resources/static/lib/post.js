@@ -1,7 +1,14 @@
+isMobile();
 //let lazyload class img lazyload
 lazyload();
 var touch = true;
 addtouch();
+
+function isMobile(){
+	if(navigator.userAgent.match(/(iphone|android);?/i)){
+		$("body").addClass("ismobile");
+	}
+}
 function addtouch(element){
 	element = element || ".change-top";
 	$(element).on("touchend", touchEnd);

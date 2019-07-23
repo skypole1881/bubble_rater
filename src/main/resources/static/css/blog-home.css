@@ -14,6 +14,9 @@ body {
 	font-family: 'Noto Sans TC', sans-serif;
     font-display: swap;
 }
+body.ismobile {
+	padding-top: 15vh;
+}
 
 @media (min-width: 992px) {
 	body {
