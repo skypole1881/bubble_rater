@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+   <url>
+      <loc>https://www.bubblerater.com/&amp;desc=Home_Page</loc>
+      <lastmod>2019-07-22</lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+      <loc>https://www.bubblerater.com/single/6&amp;desc=NO.1</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+
+   </url>
+   <url>
+      <loc>https://www.bubblerater.com/single/7&amp;desc=NO.2</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    
+   </url>
+   <url>
+      <loc>https://www.bubblerater.com/single/9&amp;desc=NO.3</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    
+   </url>
+   <url>
+      <loc>https://www.bubblerater.com/single/29&amp;desc=NO.4</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+      
+   </url>
+   <url>
+      <loc>https://www.bubblerater.com/single/26&amp;desc=NO.5</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+      
+   </url>
+   <url>
+      <loc>https://www.bubblerater.com/single/20&amp;desc=NO.6</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+     
+   </url>
+
+</urlset>
