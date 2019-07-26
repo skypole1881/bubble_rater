@@ -2,19 +2,36 @@
 {
 	height: 15vh;
 }
+.ismobile .navbar-brand
+{
+	max-width: 70%;
+	max-height: 100%;
+}
 .ismobile .navbar-brand img
 {
-	src: url("../static/images/bubble rater_logo-15.png");
 	max-height: 7.5vh;
+}
+.ismobile .navbar-brand img:nth-of-type(1)
+{
+	display: none;
+}
+.ismobile .navbar-brand img:nth-of-type(2)
+{
+	display: inline;
 }
 .ismobile .navbar-toggler-icon
 {
 	height: 5vh;
 }
-#about > .row
+.ismobile #about > .row
 {
 	padding-left: 6vw;
 	padding-right: 6vw;
+}
+.ismobile .header
+{
+	height: 85vh;
+	padding-bottom: 0px;
 }
 .ismobile .slogan
 {
@@ -49,6 +66,22 @@
 }
 .ismobile #about img
 {
-	height: 50vw;
+	margin-top: 5vh;
+	width: 50%;
 }
-.ismobile 
+.ismobile .introduction-header
+{
+	font-size: 6rem;
+}
+.ismobile .introduction-text
+{
+	font-size: 4rem;
+	line-height: 1.75;
+}
+.ismobile .introduction-conclusion
+{
+	padding: 7vh 0;
+	margin-bottom: 0;
+	font-size: 4.5rem;
+	line-height: 1.8;
+}

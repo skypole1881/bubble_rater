@@ -78,6 +78,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="https://www.bubblerater.com/">
         <img src="../static/images/bubble rater_logo-16.png" class="img-fluid" th:src="@{/images/bubble rater_logo-16.png}"/>
+        <img src="../static/images/bubble rater_logo-15.png" class="img-fluid" th:src="@{/images/bubble rater_logo-15.png}"/>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -134,12 +135,12 @@
     </div>
     <div class="row text-white">
       <div class="col-md-12">
-        <p class="formula-text">
+        <div class="formula-text">
           一杯好喝的珍珠奶茶 =<br/>
           QQ 的珍珠 + 濃濃的奶茶 + 恰恰好的甜<br/>
           誰才是最好喝的珍奶？<br/>
           我們用數字告訴你！
-        </p>
+        </div>
       </div>
     </div>
     <div class="row text-center">
@@ -149,7 +150,9 @@
         <hr color="white"/>
         <p class="introduction-text text-left">以彈性係數 (elastic modulus) 為測量目標，彈性係數愈高，珍珠愈 Q 彈！
 我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的珍珠比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
-        <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-bubble">顯示更多</button>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-bubble">顯示更多</button>
+        </div>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble-rater_logo-03.png" th:src="@{/images/bubble-rater_logo-03.png}" data-src="../static/images/bubble-rater_logo-03.png" th:data-src="@{/images/bubble-rater_logo-03.png}" class="img-fluid lazyload"/>
@@ -157,7 +160,9 @@
         <hr color="white"/>
         <p class="introduction-text text-left">我們使用黏度 (viscosity) 作為測量目標。黏度愈高的奶茶，流動性愈差，口感愈濃郁。
 以落球法測試奶茶黏度，在層流狀態下，在奶茶中落下的小球會因重力、浮力及黏滯阻力的力平衡達到終端速度，便可從此得知奶茶的黏度。</p>
-        <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-tea">顯示更多</button>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-tea">顯示更多</button>
+        </div>
       </div>
       <div class="col-md-4">
         <img src="../static/images/bubble-rater_logo-04.png"  th:src="@{/images/bubble-rater_logo-04.png}" data-src="../static/images/bubble-rater_logo-04.png"  th:data-src="@{/images/bubble-rater_logo-04.png}" class="img-fluid lazyload"/>
@@ -165,7 +170,9 @@
         <hr color="white"/>
         <p class="introduction-text text-left">白利糖度 (Brix) 形容攝氏 20 度 C 下，每 100 公克水溶液中，溶解的蔗糖公克數。
 我們以 4 °Bx、6 °Bx、8 °Bx、10 °Bx 以及 12 °Bx 的蔗糖溶液為比較基準，比較奶茶甜度與甜度比較基準的差異，判斷奶茶含糖量。</p>
-        <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-sweetness">顯示更多</button>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light" data-toggle="modal" data-target="#Modal-introduction-sweetness">顯示更多</button>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center">
