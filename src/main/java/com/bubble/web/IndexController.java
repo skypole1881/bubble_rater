@@ -35,7 +35,7 @@ public class IndexController {
 	private BlogUtils blogUtils;
 
 	// 最開始載入頁面
-	@RequestMapping(value = { "/", "/login1" })
+	@RequestMapping(value = { "/", "/home" })
 	public String index(Model model, HttpServletRequest request, HttpSession session, HttpServletResponse response) {
 //		String bubbletag = session.getAttribute("bubbletag").toString();
 		List<Blog> dtos = blogService.selectTopTwelve();
