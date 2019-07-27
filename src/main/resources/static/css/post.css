@@ -243,6 +243,10 @@
 	background-size: contain;
 	color: black;
 }
+.storecomment .single-link, #blogAppend .single-link
+{
+	display: none;
+}
 #blogAppend .otherstore
 {
 	/*navbar is 8rem height*/

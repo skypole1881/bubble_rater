@@ -319,6 +319,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[0].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[0].blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
             <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -407,6 +408,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[1].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[1].blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
             <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -495,6 +497,7 @@
               小編評價巴拉巴拉巴拉
             </p>
             <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[2].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[2].blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
             <div class="d-none">看不到</div>
             <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
           </div>
@@ -574,6 +577,7 @@
             小編評價巴拉巴拉巴拉
           </p>
           <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+          <a href="#" th:href="'/single/' + ${blogs.blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
           <div class="d-none" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
           <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
         </div>

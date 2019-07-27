@@ -85,3 +85,12 @@
 	font-size: 4.5rem;
 	line-height: 1.8;
 }
+.ismobile .modal-btn
+{
+	display: none;
+}
+.ismobile .single-link
+{
+	display: inline-block;
+	font-size: 2rem;
+}
