@@ -134,14 +134,12 @@
 {
 	color: white;
 }
-.chosen-container-single
-{
-	background-color: hsla(1, 100%, 100%, 0.75);
-}
-.chosen-single.chosen-default
+.chosen-container-single .chosen-single.chosen-default
 {
 	height: 100%!important;
-	background-image: none;
+	background-image: unset;
+	background-color: hsla(0, 0%, 100%, 0.8);
+	border-radius: 0px;
 }
 .chosen-single span
 {
