@@ -153,6 +153,11 @@
 {
 	height: 100%;
 }
+#testgo
+{
+	height: 100%;
+	font-size: 2rem;
+}
 #search .dropdown-toggle:after
 {
 	display: none;
