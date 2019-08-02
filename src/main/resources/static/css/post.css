@@ -130,6 +130,11 @@
 {
 	color: white;
 }
+#query_suggeest
+{
+	background-color: hsla(1,100%,100%,0.75);
+	border-style: none;
+}
 .chosen-container-single
 {
 	background-color: hsla(1, 100%, 100%, 0.75);
@@ -149,14 +154,12 @@
 {
 	margin: 0.375rem 0;
 }
-#go
+#GO
 {
-	height: 100%;
-}
-#testgo
-{
-	height: 100%;
 	font-size: 2rem;
+	line-height: 1.5;
+	background-color: hsla(1,100%,100%,0.75);
+	/*height: 100%;*/
 }
 #search .dropdown-toggle:after
 {
