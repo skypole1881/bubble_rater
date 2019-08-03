@@ -73,8 +73,9 @@ function loadsix(data){
 		                      var id = btnId.substr(13);
 		                      openModal(id);
 		                    });
+		var singlelink = $("<a>").attr({href:`/single/${data.blogs[i].blogId}`}).text("顯示更多").addClass("btn btn-outline-light btn-sm single-link");
 		var divInvisible = $("<div>").attr({id:`invisibleId${data.blogs[i].blogId}`}).addClass("d-none").text(`${data.blogs[i].blogId}`);
-		div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(divInvisible);
+		div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(singlelink).append(divInvisible);
 		divId.append(div3);
 		
 		if(data.blogs[i].latest == true){

@@ -15,8 +15,8 @@
 	margin-bottom: 0.5rem;
 	margin-left: -1.2vmin;
 	padding-left: 3vw;
-	max-width: 70%;
-	height: 6rem;
+	max-width: 50%;
+	max-height: 6rem;
 	font-size: 3rem;
 }
 .navbar-brand img
@@ -24,6 +24,10 @@
 	/*height: 7.375rem;*/
 	/*height: 5.4vmin;*/
 	max-height: 40%;
+}
+.navbar-brand img:nth-of-type(2)
+{
+	display: none;
 }
 #navbarResponsive >　ul
 {
@@ -139,10 +143,12 @@
 {
 	background-color: hsla(1, 100%, 100%, 0.75);
 }
-.chosen-single.chosen-default
+.chosen-container-single .chosen-single.chosen-default
 {
 	height: 100%!important;
-	background-image: none;
+	background-image: unset;
+	background-color: hsla(0, 0%, 100%, 0.8);
+	border-radius: 0px;
 }
 .chosen-single span
 {
@@ -246,6 +252,10 @@
 	background-position: center;
 	background-size: contain;
 	color: black;
+}
+.storecomment .single-link, #blogAppend .single-link
+{
+	display: none;
 }
 #blogAppend .otherstore
 {
