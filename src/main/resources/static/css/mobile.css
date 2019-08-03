@@ -89,6 +89,10 @@
 {
 	font-size: 4rem;
 }
+.ismobile .sticky-nav
+{
+	top: 15vh;
+}
 .ismobile .storecomment .modal-btn, .ismobile #blogAppend .modal-btn
 {
 	display: none;
