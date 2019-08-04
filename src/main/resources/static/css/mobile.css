@@ -6,10 +6,12 @@
 {
 	max-width: 70%;
 	max-height: 100%;
+	padding-left: 6vw;
 }
 .ismobile .navbar-brand img
 {
 	max-height: 7.5vh;
+	margin-left: 15px;
 }
 .ismobile .navbar-brand img:nth-of-type(1)
 {
@@ -22,6 +24,10 @@
 .ismobile .navbar-toggler-icon
 {
 	height: 5vh;
+}
+.ismobile #navbarResponsive >　ul
+{
+	padding-left: 6vw;
 }
 .ismobile #about > .row
 {
