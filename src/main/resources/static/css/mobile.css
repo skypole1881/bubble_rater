@@ -1,10 +1,10 @@
-.ismobile #nav-bar-spy
+.ismobile #nav-bar-spy .container-fluid:after
 {
-	height: 15vh;
+	height: calc(15vh - 1rem);
 }
 .ismobile .navbar-brand
 {
-	max-width: 70%;
+	max-width: 60%;
 	max-height: 100%;
 	padding-left: 6vw;
 }
@@ -20,6 +20,10 @@
 .ismobile .navbar-brand img:nth-of-type(2)
 {
 	display: inline;
+}
+.ismobile #nav-bar-spy .container-fluid > button
+{
+	margin-right: calc(6vw - 1rem + 15px);
 }
 .ismobile .navbar-toggler-icon
 {
