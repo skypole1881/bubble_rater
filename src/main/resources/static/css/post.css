@@ -147,8 +147,11 @@
 #query_suggeest
 {
 	-webkit-appearance: none;
-	background-color: hsla(0,0%,100%,0.75);
 	border-style: none;
+	border-radius: unset;
+	padding-right: 10px;
+	background: url("../images/down_triangle.png") no-repeat 0 50%;
+	background-color: hsla(0,0%,100%,0.75);
 }
 .chosen-container-single
 {
