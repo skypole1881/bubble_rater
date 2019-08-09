@@ -149,8 +149,9 @@
 	-webkit-appearance: none;
 	border-style: none;
 	border-radius: unset;
-	padding-right: 10px;
-	background: url("../images/down_triangle.png") no-repeat 0 50%;
+	padding-right: 15px;
+	background: url("../images/down_triangle.png") no-repeat;
+	background-position: right 3px top 50%;
 	background-color: hsla(0,0%,100%,0.75);
 }
 .chosen-container-single
