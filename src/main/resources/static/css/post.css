@@ -45,6 +45,12 @@
 	padding-right: 3vw;
 	font-size: 2.5rem;
 }
+.divider
+{
+	display: none;
+	font-size: 4rem;
+	line-height: 1;
+}
 .chosen-select
 {
 	/*font-family: 'GenJyuuGothic';*/

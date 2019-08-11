@@ -19,7 +19,8 @@ body.ismobile {
 }
 
 @media (min-width: 992px) {
-	body {
+	#nav-bar-spy .divider {
+		display: block;
 	}
 }
 /* noto-sans-tc-300 - chinese-traditional_latin */
