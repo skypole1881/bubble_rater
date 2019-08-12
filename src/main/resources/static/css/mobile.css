@@ -103,6 +103,10 @@
 {
 	top: 15vh;
 }
+.ismobile #query_suggeest.chosen-select
+{
+	font-size: 16px;
+}
 .ismobile .storecomment .modal-btn, .ismobile #blogAppend .modal-btn
 {
 	display: none;
