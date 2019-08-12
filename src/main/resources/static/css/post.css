@@ -51,13 +51,6 @@
 	font-size: 4rem;
 	line-height: 1;
 }
-.chosen-select
-{
-	/*font-family: 'GenJyuuGothic';*/
-	font-weight: bold;
-	font-size: 2rem;
-	/*height: 40px;*/
-}
 #about > .row
 {
 	padding-left: 3vw;
@@ -149,6 +142,13 @@
 #btnGroupDrop1 + div > button, #btnGroupDrop2 + div > button, #btnGroupDrop3 + div > button
 {
 	color: white;
+}
+.chosen-select
+{
+	/*font-family: 'GenJyuuGothic';*/
+	font-weight: bold;
+	font-size: 2rem;
+	/*height: 40px;*/
 }
 #query_suggeest
 {
