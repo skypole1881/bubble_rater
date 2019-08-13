@@ -11,7 +11,6 @@
 .ismobile .navbar-brand img
 {
 	max-height: 7.5vh;
-	margin-left: 15px;
 }
 .ismobile .navbar-brand img:nth-of-type(1)
 {
@@ -23,7 +22,7 @@
 }
 .ismobile #nav-bar-spy .container-fluid > button
 {
-	margin-right: calc(6vw - 1rem + 15px);
+	margin-right: calc(6vw - 1rem);
 }
 .ismobile .navbar-toggler-icon
 {
@@ -35,8 +34,11 @@
 }
 .ismobile #about > .row
 {
-	padding-left: 6vw;
-	padding-right: 6vw;
+	padding: 0;
+}
+.ismobile #about > .row > div
+{
+	padding: 0 6vw;
 }
 .ismobile .header
 {
