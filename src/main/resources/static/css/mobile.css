@@ -113,8 +113,148 @@
 {
 	display: none;
 }
+.ismobile #searchPack .store
+{
+	height: 85vh;
+}
+.ismobile .storeinfo
+{
+	padding-left: 12vw;
+	padding-right: 12vw;
+}
+.ismobile .storeinfo .ranking
+{
+	font-size: 5.5rem;
+	line-height: 1;
+}
+.ismobile .storeinfo .finalscore
+{
+	font-size: 18rem;
+	line-height: 1;
+}
+.ismobile .storeinfo .store-name, .ismobile .storeinfo .substore-name, .ismobile .storeinfo .drink-name
+{
+	font-size: 5.5rem;
+	line-height: 1.6;
+}
+.ismobile .storeinfo hr
+{
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+}
+.ismobile .storeinfo .scoretable tr td
+{
+	font-size: 4rem;
+}
+.ismobile .storecomment
+{
+	height: 100%;
+}
+.ismobile .storecomment > img
+{
+	height: 35vh;
+	width: auto;
+}
+.ismobile .storecomment > div
+{
+	position: relative;
+	padding: 0 12vw;
+	top: 25vh;
+	transform: translateY(-50%);
+}
+.ismobile .storecomment > div >*
+{
+	margin-bottom: 3vh;
+}
+.ismobile .storecomment > div >*:last-child
+{
+	margin-bottom: 0;
+}
+.ismobile .storecomment .storename td:nth-of-type(1)
+{
+	font-size: 4rem;
+}
+.ismobile .storecomment .storename td:nth-of-type(2)
+{
+	font-size: 5rem;
+	line-height: 20vw;
+}
+.ismobile .storecomment .storename td:nth-of-type(2) div
+{
+	height: 20vw;
+}
+.ismobile .storecomment .scoretable tr td
+{
+	font-size: 3rem;
+	line-height: 1.6;
+}
+.ismobile .storecomment .comment, .ismobile .othercomment .comment
+{
+	font-size: 3rem;
+	line-height: 1.6;
+}
 .ismobile .single-link, .ismobile #blogAppend .single-link
 {
 	display: inline-block;
+	font-size: 3rem;
+}
+.ismobile .otherinfo .storename td:nth-of-type(1)
+{
+	font-size: 3rem;
+	line-height: 1.6;
+}
+.ismobile .otherinfo .storename td:nth-of-type(2)
+{
+	font-size: 8rem;
+}
+.ismobile .othercomment .storename td:nth-of-type(1)
+{
+	font-size: 4rem;
+}
+.ismobile .othercomment .storename td:nth-of-type(2)
+{
+	font-size: 5rem;
+}
+.ismobile .othercomment .scoretable tr td
+{
+	font-size: 3rem;
+	line-height: 1.6;
+}
+.ismobile .readmore div:nth-of-type(1), .ismobile .readmore div:nth-of-type(2), .ismobile .readmore div:nth-of-type(3), .ismobile .readmore div:nth-of-type(4)
+{
+	height: 3.5vh;
+}
+.ismobile .readmore div:nth-of-type(5) > a
+{
+	height: 14vh;
+	font-size: 4rem;
+	line-height: 14vh;
+}
+.ismobile #contact .logo > div > a
+{
+	line-height: 16vh;
+}
+.ismobile #contact .logo > div img
+{
+	height: 16vh;
+	width: auto;
+}
+.ismobile #contact .society > div > a
+{
+	line-height: 7vh;
+}
+.ismobile #contact .society > div img
+{
+	height: 7vh;
+	width: auto;
+}
+.ismobile #contact .ps > div
+{
+	padding-left: 6vw;
+	padding-right: 6vw;
+}
+.ismobile #contact .ps > div > ol
+{
+	margin-bottom: 13vh;
 	font-size: 2rem;
 }
