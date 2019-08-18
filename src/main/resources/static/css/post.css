@@ -237,9 +237,9 @@
 	padding-left: 8.4vmin;
 	padding-right: 8.4vmin;
 	position:absolute;
-	top: 13.2vmin;
-	/*top: 50%;*/
-    /*transform: perspective(1px) translateY(-50%);*/
+	/*top: 13.2vmin;*/
+	top: 50%;
+    transform: perspective(1px) translateY(-50%);
     /*transition: opacity 1s;*/
 }
 .storeinfo > .ranking
@@ -359,7 +359,7 @@
 	transition: opacity 1s;
 	height: 100%;
 }
-.othercomment > *
+.othercomment > div > *
 {
 	margin-bottom: 2vmin;
 }
@@ -368,7 +368,7 @@
 	width: 100%;
 	text-align: left;
 }
-.othercomment > .storename tr td:nth-of-type(2)
+.othercomment .storename tr td:nth-of-type(2)
 {
 	text-align: center;
 	background-image: url("../images/bubble rater_logo_score.png");

@@ -540,45 +540,47 @@
           </div>
         </div>
         <div class="othercomment change-second bg-blur">
-          <table class="storename">
-            <tr>
-              <td>
-                <div th:text="${blog.storeBrand}">清心</div>
-              </td>
-              <td rowspan="2">
-                <div class="text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
-                <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
-              </td>
-            </tr>
-          </table>
-          <table class="scoretable">
-            <tr>
-              <td>珍珠彈性</td>
-              <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
-              <td>珍探給分</td>
-              <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
-            </tr>
-            <tr>
-              <td>奶茶濃度</td>
-              <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
-              <td>甜度等級</td>
-              <td th:text="${blog.sweetness}">中等</td>
-            </tr>
-          </table>
-          <p class="comment" th:text="${blog.content1}">
-            小編評價巴拉巴拉巴拉
-            小編評價巴拉巴拉巴拉
-            小編評價巴拉巴拉巴拉
-          </p>
-          <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
-          <a href="#" th:href="'/single/' + ${blog.blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
-          <div class="d-none" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
-          <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          <div>
+            <table class="storename">
+              <tr>
+                <td>
+                  <div th:text="${blog.storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
+                  <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable">
+              <tr>
+                <td>珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
+                <td>珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td>奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
+                <td>甜度等級</td>
+                <td th:text="${blog.sweetness}">中等</td>
+              </tr>
+            </table>
+            <p class="comment" th:text="${blog.content1}">
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+            </p>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blog.blogId}" class="btn btn-outline-light btn-sm single-link">顯示更多</a>
+            <div class="d-none" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          </div>
         </div>
         <div th:if="${blog.latest}" class="newstore">
           新 進 榜

@@ -115,7 +115,7 @@
 }
 .ismobile #searchPack .store
 {
-	height: 85vh;
+	height: 85vh!important;
 }
 .ismobile .storeinfo
 {
@@ -131,6 +131,7 @@
 {
 	font-size: 18rem;
 	line-height: 1;
+	padding: 6vh 0;
 }
 .ismobile .storeinfo .store-name, .ismobile .storeinfo .substore-name, .ismobile .storeinfo .drink-name
 {
@@ -166,7 +167,7 @@
 {
 	margin-bottom: 3vh;
 }
-.ismobile .storecomment > div >*:last-child
+.ismobile .storecomment > div > a
 {
 	margin-bottom: 0;
 }
@@ -198,14 +199,48 @@
 	display: inline-block;
 	font-size: 3rem;
 }
+.ismobile #blogAppend .otherstore
+{
+	height: 42.5vh;
+}
+.ismobile #blogAppend .otherinfo
+{
+	height: 14vh;
+}
+.ismobile #blogAppend .otherinfo > .bg-blur
+{
+	height: 100%;
+}
+.ismobile #blogAppend .bg-blur
+{
+	padding: 0 12vw;
+}
+.ismobile .otherinfo .storename
+{
+	position: relative;
+	top: 7vh;
+	transform: translateY(-50%);
+}
 .ismobile .otherinfo .storename td:nth-of-type(1)
 {
 	font-size: 3rem;
 	line-height: 1.6;
+	text-align: left!important;
 }
 .ismobile .otherinfo .storename td:nth-of-type(2)
 {
 	font-size: 8rem;
+	text-align: right!important;
+}
+.ismobile .othercomment > div
+{
+	position: relative;
+	top: 21.25vh;
+	transform: translateY(-50%);
+}
+.ismobile .othercomment .storename
+{
+	margin-bottom: 3vh;
 }
 .ismobile .othercomment .storename td:nth-of-type(1)
 {
@@ -215,16 +250,28 @@
 {
 	font-size: 5rem;
 }
+.ismobile .othercomment .scoretable
+{
+	margin-bottom: 2vh;
+}
 .ismobile .othercomment .scoretable tr td
 {
 	font-size: 3rem;
 	line-height: 1.6;
 }
-.ismobile .readmore div:nth-of-type(1), .ismobile .readmore div:nth-of-type(2), .ismobile .readmore div:nth-of-type(3), .ismobile .readmore div:nth-of-type(4)
+.ismobile .othercomment .comment
+{
+	margin-bottom: 2vh;
+}
+.ismobile .othercomment > div > a
+{
+	margin-bottom: 0;
+}
+.ismobile #searchPack .readmore div:nth-of-type(1), .ismobile #searchPack .readmore div:nth-of-type(2), .ismobile #searchPack .readmore div:nth-of-type(3), .ismobile #searchPack .readmore div:nth-of-type(4)
 {
 	height: 3.5vh;
 }
-.ismobile .readmore div:nth-of-type(5) > a
+.ismobile #searchPack .readmore div:nth-of-type(5) > a
 {
 	height: 14vh;
 	font-size: 4rem;
