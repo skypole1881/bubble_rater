@@ -48,6 +48,7 @@ function loadsix(data){
 		divId.append(div2);
 		
 		var div3 = $("<div>").addClass("othercomment change-second bg-blur");
+		var div3_1 = $("<div>");
 		var tableStoreName = $("<table>").addClass("storename");
 		var storeNameTr1 = $("<tr>").append(`<td><div>${data.blogs[i].storeBrand}</div></td>`)
 		                    .append(`<td rowspan="2"><div class="text-center">${data.blogs[i].totalRate.toFixed(1)}</div></td>`);
@@ -75,7 +76,8 @@ function loadsix(data){
 		                    });
 		var singlelink = $("<a>").attr({href:`/single/${data.blogs[i].blogId}`}).text("顯示更多").addClass("btn btn-outline-light btn-sm single-link");
 		var divInvisible = $("<div>").attr({id:`invisibleId${data.blogs[i].blogId}`}).addClass("d-none").text(`${data.blogs[i].blogId}`);
-		div3.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(singlelink).append(divInvisible);
+		div3_1.append(tableStoreName).append(tableScoretable).append(p).append(btnClickModal).append(singlelink).append(divInvisible);
+		div3.append(div3_1);
 		divId.append(div3);
 		
 		if(data.blogs[i].latest == true){
