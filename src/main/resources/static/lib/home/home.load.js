@@ -66,7 +66,7 @@ function loadsix(data){
 		                    .append(`<td>甜度等級</td>`).append(`<td>${data.blogs[i].sweetness}</td>`);
 		tableScoretable.append(ScoreTableTr1).append(ScoreTableTr2);
 		
-		var p = $("<p>").addClass("comment").text(`${data.blogs[i].content1}`);
+		var p = $("<p>").addClass("comment").html(`${data.blogs[i].content1}`);
 		var btnClickModal = $("<button>").attr({id:`btnClickModal${data.blogs[i].blogId}`,type:"button","data-toggle":"modal","data-target":"#myModal"}).text("顯示更多")
 		                    .addClass("btn btn-outline-light btn-sm modal-btn")
 		                    .on("click", function(){
