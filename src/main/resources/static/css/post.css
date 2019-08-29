@@ -332,6 +332,7 @@
 }
 .storecomment .comment, .othercomment .comment
 {
+	white-space: pre-line;
 	/*font-size: 20px;*/
 	font-size: 1.7rem;
 	/*line-height: 30px;*/
