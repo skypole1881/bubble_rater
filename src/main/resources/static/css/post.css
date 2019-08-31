@@ -64,6 +64,11 @@
 	background-position: center;
 	padding-bottom: 5vh;
 }
+.slogan
+{
+	/*eliminate space between two inline-block*/
+	font-size: 0px;
+}
 .slogan-main
 {
 	/*font-size: 120px;*/
