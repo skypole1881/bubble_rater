@@ -1,5 +1,7 @@
 package com.bubble.Interceptor;
 
+import java.util.Locale;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +40,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "localeResolver")
 	public LocaleResolver getLocaleResolver() {
 		CookieLocaleResolver resolver = new CookieLocaleResolver();
-		resolver.setCookieDomain("myAppLocaleCookie");
+		resolver.setDefaultLocale(Locale.TAIWAN);
+		resolver.setCookieName("lang");
 		// 60 minutes
 		resolver.setCookieMaxAge(60 * 60);
 		return resolver;
