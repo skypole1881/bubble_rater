@@ -40,25 +40,7 @@ public class IndexController {
 //		String bubbletag = session.getAttribute("bubbletag").toString();
 		List<Blog> dtos = blogService.selectTopTwelve();
 		List<Blog> defaultList = blogService.selectDefault();
-//		List<Rating> rating = blogService.selectRating(bubbletag);
-//		if (rating != null) {
-//			Set<Integer> same = new HashSet<Integer>();
-//			Set<Integer> temp = new HashSet<Integer>();
-//
-//			for (int i = 0; i < dtos.size(); i++) {
-//				temp.add(dtos.get(i).getBlogId());
-//			}
-//
-//			for (int j = 0; j < rating.size(); j++) {
-//				if (!temp.add(rating.get(j).getBlogId())) {
-//					for(Blog blog : dtos) {
-//						if(rating.get(j).getBlogId() == blog.getBlogId()) {
-//							blog.setTempRate(rating.get(j).getCusRate());
-//						}
-//					}
-//				}
-//			}
-//		}
+
 		dtos = blogService.setLatest(dtos);
 		boolean num = true;
 		model.addAttribute("blogsize", dtos.size());
