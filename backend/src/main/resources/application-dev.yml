@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bubble_test?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: logic123
+  jpa:
+    hibernate:
+     ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    root: info
+    com.bubble: debug
+  file: log/blog-dev.log   
+server:
+  port: 8080

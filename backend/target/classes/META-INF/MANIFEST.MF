@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: jameschih
+Build-Jdk: 10.0.1
+Implementation-Title: spring-boot-jwt-tr
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.javainuse
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-jwt-tr
+Created-By: Maven Integration for Eclipse
+
