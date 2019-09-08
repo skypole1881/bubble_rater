@@ -106,19 +106,19 @@
           </table>
           <table class="scoretable">
             <tr>
-              <td>珍珠彈性</td>
+              <td th:utext="#{page.pearl}">珍珠彈性</td>
               <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
             </tr>
             <tr>
-              <td>奶茶濃度</td>
+              <td th:utext="#{page.milk}">奶茶濃度</td>
               <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
             </tr>
             <tr>
-              <td>珍探給分</td>
+              <td th:utext="#{page.review}">珍探給分</td>
               <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
             </tr>
             <tr>
-              <td>甜度等級</td>
+              <td th:utext="#{page.sweetness}">甜度等級</td>
               <td th:text="${blog.sweetness}">剛剛好</td>
             </tr>
           </table>
