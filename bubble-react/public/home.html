@@ -1,0 +1,858 @@
+﻿<!DOCTYPE html>
+<!-- {% load staticfiles %} -->
+<!-- saved from url=(0061)https://blackrockdigital.github.io/startbootstrap-blog-home/# -->
+<html lang="en" class="gr__blackrockdigital_github_io" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Search engine optimization section -->
+  <title>bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶</title>
+  <meta name="description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！">
+  <meta name="author" content="bubble rater">
+   
+    <!-- Search engine - sitelink - searchbox  -->
+  <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.bubblerater.com//",
+    "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://www.bubblerater.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+    }
+    }       
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+    <!-- Bing search conconsole verification  -->
+  <meta name="msvalidate.01" content="6ED7BD087CB0FA00DA80676702497DFF" />
+    <!-- Google search conconsole verification  -->
+  <meta name="google-site-verification" content="i4Dqcu9JydGW2Kq9cxC58Q8pr0vVj0nqTc-oSRHikHc" />
+  <link rel="preload" href="../fonts/font300.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="../fonts/font900.woff2" as="font" crossorigin="anonymous">
+    <!-- FB share  -->
+  <meta property="og:title" content="bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶"/>
+  <meta property="og:description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:image" content="https://www.bubblerater.com/images/bubblerater_stocks_FBshare.jpg"/>
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://bubblerater.com">
+    <!-- Twitter share  -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@BubbleRater" />
+  <meta name="twitter:title" content="bubble rater 珍奶評鑑 ｜ 推薦你最好喝的珍珠奶茶" />
+  <meta name="twitter:description" content="誰是最好喝的手搖飲料？從台北、新竹，到全台各地，bubble rater 用科學測量方法，給你專業評比，推薦你最厲害的珍珠奶茶。好不好喝，一看就知！" />
+  <meta name="twitter:image" content="https://www.bubblerater.com/images/bubblerater_stocks_FBshare.jpg" />
+    <!-- Website logo  -->
+  <link rel="Shortcut icon" href="https://www.bubblerater.com/images/logo.ico" type="image/x-icon">
+  <link rel="Bookmark" href="https://www.bubblerater.com/images/logo.ico" type="image/x-icon">
+        <!-- Bootstrap core CSS -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
+
+  	<!-- Custom styles for this template -->
+  <link href="../static/css/blog-home.css" rel="stylesheet" th:href="@{/css/blog-home.css}">
+  <link rel="stylesheet" type="text/css" href="../static/css/post.css" th:href="@{/css/post.css}" />
+  <link rel="stylesheet" type="text/css" href="../static/css/mobile.css" th:href="@{/css/mobile.css}" />
+
+
+  <!-- Chosen css -->
+  <link rel="stylesheet" href="../static/lib/chosen/chosen.min.css" th:href="@{/lib/chosen/chosen.min.css}">
+
+  <!-- <link href="https://fonts.googleapis.com/earlyaccess/GenJyuuGothic.css" rel="stylesheet" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400&display=swap" rel="stylesheet">
+
+
+  
+</head>
+
+<body data-gr-c-s-loaded="true" data-spy="scroll" data-target="#nav-bar-spy" data-offset="10">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-font" id="nav-bar-spy">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://www.bubblerater.com/">
+        <img src="../static/images/bubble rater_logo-16.png" class="img-fluid" th:src="@{/images/bubble rater_logo-16.png}"/>
+        <img src="../static/images/bubble rater_logo-15.png" class="img-fluid" th:src="@{/images/bubble rater_logo-15.png}"/>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ml-auto text-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link active" href="#about">About us
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#stores">Rate</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact us</a>
+          </li>
+        </ul>
+        <div class="dropdown-divider"></div>
+        <div class="divider text-white-50">|</div>
+        <ul class="nav navbar-nav text-nowrap">
+          <li class="nav-item ">
+            <a class="nav-link" href="" th:href="@{/home?lang=zh}">中</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" th:href="@{/home?lang=ja}">日</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="" th:href="@{/home?lang=en}">ENG</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container-fluid text-white" id="about">
+
+    <div class="row text-white header">
+
+      <!-- Blog Entries Column -->
+      <div class="col-md-12 text-left slogan align-self-end">
+        <div class="">
+          <p class="my-4 slogan-main" th:utext="#{taste.title}" >用科學評珍奶</p>
+          <p class="slogan-text" th:utext="#{taste.first}">
+            儀器測量加上清楚數據<br/>
+            好不好喝，一看就知<br/>
+            bubble rater 給你最精確的珍奶指南
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row text-white">
+      <div class="col-md-12">
+        <div class="formula-text" th:utext="#{taste.second}">
+          一杯好喝的珍珠奶茶 =<br/>
+          QQ 的珍珠 + 濃濃的奶茶 + 恰恰好的甜<br/>
+          誰才是最好喝的珍奶？<br/>
+          我們用數字告訴你！
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <img src="../static/images/bubble-rater_logo-02.png" th:src="@{/images/bubble-rater_logo-02.png}" data-src="../static/images/bubble-rater_logo-02.png" th:data-src="@{/images/bubble-rater_logo-02.png}" class="img-fluid lazyload"/>
+        <p class="introduction-header text-left" th:utext="#{bubble.title}">珍珠到底有多Q？</p>
+        <hr color="white"/>
+        <p class="introduction-text text-left" th:utext="#{bubble.first}">以彈性係數 (elastic modulus) 為測量目標，彈性係數愈高，珍珠愈 Q 彈！
+我們在買到珍奶時迅速測量，避免珍珠在冷、熱茶品中結晶或溶解。利用儀器以 50% 的珍珠比例壓縮珍珠後，結合珍珠截面積的變化及產生的應力，得出珍珠的彈性係數。</p>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light" 
+          data-toggle="modal" data-target="#Modal-introduction-bubble" th:utext="#{show.detail}">
+          顯示更多</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="../static/images/bubble-rater_logo-03.png" th:src="@{/images/bubble-rater_logo-03.png}" data-src="../static/images/bubble-rater_logo-03.png" th:data-src="@{/images/bubble-rater_logo-03.png}" class="img-fluid lazyload"/>
+        <p class="introduction-header text-left" th:utext="#{tea.title}">奶茶到底有多濃？</p>
+        <hr color="white"/>
+        <p class="introduction-text text-left" th:utext="#{tea.first}">我們使用黏度 (viscosity) 作為測量目標。黏度愈高的奶茶，流動性愈差，口感愈濃郁。
+以落球法測試奶茶黏度，在層流狀態下，在奶茶中落下的小球會因重力、浮力及黏滯阻力的力平衡達到終端速度，便可從此得知奶茶的黏度。</p>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light"
+          data-toggle="modal" data-target="#Modal-introduction-tea" th:utext="#{show.detail}">
+          顯示更多</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <img src="../static/images/bubble-rater_logo-04.png"  th:src="@{/images/bubble-rater_logo-04.png}" data-src="../static/images/bubble-rater_logo-04.png"  th:data-src="@{/images/bubble-rater_logo-04.png}" class="img-fluid lazyload"/>
+        <p class="introduction-header text-left" th:utext="#{sweetness.title}">奶茶到底有多甜？</p>
+        <hr color="white"/>
+        <p class="introduction-text text-left" th:utext="#{sweetness.first}">白利糖度 (Brix) 形容攝氏 20 度 C 下，每 100 公克水溶液中，溶解的蔗糖公克數。
+我們以 4 °Bx、6 °Bx、8 °Bx、10 °Bx 以及 12 °Bx 的蔗糖溶液為比較基準，比較奶茶甜度與甜度比較基準的差異，判斷奶茶含糖量。</p>
+        <div class="text-left">
+          <button type="button" class="modal-btn btn btn-outline-light"
+          data-toggle="modal" data-target="#Modal-introduction-sweetness" th:utext="#{show.detail}">
+          顯示更多</button>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <p class="introduction-conclusion" th:utext="#{subtitle.content}">
+          想睡了？好麻煩？<br/>
+          別擔心， Bubble Rater 把最終分數轉換成 5～10 分，讓你一目瞭然。<br/>
+          測量、踩雷交給我們，最好喝的珍珠奶茶留給你！
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid text-white" id="stores" th:fragment="stores">
+    <div class="sticky-nav" id="search" th:fragment="search">
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop1" type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown"
+          	th:utext="#{button.select}" aria-haspopup="true" aria-expanded="false">
+            篩選
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <button type="button" class="dropdown-item filter_category"
+            	value="cold" th:utext="#{button.cold}"> 冷飲 </button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item filter_category"
+            	value="hot" th:utext="#{button.hot}"> 熱飲 </button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item filter_category"
+            	value="" th:utext="#{button.all}"> 不拘 </button>
+          </div>
+        </div>
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop2" type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown" 
+          	aria-haspopup="true" aria-expanded="false" th:utext="#{button.want}">
+            我要找
+          </button>
+          <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+            <button type="button" class="dropdown-item filter_region"
+            	value="city" th:utext="#{button.country}">找縣市</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item filter_region"
+            	value="district" th:utext="#{button.distinct}">找區域</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item filter_region"
+            	value="store" th:utext="#{button.store}">找店家</button>
+          </div>
+        </div>
+        <!-- <div class="text-dark"> -->
+          <select id="query_suggeest" th:attr="data-placeholder=#{button.search}" class="chosen-select text-reset" tabindex="4">
+           <!-- <th:block th:each="blog:${default}"> -->
+            <option value=""></option>
+            <option th:each="blog:${default}" value="123" th:value="${blog}" th:text="${blog}"></option>
+        <!-- 	</th:block> -->
+            
+            
+          </select>
+          <button type="button" id="GO" class="btn"> GO</button>
+        <!-- </div> -->
+        <div class="btn-group" role="group">
+          <button id="btnGroupDrop3" type="button" class="btn text-white dropdown-toggle" data-toggle="dropdown"
+          	aria-haspopup="true" aria-expanded="false" value="totalRate" th:utext="#{button.sort}">
+            排序
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="btnGroupDrop3">
+            <button type="button" class="dropdown-item sort" value="totalRate" th:utext="#{button.rank_all}">依照總分</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item sort" value="createdDtm" th:utext="#{button.rank_time}">依照時間</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item sort" value="bubbleRatePR" th:utext="#{button.rank_pearl}">珍珠彈性</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item sort" value="teaRatePR" th:utext="#{button.rank_milk}">奶茶口感</button>
+            <div class="dropdown-divider"></div>
+            <button type="button" class="dropdown-item sort" value="godfeelingRate" th:utext="#{button.rank_review}">小編評比</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div id="searchPack" th:fragment="searchPack">
+    <div class="row no-gutters justify-content-md-center">
+      <div th:id="'search' + ${blogs[0].blogId}" class="col-md-4 store change-top bg-blur text-white h-100">
+<!--       <tr th:each="blog : ${blog}"> -->
+        <div class="storeinfo change-first">
+          <div class="text-center ranking">第一名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[0].storeBrand}">店家</div>
+          <div class="text-center substore-name" th:text="${blogs[0].storeCity+' - '+blogs[0].storeDistrict}">門市</div>
+          <div th:if="${blogs[0].cold}" class="text-center drink-name" th:text="${blogs[0].item}">品名</div>
+          <div th:unless="${blogs[0].cold}" class="text-center drink-name" th:text="${blogs[0].item}+' (熱)'">品名</div>
+          <hr color="white"/>
+          <center>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].bubbleRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].TeaRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].godfeelingRate,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[0].sweetness}"></td>
+              </tr>
+            </table>
+          </center>
+        </div>
+ <!--        </tr> -->
+        <div class="text-white change-second storecomment text-center">
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blogs[0].photoLink}}"/>
+          
+          <div class="text-left">
+            <table class="storename">
+              <tr>
+                <td>
+                  <div id="aaa" th:text="${blogs[0].storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[0].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blogs[0].cold}" th:text="${blogs[0].item}">珍奶104</div>
+                  <div th:unless="${blogs[0].cold}" th:text="${blogs[0].item}+' (熱)'">珍奶104</div>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].bubbleRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].TeaRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}"> 珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[0].godfeelingRate,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[0].sweetness}">甜膩</td>
+              </tr>
+            </table>
+            <p class="comment" th:utext="${blogs[0].content1}">
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+            </p>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[0].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[0].blogId}"
+            	class="btn btn-outline-light btn-sm single-link"
+            	th:attr="text=#{show.detail}">顯示更多</a>
+            <div class="d-none">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          </div>
+        </div>
+        <div th:if="${blogs[0].latest}" class="newstore" th:utext="#{page.new}">
+          新 進 榜
+        </div>
+        <style type="text/css" th:inline="text">
+          #[['search' + ${blogs[0].blogId}]]::before {background-image: url("[[@{${blogs[0].photoLink}}]]");}
+        </style>
+      </div>
+      <div th:id="'search' + ${blogs[1].blogId}" th:if="${blogsize >= 2}" class="col-md-4 store change-top bg-blur text-white h-100">
+<!--       <div id="search1" th:if="${blogs[1].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
+<!--       <tr th:each="blog : ${blog}"> -->
+        <div class="storeinfo change-first">
+          <div class="text-center ranking">第二名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[1].storeBrand}">店家</div>
+          <div class="text-center substore-name" th:text="${blogs[1].storeCity+' - '+blogs[1].storeDistrict}">門市</div>
+          <div th:if="${blogs[1].cold}" class="text-center drink-name" th:text="${blogs[1].item}">品名</div>
+          <div th:unless="${blogs[1].cold}" class="text-center drink-name" th:text="${blogs[1].item}+' (熱)'">品名</div>
+          <hr color="white"/>
+          <center>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].bubbleRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].TeaRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].godfeelingRate,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[1].sweetness}"></td>
+              </tr>
+            </table>
+          </center>
+        </div>
+ <!--        </tr> -->
+        <div class="text-white change-second storecomment text-center">
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blogs[1].photoLink}}"/>
+          
+          <div class="text-left">
+            <table class="storename">
+              <tr>
+                <td>
+                  <div th:text="${blogs[1].storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[1].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blogs[1].cold}" th:text="${blogs[1].item}">珍奶104</div>
+                  <div th:unless="${blogs[1].cold}" th:text="${blogs[1].item}+' (熱)'">珍奶104</div>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].bubbleRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].TeaRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[1].godfeelingRate,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[1].sweetness}">甜膩</td>
+              </tr>
+            </table>
+            <p class="comment" th:utext="${blogs[1].content1}">
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+            </p>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[1].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[1].blogId}"
+            	class="btn btn-outline-light btn-sm single-link"
+            	th:attr="text=#{show.detail}">顯示更多</a>
+            <div class="d-none">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          </div>
+        </div>
+        <div th:if="${blogs[1].latest}" class="newstore" th:utext="#{page.new}" >
+          新 進 榜
+        </div>
+        <style type="text/css" th:inline="text">
+          #[['search' + ${blogs[1].blogId}]]::before {background-image: url("[[@{${blogs[1].photoLink}}]]");}
+        </style>
+      </div>
+      <div th:id="'search' + ${blogs[2].blogId}" th:if="${blogsize >= 3}" class="col-md-4 store change-top bg-blur text-white h-100">
+<!--       <div id="search2" th:if="${blogs[2].blogId != null}" class="col-md-4 store change-top bg-blur text-white"> -->
+<!--       <tr th:each="blog : ${blog}"> -->
+        <div class="storeinfo change-first">
+          <div class="text-center ranking">第三名</div>
+          <div class="text-center finalscore" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">9.6</div>
+          <div class="text-center store-name" th:text="${blogs[2].storeBrand}">店家</div>
+          <div class="text-center substore-name" th:text="${blogs[2].storeCity+' - '+blogs[2].storeDistrict}">門市</div>
+          <div th:if="${blogs[2].cold}" class="text-center drink-name" th:text="${blogs[2].item}">品名</div>
+          <div th:unless="${blogs[2].cold}" class="text-center drink-name" th:text="${blogs[2].item}+' (熱)'">品名</div>
+          <hr color="white"/>
+          <center>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].bubbleRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].TeaRatePR,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].godfeelingRate,0,1)}"></td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[2].sweetness}"></td>
+              </tr>
+            </table>
+          </center>
+        </div>
+ <!--        </tr> -->
+        <div class="text-white change-second storecomment text-center">
+          <img class="img-fluid" src="../static/images/store1.jpg" th:src="@{${blogs[2].photoLink}}"/>
+          
+          <div class="text-left">
+            <table class="storename">
+              <tr>
+                <td>
+                  <div th:text="${blogs[2].storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blogs[2].totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blogs[2].cold}" th:text="${blogs[2].item}">珍奶104</div>
+                  <div th:unless="${blogs[2].cold}" th:text="${blogs[2].item}+' (熱)'">珍奶104</div>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].bubbleRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].TeaRatePR,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blogs[2].godfeelingRate,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blogs[2].sweetness}">甜膩</td>
+              </tr>
+            </table>
+            <p class="comment" th:utext="${blogs[2].content1}">
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+            </p>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blogs[2].blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blogs[2].blogId}"
+            	class="btn btn-outline-light btn-sm single-link"
+            	th:inline='text' th:attr="text=#{show.detail}">顯示更多</a>
+            <div class="d-none">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          </div>
+        </div>
+        <div th:if="${blogs[2].latest}" class="newstore" th:utext="#{page.new}">
+          新 進 榜
+        </div>
+        <style type="text/css" th:inline="text">
+          #[['search' + ${blogs[2].blogId}]]::before {background-image: url("[[@{${blogs[2].photoLink}}]]");}
+        </style>
+      </div>
+    </div>
+      
+    <div id="blogAppend" class="row no-gutters justify-content-md-center">
+      
+ <th:block th:each="blog,iterStat:${blogs}" th:if="${iterStat.index} >= 3 and ${blog.blogId != null}">
+      <div th:id="'search' + ${blog.blogId}" class="col-md-4 text-white otherstore change-top">
+        <div class="otherinfo">
+          <div class="bg-blur">
+            <table class="storename text-center">
+              <tr>
+                <td>
+                  <div th:text="${blog.storeBrand}">清心</div>
+                </td>
+                <td rowspan="3">
+                  <div th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:text="${blog.storeCity+' - '+blog.storeDistrict}">宜蘭縣蘇澳鎮</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
+                  <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="othercomment change-second bg-blur">
+          <div>
+            <table class="storename">
+              <tr>
+                <td>
+                  <div th:text="${blog.storeBrand}">清心</div>
+                </td>
+                <td rowspan="2">
+                  <div class="text-center" th:text="${#numbers.formatDecimal(blog.totalRate,0,1)}">8.9</div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div th:if="${blog.cold}" th:text="${blog.item}">珍奶半糖去冰</div>
+                  <div th:unless="${blog.cold}" th:text="${blog.item}+' (熱)'">珍奶半糖去冰</div>
+                </td>
+              </tr>
+            </table>
+            <table class="scoretable">
+              <tr>
+                <td th:utext="#{page.pearl}">珍珠彈性</td>
+                <td th:text="${#numbers.formatDecimal(blog.bubbleRatePR,0,1)}">90</td>
+                <td th:utext="#{page.review}">珍探給分</td>
+                <td th:text="${#numbers.formatDecimal(blog.godfeelingRate,0,1)}">90</td>
+              </tr>
+              <tr>
+                <td th:utext="#{page.milk}">奶茶濃度</td>
+                <td th:text="${#numbers.formatDecimal(blog.TeaRatePR,0,1)}">90</td>
+                <td th:utext="#{page.sweetness}">甜度等級</td>
+                <td th:text="${blog.sweetness}">中等</td>
+              </tr>
+            </table>
+            <p class="comment" th:text="${blog.content1}">
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+              小編評價巴拉巴拉巴拉
+            </p>
+            <button type="button" class="btn btn-outline-light btn-sm modal-btn" onclick="openModal()" th:onclick="'openModal(\'' + ${blog.blogId} + '\')'" data-toggle="modal" data-target="#myModal">顯示更多</button>
+            <a href="#" th:href="'/single/' + ${blog.blogId}"
+            	class="btn btn-outline-light btn-sm single-link"
+            	th:attr="text=#{show.detail}">顯示更多</a>
+            <div class="d-none" id="invisibleId" th:id="'invisibleId' + ${blog.blogId}" th:text="${blog.blogId}">看不到</div>
+            <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+          </div>
+        </div>
+        <div th:if="${blog.latest}" class="newstore" th:utext="#{page.new}">
+          新 進 榜
+        </div>
+        <style type="text/css" th:inline="text">
+          #[['search' + ${blog.blogId}]]:before, #[['search' + ${blog.blogId}]] .otherinfo .bg-blur:before {
+            background-image: url("[[@{${blog.photoLink}}]]");
+          }
+        </style>
+      </div>
+  </th:block> 
+
+    </div>
+    <div th:if='${num}' id="bu">
+	    <div class="row readmore no-gutters">
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div class="col-12"></div>
+	      <div id="loadButtonParent">
+	        <a href="Javascript:void(0);" id="loadButton" class="btn text-white"
+	        	role="button" th:utext="#{show.item}">點我看更多排名</a>
+	      </div>
+	    </div>
+  	</div>
+  </div>
+<!-- searchPack end -->
+  </div>
+<!-- id="store" end -->
+  <div class="container-fluid text-white bg-blur" id="contact">
+    <div class="row justify-content-center logo">
+      <div class="col-sm-2 col-6 text-center">
+        <img src="../static/images/bubble rater_logo_B-w.png" th:src="@{/images/bubble rater_logo_B-w.png}" class="img-fluid"/>
+      </div>
+    </div>
+    <div class="row justify-content-center society text-center">
+      <div class="col-3 col-md-1 align-self-center" >
+        <a href="https://www.facebook.com/BubbleRater/">
+          <img src="../static/images/bubble rater_logo-11.png" th:src="@{/images/bubble rater_logo-11.png}" class="img-fluid"/>
+        </a>
+      </div>
+      <div class="col-3 col-md-1 align-self-center" >
+        <a href="mailto:bubblerater@gmail.com">
+          <img src="../static/images/bubble rater_logo_icon_mail.png" th:src="@{/images/bubble rater_logo_icon_mail.png}" class="img-fluid"/>
+        </a>
+      </div>
+      <div class="col-3 col-md-1 align-self-center" >
+        <a href="https://www.instagram.com/bubblerater/">
+          <img src="../static/images/bubble rater_logo-12.png" th:src="@{/images/bubble rater_logo-12.png}" class="img-fluid"/>
+        </a>
+      </div>
+    </div>
+    <div class="row justify-content-center ps">
+      <div class="col-12">
+        <ol>
+          <li th:utext="#{bottom.first}">
+            本網站評比的對象為珍珠鮮奶茶。為求量測公平，冰飲皆為三分糖去冰；熱飲皆為三分糖。若該品項無法調整甜度冰量，則另行標示。
+          </li>
+          <li th:utext="#{bottom.second}">
+            為避免珍珠過度糊化或過度結晶，測量皆在購買後30分鐘內開始進行。奶茶濃度評分的依據為牛奶對於黏度的貢獻（扣除糖的貢獻），由於各店家採用的牛奶種類不同，故此評分並不代表牛奶含量。
+          </li>
+          <li th:utext="#{bottom.third}">
+            本網站黏度的量測方式為傾斜式的落球法，並建立在奶茶為牛頓流體且落球時雷諾數小於1的基礎上。
+          </li>
+          <li th:utext="#{bottom.fourth}">
+            本網站的評分會因量測的品項增加而隨著變動，以5-10分的區間表示該項目在全部飲品之間的排名。
+          </li>
+          <li th:utext="#{bottom.fifth}">
+            本網站評比分數係為個人意見，僅供參考。
+          </li>
+          <li th:utext="#{bottom.sixth}">
+            本網站的分數歡迎引用，但因分數隨著量測的品項增加而變化，敬請加註引用時間。例如: 總分9.2（2019/5/2）
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <!--<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>-->
+        <div class="modal-body bg-tea">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-12 modal-img">
+              <img id="modalPhotoLink" src="../static/images/store1.jpg" class="img-fluid"/>
+            </div>
+            <div class="modalcomment col-lg-6 col-12">
+              <div id="modalRanking" class="ranking" >NO.01</div>
+              <table class="storename">
+                <tr>
+                  <td id="modalStoreBrand">清心</td>
+                  <td rowspan="3" id="modalTotalRate"class="finalscore" >8.9</td>
+                </tr>
+                <tr>
+                  <td id="modalStoreDistrict">文山</td>
+                </tr>
+                <tr>
+                  <td id="modalItem">珍珠奶茶</td>
+                </tr>
+              </table>
+              <table class="scoretable">
+                <tr>
+                  <td th:utext="#{page.pearl}">珍珠彈性</td>
+                  <td id="modalBubbleRatePR">90</td>
+                </tr>
+                <tr>
+                  <td th:utext="#{page.milk}">奶茶濃度</td>
+                  <td id="modalTeaRatePR">90</td>
+                </tr>
+                <tr>
+                  <td th:utext="#{page.review}">珍探給分</td>
+                  <td id="modalGodfeelingRate">90</td>
+                </tr>
+                <tr>
+                  <td th:utext="#{page.sweetness}">甜度等級</td>
+                  <td id="modalSweetness">剛剛好</td>
+                </tr>
+              </table>
+              <p id="modalContent"class="comment" >
+                小編評價巴拉巴拉巴拉
+                小編評價巴拉巴拉巴拉
+                小編評價巴拉巴拉巴拉
+              </p>
+              <!-- <hr></hr> -->
+              <!-- <p class="vote">我也要評分 O O O O O O O</p> -->
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-block btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal-introduction-tea" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">奶茶到底有多濃？</h4>
+        </div>
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+              <img src="../static/images/introduction_tea.jpg" th:src="@{/images/introduction_tea.jpg}" class="img-fluid"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-block btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal-introduction-bubble" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">珍珠到底有多Q？</h4>
+        </div>
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+              <img src="../static/images/introduction_bubble.jpg" th:src="@{/images/introduction_bubble.jpg}" class="img-fluid"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-block btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="Modal-introduction-sweetness" role="dialog" th:fragment="modalContent">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">奶茶到底有多甜？</h4>
+        </div>
+        <div class="modal-body text-white">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-12">
+              <img src="../static/images/introduction_sweetness.jpg" th:src="@{/images/introduction_sweetness.jpg}" class="img-fluid"/>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-lg btn-block btn-dark" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="py-5 bg-black">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright © Your Website 2019</p>
+  </div>
+</footer>
+<!-- /.container -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="../static/lib/jquery.min.js" th:src="@{/lib/jquery.min.js}"></script>
+<script src="../static/lib/bootstrap.bundle.min.js" th:src="@{/lib/bootstrap.bundle.min.js}"></script>
+<script src="../static/lib/chosen/chosen.jquery.min.js" th:src="@{/lib/chosen/chosen.jquery.min.js}"></script>
+<!-- lazyload javascript -->
+<script src="../static/lib/lazyload/lazyload.min.js" th:src="@{/lib/lazyload/lazyload.min.js}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142575291-1"></script>
+
+<!-- home.js Plug-in written by 'self -->
+<script src="../static/lib/home/home.modal.js" th:src="@{/lib/home/home.modal.js}"></script>
+<script src="../static/lib/home/home.chosen.js" th:src="@{/lib/home/home.chosen.js}"></script>
+<script src="../static/lib/home/home.load.js" th:src="@{/lib/home/home.load.js}"></script>
+
+<!-- jQuery UI call chosen function -->
+<script src="../static/lib/post.js" th:src="@{/lib/post.js}"></script> 
+<script>
+// What's this?
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-142575291-1');
+
+var index = 1;
+var query_result;
+var data_out;
+// 設置儲存"GO"的篩選遠條件，以便loadsix可以存取並再次搜尋下六筆
+var data_condition = {};
+data_condition.cold = "";
+data_condition.criteria = "";
+data_condition.orderby = "totalRate";
+data_condition.keyword = "";
+data_condition.limitNumStart = 0;
+data_condition.limitNumEnd = 12;
+data_condition.token = index;
+bindLoadButton();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.single-store > div
+{
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
+	padding-top: 3.6vmin;
+	padding-bottom: 1.2vmin;
+}
+.single-store > div > *
+{
+	margin-bottom: 2.4vmin;
+}
+.storename td:nth-child(1)
+{
+	font-size: 4rem;
+	font-weight: bold;
+}
+.storename td:nth-child(2)
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 7rem;
+	font-weight: bold;
+	text-align: center;
+	background-image: url("./images/bubble rater_logo_score_red.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: white;
+}
+
+.scoretable
+{
+	font-size: 3rem;
+	width: 100%;
+	text-align: left;
+}
+.scoretable tr td:nth-child(1)
+{
+	font-weight: bold;
+}
+.ranking
+{
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 4rem;
+	font-weight: bold;
+	color: #FF0062;
+	text-decoration: underline;
+}
+.comment
+{
+	font-family: 'Noto Sans TC', sans-serif;
+	font-size: 2rem;
+	white-space: pre-line;
+}
+.storecomment > hr
+{
+	color: #715831;
+}
+.readmore
+{
+	position: relative;
+	/*bottom: -2.4vmin;*/
+	width: 100%;
+	height: 8vh;
+	left: 15px;
+	z-index: 1;
+}
+.readmore > div > a
+{
+	width: 100%;
+}

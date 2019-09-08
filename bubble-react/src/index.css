@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -10,4 +10,61 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+html{
+	/*font-size: 12px;*/
+	font-size: 1.2vmin;
 }
+body {
+	position: relative;
+	padding-top: 8rem;
+	background-color: black;
+	font-family: 'Noto Sans TC', sans-serif;
+    font-display: swap;
+}
+body.ismobile {
+	padding-top: 15vh;
+}
+
+@media (min-width: 992px) {
+	#nav-bar-spy .divider {
+		display: block;
+	}
+}
+
+/*@font-face {
+	font-family: 'GenJyuuGothic';
+	src: url('../lib/fonts/GenJyuuGothic-Regular.woff2') format('woff2');*/ /* IE9 Compat Modes */
+/*	font-weight: 400;
+	font-style: normal;
+}*/
+/*@font-face {
+	font-family: 'Branding';
+	src: url('../lib/fonts/Branding-Bold.woff2') format('woff2'), url('../lib/fonts/Branding-Bold.woff') format('woff');*/ /* IE9 Compat Modes */
+	/*font-weight: 700;
+	font-style: normal;
+}*/
+/*@font-face {
+	font-family: 'Branding';
+	src: url('../lib/fonts/Branding-SemiBold.woff2') format('woff2'), url('../lib/fonts/Branding-SemiBold.woff') format('woff');*/ /* IE9 Compat Modes */
+	/*font-weight: 600;
+	font-style: normal;
+}*/
+/*@font-face {
+	font-family: 'GenSenMaruGothic';
+	src: url('../lib/fonts/GenSenMaruGothicTW-Heavy-TTF.woff') format('woff'), url('../lib/fonts/GenSenMaruGothicTW-Heavy.ttf') format('truetype');*/ /* IE9 Compat Modes */
+/*	font-weight: 900;
+	font-style: normal;
+}*/
+/*@font-face {
+	font-family: 'pingfang';
+	src: url('../lib/fonts/pingfang.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}*/
+

@@ -1,0 +1,646 @@
+/*hr
+{
+	color: white;
+	size: 20px;
+	width: 80%;
+}*/
+/*:target
+{
+	padding-top: 5rem;
+	margin-top: -5rem;
+}*/
+#nav-bar-spy .container-fluid:after
+{
+	content: '';
+	height: 7rem;
+	display: inline-block;
+}
+.navbar-brand
+{
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	margin-left: -1rem;
+	padding-left: 3vw;
+	max-width: 35%;
+	max-height: 6rem;
+	font-size: 3rem;
+}
+.navbar-brand img
+{
+	/*height: 7.375rem;*/
+	/*height: 5.4vmin;*/
+	max-height: 3.2rem;
+}
+.navbar-brand img:nth-of-type(2)
+{
+	display: none;
+}
+#nav-bar-spy .container-fluid > button, #nav-bar-spy .container-fluid > div
+{
+	order: 1;
+}
+#navbarResponsive >　ul
+{
+	margin-right: -1rem;
+	padding-right: 3vw;
+	font-size: 2.5rem;
+}
+.divider
+{
+	display: none;
+	font-size: 4rem;
+	line-height: 1;
+}
+#about > .row
+{
+	padding-left: 3vw;
+	padding-right: 3vw;
+}
+.header
+{
+	height: calc(100vh - 8rem);
+	background-image: url('./images/header_background.jpg');
+	background-size: contain;
+	background-position: center;
+	padding-bottom: 5vh;
+}
+.slogan
+{
+	/*eliminate space between two inline-block*/
+	font-size: 0px;
+}
+.slogan-main
+{
+	/*font-size: 120px;*/
+	font-size: 10rem;
+}
+.formula-text
+{
+	/*font-size: 60px;*/
+	/*font-size: 3.125vw;*/
+	font-size: 5rem;
+	/*line-height: 90px;*/
+	/*line-height: 4.7vw;*/
+	padding-top: 5vh;
+}
+.introduction-conclusion
+{
+	padding: 5vh 0;
+}
+
+#stores
+{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.sticky-nav
+{
+	text-align: right;
+	position: -webkit-sticky;
+	position: sticky;
+	/*top: 10.8vmin;*/
+	top: 8rem;
+	width: 	100%;
+	z-index: 999;
+	font-size: 1.5rem;
+}
+#btnGroupDrop1, #btnGroupDrop1 + div
+{
+	border-bottom-left-radius: 2.5vmin;
+}
+#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop1 + div, #btnGroupDrop2 + div
+{
+	background-color: #FF009D;
+}
+#search > .btn-group > .btn-group:nth-of-type(1):before
+{
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-color: hsla(323, 100%, 50%, 0.5);
+	position: absolute;
+	top: 0.5rem;
+	border-bottom-left-radius: 2.5vmin;
+}
+#search > .btn-group > .btn-group:nth-of-type(2):before
+{
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-color: hsla(323, 100%, 50%, 0.5);
+	position: absolute;
+	top: 0.5rem;
+}
+#search > .btn-group > .btn-group:nth-last-of-type(1):before
+{
+	content: '';
+	height: 100%;
+	width: 100%;
+	background-color: hsla(41, 100%, 50%, 0.5);
+	position: absolute;
+	top: 0.5rem;
+}
+#btnGroupDrop3, #btnGroupDrop3 + div
+{
+	background-color: #FFB100;
+}
+#btnGroupDrop1 + div > button, #btnGroupDrop2 + div > button, #btnGroupDrop3 + div > button
+{
+	color: white;
+}
+.chosen-select
+{
+	/*font-family: 'GenJyuuGothic';*/
+	font-weight: bold;
+	font-size: 2rem;
+	/*height: 40px;*/
+}
+#query_suggeest
+{
+	-webkit-appearance: none;
+	border-style: none;
+	border-radius: unset;
+	padding-right: 15px;
+	background: url("./images/down_triangle.png") no-repeat;
+	background-position: right 3px top 50%;
+	background-color: hsla(0,0%,100%,0.75);
+}
+.chosen-container-single
+{
+	background-color: hsla(0, 0%, 100%, 0.75);
+}
+#search .chosen-container-single .chosen-single
+{
+	height: 100%!important;
+	background-image: unset;
+	/*background-color: hsla(0, 0%, 100%, 0.8);*/
+	border-radius: 0px;
+	font-size: 2rem;
+	line-height: 1.5;
+}
+#search .chosen-container-single.chosen-container-active.chosen-with-drop
+{
+	background-color: white;
+}
+.chosen-single span
+{
+	color: black;
+	font-size: 2rem;
+	line-height: 1.5;
+	padding: 0.375rem 0;
+}
+.chosen-single div b
+{
+	margin-top: 0.5rem;
+	margin-left: 0.3rem;
+}
+#GO
+{
+	font-size: 2rem;
+	line-height: 1.5;
+	background-color: hsla(1,100%,100%,0.75);
+	/*height: 100%;*/
+}
+#search .dropdown-toggle:after
+{
+	display: none;
+}
+
+.store
+{
+	transition: background-color 1s;
+}
+.store::before
+{
+	/*background-image: url('../images/store1.jpg');*/
+	background-size: auto 100%;
+	background-position: center;
+}
+
+.bg-blur
+{
+	background: hsla(0,0%,0%,0.5);
+	overflow: hidden;
+	position: relative;
+	/*need set background image of ::before in div*/
+}
+.bg-blur::before
+{
+	/*need set background image of ::before in div*/
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	filter: blur(5px);
+	margin: -10px;
+	z-index: -1;
+}
+.storeinfo
+{
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
+	position:absolute;
+	/*top: 13.2vmin;*/
+	top: 50%;
+    transform: perspective(1px) translateY(-50%);
+    /*transition: opacity 1s;*/
+}
+.storeinfo > .ranking
+{
+	
+}
+.storeinfo > .finalscore
+{
+	/*font-size: 210px;*/
+	font-size: 17.5rem;
+	line-height: 1.2;
+}
+.scoretable
+{
+	width: 100%;
+	table-layout: fixed;
+	text-align: left;
+}
+.storecomment
+{
+	background-color: black;
+	transition: opacity 1s;
+}
+.storecomment > div
+{
+	padding-left: 8.4vmin;
+	padding-right: 8.4vmin;
+	padding-top: 3.6vmin;
+	padding-bottom: 1.2vmin;
+}
+.storecomment > div >*
+{
+	margin-bottom: 2.4vmin;
+}
+.storecomment > div > .storename td:nth-of-type(2)
+{
+	background-image: url("./images/bubble rater_logo_score.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: black;
+}
+.storecomment .single-link, #blogAppend .single-link
+{
+	display: none;
+}
+#blogAppend .otherstore
+{
+	/*navbar is 8rem height*/
+	min-height: calc(50vh - 4rem);
+	overflow: hidden;
+}
+#blogAppend .otherstore:before
+{
+	/*background-image: url('../images/store2.jpg');*/
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: -10px;
+	z-index: -1;
+	transition: background 1s;
+}
+#blogAppend .change-top:hover:before
+{
+	filter: blur(5px);
+	background-position: center;
+}
+#blogAppend .touched:before
+{
+	filter: blur(5px);
+	background-position: center;
+}
+.otherinfo
+{
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	transition: transform 1s;
+}
+#blogAppend .change-top:hover .otherinfo
+{
+	transform: translateY(100%);
+}
+#blogAppend .touched .otherinfo
+{
+	transform: translateY(100%);
+}
+.otherinfo .bg-blur::before
+{
+	/*background-image: url('../images/store2.jpg');*/
+	background-size: cover;
+	background-position: bottom;
+}
+.otherinfo .storename td:nth-of-type(1)
+{
+	/*padding-left: 20px;*/
+}
+.otherinfo .storename td:nth-of-type(2)
+{
+	/*font-size: 90px;*/
+	font-size: 7.5rem;
+	/*padding-right: 20px;*/
+}
+.othercomment
+{
+	overflow: hidden;
+	padding-left: 2vmin;
+	padding-right: 2vmin;
+	padding-top: 1vmin;
+	padding-bottom: 1vmin;
+	transition: opacity 1s;
+	height: 100%;
+}
+.othercomment > div > *
+{
+	margin-bottom: 2vmin;
+}
+.storename
+{
+	width: 100%;
+	text-align: left;
+}
+.othercomment .storename tr td:nth-of-type(2)
+{
+	text-align: center;
+	background-image: url("./images/bubble rater_logo_score.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	color: black;
+}
+.storecomment .comment, .othercomment .comment
+{
+	white-space: pre-line;
+	/*font-size: 20px;*/
+	font-size: 1.7rem;
+	/*line-height: 30px;*/
+	line-height: 1.5em;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	/*text-overflow: ellipsis;*/
+	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2; /*顯示的行數*/
+	height: 3em; /*line height 乘以顯示行數*/
+}
+.newstore
+{
+	/*垂直書寫*/
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr ;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	background-color: #FF0062;
+	line-height: 1.35;
+	padding: 2.4vmin 1.8vmin 2.4vmin 1.8vmin;
+	border-bottom-left-radius: 1.8vmin;
+	transition: transform 1s;
+	white-space: nowrap;
+}
+.change-top:hover .newstore, .touched .newstore
+{
+	transform: translateY(-110%);
+}
+
+/*when change-top is hover, change-first change to change-second*/
+.change-top
+{
+	
+}
+.change-first
+{
+
+}
+.change-second
+{
+	opacity: 0;
+}
+.change-top:hover .change-first, .touched .change-first
+{
+	display: none;
+}
+.change-top:hover .change-second, .touched .change-second
+{
+	opacity: 1;
+}
+.readmore
+{
+	position: relative;
+}
+.readmore div:nth-of-type(1):before, .readmore div:nth-of-type(2):before, .readmore div:nth-of-type(3):before, .readmore div:nth-of-type(4):before
+{
+	content: '';
+	background-color: #715831;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	z-index: -1;
+}
+.readmore div:nth-of-type(1)
+{
+	height:  2vh;
+	background: hsla(0, 0%, 100%, 0.4);
+}
+.readmore div:nth-of-type(2)
+{
+	height:  2vh;
+	background: hsla(0, 0%, 100%, 0.3);
+}
+.readmore div:nth-of-type(3)
+{
+	height:  2vh;
+	background: hsla(0, 0%, 100%, 0.1);
+}
+.readmore div:nth-of-type(4)
+{
+	height:  2vh;
+}
+.readmore div:nth-of-type(5)
+{
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+.readmore div:nth-of-type(5) > a
+{
+	width: 100%;
+	height: 8vh;
+	line-height: 8vh;
+	padding: 0;
+	border: 0;
+}
+
+#contact:before
+{
+	background-image: url('./images/header_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.logo, .society
+{
+	margin-top: 5vw;
+	margin-bottom: 5vw;
+}
+.ps
+{
+	/*font-size: 15px;*/
+	font-size: 1.25rem;
+}
+
+/*#test:hover ~ #test2
+{
+	display: block;
+}
+#test2:hover
+{
+	display: block;
+}*/
+
+/*modal*/
+
+.modal-img
+{
+	overflow: hidden;
+	text-align: center;
+}
+@media (min-width: 992px) {
+	.modal-img > img{
+		width: 370px;
+	}
+}
+.modalcomment
+{
+	color: black;
+	font-size: 16px;
+}
+.modalcomment > *:nth-child(2n)
+{
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.modalcomment .ranking
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #FF0062;
+	text-decoration: underline;
+}
+.modalcomment > .storename tr > td:nth-child(1)
+{
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+.modalcomment > .storename tr > td:nth-child(2)
+{
+	color: white;
+	font-size: 2.5em;
+	font-weight: bolder;
+	text-align: center;
+	background-image: url("./images/bubble rater_logo_score_red.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+.modalcomment > .scoretable tr > td:nth-child(1)
+{
+	font-weight: bold;
+}
+.modalcomment .comment
+{
+	white-space: pre-line;
+}
+.modal-footer button
+{
+	font-size: 16px;
+}
+
+.introduction-text, .modal-btn, .introduction-conclusion, #btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, #btnGroupDrop1 + div, #btnGroupDrop2 + div, #btnGroupDrop3 + div, .store .scoretable tr td:nth-child(1), .store .scoretable tr td:nth-child(2), .otherinfo .storename td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4), .vote, .readmore div:nth-of-type(5) a, .newstore
+{
+	/*font-size: 24px;*/
+	/*font-size: 1.25vw;*/
+	font-size: 2rem;
+}
+.navbar-font, .navbar-font > div > button, .slogan-text, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .storecomment .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+{
+	/*font-size: 36px;*/
+	font-size: 3rem;
+}
+.introduction-header, .othercomment .storename td:nth-of-type(2), .storecomment .storename td:nth-of-type(2)
+{
+	/*font-size: 48px;*/
+	/*font-size: 2.5vw;*/
+	font-size: 4rem;
+}
+/*.slogan-main, .slogan-text, .formula-text, .introduction-header, .introduction-text, .introduction-conclusion, .sticky-nav, .newstore, .storeinfo > .ranking, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name
+{
+	font-family: 'Noto Sans TC', sans-serif;
+}*/
+.navbar-font, .storeinfo > .finalscore, .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .storename td:nth-of-type(2), .modalcomment .ranking, .modalcomment > .storename tr > td:nth-child(2)
+{
+	font-family: 'Ubuntu', sans-serif;
+}
+#btnGroupDrop1, #btnGroupDrop2, #btnGroupDrop3, .storeinfo > .finalscore, .storeinfo > .store-name, .storeinfo > .substore-name, .storeinfo > .drink-name, .store .scoretable tr td:nth-child(1), .otherinfo .storename td:nth-of-type(1), .otherinfo .storename td:nth-of-type(2), .othercomment .storename td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .storename td:nth-of-type(2), .vote, .readmore div:nth-of-type(5) a
+{
+	font-weight: bold;
+}
+.storecomment .storename td:nth-of-type(1), .othercomment .storename td:nth-of-type(1)
+{
+	font-weight: bolder;
+}
+.slogan-main, .formula-text, .introduction-header, .introduction-conclusion
+{
+	font-weight: 900;
+}
+.navbar-font, .ps
+{
+	font-weight: 300;
+}
+.introduction-header, .othercomment .scoretable tr td:nth-of-type(1), .othercomment .scoretable tr td:nth-of-type(3), .othercomment .scoretable tr td:nth-of-type(2), .othercomment .scoretable tr td:nth-of-type(4)
+{
+	/*line-height: 48px;*/
+	/*line-height: 2.5vw;*/
+	/*line-height: 4.8vmin;*/
+}
+.othercomment .storename td:nth-of-type(1), .storecomment .storename td:nth-of-type(1)
+{
+	/*line-height: 54px;*/
+	/*line-height: 2.8vw;*/
+	/*line-height: 5.4vmin;*/
+}
+
+.bg-black
+{
+	background-color: #000000;
+}
+.bg-coffee
+{
+	background-color: #2F1703;
+}
+.bg-tea
+{
+	background-color: #D1C5AE;
+}
+.mask-tea
+{
+	background: hsla(36, 39%, 31%, 0.5);
+}
