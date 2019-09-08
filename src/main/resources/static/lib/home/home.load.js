@@ -33,8 +33,8 @@ function loadsix(data){
 	if(data.num == false){
 		$("#bu").hide();
 	}
-	console.log("lang=="+getUrlVars()["lang"]);
-    switch(getUrlVars()["lang"]) {
+	console.log("lang=="+Cookies.get('lang'));
+    switch(Cookies.get('lang')) {
 	    case "en":
 	    	loadsixEn(data);
 	    	break;
