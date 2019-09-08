@@ -40,7 +40,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Bean(name = "localeResolver")
 	public LocaleResolver getLocaleResolver() {
 		CookieLocaleResolver resolver = new CookieLocaleResolver();
-		resolver.setDefaultLocale(Locale.TAIWAN);
+//		resolver.setDefaultLocale(Locale.TAIWAN);
 		resolver.setCookieName("lang");
 		// 60 minutes
 		resolver.setCookieMaxAge(60 * 60);
