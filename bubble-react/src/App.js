@@ -2,10 +2,8 @@ import React from 'react';
 import './App.css';
 import './single-store.css'
 import './bootstrap.min.css'
-import './animate.css'
 // import './blog-home.css'
 import './post.css'
-import './typo.css'
 import {Navbar} from './components/Navbar'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
