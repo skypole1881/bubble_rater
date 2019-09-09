@@ -1,5 +1,5 @@
 import React from 'react'
-import '../post.css'
+import '../../post.css'
 
 class IntroMain extends React.Component {
     render() {
