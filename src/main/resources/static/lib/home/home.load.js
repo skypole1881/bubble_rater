@@ -33,7 +33,6 @@ function loadsix(data){
 	if(data.num == false){
 		$("#bu").hide();
 	}
-	console.log("lang=="+Cookies.get('lang'));
     switch(Cookies.get('lang')) {
 	    case "en":
 	    	loadsixEn(data);
@@ -45,7 +44,19 @@ function loadsix(data){
 		    loadsixDefault(data);
 	    	break;
 	    default:
-	    	loadsixDefault(data);
+	    	switch(getBrowserLang()) {
+			    case "en":
+			    	loadsixEn(data);
+			    	break;
+			    case "ja":
+				    loadsixJa(data);
+			    	break;
+			    case "zh":
+				    loadsixDefault(data);
+			    	break;
+			    default:
+			    	loadsixDefault(data);
+		    }
     }
 }
 function loadsixDefault(data){
