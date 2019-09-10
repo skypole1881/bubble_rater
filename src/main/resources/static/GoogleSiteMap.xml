@@ -1,50 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-   <url>
-      <loc>https://www.bubblerater.com/</loc>
-      <lastmod>2019-07-22</lastmod>
-      <changefreq>daily</changefreq>
-      <priority>0.8</priority>
-
-   </url>
-
-   <url>
-      <loc>https://www.bubblerater.com/single/6</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-
-   </url>
-   <url>
-      <loc>https://www.bubblerater.com/single/7</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    
-   </url>
-   <url>
-      <loc>https://www.bubblerater.com/single/9</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.7</priority>
-    
-   </url>
-   <url>
-      <loc>https://www.bubblerater.com/single/29</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-      
-   </url>
-   <url>
-      <loc>https://www.bubblerater.com/single/26</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-      
-   </url>
-   <url>
-      <loc>https://www.bubblerater.com/single/20</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
-     
-   </url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.bubblerater.com/</loc>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="zh"
+               href="https://www.bubblerater.com/"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="ja"
+               href="https://www.bubblerater.com/home?lang=ja"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="en"
+               href="https://www.bubblerater.com/home?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.bubblerater.com/home?lang=ja</loc>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="zh"
+               href="https://www.bubblerater.com/"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="ja"
+               href="https://www.bubblerater.com/home?lang=ja"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="en"
+               href="https://www.bubblerater.com/home?lang=en"/>
+  </url>
+  <url>
+    <loc>https://www.bubblerater.com/home?lang=en</loc>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="zh"
+               href="https://www.bubblerater.com/"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="ja"
+               href="https://www.bubblerater.com/home?lang=ja"/>
+    <xhtml:link 
+               rel="alternate"
+               hreflang="en"
+               href="https://www.bubblerater.com/home?lang=en"/>
+  </url>
 </urlset>
