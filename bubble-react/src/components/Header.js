@@ -1,17 +1,11 @@
 import React from 'react'
-import IntroMain from './IntroMain'
-import IntroSub from './IntroSub'
-import IntroDetail from './IntroDetail'
-import IntroBot from './IntroBot'
+import { Navbar } from './Navbar';
 
 class Header extends React.Component {
     render() {
         return (
-            <div className="container-fluid text-white" id="about">
-                <IntroMain />
-                <IntroSub />
-                <IntroDetail />
-                <IntroBot />
+            <div>
+                <Navbar />
             </div>
         )
     }

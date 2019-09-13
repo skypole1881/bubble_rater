@@ -1,8 +1,8 @@
 import React from 'react'
 import '../../post.css'
-import img1 from '../images/bubble-rater_logo-02.png'
-import img2 from '../images/bubble-rater_logo-03.png'
-import img3 from '../images/bubble-rater_logo-04.png'
+import img1 from '../../images/bubble-rater_logo-02.png'
+import img2 from '../../images/bubble-rater_logo-03.png'
+import img3 from '../../images/bubble-rater_logo-04.png'
 
 const imgsArr = [img1, img2, img3]
 class IntroDetail extends React.Component {
