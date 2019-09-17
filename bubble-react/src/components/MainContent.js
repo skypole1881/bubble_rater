@@ -30,9 +30,11 @@ class MainContent extends React.Component {
                             )
                         }
                     </div>
-                    {
-                        blogs
-                    }
+                    <div id="blogAppend" className="row no-gutters justify-content-md-center">
+                        {
+                            blogs
+                        }
+                    </div>
                 </div>
             </div>
         )
