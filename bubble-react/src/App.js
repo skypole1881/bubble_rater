@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './single-store.css'
 import './bootstrap.min.css'
-// import './blog-home.css'
+import './blog-home.css'
 import './post.css'
 import {Navbar} from './components/Navbar'
 import Header from './components/Header'
