@@ -9,13 +9,20 @@ import IntroContainer from './introduction/IntroContainer'
 import { Store } from './Store';
 
 const ratingArr = ["第一名", "第二名", "第三名"];
-const blogs = []
-for(let i = 0; i < 12; i ++){
-    blogs.push(<Store key={i} />)
-}
 
 class MainContent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            numberofblogs: 6,
+        }
+    }
     render() {
+        const blogs = [];
+        for(let i = 0; i < this.state.numberofblogs; i += 1)
+        {
+            blogs.push(<Store key = {i} />);
+        }
         return (
             <div>
                 <IntroContainer />
