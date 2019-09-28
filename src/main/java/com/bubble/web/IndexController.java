@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ import com.bubble.service.BlogService;
 import com.bubble.util.BlogUtils;
 
 @Controller
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class IndexController {
 
 	@Autowired
@@ -34,6 +36,15 @@ public class IndexController {
 	@Autowired
 	private BlogUtils blogUtils;
 
+	// React test
+	@RequestMapping(value = "/react", produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> reactTest(ModelMap model) {
+		List<Blog> dtos = blogService.selectTopTwelve();
+		Map<String, Object> map = new HashMap<>();
+		map.put("blogs", dtos);
+		return ResponseEntity.ok(dtos);
+	}
 	// 最開始載入頁面
 	@RequestMapping(value = { "/", "/home" })
 	public String index(Model model, HttpServletRequest request, HttpSession session, HttpServletResponse response) {
