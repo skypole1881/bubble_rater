@@ -6,7 +6,7 @@ import { StoreTop } from './StoreTop'
 // import IntroSub from './introduction/IntroSub'
 // import IntroDetail from './introduction/IntroDetail'
 import IntroContainer from './introduction/IntroContainer'
-import { Store } from './Store';
+import { Store } from './Store'
 
 const ratingArr = ["第一名", "第二名", "第三名"];
 
@@ -14,31 +14,33 @@ class MainContent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numberofblogs: 6,
-            blogs: [],
+            numberofblogs: 9,
+            stores: [],
         }
     }
     componentDidMount() {
         fetch('http://localhost:8080/react')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ blogs: data })
-                console.log(this.state.blogs[0])
+                this.setState({ stores: data })
+                console.log(this.state.stores[0])
             })
             .catch()
     }
     render() {
-        const blogs = [];
-        for (let i = 0; i < this.state.numberofblogs; i += 1) {
-            blogs.push(<Store key={i} />);
-        }
-        const storeCount = this.state.blogs.length
-        const storeTop = [];
-        if (this.state.blogs.length >= 3) {
-            for (let i = 0; i < 3; i++) {
-                storeTop.push(<StoreTop key={i} rating={ratingArr[i]} store={this.state.blogs[i]} />);
+        const stores = []
+        if(this.state.stores.length >= 3){
+            for (let i = 3; i < this.state.stores.length; i ++) {
+                stores.push(<Store key={this.state.stores[i].blogId} store={this.state.stores[i]} />);
             }
         }
+        
+        // const storeTop = [];
+        // if (this.state.stores.length >= 3) {
+        //     for (let i = 0; i < 3; i++) {
+        //         storeTop.push(<StoreTop key={i} rating={ratingArr[i]} store={this.state.stores[i]} />);
+        //     }
+        // }
         return (
             <div>
                 <IntroContainer />
@@ -46,26 +48,26 @@ class MainContent extends React.Component {
                     <Searchbar />
                     <div className="row no-gutters justify-content-md-center">
                         {
-                            this.state.blogs.length >= 3 && (
+                            this.state.stores.length >= 3 ? (
                                 ratingArr.map(
                                     (rating, index) => {
-                                        return <StoreTop key={index} rating={rating} blog={this.state.blogs[index]} />
+                                        return <StoreTop key={index} rating={rating} store={this.state.stores[index]} />
                                     }
                                 )
                             )
-                            // :
-                            // (
-                            //     (storeCount) => {
-                            //         for(let i = 0; i < storeCount; i ++){
-                            //             return <StoreTop key={i} rating={ratingArr[i]} blog={this.state.blogs} />
-                            //         }
-                            //     }
-                            // )
+                            :
+                            (
+                                this.state.stores.map(
+                                    (blog, index) => {
+                                        return <StoreTop key={index} rating={ratingArr[index]} blog={blog} />
+                                    }
+                                )
+                            )
                         }
                     </div>
                     <div id="blogAppend" className="row no-gutters justify-content-md-center">
                         {
-                            blogs
+                            stores
                         }
                     </div>
                 </div>

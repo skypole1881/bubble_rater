@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Store = () => {
+const Store = (props) => {
     return (
         <div className="col-md-4 text-white otherstore change-top">
             <div className="otherinfo">
@@ -9,20 +9,20 @@ const Store = () => {
                         <tbody>
                             <tr>
                                 <td>
-                                    <div text="">清心</div>
+                                    <div>{props.store.storeBrand}</div>
                                 </td>
                                 <td rowSpan="3">
-                                    <div text="">8.9</div>
+                                    <div>{props.store.totalRate.toFixed(1)}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div text="">宜蘭縣蘇澳鎮</div>
+                                    <div>{`${props.store.storeCity}-${props.store.storeDistrict}`}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div text="">珍奶半糖去冰</div>
+                                    <div>{props.store.item}</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -35,15 +35,15 @@ const Store = () => {
                         <tbody>
                             <tr>
                                 <td>
-                                    <div text="">清心</div>
+                                    <div>{props.store.storeBrand}</div>
                                 </td>
                                 <td rowSpan="2">
-                                    <div className="text-center" text="">8.9</div>
+                                    <div className="text-center">{props.store.totalRate.toFixed(1)}</div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <div text="">珍奶半糖去冰</div>
+                                    <div>{props.store.item}</div>
                                 </td>
                             </tr>
                         </tbody>
@@ -51,31 +51,27 @@ const Store = () => {
                     <table className="scoretable">
                         <tbody>
                             <tr>
-                                <td text="">珍珠彈性</td>
-                                <td text="">90</td>
-                                <td text="">珍探給分</td>
-                                <td text="">90</td>
+                                <td>珍珠彈性</td>
+                                <td>{props.store.bubbleRatePR.toFixed(1)}</td>
+                                <td>珍探給分</td>
+                                <td>{props.store.godfeelingRate.toFixed(1)}</td>
                             </tr>
                             <tr>
-                                <td text="">奶茶濃度</td>
-                                <td text="">90</td>
-                                <td text="">甜度等級</td>
-                                <td text="">中等</td>
+                                <td>奶茶濃度</td>
+                                <td>{props.store.teaRatePR.toFixed(1)}</td>
+                                <td>甜度等級</td>
+                                <td>{props.store.sweetness}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <p className="comment" text="">
-                        小編評價巴拉巴拉巴拉
-                        小編評價巴拉巴拉巴拉
-                        小編評價巴拉巴拉巴拉
-                    </p>
+                    <p className="comment">{props.store.content1}</p>
                     <button type="button" className="btn btn-outline-light btn-sm modal-btn" data-toggle="modal" data-target="#myModal">顯示更多</button>
                     <a href="#"
                         className="btn btn-outline-light btn-sm single-link">顯示更多</a>
-                    <div className="d-none" id="invisibleId" text="">看不到</div>
+                    <div className="d-none" id="invisibleId">看不到</div>
                 </div>
             </div>
-            <div className="newstore" text="">
+            <div className="newstore">
                 新 進 榜
             </div>
         </div>
