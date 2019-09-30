@@ -28,12 +28,12 @@ class MainContent extends React.Component {
             .catch()
     }
     render() {
-        const stores = []
-        if(this.state.stores.length >= 3){
-            for (let i = 3; i < this.state.stores.length; i ++) {
-                stores.push(<Store key={this.state.stores[i].blogId} store={this.state.stores[i]} />);
-            }
-        }
+        // const stores = []
+        // if(this.state.stores.length >= 3){
+        //     for (let i = 3; i < this.state.stores.length; i ++) {
+        //         stores.push(<Store key={this.state.stores[i].blogId} store={this.state.stores[i]} />);
+        //     }
+        // }
         
         // const storeTop = [];
         // if (this.state.stores.length >= 3) {
@@ -48,26 +48,18 @@ class MainContent extends React.Component {
                     <Searchbar />
                     <div className="row no-gutters justify-content-md-center">
                         {
-                            this.state.stores.length >= 3 ? (
-                                ratingArr.map(
-                                    (rating, index) => {
-                                        return <StoreTop key={index} rating={rating} store={this.state.stores[index]} />
-                                    }
-                                )
-                            )
-                            :
-                            (
-                                this.state.stores.map(
-                                    (blog, index) => {
-                                        return <StoreTop key={index} rating={ratingArr[index]} blog={blog} />
-                                    }
-                                )
+                            this.state.stores.slice(0,3).map(
+                                (store, index) => {
+                                    return <StoreTop key={store.blogId} rating={ratingArr[index]} store={store} />
+                                }
                             )
                         }
                     </div>
                     <div id="blogAppend" className="row no-gutters justify-content-md-center">
                         {
-                            stores
+                            this.state.stores.slice(3).map(
+                                (store) => <Store key={store.blogId} store={store} />
+                            )
                         }
                     </div>
                 </div>
