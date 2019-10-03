@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA844DA5234644BF00667ABF /* BRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DA4234644BF00667ABF /* BRBaseViewController.swift */; };
+		CA844DA7234644FD00667ABF /* BRTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DA6234644FD00667ABF /* BRTabBarViewController.swift */; };
+		CA844DAB2346460500667ABF /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DAA2346460500667ABF /* UIStoryboard+Extension.swift */; };
 		CACFCFD6232003300056590B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFCFD5232003300056590B /* AppDelegate.swift */; };
 		CACFCFD8232003300056590B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACFCFD7232003300056590B /* ViewController.swift */; };
 		CACFCFDB232003300056590B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACFCFD9232003300056590B /* Main.storyboard */; };
@@ -15,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA844DA4234644BF00667ABF /* BRBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRBaseViewController.swift; sourceTree = "<group>"; };
+		CA844DA6234644FD00667ABF /* BRTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRTabBarViewController.swift; sourceTree = "<group>"; };
+		CA844DAA2346460500667ABF /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		CACFCFD2232003300056590B /* bubblerater.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bubblerater.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACFCFD5232003300056590B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACFCFD7232003300056590B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +41,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA844D9E2346444B00667ABF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA844DA2234644A500667ABF /* Base */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CA844D9F2346445700667ABF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA844DA02346445D00667ABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CA844DA12346446B00667ABF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CACFCFD9232003300056590B /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		CA844DA2234644A500667ABF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CA844DA4234644BF00667ABF /* BRBaseViewController.swift */,
+				CA844DA6234644FD00667ABF /* BRTabBarViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CA844DA8234645E200667ABF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CA844DAA2346460500667ABF /* UIStoryboard+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		CACFCFC9232003300056590B = {
 			isa = PBXGroup;
 			children = (
@@ -54,9 +107,13 @@
 		CACFCFD4232003300056590B /* bubblerater */ = {
 			isa = PBXGroup;
 			children = (
+				CA844DA8234645E200667ABF /* Extension */,
+				CA844DA12346446B00667ABF /* Storyboard */,
+				CA844DA02346445D00667ABF /* Model */,
+				CA844D9F2346445700667ABF /* View */,
+				CA844D9E2346444B00667ABF /* Controller */,
 				CACFCFD5232003300056590B /* AppDelegate.swift */,
 				CACFCFD7232003300056590B /* ViewController.swift */,
-				CACFCFD9232003300056590B /* Main.storyboard */,
 				CACFCFDC232003300056590B /* Assets.xcassets */,
 				CACFCFDE232003300056590B /* LaunchScreen.storyboard */,
 				CACFCFE1232003300056590B /* Info.plist */,
@@ -136,7 +193,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACFCFD8232003300056590B /* ViewController.swift in Sources */,
+				CA844DA5234644BF00667ABF /* BRBaseViewController.swift in Sources */,
+				CA844DA7234644FD00667ABF /* BRTabBarViewController.swift in Sources */,
 				CACFCFD6232003300056590B /* AppDelegate.swift in Sources */,
+				CA844DAB2346460500667ABF /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
