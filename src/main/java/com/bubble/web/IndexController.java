@@ -40,19 +40,27 @@ public class IndexController {
 	// React test
 	@RequestMapping(value = "/react", produces = { "application/json" })
 	@ResponseBody
-	public ResponseEntity<?> reactTest(ModelMap model) {
+	public ResponseEntity<?> reactTest(@RequestBody Condition cdt) {
 		List<Blog> dtos = blogService.selectTopTwelve();
+		List<Object> keyWords = new ArrayList<Object>();
+		System.out.println("First=====" + cdt.getCold());
+		System.out.println("Second=====" + cdt.getCriteria());
+		try {
+			keyWords = blogService.queryKeyWord(cdt.getCold(), cdt.getCriteria());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		keyWords.add(0, null);
 		Map<String, Object> map = new HashMap<>();
-		map.put("blogs", dtos);
-		return ResponseEntity.ok(dtos);
+		map.put("stores", dtos);
+		map.put("dropDownList", keyWords);
+		return ResponseEntity.ok(map);
 	}
-	// 按下GO搜尋
+	// React test 按下GO搜尋
 	@RequestMapping(value = "/reactSearch", produces = { "application/json" })
 	@ResponseBody
 	public ResponseEntity<?> reactSearch(@RequestBody Condition cdt, BindingResult br, Model model) {
-		System.out.println(cdt.getCold());
-		System.out.println(cdt.getCriteria());
-		System.out.println(cdt.getOrderby());
+		System.out.println("111"+cdt.getKeyword().trim()+"111");
 		List<Blog> dtos = new ArrayList<>();
 		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
 		if (cdt.getKeyword().trim().equals("")) {
@@ -77,6 +85,22 @@ public class IndexController {
 		}
 		dtos = blogService.setLatest(dtos);
 		return ResponseEntity.ok(dtos);
+	}
+	// chosen選單 (類onchange) React test
+	@RequestMapping(value = "/reactquerykeyword", produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> reactQuery(@RequestBody Condition cdt) {
+		List<Object> KeyWords = new ArrayList<Object>();
+		System.out.println("First=====" + cdt.getCold());
+		System.out.println("Second=====" + cdt.getCriteria());
+		try {
+			KeyWords = blogService.queryKeyWord(cdt.getCold(), cdt.getCriteria());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		KeyWords.add(0, null);
+
+		return ResponseEntity.ok(KeyWords);
 	}
 	// 最開始載入頁面
 	@RequestMapping(value = { "/", "/home" })

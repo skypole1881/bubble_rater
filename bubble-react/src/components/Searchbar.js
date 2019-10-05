@@ -38,9 +38,19 @@ class Searchbar extends React.Component {
                         </div>
                     </div>
 
-                    <select style={{}} id="query_suggeest" className="chosen-select text-reset" tabIndex="4">
-                        <option value="123123123"></option>
-                        <option value="123"></option>
+                    <select style={{}} id="query_suggeest" className="chosen-select text-reset" tabIndex="4" onChange={this.props.onChange}>
+                        {
+                            this.props.dropDownList.map(
+                                (dropDownItem, index) => {
+                                    return(
+                                        dropDownItem == '搜尋更多' ? <option key={index} value={''}>{dropDownItem}</option>
+                                        :
+                                        <option key={index} value={dropDownItem}>{dropDownItem}</option>
+                                    )
+                                    
+                                }
+                            )
+                        }
                     </select>
                     <button type="button" id="GO" className="btn" onClick={this.props.submitSearch}>GO</button>
 
