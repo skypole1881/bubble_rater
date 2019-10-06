@@ -1,11 +1,15 @@
 import React from 'react'
+// import {Image} from 'react-naive'
 import '../post.css'
 import store1 from '../images/store1.jpg'
+import {Background} from './Background'
+import {Mask} from './Mask'
 
 export const StoreTop = (props) => {
-
     return (
-        <div className="col-md-4 store change-top bg-blur text-white h-100">
+        <div className="col-md-4 store change-top bg-blur text-white h-100" >
+            <Background src = {props.photoLink} />
+            <Mask />
             <div className="storeinfo change-first">
                 <div className="text-center ranking">{props.rating}</div>
                 <div className="text-center finalscore">{props.store.totalRate.toFixed(1)}</div>
@@ -37,8 +41,7 @@ export const StoreTop = (props) => {
                 </center>
             </div>
             <div className="text-white change-second storecomment text-center">
-                <img className="img-fluid" src={store1} alt="" />
-
+                <img className="img-fluid" src={props.photoLink || store1} alt="storephoto" />
                 <div className="text-left">
                     <table className="storename">
                         <tbody>
@@ -85,7 +88,7 @@ export const StoreTop = (props) => {
             </div>
             <div className="newstore" text="">
                 新 進 榜
-        </div>
+            </div>
         </div>
     )
 }
