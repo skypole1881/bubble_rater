@@ -1,9 +1,12 @@
 package com.bubble.detail.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,8 +31,15 @@ public class Detail {
 	private String item;
 
 	private String photo;
+	@OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="score_id", referencedColumnName="score_id")
+	private Score score;
 
 	private boolean cold;
+
+	public Detail() {
+
+	}
 
 	public int getId() {
 		return id;
@@ -109,6 +119,14 @@ public class Detail {
 
 	public void setCold(boolean cold) {
 		this.cold = cold;
+	}
+
+	public Score getScore() {
+		return score;
+	}
+
+	public void setScore(Score score) {
+		this.score = score;
 	}
 
 }
