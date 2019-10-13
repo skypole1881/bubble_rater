@@ -21,7 +21,7 @@ public class DetailController {
 	private DetailService detailService;
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Object> createDetail(@RequestBody Detail detail) {
+	public ResponseEntity<Object> createDetail(@RequestBody Detail detail) throws Exception {
 		detailService.createDetail(detail);
 		return new ResponseEntity<>("Bubble detail is created successfully", HttpStatus.CREATED);
 	}

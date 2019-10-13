@@ -39,7 +39,10 @@ public class DetailService {
 	}
 
 	@Transactional
-	public Detail createDetail(Detail detail) {
+	public Detail createDetail(Detail detail) throws Exception {
+		if (detail.getId() != 0) {
+			throw new Exception("Id should be empty");
+		}
 		return detailRepository.save(detail);
 
 	}
