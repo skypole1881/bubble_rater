@@ -1,24 +1,16 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://database.c50xqnmxv90m.ap-southeast-1.rds.amazonaws.com:3306/blog?&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bubble.cxbklylust6x.ap-northeast-1.rds.amazonaws.com:3306/bubble?useUnicode=true&characterEncoding=utf-8&useSSL=true
     username: root
-    password: rootroot
+    password: logic123
   jpa:
-    properties:
-      hibernate:
-        ddl-auto: none
-        current_session_context_class: org.springframework.orm.hibernate4.SpringSessionContext
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+        ddl-auto: update
     show-sql: true
 logging:
   level:
-    root: warn
-    com.bubble: info
-  file: log/blog-pro.log 
-server:
-  port: 8080  
-  compression:
-        enabled: true
-        excluded-user-agents: 
-        mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,image/jpeg,application/font-woff,application/x-font-ttf
-        min-response-size: 1024
+    root: info
+    com.bubble: debug
+  file: log/blog-dev.log  
