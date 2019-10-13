@@ -13,7 +13,7 @@ import javax.persistence.Table;
 @Table(name = "bubble_detail")
 public class Detail {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private String country;
