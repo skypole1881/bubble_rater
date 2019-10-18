@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bubble.detail.model.Detail;
+import com.bubble.detail.model.Score;
 import com.bubble.detail.repository.DetailRepository;
 
 @Service
@@ -43,7 +44,9 @@ public class DetailService {
 		if (detail.getId() != 0) {
 			throw new Exception("Id should be empty");
 		}
-		return detailRepository.save(detail);
+		detail = detailRepository.save(detail);
+//		calculateRate();
+		return detail;
 
 	}
 
@@ -66,6 +69,42 @@ public class DetailService {
 			throw new Exception("Score can not be empty");
 		}
 		return detailRepository.save(detail);
+	}
+
+	private void calculateTotalRate() {
+		for (Detail detail : detailRepository.findAll()) {
+			Score score = detail.getScore();
+			if (score != null) {
+				Double totalRate = (score.getBubbleRate() + score.getGodFeelingRate() + score.getTeaRate()) / 3;
+				score.setTotalRate(totalRate);
+				detailRepository.save(detail);
+			}
+		}
+	}
+
+	private synchronized void calculateRate() {
+		List<Detail> BubbleRateList = detailRepository.findDetailOrderByRawBubbleRate();
+		List<Detail> TeaRateList = detailRepository.findDetailOrderByRawTeaRateRate();
+
+		int total = BubbleRateList.size();
+		int bubbleIndex = total;
+		int teaIndex = total;
+		for (Detail detail : BubbleRateList) {
+			Score score = detail.getScore();
+			if (score != null) {
+				score.setBubbleRate((bubbleIndex / total * 5) + 5);
+				bubbleIndex--;
+				detailRepository.save(detail);
+			}
+		}
+		for (Detail detail : TeaRateList) {
+			Score score = detail.getScore();
+			if (score != null) {
+				score.setTeaRate((teaIndex / total * 5) + 5);
+				teaIndex--;
+				detailRepository.save(detail);
+			}
+		}
 	}
 
 }
