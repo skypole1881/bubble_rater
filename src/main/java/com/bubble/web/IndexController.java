@@ -18,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -39,11 +40,67 @@ public class IndexController {
 	// React test
 	@RequestMapping(value = "/react", produces = { "application/json" })
 	@ResponseBody
-	public ResponseEntity<?> reactTest(ModelMap model) {
+	public ResponseEntity<?> reactTest(@RequestBody Condition cdt) {
 		List<Blog> dtos = blogService.selectTopTwelve();
+		List<Object> keyWords = new ArrayList<Object>();
+		System.out.println("First=====" + cdt.getCold());
+		System.out.println("Second=====" + cdt.getCriteria());
+		try {
+			keyWords = blogService.queryKeyWord(cdt.getCold(), cdt.getCriteria());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		keyWords.add(0, null);
 		Map<String, Object> map = new HashMap<>();
-		map.put("blogs", dtos);
+		map.put("stores", dtos);
+		map.put("dropDownList", keyWords);
+		return ResponseEntity.ok(map);
+	}
+	// React test 按下GO搜尋
+	@RequestMapping(value = "/reactSearch", produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> reactSearch(@RequestBody Condition cdt, BindingResult br, Model model) {
+		System.out.println("111"+cdt.getKeyword().trim()+"111");
+		List<Blog> dtos = new ArrayList<>();
+		// 假設keyword是空的, btnGroup2的所有條件都無效, 直接進入判斷btnGroup1程序
+		if (cdt.getKeyword().trim().equals("")) {
+			dtos = blogService.selectNoKeyword(cdt);
+		} else {
+			if (cdt.getCriteria().equals("city")) {
+				dtos = blogService.selectAllByCity(cdt);
+			} else if (cdt.getCriteria().equals("district")) {
+				dtos = blogService.selectAllByDistrict(cdt);
+			} else if (cdt.getCriteria().equals("store")) {
+				dtos = blogService.selectAllByName(cdt);
+			} else {
+				// btnGroup1 跟 btnGroup 都沒有選, 只有選keyword(這時的keyword只有店家名稱)
+				dtos = blogService.selectByKeyword(cdt);
+			}
+		}
+		boolean num = true;
+		if (dtos.size() <= 12) {
+			num = false;
+		} else {
+			dtos.remove(cdt.getLimitNumEnd() - 1);
+		}
+		dtos = blogService.setLatest(dtos);
 		return ResponseEntity.ok(dtos);
+	}
+	// chosen選單 (類onchange) React test
+	@RequestMapping(value = "/reactquerykeyword", produces = { "application/json" })
+	@ResponseBody
+	public ResponseEntity<?> reactQuery(@RequestBody Condition cdt) {
+		List<Object> KeyWords = new ArrayList<Object>();
+		System.out.println("First=====" + cdt.getCold());
+		System.out.println("Second=====" + cdt.getCriteria());
+		try {
+			KeyWords = blogService.queryKeyWord(cdt.getCold(), cdt.getCriteria());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		KeyWords.add(0, null);
+
+		return ResponseEntity.ok(KeyWords);
 	}
 	// 最開始載入頁面
 	@RequestMapping(value = { "/", "/home" })
