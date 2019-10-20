@@ -1,3 +1,3 @@
 mvn package -Dmaven.test.failure.ignore=true
-scp -i "bubble.pem" target/bubbleblog-0.0.1-SNAPSHOT.jar ubuntu@ec2-18-138-217-21.ap-southeast-1.compute.amazonaws.com:~/
-ssh -i "bubble.pem" ubuntu@18.138.217.21 'sudo kill -9 $(sudo lsof -t -i:8080); tmux; java -jar bubbleblog-0.0.1-SNAPSHOT.jar'
+scp -i ~/.ssh/aws_private_keys/"kp-2019.pem" target/demo-0.0.1-SNAPSHOT.jar ec2-user@ec2-13-230-125-32.ap-northeast-1.compute.amazonaws.com:~/
+ssh -i ~/.ssh/aws_private_keys/"kp-2019.pem" ec2-user@ec2-13-230-125-32.ap-northeast-1.compute.amazonaws.com 'sudo systemctl restart test.service'
