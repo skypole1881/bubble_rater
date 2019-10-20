@@ -1,6 +1,9 @@
 package com.bubble.detail.model;
 
+import java.util.Date;
+
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "bubble_detail")
@@ -31,11 +36,15 @@ public class Detail {
 	private String item;
 
 	private String photo;
-	@OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="score_id", referencedColumnName="score_id")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "score_id", referencedColumnName = "score_id")
 	private Score score;
 
 	private boolean cold;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "created_dtm")
+	private Date createdDtm;
 
 	public Detail() {
 
@@ -127,6 +136,14 @@ public class Detail {
 
 	public void setScore(Score score) {
 		this.score = score;
+	}
+
+	public Date getCreatedDtm() {
+		return createdDtm;
+	}
+
+	public void setCreatedDtm(Date createdDtm) {
+		this.createdDtm = createdDtm;
 	}
 
 }

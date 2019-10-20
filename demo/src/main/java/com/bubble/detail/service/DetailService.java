@@ -1,5 +1,7 @@
 package com.bubble.detail.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,8 +46,11 @@ public class DetailService {
 		if (detail.getId() != 0) {
 			throw new Exception("Id should be empty");
 		}
+		if (detail.getScore() == null) {
+			throw new Exception("Score can not be empty");
+		}
+		detail.setCreatedDtm(new Date());
 		detail = detailRepository.save(detail);
-//		calculateRate();
 		return detail;
 
 	}
@@ -71,7 +76,7 @@ public class DetailService {
 		return detailRepository.save(detail);
 	}
 
-	private void calculateTotalRate() {
+	public void calculateTotalRate() {
 		for (Detail detail : detailRepository.findAll()) {
 			Score score = detail.getScore();
 			if (score != null) {
@@ -82,14 +87,14 @@ public class DetailService {
 		}
 	}
 
-	private synchronized void calculateRate() {
-		List<Detail> BubbleRateList = detailRepository.findDetailOrderByRawBubbleRate();
-		List<Detail> TeaRateList = detailRepository.findDetailOrderByRawTeaRateRate();
+	public synchronized void calculateRate() {
+		List<Detail> bubbleRateList = detailRepository.findDetailOrderByRawBubbleRate();
+		List<Detail> teaRateList = detailRepository.findDetailOrderByRawTeaRateRate();
 
-		int total = BubbleRateList.size();
-		int bubbleIndex = total;
-		int teaIndex = total;
-		for (Detail detail : BubbleRateList) {
+		double total = bubbleRateList.size();
+		double bubbleIndex = total;
+		double teaIndex = total;
+		for (Detail detail : bubbleRateList) {
 			Score score = detail.getScore();
 			if (score != null) {
 				score.setBubbleRate((bubbleIndex / total * 5) + 5);
@@ -97,7 +102,7 @@ public class DetailService {
 				detailRepository.save(detail);
 			}
 		}
-		for (Detail detail : TeaRateList) {
+		for (Detail detail : teaRateList) {
 			Score score = detail.getScore();
 			if (score != null) {
 				score.setTeaRate((teaIndex / total * 5) + 5);
@@ -105,6 +110,15 @@ public class DetailService {
 				detailRepository.save(detail);
 			}
 		}
+	}
+
+	public static String convertDateToISO8601String(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+		String strDate = null;
+		if (date != null) {
+			strDate = sdf.format(date).toString();
+		}
+		return strDate == null ? "" : strDate;
 	}
 
 }

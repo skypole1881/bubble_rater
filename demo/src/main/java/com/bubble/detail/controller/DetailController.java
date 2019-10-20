@@ -15,7 +15,7 @@ import com.bubble.detail.model.Detail;
 import com.bubble.detail.service.DetailService;
 
 @RestController
-@CrossOrigin(origins = "*",maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/v1/bubble/detail")
 public class DetailController {
 
@@ -25,12 +25,16 @@ public class DetailController {
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Object> createDetail(@RequestBody Detail detail) throws Exception {
 		detailService.createDetail(detail);
+		detailService.calculateRate();
+		detailService.calculateTotalRate();
 		return new ResponseEntity<>("Bubble detail is created successfully", HttpStatus.CREATED);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT)
 	public ResponseEntity<Object> updateDetail(@RequestBody Detail detail) throws Exception {
 		detailService.updateDetail(detail);
+		detailService.calculateRate();
+		detailService.calculateTotalRate();
 		return new ResponseEntity<>("Bubble detail is updated successfully", HttpStatus.OK);
 	}
 
@@ -45,13 +49,12 @@ public class DetailController {
 		detailService.deleteDetail(id);
 		return new ResponseEntity<>("Delete successfully", HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ResponseEntity<Object> query(@RequestParam(value = "pageNo", required = false) Integer pageNo,
 			@RequestParam(value = "pageSize", required = false) Integer pageSize,
 			@RequestParam(value = "sortBy", required = false) String sortBy,
 			@RequestParam(value = "name", required = false) String name) {
-
 		return new ResponseEntity<>(detailService.queryDetail(pageNo, pageSize, sortBy, name), HttpStatus.OK);
 	}
 
