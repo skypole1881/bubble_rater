@@ -1,7 +1,7 @@
 package main
 
 import (
-	"routes"
+	"go-src/src/routes"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
