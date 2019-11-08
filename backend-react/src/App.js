@@ -1,11 +1,12 @@
 import React from 'react';
+import {HashRouter, Switch, Route, Link} from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
 // import 'https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js'
 // import 'https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css'
 import 'semantic-ui/dist/semantic.min.css';
 import './me.css';
-import List from './component/List'
+import ListContainer from './component/ListContainer'
 import Post from './component/Post'
 
 function Header() {
@@ -15,7 +16,8 @@ function Header() {
         <div className="ui container">
           <div className="ui inverted secondary stackable menu">
             <h2 className="ui teal header item">管理後台</h2>
-            <a href="/admin/blogs.html" className=" m-item item m-mobile-hide active"><i className="mini home icon"></i>博客</a>
+            <Link to="/list" className=" m-item item m-mobile-hide active"><i className="mini home icon"></i>店家</Link>
+            <Link to="/list" className=" m-item item m-mobile-hide active"><i className="mini home icon"></i>文章</Link>
             <div className="right m-item m-mobile-hide menu">
               <div className="ui dropdown  item">
                 <div className="text"></div>
@@ -35,59 +37,44 @@ function Header() {
   );
 }
 
+
 class MainContent extends React.Component {
   constructor(props){
     super(props);
   }
   render () {
     return (
+      // <HashRouter>
       <div>
-        <List/>
-        <Post id = "1" />
+        {/* <Switch> */}
+          <Route path="/list" component={ListContainer}/>
+          <Route path="/post/:id" render={(props) => <Post {...props}/>}/>
+          <Route exact path="/post" component={Post}/>
+        {/* </Switch> */}
       </div>
+      // </HashRouter>
     )
   }
 }
 
 function App() {
   return (
-    <div>
+    <HashRouter>
       <Header/>
       <div className="ui attached pointing menu">
         <div className="ui container">
           <div className="right menu">
-            <a href="./blogs.html" className="teal active item">列表</a>
+            <Link to="/list" className="teal item">列表</Link>
+            <Link to="/post" className="teal item">新增</Link>
           </div>
         </div>
       </div>
-
       <div className="m-container-small m-padded-tb-big">
         <div className="ui container">
-          <div  className="ui secondary segment form">
-            <input type="hidden" name="page" />
-            <div className="inline fields">
-              <div className="field">
-                <input type="text" name="title" placeholder="標題" />
-              </div>
-              <div className="field">
-                <div className="ui labeled action input">
-                  <div className="ui type selection "></div>
-                </div>
-              </div>
-              <div className="field">
-                <div className="ui checkbox"></div>
-              </div>
-              <div className="field">
-                <button  type="button" id="search-btn" className="ui mini teal basic button"><i className="search icon"></i>搜索</button>
-              </div>
-            </div>
-          </div>
-          <div id="table-container">
-            <MainContent />
-          </div>
+          <MainContent />
         </div>
       </div>
-    </div>
+    </HashRouter>
   );
 }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 // import logo from './logo.svg';
 import 'semantic-ui/dist/semantic.min.css';
 
@@ -12,8 +13,11 @@ class Post extends React.Component
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        if(this.props.id) {
-            fetch('http://13.230.125.32:8080/v1/bubble/detail/' + this.props.id)
+        const { id } = this.props.match.params;
+        console.log(this.props.match.params);
+        console.log(id);
+        if(id) {
+            fetch('http://13.230.125.32:8080/v1/bubble/detail/' + id)
                 .then(res => res.json())
                 .then((data) => {
                     this.setState({ ...data, ...data.score })
@@ -157,7 +161,7 @@ class Post extends React.Component
                         <div className="ui right aligned container">
                             <button type="button" className="ui button" onClick="window.history.go(-1)">返回</button>
                             {/* <button type="button" id="save-btn" className="ui secondary button">保存</button> */}
-                            <button type="button" id="publish-btn" className="ui teal button" onClick = {this.handleSubmit}>發布</button>
+                            <Link to="/list" type="button" id="publish-btn" className="ui teal button" onClick = {this.handleSubmit}>發布</Link>
                         </div>
                     </form>
                 </div>
