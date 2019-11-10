@@ -16,7 +16,7 @@ import com.bubble.detail.service.DetailService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/v1/bubble/detail")
+@RequestMapping("/bubble/detail")
 public class DetailController {
 
 	@Autowired
