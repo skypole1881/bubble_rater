@@ -1,10 +1,9 @@
 package com.bubble.detail.service;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.bubble.detail.model.Detail;
 import com.bubble.detail.model.Score;
 import com.bubble.detail.repository.DetailRepository;
+import com.bubble.util.SysUtil;
 
 @Service
 public class DetailService {
@@ -49,7 +49,7 @@ public class DetailService {
 		if (detail.getScore() == null) {
 			throw new Exception("Score can not be empty");
 		}
-		detail.setCreatedDtm(new Date());
+		detail.updateCommonInfo();
 		detail = detailRepository.save(detail);
 		return detail;
 
@@ -73,7 +73,10 @@ public class DetailService {
 		} else {
 			throw new Exception("Score can not be empty");
 		}
-		return detailRepository.save(detail);
+		Detail detailById = detailRepository.findById(detail.getId()).orElse(detail);
+		BeanUtils.copyProperties(detail, detailById, SysUtil.getNullPropertyNames(detail));
+		detailById.updateCommonInfo();
+		return detailRepository.save(detailById);
 	}
 
 	public void calculateTotalRate() {
@@ -110,15 +113,6 @@ public class DetailService {
 				detailRepository.save(detail);
 			}
 		}
-	}
-
-	public static String convertDateToISO8601String(Date date) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-		String strDate = null;
-		if (date != null) {
-			strDate = sdf.format(date).toString();
-		}
-		return strDate == null ? "" : strDate;
 	}
 
 }

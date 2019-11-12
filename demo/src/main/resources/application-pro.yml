@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://bubble.cxbklylust6x.ap-northeast-1.rds.amazonaws.com:3306/bubble?useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://bubble.cxbklylust6x.ap-northeast-1.rds.amazonaws.com:3306/bubble?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: root
     password: logic123
   jpa:

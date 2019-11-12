@@ -1,25 +1,16 @@
 package com.bubble.detail.model;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import com.bubble.util.BasePojo;
 
 @Entity
 @Table(name = "bubble_detail")
-public class Detail {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+public class Detail extends BasePojo {
 
 	private String country;
 
@@ -42,20 +33,8 @@ public class Detail {
 
 	private boolean cold;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_dtm")
-	private Date createdDtm;
-
 	public Detail() {
 
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getCountry() {
@@ -136,14 +115,6 @@ public class Detail {
 
 	public void setScore(Score score) {
 		this.score = score;
-	}
-
-	public Date getCreatedDtm() {
-		return createdDtm;
-	}
-
-	public void setCreatedDtm(Date createdDtm) {
-		this.createdDtm = createdDtm;
 	}
 
 }
