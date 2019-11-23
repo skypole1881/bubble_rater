@@ -10,27 +10,33 @@ import UIKit
 
 enum Tab: String {
     
-    case tab1 = "tab1"
+    case bubbleTea = "珍奶"
     
-    case tab2
+    case news = "新聞"
     
-    case tab3
+    case coupons = "折價券"
+    
+    case auth = "設定"
     
     func brController() -> UIViewController {
         
         var controller: UIViewController
         
         switch self {
-        case .tab1:
+        case .bubbleTea:
             
-            controller = UIStoryboard.main.instantiateInitialViewController()!
-        case .tab2:
+            controller = UIStoryboard.bubbleTea.instantiateInitialViewController()!
+        case .news:
             
-            controller = UIStoryboard.main.instantiateInitialViewController()!
+            controller = UIStoryboard.news.instantiateInitialViewController()!
             
-        case .tab3:
+        case .coupons:
             
-            controller = UIStoryboard.main.instantiateInitialViewController()!
+            controller = UIStoryboard.coupons.instantiateInitialViewController()!
+            
+        case .auth:
+            
+            controller = UIStoryboard.auth.instantiateInitialViewController()!
         }
         
         controller.tabBarItem = brTabBarItem()
@@ -41,24 +47,31 @@ enum Tab: String {
     func brTabBarItem() -> UITabBarItem {
         
         switch self {
-        case .tab1:
+        case .bubbleTea:
             
             return UITabBarItem(
-                title: "tab1",
+                title: self.rawValue,
                 image: UIImage(),
                 selectedImage: UIImage()
             )
-        case .tab2:
+        case .news:
             
             return UITabBarItem(
-                title: "tab1",
+                title: self.rawValue,
                 image: UIImage(),
                 selectedImage: UIImage()
             )
-        case .tab3:
+        case .coupons:
             
             return UITabBarItem(
-                title: "tab1",
+                title: self.rawValue,
+                image: UIImage(),
+                selectedImage: UIImage()
+            )
+        case .auth:
+            
+            return UITabBarItem(
+                title: self.rawValue,
                 image: UIImage(),
                 selectedImage: UIImage()
             )
@@ -68,7 +81,7 @@ enum Tab: String {
 
 class BRTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
-    private let tabs: [Tab] = [.tab1, .tab2, .tab3]
+    private let tabs: [Tab] = [.bubbleTea, .news, .coupons, .auth]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +96,10 @@ class BRTabBarViewController: UITabBarController, UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         
+        
+        guard let navVC = viewController as? UINavigationController, let _ = navVC.viewControllers.first as? BubbleTeaViewController else { return true }
+        
+        return true
         // TODO
     }
 }

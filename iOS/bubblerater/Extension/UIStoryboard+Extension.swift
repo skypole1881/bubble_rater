@@ -12,11 +12,27 @@ import UIKit
 struct BRStoryboardCategory {
     
     static let main = "Main"
+    
+    static let bubbleTea = "BubbleTea"
+    
+    static let auth = "Auth"
+    
+    static let news = "News"
+    
+    static let coupons = "Coupons"
 }
 
 extension UIStoryboard {
     
     static var main: UIStoryboard { return brStoryboard(name: BRStoryboardCategory.main) }
+    
+    static var bubbleTea: UIStoryboard { return brStoryboard(name: BRStoryboardCategory.bubbleTea) }
+    
+    static var auth: UIStoryboard { return brStoryboard(name: BRStoryboardCategory.auth) }
+    
+    static var news: UIStoryboard { return brStoryboard(name: BRStoryboardCategory.news) }
+    
+    static var coupons: UIStoryboard { return brStoryboard(name: BRStoryboardCategory.coupons) }
     
     private static func brStoryboard(name: String) -> UIStoryboard {
         
