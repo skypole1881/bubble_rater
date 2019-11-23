@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42402550238900EE00EC3868 /* BubbleTeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4240254F238900EE00EC3868 /* BubbleTeaViewController.swift */; };
+		42402552238901CD00EC3868 /* BubbleTea.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42402551238901CD00EC3868 /* BubbleTea.storyboard */; };
+		424025542389028C00EC3868 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424025532389028C00EC3868 /* Auth.storyboard */; };
+		424025562389055500EC3868 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424025552389055500EC3868 /* News.storyboard */; };
+		424025582389059500EC3868 /* Coupons.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424025572389059500EC3868 /* Coupons.storyboard */; };
+		4240255D2389079700EC3868 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4240255C2389079700EC3868 /* NewsViewController.swift */; };
+		4240255F238907B500EC3868 /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4240255E238907B500EC3868 /* CouponsViewController.swift */; };
+		42402561238907C000EC3868 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42402560238907C000EC3868 /* AuthViewController.swift */; };
 		CA844DA5234644BF00667ABF /* BRBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DA4234644BF00667ABF /* BRBaseViewController.swift */; };
 		CA844DA7234644FD00667ABF /* BRTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DA6234644FD00667ABF /* BRTabBarViewController.swift */; };
 		CA844DAB2346460500667ABF /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA844DAA2346460500667ABF /* UIStoryboard+Extension.swift */; };
@@ -18,6 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4240254F238900EE00EC3868 /* BubbleTeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTeaViewController.swift; sourceTree = "<group>"; };
+		42402551238901CD00EC3868 /* BubbleTea.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BubbleTea.storyboard; sourceTree = "<group>"; };
+		424025532389028C00EC3868 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		424025552389055500EC3868 /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
+		424025572389059500EC3868 /* Coupons.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coupons.storyboard; sourceTree = "<group>"; };
+		4240255C2389079700EC3868 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		4240255E238907B500EC3868 /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		42402560238907C000EC3868 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CA844DA4234644BF00667ABF /* BRBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRBaseViewController.swift; sourceTree = "<group>"; };
 		CA844DA6234644FD00667ABF /* BRTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRTabBarViewController.swift; sourceTree = "<group>"; };
 		CA844DAA2346460500667ABF /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
@@ -41,9 +57,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4240254E238900B200EC3868 /* BubbleTea */ = {
+			isa = PBXGroup;
+			children = (
+				4240254F238900EE00EC3868 /* BubbleTeaViewController.swift */,
+			);
+			path = BubbleTea;
+			sourceTree = "<group>";
+		};
+		424025592389072400EC3868 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				4240255C2389079700EC3868 /* NewsViewController.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		4240255A2389072B00EC3868 /* Coupons */ = {
+			isa = PBXGroup;
+			children = (
+				4240255E238907B500EC3868 /* CouponsViewController.swift */,
+			);
+			path = Coupons;
+			sourceTree = "<group>";
+		};
+		4240255B2389073400EC3868 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				42402560238907C000EC3868 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		CA844D9E2346444B00667ABF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4240254E238900B200EC3868 /* BubbleTea */,
+				424025592389072400EC3868 /* News */,
+				4240255A2389072B00EC3868 /* Coupons */,
+				4240255B2389073400EC3868 /* Auth */,
 				CA844DA2234644A500667ABF /* Base */,
 			);
 			path = Controller;
@@ -67,6 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				CACFCFD9232003300056590B /* Main.storyboard */,
+				42402551238901CD00EC3868 /* BubbleTea.storyboard */,
+				424025552389055500EC3868 /* News.storyboard */,
+				424025572389059500EC3868 /* Coupons.storyboard */,
+				424025532389028C00EC3868 /* Auth.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -179,7 +235,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424025582389059500EC3868 /* Coupons.storyboard in Resources */,
 				CACFCFE0232003300056590B /* LaunchScreen.storyboard in Resources */,
+				424025562389055500EC3868 /* News.storyboard in Resources */,
+				42402552238901CD00EC3868 /* BubbleTea.storyboard in Resources */,
+				424025542389028C00EC3868 /* Auth.storyboard in Resources */,
 				CACFCFDD232003300056590B /* Assets.xcassets in Resources */,
 				CACFCFDB232003300056590B /* Main.storyboard in Resources */,
 			);
@@ -195,7 +255,11 @@
 				CACFCFD8232003300056590B /* ViewController.swift in Sources */,
 				CA844DA5234644BF00667ABF /* BRBaseViewController.swift in Sources */,
 				CA844DA7234644FD00667ABF /* BRTabBarViewController.swift in Sources */,
+				4240255D2389079700EC3868 /* NewsViewController.swift in Sources */,
+				4240255F238907B500EC3868 /* CouponsViewController.swift in Sources */,
+				42402550238900EE00EC3868 /* BubbleTeaViewController.swift in Sources */,
 				CACFCFD6232003300056590B /* AppDelegate.swift in Sources */,
+				42402561238907C000EC3868 /* AuthViewController.swift in Sources */,
 				CA844DAB2346460500667ABF /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
