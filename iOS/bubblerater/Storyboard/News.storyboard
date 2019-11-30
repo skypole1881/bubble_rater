@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p1I-el-7TA">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p1I-el-7TA">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,143 @@
                     <view key="view" contentMode="scaleToFill" id="YQJ-pb-Aqo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="K4O-jh-df3">
+                                <rect key="frame" x="20" y="138" width="374" height="79.333333333333314"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="珍奶推薦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McP-53-YFw">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="挑選喜歡的三要素" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="938-Y9-1az">
+                                        <rect key="frame" x="0.0" y="45.666666666666657" width="227" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="U2d-hb-wLA">
+                                <rect key="frame" x="20" y="820" width="374" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sRu-An-JXZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Random"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZ1-YY-dcu">
+                                        <rect key="frame" x="287" y="0.0" width="87" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Confirm"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="2UM-oM-cqN">
+                                <rect key="frame" x="20" y="267.33333333333331" width="374" height="385.99999999999994"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="caP-dq-njz">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble rater_logo_score_red" translatesAutoresizingMaskIntoConstraints="NO" id="0u2-Mq-srn">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="W52-pc-seN"/>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="sLF-Cp-Y1F"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Cdg-Oi-QKx">
+                                                <rect key="frame" x="118" y="0.0" width="256" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="珍珠彈性" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kez-Sz-U1v">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="40.666666666666664"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-nK-fK0">
+                                                        <rect key="frame" x="-2" y="59.666666666666686" width="260" height="41.333333333333343"/>
+                                                    </slider>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Zyw-nK-fK0" secondAttribute="trailing" id="UPg-uG-ieJ"/>
+                                                    <constraint firstItem="Zyw-nK-fK0" firstAttribute="leading" secondItem="Cdg-Oi-QKx" secondAttribute="leading" id="yoj-6f-SsL"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-Ac-q4t">
+                                        <rect key="frame" x="0.0" y="143" width="374" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble rater_logo_score_red" translatesAutoresizingMaskIntoConstraints="NO" id="gdj-bF-Nhq">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="NBe-ed-4tt"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="S7y-ot-lPf"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="qUw-CE-GCE">
+                                                <rect key="frame" x="118" y="0.0" width="256" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="奶茶濃度" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qII-SH-1Vv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="40.666666666666664"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tR0-ly-AXk">
+                                                        <rect key="frame" x="-2" y="59.666666666666686" width="260" height="41.333333333333343"/>
+                                                    </slider>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="tR0-ly-AXk" secondAttribute="trailing" id="Acg-Mk-SLM"/>
+                                                    <constraint firstItem="tR0-ly-AXk" firstAttribute="leading" secondItem="qUw-CE-GCE" secondAttribute="leading" id="PAV-z6-3OU"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ruN-P0-46Z">
+                                        <rect key="frame" x="0.0" y="286.00000000000006" width="374" height="100"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubble rater_logo_score_red" translatesAutoresizingMaskIntoConstraints="NO" id="viY-Qy-IXB">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="XMo-8g-A7c"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="tdk-bL-EGT"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Doc-1D-bbn">
+                                                <rect key="frame" x="118" y="0.0" width="256" height="100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="甜度等級" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-jV-4OL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="256" height="40.666666666666664"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hs7-TK-tyb">
+                                                        <rect key="frame" x="-2" y="59.666666666666629" width="260" height="41.333333333333343"/>
+                                                    </slider>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="2UM-oM-cqN" firstAttribute="top" secondItem="K4O-jh-df3" secondAttribute="bottom" constant="50" id="9If-AA-cqZ"/>
+                            <constraint firstItem="x8o-Jt-cF9" firstAttribute="trailing" secondItem="U2d-hb-wLA" secondAttribute="trailing" constant="20" id="GNM-Me-BMP"/>
+                            <constraint firstItem="x8o-Jt-cF9" firstAttribute="trailing" secondItem="2UM-oM-cqN" secondAttribute="trailing" constant="20" id="JKw-ap-JSZ"/>
+                            <constraint firstItem="x8o-Jt-cF9" firstAttribute="bottom" secondItem="U2d-hb-wLA" secondAttribute="bottom" id="NKW-fs-flx"/>
+                            <constraint firstItem="K4O-jh-df3" firstAttribute="top" secondItem="x8o-Jt-cF9" secondAttribute="top" constant="50" id="aK7-cZ-sg8"/>
+                            <constraint firstItem="U2d-hb-wLA" firstAttribute="leading" secondItem="x8o-Jt-cF9" secondAttribute="leading" constant="20" id="aSa-Fo-aK8"/>
+                            <constraint firstItem="2UM-oM-cqN" firstAttribute="leading" secondItem="x8o-Jt-cF9" secondAttribute="leading" constant="20" id="db5-rh-6L7"/>
+                            <constraint firstItem="x8o-Jt-cF9" firstAttribute="trailing" secondItem="K4O-jh-df3" secondAttribute="trailing" constant="20" id="kaW-ze-1kZ"/>
+                            <constraint firstItem="K4O-jh-df3" firstAttribute="leading" secondItem="x8o-Jt-cF9" secondAttribute="leading" constant="20" id="vb2-8n-Bd8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="x8o-Jt-cF9"/>
                     </view>
                     <navigationItem key="navigationItem" id="fUb-2H-E5M"/>
@@ -43,4 +179,7 @@
             <point key="canvasLocation" x="2.8985507246376816" y="107.8125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bubble rater_logo_score_red" width="592" height="583"/>
+    </resources>
 </document>
