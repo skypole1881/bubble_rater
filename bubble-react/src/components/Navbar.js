@@ -5,7 +5,7 @@ import logo15 from '../images/bubble rater_logo-15.png'
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-font" id="nav-bar-spy">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-font" style={{backgroundColor: 'rgba(215, 199, 179, 0.6)'}} id="nav-bar-spy">
             <div className="container-fluid">
             <a className="navbar-brand" href="https://www.bubblerater.com/">
                 <img src={logo16} alt="logo16" className="img-fluid" />
@@ -18,15 +18,15 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="nav navbar-nav ml-auto text-nowrap">
                 <li className="nav-item ">
-                    <a className="nav-link active" href="#about">About us
+                    <a className="nav-link active" href="#about">News & Coupons
                     <span className="sr-only">(current)</span>
                     </a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#stores">Rate</a>
+                    <a className="nav-link" href="#stores">About Us</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link" href="#contact">Contact us</a>
+                    <a className="nav-link" href="#contact">Rate</a>
                 </li>
                 </ul>
                 <div className="dropdown-divider"></div>

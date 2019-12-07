@@ -1,4 +1,5 @@
 import React from 'react';
+import {StyleRoot} from 'radium';
 import './App.css';
 import './single-store.css'
 import './bootstrap.min.css'
@@ -7,14 +8,19 @@ import './post.css'
 import {Navbar} from './components/Navbar'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
+import News from './components/news/News'
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Header />
-      <MainContent />
-    </div>
+    <StyleRoot>
+      <div>
+        <Navbar />
+        <Header />
+        <MainContent />
+        <News/>
+      </div>
+    </StyleRoot>
+    
     // <div className="col-mdtext-white otherstore change-top">
     //   <div className="otherinfo">
     //     <div className="bg-blur">

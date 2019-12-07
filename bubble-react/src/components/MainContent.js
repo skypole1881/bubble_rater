@@ -40,12 +40,15 @@ class MainContent extends React.Component {
                 body: JSON.stringify(this.state.cdt),
             }).then(res => res.json())
             .then((data) => {
+            console.log('**** TCL : MainContent -> componentDidMount -> data', data);
                 this.setState({ stores: data.stores })
                 let dropDownListTemp = data.dropDownList
                 data.dropDownList[0] == null && (dropDownListTemp[0] = '搜尋更多')
                 this.setState({dropDownList: dropDownListTemp})
             })
-            .catch()
+            .catch(function(reason) {
+            console.log('**** TCL : MainContent -> componentDidMount -> reason', reason);
+            })
     }
     handleClick(e) {
         let className = e.target.className.split(' ')[1]

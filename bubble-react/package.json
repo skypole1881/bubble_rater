@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "radium": "^0.26.0",
     "react": "^16.9.0",
+    "react-animations": "^1.0.0",
+    "react-blur": "^0.6.0",
+    "react-clamp-lines": "^3.0.2",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-responsive-carousel": "^3.1.51",
+    "react-scripts": "3.1.1",
+    "react-spring": "^8.0.27",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
