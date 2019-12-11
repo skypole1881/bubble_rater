@@ -8,12 +8,19 @@
 
 import UIKit
 
-class CouponsViewController: BRBaseViewController {
-
+class CouponTableViewCell: UITableViewCell {
+    @IBOutlet weak var storename: UILabel!
+    
+}
+class CouponsViewController: BRBaseViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var coupontable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        coupontable.dataSource = self
+        coupontable.delegate = self
     }
     
 
@@ -26,5 +33,13 @@ class CouponsViewController: BRBaseViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "couponcell", for: indexPath) as! CouponTableViewCell
+        cell.storename.text = "飲川"
+        return cell
+    }
 }

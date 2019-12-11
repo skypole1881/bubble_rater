@@ -31,184 +31,52 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sNa-9g-dek">
-                                <rect key="frame" x="0.0" y="144" width="414" height="590"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="Onc-BF-evz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="jqh-JH-p6d">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJP-bG-tKl">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="O73-6P-kx1"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="zob-Zk-NcZ">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="ohK-3b-Zzo">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDE-DT-CLt">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="jvc-NN-SVN"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="HUD-Hv-LWy">
-                                        <rect key="frame" x="0.0" y="120" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="P3j-Er-L5W">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="myv-Vt-WYL">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="VSE-yc-2Ib"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="b77-gv-8sn">
-                                        <rect key="frame" x="0.0" y="180" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="J5B-CU-kcw">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xq-4N-4T4">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="tZ3-5e-wCO"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="JLF-Rt-ocx">
-                                        <rect key="frame" x="0.0" y="240" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-B6-tUI">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tta-nS-V9X">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="qFo-we-lwK"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="orI-cK-27H">
-                                        <rect key="frame" x="0.0" y="300" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="IC4-fR-f59">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKB-wX-Emn">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="GCH-Iz-i5B"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="Ned-dd-xJr">
-                                        <rect key="frame" x="0.0" y="360" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="BPo-hg-JuH">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lb-1u-8u1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="HMu-EY-xfD"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="fBB-WO-CNY">
-                                        <rect key="frame" x="0.0" y="420" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="NfS-vn-iR1">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTj-B1-7kK">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="2uv-6G-XMT"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="N1h-Qd-8vj">
-                                        <rect key="frame" x="0.0" y="480" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="lRV-9j-akh">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-t5-ZmE">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="kaS-SQ-9g2"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-50" translatesAutoresizingMaskIntoConstraints="NO" id="lar-iM-Bfq">
-                                        <rect key="frame" x="0.0" y="540" width="414" height="50"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store2" translatesAutoresizingMaskIntoConstraints="NO" id="Qdi-FZ-WLC">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jp8-JA-YGa">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <state key="normal" title="飲川"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ZH6-rr-ucS"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-eS-WQG">
+                                <rect key="frame" x="20" y="134" width="374" height="728"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="couponcell" id="luN-PG-OSD" customClass="CouponTableViewCell" customModule="bubblerater" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="luN-PG-OSD" id="6qi-wd-gjJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="muE-Mo-e49">
+                                                    <rect key="frame" x="154" y="6" width="67" height="33.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="muE-Mo-e49" firstAttribute="centerY" secondItem="6qi-wd-gjJ" secondAttribute="centerY" id="Sgp-Qd-INa"/>
+                                                <constraint firstItem="muE-Mo-e49" firstAttribute="centerX" secondItem="6qi-wd-gjJ" secondAttribute="centerX" id="vAF-Do-0Bl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="storename" destination="muE-Mo-e49" id="PvW-ma-yYv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="sNa-9g-dek" firstAttribute="leading" secondItem="S7O-18-rxo" secondAttribute="leading" id="3gE-aN-wQd"/>
-                            <constraint firstAttribute="trailing" secondItem="sNa-9g-dek" secondAttribute="trailing" id="8cN-C8-XN5"/>
+                            <constraint firstItem="fbg-eS-WQG" firstAttribute="top" secondItem="Lji-0s-Rxw" secondAttribute="bottom" id="1Cu-d9-dPF"/>
                             <constraint firstItem="Lji-0s-Rxw" firstAttribute="leading" secondItem="S7O-18-rxo" secondAttribute="leading" id="EhA-rU-LIp"/>
                             <constraint firstItem="Lji-0s-Rxw" firstAttribute="top" secondItem="S7O-18-rxo" secondAttribute="top" id="IbD-sB-V1l"/>
-                            <constraint firstItem="sNa-9g-dek" firstAttribute="top" secondItem="Lji-0s-Rxw" secondAttribute="bottom" constant="10" id="bGV-Xq-zkh"/>
+                            <constraint firstItem="fbg-eS-WQG" firstAttribute="bottom" secondItem="S7O-18-rxo" secondAttribute="bottom" id="RjC-SZ-KcN"/>
+                            <constraint firstItem="S7O-18-rxo" firstAttribute="trailing" secondItem="fbg-eS-WQG" secondAttribute="trailing" constant="20" id="jTP-e8-Fcv"/>
                             <constraint firstItem="S7O-18-rxo" firstAttribute="trailing" secondItem="Lji-0s-Rxw" secondAttribute="trailing" id="kiD-vW-poH"/>
+                            <constraint firstItem="fbg-eS-WQG" firstAttribute="leading" secondItem="S7O-18-rxo" secondAttribute="leading" constant="20" id="mC9-tI-Tc3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S7O-18-rxo"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bes-le-fhF"/>
+                    <connections>
+                        <outlet property="coupontable" destination="fbg-eS-WQG" id="T4E-yd-8i7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fj4-wk-GP9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -233,7 +101,4 @@
             <point key="canvasLocation" x="105.79710144927537" y="203.57142857142856"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="store2" width="970" height="970"/>
-    </resources>
 </document>
