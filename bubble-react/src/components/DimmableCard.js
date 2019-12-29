@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Radium from 'radium';
-import {Spring} from 'react-spring/renderprops';
+import {Spring} from 'react-spring/renderprops'
 import { bounce } from 'react-animations';
 import { Button, Dimmer, Header, Image } from 'semantic-ui-react';
 import brSmall from '../images/br-newsimg-small.png';
@@ -93,70 +93,13 @@ class DimmableCard extends Component {
     return (
 
       <div>
-        {/* {this.state.isHovering === false &&
-          <div class="card h-100"
-            style={rankCard}
-            onMouseEnter={this.handleMouseHover}
-            onMouseLeave={this.handleMouseHover}>
-            <img src={brSmall} class="card-img-top" alt="..."></img>
-            <div class="card-body"
-              style={cardBodyStyle}>
-              <div class="container">
-                <div class="row"
-                  style={cardTopContentStyle}>
-                  <div class="col d-flex flex-column">
-                    <div class="p-2 bd-highlight align-self-center">約翰紅茶公司</div>
-                    <div class="p-2 bd-highlight align-self-center">南港店</div>
-                    <div class="p-2 bd-highlight align-self-center">雨果那堤</div>
-                  </div>
-                </div>
+        {
+          
 
-                <hr style={hrStyle}></hr>
+        }
+       
 
-                <div class="row">
-                  <div class="col d-flex flex-row">
-                    珍珠彈性
-                  </div>
-                  <div class="col d-flex flex-row-reverse">
-                    9.8
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col d-flex flex-row">
-                    奶茶濃度
-                  </div>
-                  <div class="col d-flex flex-row-reverse">
-                    9.5
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col d-flex flex-row">
-                    珍探給分
-                  </div>
-                  <div class="col d-flex flex-row-reverse">
-                    9.5
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col d-flex flex-row">
-                    甜度等級
-                  </div>
-                  <div class="col d-flex flex-row-reverse">
-                    剛剛好
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        } */}
-        {<Spring
-          from={{ opacity: 0 }}
-          to={{ opacity: 1 }}>
-          {props => <div style={props}>hello</div>}
-        </Spring>}
-
-        {true &&
+        {this.state.isHovering === false &&
           <div class="card h-65"
             style={dimmerCard.bounce}
             onMouseEnter={this.handleMouseHover}
@@ -233,6 +176,65 @@ class DimmableCard extends Component {
             </div>
           </div>         
         }
+        {<Spring
+          config={{duration: 2000}} 
+          from={{ opacity: 1 }}
+          to={{ opacity: this.state.isHovering ? 0 : 1 }}>
+          {props => <div style={props}><div class="card h-100"
+            style={rankCard}
+            onMouseEnter={this.handleMouseHover}
+            onMouseLeave={this.handleMouseHover}>
+            <img src={brSmall} class="card-img-top" alt="..."></img>
+            <div class="card-body"
+              style={cardBodyStyle}>
+              <div class="container">
+                <div class="row"
+                  style={cardTopContentStyle}>
+                  <div class="col d-flex flex-column">
+                    <div class="p-2 bd-highlight align-self-center">約翰紅茶公司</div>
+                    <div class="p-2 bd-highlight align-self-center">南港店</div>
+                    <div class="p-2 bd-highlight align-self-center">雨果那堤</div>
+                  </div>
+                </div>
+
+                <hr style={hrStyle}></hr>
+
+                <div class="row">
+                  <div class="col d-flex flex-row">
+                    珍珠彈性
+                  </div>
+                  <div class="col d-flex flex-row-reverse">
+                    9.8
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex flex-row">
+                    奶茶濃度
+                  </div>
+                  <div class="col d-flex flex-row-reverse">
+                    9.5
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex flex-row">
+                    珍探給分
+                  </div>
+                  <div class="col d-flex flex-row-reverse">
+                    9.5
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col d-flex flex-row">
+                    甜度等級
+                  </div>
+                  <div class="col d-flex flex-row-reverse">
+                    剛剛好
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></div>}
+        </Spring>}
       </div>
 
     );

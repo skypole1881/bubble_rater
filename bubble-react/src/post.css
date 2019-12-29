@@ -644,3 +644,22 @@
 {
 	background: hsla(36, 39%, 31%, 0.5);
 }
+
+.btn-primary {
+  color: #75654E;
+  background-color: #F8EADD !important;
+}
+
+.btn-primary:hover {
+  color: #75654E;
+  background-color: #F8EADD !important;
+}
+
+.btn-primary:active {
+  color: #75654E;
+  background-color: #F8EADD !important;
+}
+
+.btn-secondary {
+  color: #ED3365;
+}
