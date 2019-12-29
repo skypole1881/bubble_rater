@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleRoot} from 'radium';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import { HashRouter as Router, Route, Link, Switch} from 'react-router-dom';
 import './App.css';
 import './single-store.css'
 import './blog-home.css'

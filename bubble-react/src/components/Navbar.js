@@ -6,16 +6,10 @@ import logo15 from '../images/bubble rater_logo-15.png'
 
 import MainContent from '../../src/components/MainContent'
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-      <Router>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top navbar-font" style={{backgroundColor: 'rgba(215, 199, 179, 0.6)'}} id="nav-bar-spy">
             <div className="container-fluid">
             <a className="navbar-brand" href="https://www.bubblerater.com/">
@@ -58,8 +52,6 @@ const Navbar = () => {
             </div>
             </div>
         </nav>
-
-      </Router>
 
     )
 }
