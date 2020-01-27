@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://database.c50xqnmxv90m.ap-southeast-1.rds.amazonaws.com:3306/blog?&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    url: jdbc:mysql://bubble.cxbklylust6x.ap-northeast-1.rds.amazonaws.com:3306/blog?&useUnicode=true&characterEncoding=utf-8&useSSL=false
     username: root
-    password: rootroot
+    password: logic123
   jpa:
     properties:
       hibernate:
